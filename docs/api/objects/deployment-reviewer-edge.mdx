@@ -1,0 +1,23 @@
+---
+id: deployment-reviewer-edge
+title: DeploymentReviewerEdge
+---
+
+An edge in a connection.
+
+```graphql
+type DeploymentReviewerEdge {
+  cursor: String!
+  node: DeploymentReviewer
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`DeploymentReviewer`](/docs/api/unions/deployment-reviewer))
+
+The item at the end of the edge.

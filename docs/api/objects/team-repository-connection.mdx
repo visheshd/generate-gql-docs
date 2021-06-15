@@ -1,0 +1,33 @@
+---
+id: team-repository-connection
+title: TeamRepositoryConnection
+---
+
+The connection type for Repository.
+
+```graphql
+type TeamRepositoryConnection {
+  edges: [TeamRepositoryEdge]
+  nodes: [Repository]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[TeamRepositoryEdge]`](/docs/api/objects/team-repository-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Repository]`](/docs/api/objects/repository))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

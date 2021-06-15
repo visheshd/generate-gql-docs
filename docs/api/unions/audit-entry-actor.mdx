@@ -1,0 +1,24 @@
+---
+id: audit-entry-actor
+title: AuditEntryActor
+---
+
+Types that can initiate an audit log event.
+
+```graphql
+union AuditEntryActor = Bot | Organization | User
+```
+
+### Possible types
+
+#### [`Bot`](/docs/api/objects/bot)
+
+A special type of user which takes actions on behalf of GitHub Apps.
+
+#### [`Organization`](/docs/api/objects/organization)
+
+An account on GitHub, with one or more owners, that has repositories, members and teams.
+
+#### [`User`](/docs/api/objects/user)
+
+A user is an individual's account on GitHub that owns repositories and can make new content.

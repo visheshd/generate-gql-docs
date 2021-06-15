@@ -1,0 +1,23 @@
+---
+id: enterprise-server-user-accounts-upload-order
+title: EnterpriseServerUserAccountsUploadOrder
+---
+
+Ordering options for Enterprise Server user accounts upload connections.
+
+```graphql
+type EnterpriseServerUserAccountsUploadOrder {
+  direction: OrderDirection!
+  field: EnterpriseServerUserAccountsUploadOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`EnterpriseServerUserAccountsUploadOrderField!`](/docs/api/enums/enterprise-server-user-accounts-upload-order-field))
+
+The field to order user accounts uploads by.

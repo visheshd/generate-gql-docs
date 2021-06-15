@@ -1,0 +1,33 @@
+---
+id: check-annotation-range
+title: CheckAnnotationRange
+---
+
+Information from a check run analysis to specific lines of code.
+
+```graphql
+type CheckAnnotationRange {
+  endColumn: Int
+  endLine: Int!
+  startColumn: Int
+  startLine: Int!
+}
+```
+
+### Fields
+
+#### `endColumn` ([`Int`](/docs/api/scalars/int))
+
+The ending column of the range.
+
+#### `endLine` ([`Int!`](/docs/api/scalars/int))
+
+The ending line of the range.
+
+#### `startColumn` ([`Int`](/docs/api/scalars/int))
+
+The starting column of the range.
+
+#### `startLine` ([`Int!`](/docs/api/scalars/int))
+
+The starting line of the range.

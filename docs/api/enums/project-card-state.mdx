@@ -1,0 +1,28 @@
+---
+id: project-card-state
+title: ProjectCardState
+---
+
+Various content states of a ProjectCard
+
+```graphql
+enum ProjectCardState {
+  CONTENT_ONLY
+  NOTE_ONLY
+  REDACTED
+}
+```
+
+### Values
+
+#### `CONTENT_ONLY`
+
+The card has content only.
+
+#### `NOTE_ONLY`
+
+The card has a note only.
+
+#### `REDACTED`
+
+The card is redacted.

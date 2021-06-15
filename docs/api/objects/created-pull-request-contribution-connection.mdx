@@ -1,0 +1,33 @@
+---
+id: created-pull-request-contribution-connection
+title: CreatedPullRequestContributionConnection
+---
+
+The connection type for CreatedPullRequestContribution.
+
+```graphql
+type CreatedPullRequestContributionConnection {
+  edges: [CreatedPullRequestContributionEdge]
+  nodes: [CreatedPullRequestContribution]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CreatedPullRequestContributionEdge]`](/docs/api/objects/created-pull-request-contribution-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CreatedPullRequestContribution]`](/docs/api/objects/created-pull-request-contribution))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

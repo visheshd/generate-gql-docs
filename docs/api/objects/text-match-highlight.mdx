@@ -1,0 +1,28 @@
+---
+id: text-match-highlight
+title: TextMatchHighlight
+---
+
+Represents a single highlight in a search result match.
+
+```graphql
+type TextMatchHighlight {
+  beginIndice: Int!
+  endIndice: Int!
+  text: String!
+}
+```
+
+### Fields
+
+#### `beginIndice` ([`Int!`](/docs/api/scalars/int))
+
+The indice in the fragment where the matched text begins.
+
+#### `endIndice` ([`Int!`](/docs/api/scalars/int))
+
+The indice in the fragment where the matched text ends.
+
+#### `text` ([`String!`](/docs/api/scalars/string))
+
+The text matched.

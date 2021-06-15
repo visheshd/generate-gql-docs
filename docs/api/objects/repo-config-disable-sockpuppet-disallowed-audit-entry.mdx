@@ -1,0 +1,139 @@
+---
+id: repo-config-disable-sockpuppet-disallowed-audit-entry
+title: RepoConfigDisableSockpuppetDisallowedAuditEntry
+---
+
+Audit log entry for a repo.config.disable_sockpuppet_disallowed event.
+
+```graphql
+type RepoConfigDisableSockpuppetDisallowedAuditEntry implements AuditEntry, Node, OrganizationAuditEntryData, RepositoryAuditEntryData {
+  action: String!
+  actor: AuditEntryActor
+  actorIp: String
+  actorLocation: ActorLocation
+  actorLogin: String
+  actorResourcePath: URI
+  actorUrl: URI
+  createdAt: PreciseDateTime!
+  id: ID!
+  operationType: OperationType
+  organization: Organization
+  organizationName: String
+  organizationResourcePath: URI
+  organizationUrl: URI
+  repository: Repository
+  repositoryName: String
+  repositoryResourcePath: URI
+  repositoryUrl: URI
+  user: User
+  userLogin: String
+  userResourcePath: URI
+  userUrl: URI
+}
+```
+
+### Fields
+
+#### `action` ([`String!`](/docs/api/scalars/string))
+
+The action name
+
+#### `actor` ([`AuditEntryActor`](/docs/api/unions/audit-entry-actor))
+
+The user who initiated the action
+
+#### `actorIp` ([`String`](/docs/api/scalars/string))
+
+The IP address of the actor
+
+#### `actorLocation` ([`ActorLocation`](/docs/api/objects/actor-location))
+
+A readable representation of the actor's location
+
+#### `actorLogin` ([`String`](/docs/api/scalars/string))
+
+The username of the user who initiated the action
+
+#### `actorResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for the actor.
+
+#### `actorUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for the actor.
+
+#### `createdAt` ([`PreciseDateTime!`](/docs/api/scalars/precise-date-time))
+
+The time the action was initiated
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `operationType` ([`OperationType`](/docs/api/enums/operation-type))
+
+The corresponding operation type for the action
+
+#### `organization` ([`Organization`](/docs/api/objects/organization))
+
+The Organization associated with the Audit Entry.
+
+#### `organizationName` ([`String`](/docs/api/scalars/string))
+
+The name of the Organization.
+
+#### `organizationResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for the organization
+
+#### `organizationUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for the organization
+
+#### `repository` ([`Repository`](/docs/api/objects/repository))
+
+The repository associated with the action
+
+#### `repositoryName` ([`String`](/docs/api/scalars/string))
+
+The name of the repository
+
+#### `repositoryResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for the repository
+
+#### `repositoryUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for the repository
+
+#### `user` ([`User`](/docs/api/objects/user))
+
+The user affected by the action
+
+#### `userLogin` ([`String`](/docs/api/scalars/string))
+
+For actions involving two users, the actor is the initiator and the user is the affected user.
+
+#### `userResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for the user.
+
+#### `userUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for the user.
+
+### Interfaces
+
+#### [`AuditEntry`](/docs/api/interfaces/audit-entry)
+
+An entry in the audit log.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`OrganizationAuditEntryData`](/docs/api/interfaces/organization-audit-entry-data)
+
+Metadata for an audit entry with action org.\*
+
+#### [`RepositoryAuditEntryData`](/docs/api/interfaces/repository-audit-entry-data)
+
+Metadata for an audit entry with action repo.\*

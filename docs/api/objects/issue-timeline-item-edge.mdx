@@ -1,0 +1,23 @@
+---
+id: issue-timeline-item-edge
+title: IssueTimelineItemEdge
+---
+
+An edge in a connection.
+
+```graphql
+type IssueTimelineItemEdge {
+  cursor: String!
+  node: IssueTimelineItem
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`IssueTimelineItem`](/docs/api/unions/issue-timeline-item))
+
+The item at the end of the edge.

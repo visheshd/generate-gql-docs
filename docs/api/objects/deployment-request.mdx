@@ -1,0 +1,59 @@
+---
+id: deployment-request
+title: DeploymentRequest
+---
+
+A request to deploy a workflow run to an environment.
+
+```graphql
+type DeploymentRequest {
+  currentUserCanApprove: Boolean!
+  environment: Environment!
+  reviewers(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): DeploymentReviewerConnection!
+  waitTimer: Int!
+  waitTimerStartedAt: DateTime
+}
+```
+
+### Fields
+
+#### `currentUserCanApprove` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the current user can approve the deployment
+
+#### `environment` ([`Environment!`](/docs/api/objects/environment))
+
+The target environment of the deployment
+
+#### `reviewers` ([`DeploymentReviewerConnection!`](/docs/api/objects/deployment-reviewer-connection))
+
+The teams or users that can review the deployment
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `waitTimer` ([`Int!`](/docs/api/scalars/int))
+
+The wait timer in minutes configured in the environment
+
+#### `waitTimerStartedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+The wait timer in minutes configured in the environment

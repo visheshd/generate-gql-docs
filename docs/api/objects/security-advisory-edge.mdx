@@ -1,0 +1,23 @@
+---
+id: security-advisory-edge
+title: SecurityAdvisoryEdge
+---
+
+An edge in a connection.
+
+```graphql
+type SecurityAdvisoryEdge {
+  cursor: String!
+  node: SecurityAdvisory
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`SecurityAdvisory`](/docs/api/objects/security-advisory))
+
+The item at the end of the edge.

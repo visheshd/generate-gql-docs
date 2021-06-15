@@ -1,0 +1,93 @@
+---
+id: project-column
+title: ProjectColumn
+---
+
+A column inside a project.
+
+```graphql
+type ProjectColumn implements Node {
+  cards(
+    after: String
+    archivedStates: [ProjectCardArchivedState] = [ARCHIVED, NOT_ARCHIVED]
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): ProjectCardConnection!
+  createdAt: DateTime!
+  databaseId: Int
+  id: ID!
+  name: String!
+  project: Project!
+  purpose: ProjectColumnPurpose
+  resourcePath: URI!
+  updatedAt: DateTime!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `cards` ([`ProjectCardConnection!`](/docs/api/objects/project-card-connection))
+
+List of cards in the column
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `archivedStates` ([`[ProjectCardArchivedState]`](/docs/api/enums/project-card-archived-state))
+
+A list of archived states to filter the cards by
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The project column's name.
+
+#### `project` ([`Project!`](/docs/api/objects/project))
+
+The project that contains this column.
+
+#### `purpose` ([`ProjectColumnPurpose`](/docs/api/enums/project-column-purpose))
+
+The semantic purpose of the column
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this project column
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this project column
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

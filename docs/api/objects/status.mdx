@@ -1,0 +1,72 @@
+---
+id: status
+title: Status
+---
+
+Represents a commit status.
+
+```graphql
+type Status implements Node {
+  combinedContexts(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): StatusCheckRollupContextConnection!
+  commit: Commit
+  context(name: String!): StatusContext
+  contexts: [StatusContext!]!
+  id: ID!
+  state: StatusState!
+}
+```
+
+### Fields
+
+#### `combinedContexts` ([`StatusCheckRollupContextConnection!`](/docs/api/objects/status-check-rollup-context-connection))
+
+A list of status contexts and check runs for this commit.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `commit` ([`Commit`](/docs/api/objects/commit))
+
+The commit this status is attached to.
+
+#### `context` ([`StatusContext`](/docs/api/objects/status-context))
+
+Looks up an individual status context by context name.
+
+- ##### `name` ([`String!`](/docs/api/scalars/string))
+
+The context name.
+
+#### `contexts` ([`[StatusContext!]!`](/docs/api/objects/status-context))
+
+The individual status contexts for this commit.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `state` ([`StatusState!`](/docs/api/enums/status-state))
+
+The combined commit status.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

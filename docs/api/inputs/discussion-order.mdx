@@ -1,0 +1,23 @@
+---
+id: discussion-order
+title: DiscussionOrder
+---
+
+Ways in which lists of discussions can be ordered upon return.
+
+```graphql
+type DiscussionOrder {
+  direction: OrderDirection!
+  field: DiscussionOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order discussions by the specified field.
+
+#### `field` ([`DiscussionOrderField!`](/docs/api/enums/discussion-order-field))
+
+The field by which to order discussions.

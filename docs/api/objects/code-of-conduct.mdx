@@ -1,0 +1,47 @@
+---
+id: code-of-conduct
+title: CodeOfConduct
+---
+
+The Code of Conduct for a repository
+
+```graphql
+type CodeOfConduct implements Node {
+  body: String
+  id: ID!
+  key: String!
+  name: String!
+  resourcePath: URI
+  url: URI
+}
+```
+
+### Fields
+
+#### `body` ([`String`](/docs/api/scalars/string))
+
+The body of the Code of Conduct
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `key` ([`String!`](/docs/api/scalars/string))
+
+The key for the Code of Conduct
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The formal name of the Code of Conduct
+
+#### `resourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for this Code of Conduct
+
+#### `url` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for this Code of Conduct
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

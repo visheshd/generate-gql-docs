@@ -1,0 +1,23 @@
+---
+id: reaction-edge
+title: ReactionEdge
+---
+
+An edge in a connection.
+
+```graphql
+type ReactionEdge {
+  cursor: String!
+  node: Reaction
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Reaction`](/docs/api/objects/reaction))
+
+The item at the end of the edge.

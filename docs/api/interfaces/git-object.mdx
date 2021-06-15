@@ -1,0 +1,41 @@
+---
+id: git-object
+title: GitObject
+---
+
+Represents a Git object.
+
+```graphql
+interface GitObject {
+  abbreviatedOid: String!
+  commitResourcePath: URI!
+  commitUrl: URI!
+  id: ID!
+  oid: GitObjectID!
+  repository: Repository!
+}
+```
+
+### Fields
+
+#### `abbreviatedOid` ([`String!`](/docs/api/scalars/string))
+
+An abbreviated version of the Git object ID
+
+#### `commitResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this Git object
+
+#### `commitUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this Git object
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `oid` ([`GitObjectID!`](/docs/api/scalars/git-object-id))
+
+The Git object ID
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The Repository the Git object belongs to

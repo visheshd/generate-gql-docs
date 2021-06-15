@@ -1,0 +1,28 @@
+---
+id: gist-order-field
+title: GistOrderField
+---
+
+Properties by which gist connections can be ordered.
+
+```graphql
+enum GistOrderField {
+  CREATED_AT
+  PUSHED_AT
+  UPDATED_AT
+}
+```
+
+### Values
+
+#### `CREATED_AT`
+
+Order gists by creation time
+
+#### `PUSHED_AT`
+
+Order gists by push time
+
+#### `UPDATED_AT`
+
+Order gists by update time

@@ -1,0 +1,71 @@
+---
+id: cross-referenced-event
+title: CrossReferencedEvent
+---
+
+Represents a mention made by one issue or pull request to another.
+
+```graphql
+type CrossReferencedEvent implements Node, UniformResourceLocatable {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  isCrossRepository: Boolean!
+  referencedAt: DateTime!
+  resourcePath: URI!
+  source: ReferencedSubject!
+  target: ReferencedSubject!
+  url: URI!
+  willCloseTarget: Boolean!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isCrossRepository` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Reference originated in a different repository.
+
+#### `referencedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies when the reference was made.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this pull request.
+
+#### `source` ([`ReferencedSubject!`](/docs/api/unions/referenced-subject))
+
+Issue or pull request that made the reference.
+
+#### `target` ([`ReferencedSubject!`](/docs/api/unions/referenced-subject))
+
+Issue or pull request to which the reference was made.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this pull request.
+
+#### `willCloseTarget` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Checks if the target will be closed when the source is merged.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

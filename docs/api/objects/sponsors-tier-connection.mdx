@@ -1,0 +1,33 @@
+---
+id: sponsors-tier-connection
+title: SponsorsTierConnection
+---
+
+The connection type for SponsorsTier.
+
+```graphql
+type SponsorsTierConnection {
+  edges: [SponsorsTierEdge]
+  nodes: [SponsorsTier]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[SponsorsTierEdge]`](/docs/api/objects/sponsors-tier-edge))
+
+A list of edges.
+
+#### `nodes` ([`[SponsorsTier]`](/docs/api/objects/sponsors-tier))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

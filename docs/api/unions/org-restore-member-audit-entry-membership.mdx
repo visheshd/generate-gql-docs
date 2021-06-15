@@ -1,0 +1,27 @@
+---
+id: org-restore-member-audit-entry-membership
+title: OrgRestoreMemberAuditEntryMembership
+---
+
+Types of memberships that can be restored for an Organization member.
+
+```graphql
+union OrgRestoreMemberAuditEntryMembership =
+    OrgRestoreMemberMembershipOrganizationAuditEntryData
+  | OrgRestoreMemberMembershipRepositoryAuditEntryData
+  | OrgRestoreMemberMembershipTeamAuditEntryData
+```
+
+### Possible types
+
+#### [`OrgRestoreMemberMembershipOrganizationAuditEntryData`](/docs/api/objects/org-restore-member-membership-organization-audit-entry-data)
+
+Metadata for an organization membership for org.restore_member actions
+
+#### [`OrgRestoreMemberMembershipRepositoryAuditEntryData`](/docs/api/objects/org-restore-member-membership-repository-audit-entry-data)
+
+Metadata for a repository membership for org.restore_member actions
+
+#### [`OrgRestoreMemberMembershipTeamAuditEntryData`](/docs/api/objects/org-restore-member-membership-team-audit-entry-data)
+
+Metadata for a team membership for org.restore_member actions

@@ -1,0 +1,23 @@
+---
+id: gist-comment-edge
+title: GistCommentEdge
+---
+
+An edge in a connection.
+
+```graphql
+type GistCommentEdge {
+  cursor: String!
+  node: GistComment
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`GistComment`](/docs/api/objects/gist-comment))
+
+The item at the end of the edge.

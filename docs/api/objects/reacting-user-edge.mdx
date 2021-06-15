@@ -1,0 +1,26 @@
+---
+id: reacting-user-edge
+title: ReactingUserEdge
+---
+
+Represents a user that's made a reaction.
+
+```graphql
+type ReactingUserEdge {
+  cursor: String!
+  node: User!
+  reactedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`User!`](/docs/api/objects/user))
+
+#### `reactedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+The moment when the user made the reaction.

@@ -1,0 +1,23 @@
+---
+id: external-identity-edge
+title: ExternalIdentityEdge
+---
+
+An edge in a connection.
+
+```graphql
+type ExternalIdentityEdge {
+  cursor: String!
+  node: ExternalIdentity
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`ExternalIdentity`](/docs/api/objects/external-identity))
+
+The item at the end of the edge.

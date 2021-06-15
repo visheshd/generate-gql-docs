@@ -1,0 +1,38 @@
+---
+id: enterprise-members-can-create-repositories-setting-value
+title: EnterpriseMembersCanCreateRepositoriesSettingValue
+---
+
+The possible values for the enterprise members can create repositories setting.
+
+```graphql
+enum EnterpriseMembersCanCreateRepositoriesSettingValue {
+  ALL
+  DISABLED
+  NO_POLICY
+  PRIVATE
+  PUBLIC
+}
+```
+
+### Values
+
+#### `ALL`
+
+Members will be able to create public and private repositories.
+
+#### `DISABLED`
+
+Members will not be able to create public or private repositories.
+
+#### `NO_POLICY`
+
+Organization administrators choose whether to allow members to create repositories.
+
+#### `PRIVATE`
+
+Members will be able to create only private repositories.
+
+#### `PUBLIC`
+
+Members will be able to create only public repositories.

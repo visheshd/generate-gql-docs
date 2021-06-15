@@ -1,0 +1,33 @@
+---
+id: package-connection
+title: PackageConnection
+---
+
+The connection type for Package.
+
+```graphql
+type PackageConnection {
+  edges: [PackageEdge]
+  nodes: [Package]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PackageEdge]`](/docs/api/objects/package-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Package]`](/docs/api/objects/package))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

@@ -1,0 +1,47 @@
+---
+id: renamed-title-event
+title: RenamedTitleEvent
+---
+
+Represents a 'renamed' event on a given issue or pull request
+
+```graphql
+type RenamedTitleEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  currentTitle: String!
+  id: ID!
+  previousTitle: String!
+  subject: RenamedTitleSubject!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `currentTitle` ([`String!`](/docs/api/scalars/string))
+
+Identifies the current title of the issue or pull request.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `previousTitle` ([`String!`](/docs/api/scalars/string))
+
+Identifies the previous title of the issue or pull request.
+
+#### `subject` ([`RenamedTitleSubject!`](/docs/api/unions/renamed-title-subject))
+
+Subject that was renamed.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

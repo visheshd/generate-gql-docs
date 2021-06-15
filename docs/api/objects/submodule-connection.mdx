@@ -1,0 +1,33 @@
+---
+id: submodule-connection
+title: SubmoduleConnection
+---
+
+The connection type for Submodule.
+
+```graphql
+type SubmoduleConnection {
+  edges: [SubmoduleEdge]
+  nodes: [Submodule]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[SubmoduleEdge]`](/docs/api/objects/submodule-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Submodule]`](/docs/api/objects/submodule))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

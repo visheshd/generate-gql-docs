@@ -1,0 +1,23 @@
+---
+id: status-check-rollup-context-edge
+title: StatusCheckRollupContextEdge
+---
+
+An edge in a connection.
+
+```graphql
+type StatusCheckRollupContextEdge {
+  cursor: String!
+  node: StatusCheckRollupContext
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`StatusCheckRollupContext`](/docs/api/unions/status-check-rollup-context))
+
+The item at the end of the edge.

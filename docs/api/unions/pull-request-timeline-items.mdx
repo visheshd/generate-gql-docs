@@ -1,0 +1,287 @@
+---
+id: pull-request-timeline-items
+title: PullRequestTimelineItems
+---
+
+An item in a pull request timeline
+
+```graphql
+union PullRequestTimelineItems =
+    AddedToProjectEvent
+  | AssignedEvent
+  | AutoMergeDisabledEvent
+  | AutoMergeEnabledEvent
+  | AutoRebaseEnabledEvent
+  | AutoSquashEnabledEvent
+  | AutomaticBaseChangeFailedEvent
+  | AutomaticBaseChangeSucceededEvent
+  | BaseRefChangedEvent
+  | BaseRefDeletedEvent
+  | BaseRefForcePushedEvent
+  | ClosedEvent
+  | CommentDeletedEvent
+  | ConnectedEvent
+  | ConvertToDraftEvent
+  | ConvertedNoteToIssueEvent
+  | CrossReferencedEvent
+  | DemilestonedEvent
+  | DeployedEvent
+  | DeploymentEnvironmentChangedEvent
+  | DisconnectedEvent
+  | HeadRefDeletedEvent
+  | HeadRefForcePushedEvent
+  | HeadRefRestoredEvent
+  | IssueComment
+  | LabeledEvent
+  | LockedEvent
+  | MarkedAsDuplicateEvent
+  | MentionedEvent
+  | MergedEvent
+  | MilestonedEvent
+  | MovedColumnsInProjectEvent
+  | PinnedEvent
+  | PullRequestCommit
+  | PullRequestCommitCommentThread
+  | PullRequestReview
+  | PullRequestReviewThread
+  | PullRequestRevisionMarker
+  | ReadyForReviewEvent
+  | ReferencedEvent
+  | RemovedFromProjectEvent
+  | RenamedTitleEvent
+  | ReopenedEvent
+  | ReviewDismissedEvent
+  | ReviewRequestRemovedEvent
+  | ReviewRequestedEvent
+  | SubscribedEvent
+  | TransferredEvent
+  | UnassignedEvent
+  | UnlabeledEvent
+  | UnlockedEvent
+  | UnmarkedAsDuplicateEvent
+  | UnpinnedEvent
+  | UnsubscribedEvent
+  | UserBlockedEvent
+```
+
+### Possible types
+
+#### [`AddedToProjectEvent`](/docs/api/objects/added-to-project-event)
+
+Represents a 'added_to_project' event on a given issue or pull request.
+
+#### [`AssignedEvent`](/docs/api/objects/assigned-event)
+
+Represents an 'assigned' event on any assignable object.
+
+#### [`AutoMergeDisabledEvent`](/docs/api/objects/auto-merge-disabled-event)
+
+Represents a 'auto_merge_disabled' event on a given pull request.
+
+#### [`AutoMergeEnabledEvent`](/docs/api/objects/auto-merge-enabled-event)
+
+Represents a 'auto_merge_enabled' event on a given pull request.
+
+#### [`AutoRebaseEnabledEvent`](/docs/api/objects/auto-rebase-enabled-event)
+
+Represents a 'auto_rebase_enabled' event on a given pull request.
+
+#### [`AutoSquashEnabledEvent`](/docs/api/objects/auto-squash-enabled-event)
+
+Represents a 'auto_squash_enabled' event on a given pull request.
+
+#### [`AutomaticBaseChangeFailedEvent`](/docs/api/objects/automatic-base-change-failed-event)
+
+Represents a 'automatic_base_change_failed' event on a given pull request.
+
+#### [`AutomaticBaseChangeSucceededEvent`](/docs/api/objects/automatic-base-change-succeeded-event)
+
+Represents a 'automatic_base_change_succeeded' event on a given pull request.
+
+#### [`BaseRefChangedEvent`](/docs/api/objects/base-ref-changed-event)
+
+Represents a 'base_ref_changed' event on a given issue or pull request.
+
+#### [`BaseRefDeletedEvent`](/docs/api/objects/base-ref-deleted-event)
+
+Represents a 'base_ref_deleted' event on a given pull request.
+
+#### [`BaseRefForcePushedEvent`](/docs/api/objects/base-ref-force-pushed-event)
+
+Represents a 'base_ref_force_pushed' event on a given pull request.
+
+#### [`ClosedEvent`](/docs/api/objects/closed-event)
+
+Represents a 'closed' event on any `Closable`.
+
+#### [`CommentDeletedEvent`](/docs/api/objects/comment-deleted-event)
+
+Represents a 'comment_deleted' event on a given issue or pull request.
+
+#### [`ConnectedEvent`](/docs/api/objects/connected-event)
+
+Represents a 'connected' event on a given issue or pull request.
+
+#### [`ConvertToDraftEvent`](/docs/api/objects/convert-to-draft-event)
+
+Represents a 'convert_to_draft' event on a given pull request.
+
+#### [`ConvertedNoteToIssueEvent`](/docs/api/objects/converted-note-to-issue-event)
+
+Represents a 'converted_note_to_issue' event on a given issue or pull request.
+
+#### [`CrossReferencedEvent`](/docs/api/objects/cross-referenced-event)
+
+Represents a mention made by one issue or pull request to another.
+
+#### [`DemilestonedEvent`](/docs/api/objects/demilestoned-event)
+
+Represents a 'demilestoned' event on a given issue or pull request.
+
+#### [`DeployedEvent`](/docs/api/objects/deployed-event)
+
+Represents a 'deployed' event on a given pull request.
+
+#### [`DeploymentEnvironmentChangedEvent`](/docs/api/objects/deployment-environment-changed-event)
+
+Represents a 'deployment_environment_changed' event on a given pull request.
+
+#### [`DisconnectedEvent`](/docs/api/objects/disconnected-event)
+
+Represents a 'disconnected' event on a given issue or pull request.
+
+#### [`HeadRefDeletedEvent`](/docs/api/objects/head-ref-deleted-event)
+
+Represents a 'head_ref_deleted' event on a given pull request.
+
+#### [`HeadRefForcePushedEvent`](/docs/api/objects/head-ref-force-pushed-event)
+
+Represents a 'head_ref_force_pushed' event on a given pull request.
+
+#### [`HeadRefRestoredEvent`](/docs/api/objects/head-ref-restored-event)
+
+Represents a 'head_ref_restored' event on a given pull request.
+
+#### [`IssueComment`](/docs/api/objects/issue-comment)
+
+Represents a comment on an Issue.
+
+#### [`LabeledEvent`](/docs/api/objects/labeled-event)
+
+Represents a 'labeled' event on a given issue or pull request.
+
+#### [`LockedEvent`](/docs/api/objects/locked-event)
+
+Represents a 'locked' event on a given issue or pull request.
+
+#### [`MarkedAsDuplicateEvent`](/docs/api/objects/marked-as-duplicate-event)
+
+Represents a 'marked_as_duplicate' event on a given issue or pull request.
+
+#### [`MentionedEvent`](/docs/api/objects/mentioned-event)
+
+Represents a 'mentioned' event on a given issue or pull request.
+
+#### [`MergedEvent`](/docs/api/objects/merged-event)
+
+Represents a 'merged' event on a given pull request.
+
+#### [`MilestonedEvent`](/docs/api/objects/milestoned-event)
+
+Represents a 'milestoned' event on a given issue or pull request.
+
+#### [`MovedColumnsInProjectEvent`](/docs/api/objects/moved-columns-in-project-event)
+
+Represents a 'moved_columns_in_project' event on a given issue or pull request.
+
+#### [`PinnedEvent`](/docs/api/objects/pinned-event)
+
+Represents a 'pinned' event on a given issue or pull request.
+
+#### [`PullRequestCommit`](/docs/api/objects/pull-request-commit)
+
+Represents a Git commit part of a pull request.
+
+#### [`PullRequestCommitCommentThread`](/docs/api/objects/pull-request-commit-comment-thread)
+
+Represents a commit comment thread part of a pull request.
+
+#### [`PullRequestReview`](/docs/api/objects/pull-request-review)
+
+A review object for a given pull request.
+
+#### [`PullRequestReviewThread`](/docs/api/objects/pull-request-review-thread)
+
+A threaded list of comments for a given pull request.
+
+#### [`PullRequestRevisionMarker`](/docs/api/objects/pull-request-revision-marker)
+
+Represents the latest point in the pull request timeline for which the viewer has seen the pull request's commits.
+
+#### [`ReadyForReviewEvent`](/docs/api/objects/ready-for-review-event)
+
+Represents a 'ready_for_review' event on a given pull request.
+
+#### [`ReferencedEvent`](/docs/api/objects/referenced-event)
+
+Represents a 'referenced' event on a given `ReferencedSubject`.
+
+#### [`RemovedFromProjectEvent`](/docs/api/objects/removed-from-project-event)
+
+Represents a 'removed_from_project' event on a given issue or pull request.
+
+#### [`RenamedTitleEvent`](/docs/api/objects/renamed-title-event)
+
+Represents a 'renamed' event on a given issue or pull request
+
+#### [`ReopenedEvent`](/docs/api/objects/reopened-event)
+
+Represents a 'reopened' event on any `Closable`.
+
+#### [`ReviewDismissedEvent`](/docs/api/objects/review-dismissed-event)
+
+Represents a 'review_dismissed' event on a given issue or pull request.
+
+#### [`ReviewRequestRemovedEvent`](/docs/api/objects/review-request-removed-event)
+
+Represents an 'review_request_removed' event on a given pull request.
+
+#### [`ReviewRequestedEvent`](/docs/api/objects/review-requested-event)
+
+Represents an 'review_requested' event on a given pull request.
+
+#### [`SubscribedEvent`](/docs/api/objects/subscribed-event)
+
+Represents a 'subscribed' event on a given `Subscribable`.
+
+#### [`TransferredEvent`](/docs/api/objects/transferred-event)
+
+Represents a 'transferred' event on a given issue or pull request.
+
+#### [`UnassignedEvent`](/docs/api/objects/unassigned-event)
+
+Represents an 'unassigned' event on any assignable object.
+
+#### [`UnlabeledEvent`](/docs/api/objects/unlabeled-event)
+
+Represents an 'unlabeled' event on a given issue or pull request.
+
+#### [`UnlockedEvent`](/docs/api/objects/unlocked-event)
+
+Represents an 'unlocked' event on a given issue or pull request.
+
+#### [`UnmarkedAsDuplicateEvent`](/docs/api/objects/unmarked-as-duplicate-event)
+
+Represents an 'unmarked_as_duplicate' event on a given issue or pull request.
+
+#### [`UnpinnedEvent`](/docs/api/objects/unpinned-event)
+
+Represents an 'unpinned' event on a given issue or pull request.
+
+#### [`UnsubscribedEvent`](/docs/api/objects/unsubscribed-event)
+
+Represents an 'unsubscribed' event on a given `Subscribable`.
+
+#### [`UserBlockedEvent`](/docs/api/objects/user-blocked-event)
+
+Represents a 'user_blocked' event on a given user.

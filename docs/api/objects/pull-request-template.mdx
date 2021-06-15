@@ -1,0 +1,28 @@
+---
+id: pull-request-template
+title: PullRequestTemplate
+---
+
+A repository pull request template.
+
+```graphql
+type PullRequestTemplate {
+  body: String
+  filename: String
+  repository: Repository!
+}
+```
+
+### Fields
+
+#### `body` ([`String`](/docs/api/scalars/string))
+
+The body of the template
+
+#### `filename` ([`String`](/docs/api/scalars/string))
+
+The filename of the template
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository the template belongs to

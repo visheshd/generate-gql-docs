@@ -1,0 +1,23 @@
+---
+id: sponsors-tier-order
+title: SponsorsTierOrder
+---
+
+Ordering options for Sponsors tiers connections.
+
+```graphql
+type SponsorsTierOrder {
+  direction: OrderDirection!
+  field: SponsorsTierOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`SponsorsTierOrderField!`](/docs/api/enums/sponsors-tier-order-field))
+
+The field to order tiers by.

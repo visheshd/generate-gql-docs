@@ -1,0 +1,25 @@
+---
+id: nodes
+title: nodes
+---
+
+Lookup nodes by a list of IDs.
+
+```graphql
+nodes(
+  ids: [ID!]!
+): [Node]!
+
+```
+
+### Arguments
+
+#### `ids` ([`[ID!]!`](/docs/api/scalars/id))
+
+The list of node IDs.
+
+### Type
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

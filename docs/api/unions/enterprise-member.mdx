@@ -1,0 +1,20 @@
+---
+id: enterprise-member
+title: EnterpriseMember
+---
+
+An object that is a member of an enterprise.
+
+```graphql
+union EnterpriseMember = EnterpriseUserAccount | User
+```
+
+### Possible types
+
+#### [`EnterpriseUserAccount`](/docs/api/objects/enterprise-user-account)
+
+An account for a user who is an admin of an enterprise or a member of an enterprise through one or more organizations.
+
+#### [`User`](/docs/api/objects/user)
+
+A user is an individual's account on GitHub that owns repositories and can make new content.

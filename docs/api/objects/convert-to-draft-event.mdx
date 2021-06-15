@@ -1,0 +1,51 @@
+---
+id: convert-to-draft-event
+title: ConvertToDraftEvent
+---
+
+Represents a 'convert_to_draft' event on a given pull request.
+
+```graphql
+type ConvertToDraftEvent implements Node, UniformResourceLocatable {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  pullRequest: PullRequest!
+  resourcePath: URI!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this convert to draft event.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this convert to draft event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

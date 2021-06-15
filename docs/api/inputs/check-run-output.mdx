@@ -1,0 +1,38 @@
+---
+id: check-run-output
+title: CheckRunOutput
+---
+
+Descriptive details about the check run.
+
+```graphql
+type CheckRunOutput {
+  annotations: [CheckAnnotationData!]
+  images: [CheckRunOutputImage!]
+  summary: String!
+  text: String
+  title: String!
+}
+```
+
+### Fields
+
+#### `annotations` ([`[CheckAnnotationData!]`](/docs/api/inputs/check-annotation-data))
+
+The annotations that are made as part of the check run.
+
+#### `images` ([`[CheckRunOutputImage!]`](/docs/api/inputs/check-run-output-image))
+
+Images attached to the check run output displayed in the GitHub pull request UI.
+
+#### `summary` ([`String!`](/docs/api/scalars/string))
+
+The summary of the check run (supports Commonmark).
+
+#### `text` ([`String`](/docs/api/scalars/string))
+
+The details of the check run (supports Commonmark).
+
+#### `title` ([`String!`](/docs/api/scalars/string))
+
+A title to provide for this check run.

@@ -1,0 +1,33 @@
+---
+id: project-connection
+title: ProjectConnection
+---
+
+A list of projects associated with the owner.
+
+```graphql
+type ProjectConnection {
+  edges: [ProjectEdge]
+  nodes: [Project]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[ProjectEdge]`](/docs/api/objects/project-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Project]`](/docs/api/objects/project))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

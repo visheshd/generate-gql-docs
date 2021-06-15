@@ -1,0 +1,295 @@
+---
+id: pull-request-review
+title: PullRequestReview
+---
+
+A review object for a given pull request.
+
+```graphql
+type PullRequestReview implements Comment, Deletable, Node, Reactable, RepositoryNode, Updatable, UpdatableComment {
+  author: Actor
+  authorAssociation: CommentAuthorAssociation!
+  authorCanPushToRepository: Boolean!
+  body: String!
+  bodyHTML: HTML!
+  bodyText: String!
+  comments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): PullRequestReviewCommentConnection!
+  commit: Commit
+  createdAt: DateTime!
+  createdViaEmail: Boolean!
+  databaseId: Int
+  editor: Actor
+  id: ID!
+  includesCreatedEdit: Boolean!
+  lastEditedAt: DateTime
+  onBehalfOf(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): TeamConnection!
+  publishedAt: DateTime
+  pullRequest: PullRequest!
+  reactionGroups: [ReactionGroup!]
+  reactions(
+    after: String
+    before: String
+    content: ReactionContent
+    first: Int = 0
+    last: Int = 0
+    orderBy: ReactionOrder
+  ): ReactionConnection!
+  repository: Repository!
+  resourcePath: URI!
+  state: PullRequestReviewState!
+  submittedAt: DateTime
+  updatedAt: DateTime!
+  url: URI!
+  userContentEdits(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserContentEditConnection
+  viewerCanDelete: Boolean!
+  viewerCanReact: Boolean!
+  viewerCanUpdate: Boolean!
+  viewerCannotUpdateReasons: [CommentCannotUpdateReason!]!
+  viewerDidAuthor: Boolean!
+}
+```
+
+### Fields
+
+#### `author` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who authored the comment.
+
+#### `authorAssociation` ([`CommentAuthorAssociation!`](/docs/api/enums/comment-author-association))
+
+Author's association with the subject of the comment.
+
+#### `authorCanPushToRepository` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates whether the author of this review has push access to the repository.
+
+#### `body` ([`String!`](/docs/api/scalars/string))
+
+Identifies the pull request review body.
+
+#### `bodyHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The body rendered to HTML.
+
+#### `bodyText` ([`String!`](/docs/api/scalars/string))
+
+The body of this review rendered as plain text.
+
+#### `comments` ([`PullRequestReviewCommentConnection!`](/docs/api/objects/pull-request-review-comment-connection))
+
+A list of review comments for the current pull request review.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `commit` ([`Commit`](/docs/api/objects/commit))
+
+Identifies the commit associated with this pull request review.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `createdViaEmail` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was created via an email reply.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `editor` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who edited the comment.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `includesCreatedEdit` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was edited and includes an edit with the creation data
+
+#### `lastEditedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+The moment the editor made the last edit
+
+#### `onBehalfOf` ([`TeamConnection!`](/docs/api/objects/team-connection))
+
+A list of teams that this review was made on behalf of.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `publishedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the comment was published at.
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+Identifies the pull request associated with this pull request review.
+
+#### `reactionGroups` ([`[ReactionGroup!]`](/docs/api/objects/reaction-group))
+
+A list of reactions grouped by content left on the subject.
+
+#### `reactions` ([`ReactionConnection!`](/docs/api/objects/reaction-connection))
+
+A list of Reactions left on the Issue.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `content` ([`ReactionContent`](/docs/api/enums/reaction-content))
+
+Allows filtering Reactions by emoji.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ReactionOrder`](/docs/api/inputs/reaction-order))
+
+Allows specifying the order in which reactions are returned.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository associated with this node.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path permalink for this PullRequestReview.
+
+#### `state` ([`PullRequestReviewState!`](/docs/api/enums/pull-request-review-state))
+
+Identifies the current state of the pull request review.
+
+#### `submittedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the Pull Request Review was submitted
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL permalink for this PullRequestReview.
+
+#### `userContentEdits` ([`UserContentEditConnection`](/docs/api/objects/user-content-edit-connection))
+
+A list of edits to this content.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `viewerCanDelete` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can delete this object.
+
+#### `viewerCanReact` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can user react to this subject
+
+#### `viewerCanUpdate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can update this object.
+
+#### `viewerCannotUpdateReasons` ([`[CommentCannotUpdateReason!]!`](/docs/api/enums/comment-cannot-update-reason))
+
+Reasons why the current viewer can not update this comment.
+
+#### `viewerDidAuthor` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Did the viewer author this comment.
+
+### Interfaces
+
+#### [`Comment`](/docs/api/interfaces/comment)
+
+Represents a comment.
+
+#### [`Deletable`](/docs/api/interfaces/deletable)
+
+Entities that can be deleted.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`Reactable`](/docs/api/interfaces/reactable)
+
+Represents a subject that can be reacted on.
+
+#### [`RepositoryNode`](/docs/api/interfaces/repository-node)
+
+Represents a object that belongs to a repository.
+
+#### [`Updatable`](/docs/api/interfaces/updatable)
+
+Entities that can be updated.
+
+#### [`UpdatableComment`](/docs/api/interfaces/updatable-comment)
+
+Comments that can be updated.

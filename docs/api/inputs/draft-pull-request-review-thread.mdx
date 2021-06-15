@@ -1,0 +1,43 @@
+---
+id: draft-pull-request-review-thread
+title: DraftPullRequestReviewThread
+---
+
+Specifies a review comment thread to be left with a Pull Request Review.
+
+```graphql
+type DraftPullRequestReviewThread {
+  body: String!
+  line: Int!
+  path: String!
+  side: DiffSide
+  startLine: Int
+  startSide: DiffSide
+}
+```
+
+### Fields
+
+#### `body` ([`String!`](/docs/api/scalars/string))
+
+Body of the comment to leave.
+
+#### `line` ([`Int!`](/docs/api/scalars/int))
+
+The line of the blob to which the thread refers. The end of the line range for multi-line comments.
+
+#### `path` ([`String!`](/docs/api/scalars/string))
+
+Path to the file being commented on.
+
+#### `side` ([`DiffSide`](/docs/api/enums/diff-side))
+
+The side of the diff on which the line resides. For multi-line comments, this is the side for the end of the line range.
+
+#### `startLine` ([`Int`](/docs/api/scalars/int))
+
+The first line of the range to which the comment refers.
+
+#### `startSide` ([`DiffSide`](/docs/api/enums/diff-side))
+
+The side of the diff on which the start line resides.

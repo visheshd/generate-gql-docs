@@ -1,0 +1,58 @@
+---
+id: environment
+title: Environment
+---
+
+An environment.
+
+```graphql
+type Environment implements Node {
+  databaseId: Int
+  id: ID!
+  name: String!
+  protectionRules(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): DeploymentProtectionRuleConnection!
+}
+```
+
+### Fields
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the environment
+
+#### `protectionRules` ([`DeploymentProtectionRuleConnection!`](/docs/api/objects/deployment-protection-rule-connection))
+
+The protection rules defined for this environment
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

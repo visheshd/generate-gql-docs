@@ -1,0 +1,62 @@
+---
+id: gist-file
+title: GistFile
+---
+
+A file in a gist.
+
+```graphql
+type GistFile {
+  encodedName: String
+  encoding: String
+  extension: String
+  isImage: Boolean!
+  isTruncated: Boolean!
+  language: Language
+  name: String
+  size: Int
+  text(truncate: Int = 0): String
+}
+```
+
+### Fields
+
+#### `encodedName` ([`String`](/docs/api/scalars/string))
+
+The file name encoded to remove characters that are invalid in URL paths.
+
+#### `encoding` ([`String`](/docs/api/scalars/string))
+
+The gist file encoding.
+
+#### `extension` ([`String`](/docs/api/scalars/string))
+
+The file extension from the file name.
+
+#### `isImage` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if this file is an image.
+
+#### `isTruncated` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the file's contents were truncated.
+
+#### `language` ([`Language`](/docs/api/objects/language))
+
+The programming language this file is written in.
+
+#### `name` ([`String`](/docs/api/scalars/string))
+
+The gist file name.
+
+#### `size` ([`Int`](/docs/api/scalars/int))
+
+The gist file size in bytes.
+
+#### `text` ([`String`](/docs/api/scalars/string))
+
+UTF8 text data or null if the file is binary
+
+- ##### `truncate` ([`Int`](/docs/api/scalars/int))
+
+Optionally truncate the returned file to this length.

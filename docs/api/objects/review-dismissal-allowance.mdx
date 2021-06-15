@@ -1,0 +1,32 @@
+---
+id: review-dismissal-allowance
+title: ReviewDismissalAllowance
+---
+
+A team or user who has the ability to dismiss a review on a protected branch.
+
+```graphql
+type ReviewDismissalAllowance implements Node {
+  actor: ReviewDismissalAllowanceActor
+  branchProtectionRule: BranchProtectionRule
+  id: ID!
+}
+```
+
+### Fields
+
+#### `actor` ([`ReviewDismissalAllowanceActor`](/docs/api/unions/review-dismissal-allowance-actor))
+
+The actor that can dismiss.
+
+#### `branchProtectionRule` ([`BranchProtectionRule`](/docs/api/objects/branch-protection-rule))
+
+Identifies the branch protection rule associated with the allowed user or team.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

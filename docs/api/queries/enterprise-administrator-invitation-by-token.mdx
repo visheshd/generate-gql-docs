@@ -1,0 +1,25 @@
+---
+id: enterprise-administrator-invitation-by-token
+title: enterpriseAdministratorInvitationByToken
+---
+
+Look up a pending enterprise administrator invitation by invitation token.
+
+```graphql
+enterpriseAdministratorInvitationByToken(
+  invitationToken: String!
+): EnterpriseAdministratorInvitation
+
+```
+
+### Arguments
+
+#### `invitationToken` ([`String!`](/docs/api/scalars/string))
+
+The invitation token sent with the invitation email.
+
+### Type
+
+#### [`EnterpriseAdministratorInvitation`](/docs/api/objects/enterprise-administrator-invitation)
+
+An invitation for a user to become an owner or billing manager of an enterprise.

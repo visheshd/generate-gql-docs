@@ -1,0 +1,30 @@
+---
+id: enterprise
+title: enterprise
+---
+
+Look up an enterprise by URL slug.
+
+```graphql
+enterprise(
+  invitationToken: String
+  slug: String!
+): Enterprise
+
+```
+
+### Arguments
+
+#### `invitationToken` ([`String`](/docs/api/scalars/string))
+
+The enterprise invitation token.
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+The enterprise URL slug.
+
+### Type
+
+#### [`Enterprise`](/docs/api/objects/enterprise)
+
+An account to manage multiple organizations with consolidated policy and billing.

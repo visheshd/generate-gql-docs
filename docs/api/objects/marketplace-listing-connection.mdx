@@ -1,0 +1,33 @@
+---
+id: marketplace-listing-connection
+title: MarketplaceListingConnection
+---
+
+Look up Marketplace Listings
+
+```graphql
+type MarketplaceListingConnection {
+  edges: [MarketplaceListingEdge]
+  nodes: [MarketplaceListing]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[MarketplaceListingEdge]`](/docs/api/objects/marketplace-listing-edge))
+
+A list of edges.
+
+#### `nodes` ([`[MarketplaceListing]`](/docs/api/objects/marketplace-listing))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

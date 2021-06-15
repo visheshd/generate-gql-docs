@@ -1,0 +1,28 @@
+---
+id: suggested-reviewer
+title: SuggestedReviewer
+---
+
+A suggestion to review a pull request based on a user's commit history and review comments.
+
+```graphql
+type SuggestedReviewer {
+  isAuthor: Boolean!
+  isCommenter: Boolean!
+  reviewer: User!
+}
+```
+
+### Fields
+
+#### `isAuthor` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Is this suggestion based on past commits?
+
+#### `isCommenter` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Is this suggestion based on past review comments?
+
+#### `reviewer` ([`User!`](/docs/api/objects/user))
+
+Identifies the user suggested to review the pull request.

@@ -1,0 +1,28 @@
+---
+id: subscription-state
+title: SubscriptionState
+---
+
+The possible states of a subscription.
+
+```graphql
+enum SubscriptionState {
+  IGNORED
+  SUBSCRIBED
+  UNSUBSCRIBED
+}
+```
+
+### Values
+
+#### `IGNORED`
+
+The User is never notified.
+
+#### `SUBSCRIBED`
+
+The User is notified of all conversations.
+
+#### `UNSUBSCRIBED`
+
+The User is only notified when participating or @mentioned.

@@ -1,0 +1,33 @@
+---
+id: created-pull-request-review-contribution-connection
+title: CreatedPullRequestReviewContributionConnection
+---
+
+The connection type for CreatedPullRequestReviewContribution.
+
+```graphql
+type CreatedPullRequestReviewContributionConnection {
+  edges: [CreatedPullRequestReviewContributionEdge]
+  nodes: [CreatedPullRequestReviewContribution]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CreatedPullRequestReviewContributionEdge]`](/docs/api/objects/created-pull-request-review-contribution-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CreatedPullRequestReviewContribution]`](/docs/api/objects/created-pull-request-review-contribution))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

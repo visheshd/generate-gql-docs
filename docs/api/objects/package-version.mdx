@@ -1,0 +1,93 @@
+---
+id: package-version
+title: PackageVersion
+---
+
+Information about a specific package version.
+
+```graphql
+type PackageVersion implements Node {
+  files(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: PackageFileOrder = "[object Object]"
+  ): PackageFileConnection!
+  id: ID!
+  package: Package
+  platform: String
+  preRelease: Boolean!
+  readme: String
+  release: Release
+  statistics: PackageVersionStatistics
+  summary: String
+  version: String!
+}
+```
+
+### Fields
+
+#### `files` ([`PackageFileConnection!`](/docs/api/objects/package-file-connection))
+
+List of files associated with this package version
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`PackageFileOrder`](/docs/api/inputs/package-file-order))
+
+Ordering of the returned package files.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `package` ([`Package`](/docs/api/objects/package))
+
+The package associated with this version.
+
+#### `platform` ([`String`](/docs/api/scalars/string))
+
+The platform this version was built for.
+
+#### `preRelease` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this version is a pre-release.
+
+#### `readme` ([`String`](/docs/api/scalars/string))
+
+The README of this package version.
+
+#### `release` ([`Release`](/docs/api/objects/release))
+
+The release associated with this package version.
+
+#### `statistics` ([`PackageVersionStatistics`](/docs/api/objects/package-version-statistics))
+
+Statistics about package activity.
+
+#### `summary` ([`String`](/docs/api/scalars/string))
+
+The package version summary.
+
+#### `version` ([`String!`](/docs/api/scalars/string))
+
+The version string.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

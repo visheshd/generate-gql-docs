@@ -1,0 +1,33 @@
+---
+id: enterprise-repository-info-connection
+title: EnterpriseRepositoryInfoConnection
+---
+
+The connection type for EnterpriseRepositoryInfo.
+
+```graphql
+type EnterpriseRepositoryInfoConnection {
+  edges: [EnterpriseRepositoryInfoEdge]
+  nodes: [EnterpriseRepositoryInfo]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[EnterpriseRepositoryInfoEdge]`](/docs/api/objects/enterprise-repository-info-edge))
+
+A list of edges.
+
+#### `nodes` ([`[EnterpriseRepositoryInfo]`](/docs/api/objects/enterprise-repository-info))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

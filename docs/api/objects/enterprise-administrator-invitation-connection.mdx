@@ -1,0 +1,33 @@
+---
+id: enterprise-administrator-invitation-connection
+title: EnterpriseAdministratorInvitationConnection
+---
+
+The connection type for EnterpriseAdministratorInvitation.
+
+```graphql
+type EnterpriseAdministratorInvitationConnection {
+  edges: [EnterpriseAdministratorInvitationEdge]
+  nodes: [EnterpriseAdministratorInvitation]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[EnterpriseAdministratorInvitationEdge]`](/docs/api/objects/enterprise-administrator-invitation-edge))
+
+A list of edges.
+
+#### `nodes` ([`[EnterpriseAdministratorInvitation]`](/docs/api/objects/enterprise-administrator-invitation))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

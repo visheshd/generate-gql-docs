@@ -1,0 +1,23 @@
+---
+id: organization-edge
+title: OrganizationEdge
+---
+
+An edge in a connection.
+
+```graphql
+type OrganizationEdge {
+  cursor: String!
+  node: Organization
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Organization`](/docs/api/objects/organization))
+
+The item at the end of the edge.

@@ -1,0 +1,33 @@
+---
+id: pull-request-review-thread-connection
+title: PullRequestReviewThreadConnection
+---
+
+Review comment threads for a pull request review.
+
+```graphql
+type PullRequestReviewThreadConnection {
+  edges: [PullRequestReviewThreadEdge]
+  nodes: [PullRequestReviewThread]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PullRequestReviewThreadEdge]`](/docs/api/objects/pull-request-review-thread-edge))
+
+A list of edges.
+
+#### `nodes` ([`[PullRequestReviewThread]`](/docs/api/objects/pull-request-review-thread))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

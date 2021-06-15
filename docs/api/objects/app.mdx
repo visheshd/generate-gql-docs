@@ -1,0 +1,71 @@
+---
+id: app
+title: App
+---
+
+A GitHub App.
+
+```graphql
+type App implements Node {
+  createdAt: DateTime!
+  databaseId: Int
+  description: String
+  id: ID!
+  logoBackgroundColor: String!
+  logoUrl(size: Int = 0): URI!
+  name: String!
+  slug: String!
+  updatedAt: DateTime!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The description of the app.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `logoBackgroundColor` ([`String!`](/docs/api/scalars/string))
+
+The hex color code, without the leading '#', for the logo background.
+
+#### `logoUrl` ([`URI!`](/docs/api/scalars/uri))
+
+A URL pointing to the app's logo.
+
+- ##### `size` ([`Int`](/docs/api/scalars/int))
+
+The size of the resulting image.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the app.
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+A slug based on the name of the app for use in URLs.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The URL to the app's homepage.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

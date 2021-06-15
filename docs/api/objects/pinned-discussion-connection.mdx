@@ -1,0 +1,33 @@
+---
+id: pinned-discussion-connection
+title: PinnedDiscussionConnection
+---
+
+The connection type for PinnedDiscussion.
+
+```graphql
+type PinnedDiscussionConnection {
+  edges: [PinnedDiscussionEdge]
+  nodes: [PinnedDiscussion]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PinnedDiscussionEdge]`](/docs/api/objects/pinned-discussion-edge))
+
+A list of edges.
+
+#### `nodes` ([`[PinnedDiscussion]`](/docs/api/objects/pinned-discussion))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

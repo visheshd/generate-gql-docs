@@ -1,0 +1,43 @@
+---
+id: check-status-state
+title: CheckStatusState
+---
+
+The possible states for a check suite or run status.
+
+```graphql
+enum CheckStatusState {
+  COMPLETED
+  IN_PROGRESS
+  PENDING
+  QUEUED
+  REQUESTED
+  WAITING
+}
+```
+
+### Values
+
+#### `COMPLETED`
+
+The check suite or run has been completed.
+
+#### `IN_PROGRESS`
+
+The check suite or run is in progress.
+
+#### `PENDING`
+
+The check suite or run is in pending state.
+
+#### `QUEUED`
+
+The check suite or run has been queued.
+
+#### `REQUESTED`
+
+The check suite or run has been requested.
+
+#### `WAITING`
+
+The check suite or run is in waiting state.

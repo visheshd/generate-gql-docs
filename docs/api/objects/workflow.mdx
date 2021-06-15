@@ -1,0 +1,42 @@
+---
+id: workflow
+title: Workflow
+---
+
+A workflow contains meta information about an Actions workflow file.
+
+```graphql
+type Workflow implements Node {
+  createdAt: DateTime!
+  databaseId: Int
+  id: ID!
+  name: String!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the workflow.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

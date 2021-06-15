@@ -1,0 +1,20 @@
+---
+id: project-card-item
+title: ProjectCardItem
+---
+
+Types that can be inside Project Cards.
+
+```graphql
+union ProjectCardItem = Issue | PullRequest
+```
+
+### Possible types
+
+#### [`Issue`](/docs/api/objects/issue)
+
+An Issue is a place to discuss ideas, enhancements, tasks, and bugs for a project.
+
+#### [`PullRequest`](/docs/api/objects/pull-request)
+
+A repository pull request.

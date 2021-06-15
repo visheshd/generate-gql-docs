@@ -1,0 +1,28 @@
+---
+id: pull-request-revision-marker
+title: PullRequestRevisionMarker
+---
+
+Represents the latest point in the pull request timeline for which the viewer has seen the pull request's commits.
+
+```graphql
+type PullRequestRevisionMarker {
+  createdAt: DateTime!
+  lastSeenCommit: Commit!
+  pullRequest: PullRequest!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `lastSeenCommit` ([`Commit!`](/docs/api/objects/commit))
+
+The last commit the viewer has seen.
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+The pull request to which the marker belongs.

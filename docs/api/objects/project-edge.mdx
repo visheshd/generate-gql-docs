@@ -1,0 +1,23 @@
+---
+id: project-edge
+title: ProjectEdge
+---
+
+An edge in a connection.
+
+```graphql
+type ProjectEdge {
+  cursor: String!
+  node: Project
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Project`](/docs/api/objects/project))
+
+The item at the end of the edge.

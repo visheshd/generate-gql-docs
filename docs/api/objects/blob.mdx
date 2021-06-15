@@ -1,0 +1,71 @@
+---
+id: blob
+title: Blob
+---
+
+Represents a Git blob.
+
+```graphql
+type Blob implements GitObject, Node {
+  abbreviatedOid: String!
+  byteSize: Int!
+  commitResourcePath: URI!
+  commitUrl: URI!
+  id: ID!
+  isBinary: Boolean
+  isTruncated: Boolean!
+  oid: GitObjectID!
+  repository: Repository!
+  text: String
+}
+```
+
+### Fields
+
+#### `abbreviatedOid` ([`String!`](/docs/api/scalars/string))
+
+An abbreviated version of the Git object ID
+
+#### `byteSize` ([`Int!`](/docs/api/scalars/int))
+
+Byte size of Blob object
+
+#### `commitResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this Git object
+
+#### `commitUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this Git object
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isBinary` ([`Boolean`](/docs/api/scalars/boolean))
+
+Indicates whether the Blob is binary or text. Returns null if unable to determine the encoding.
+
+#### `isTruncated` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates whether the contents is truncated
+
+#### `oid` ([`GitObjectID!`](/docs/api/scalars/git-object-id))
+
+The Git object ID
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The Repository the Git object belongs to
+
+#### `text` ([`String`](/docs/api/scalars/string))
+
+UTF8 text data or null if the Blob is binary
+
+### Interfaces
+
+#### [`GitObject`](/docs/api/interfaces/git-object)
+
+Represents a Git object.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

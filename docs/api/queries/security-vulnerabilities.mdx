@@ -1,0 +1,60 @@
+---
+id: security-vulnerabilities
+title: securityVulnerabilities
+---
+
+Software Vulnerabilities documented by GitHub Security Advisories
+
+```graphql
+securityVulnerabilities(
+  after: String
+  before: String
+  ecosystem: SecurityAdvisoryEcosystem
+  first: Int = 0
+  last: Int = 0
+  orderBy: SecurityVulnerabilityOrder = "[object Object]"
+  package: String
+  severities: [SecurityAdvisorySeverity!] = []
+): SecurityVulnerabilityConnection!
+
+```
+
+### Arguments
+
+#### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+#### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+#### `ecosystem` ([`SecurityAdvisoryEcosystem`](/docs/api/enums/security-advisory-ecosystem))
+
+An ecosystem to filter vulnerabilities by.
+
+#### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+#### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `orderBy` ([`SecurityVulnerabilityOrder`](/docs/api/inputs/security-vulnerability-order))
+
+Ordering options for the returned topics.
+
+#### `package` ([`String`](/docs/api/scalars/string))
+
+A package name to filter vulnerabilities by.
+
+#### `severities` ([`[SecurityAdvisorySeverity!]`](/docs/api/enums/security-advisory-severity))
+
+A list of severities to filter vulnerabilities by.
+
+### Type
+
+#### [`SecurityVulnerabilityConnection`](/docs/api/objects/security-vulnerability-connection)
+
+The connection type for SecurityVulnerability.

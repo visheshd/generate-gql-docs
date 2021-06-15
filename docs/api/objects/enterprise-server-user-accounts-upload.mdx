@@ -1,0 +1,52 @@
+---
+id: enterprise-server-user-accounts-upload
+title: EnterpriseServerUserAccountsUpload
+---
+
+A user accounts upload from an Enterprise Server installation.
+
+```graphql
+type EnterpriseServerUserAccountsUpload implements Node {
+  createdAt: DateTime!
+  enterprise: Enterprise!
+  enterpriseServerInstallation: EnterpriseServerInstallation!
+  id: ID!
+  name: String!
+  syncState: EnterpriseServerUserAccountsUploadSyncState!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `enterprise` ([`Enterprise!`](/docs/api/objects/enterprise))
+
+The enterprise to which this upload belongs.
+
+#### `enterpriseServerInstallation` ([`EnterpriseServerInstallation!`](/docs/api/objects/enterprise-server-installation))
+
+The Enterprise Server installation for which this upload was generated.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the file uploaded.
+
+#### `syncState` ([`EnterpriseServerUserAccountsUploadSyncState!`](/docs/api/enums/enterprise-server-user-accounts-upload-sync-state))
+
+The synchronization state of the upload
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

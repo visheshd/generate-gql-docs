@@ -1,0 +1,33 @@
+---
+id: organization-invitation-role
+title: OrganizationInvitationRole
+---
+
+The possible organization invitation roles.
+
+```graphql
+enum OrganizationInvitationRole {
+  ADMIN
+  BILLING_MANAGER
+  DIRECT_MEMBER
+  REINSTATE
+}
+```
+
+### Values
+
+#### `ADMIN`
+
+The user is invited to be an admin of the organization.
+
+#### `BILLING_MANAGER`
+
+The user is invited to be a billing manager of the organization.
+
+#### `DIRECT_MEMBER`
+
+The user is invited to be a direct member of the organization.
+
+#### `REINSTATE`
+
+The user's previous role will be reinstated.

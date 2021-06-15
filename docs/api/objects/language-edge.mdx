@@ -1,0 +1,24 @@
+---
+id: language-edge
+title: LanguageEdge
+---
+
+Represents the language of a repository.
+
+```graphql
+type LanguageEdge {
+  cursor: String!
+  node: Language!
+  size: Int!
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+#### `node` ([`Language!`](/docs/api/objects/language))
+
+#### `size` ([`Int!`](/docs/api/scalars/int))
+
+The number of bytes of code written in the language.

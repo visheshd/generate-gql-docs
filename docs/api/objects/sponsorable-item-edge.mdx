@@ -1,0 +1,23 @@
+---
+id: sponsorable-item-edge
+title: SponsorableItemEdge
+---
+
+An edge in a connection.
+
+```graphql
+type SponsorableItemEdge {
+  cursor: String!
+  node: SponsorableItem
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`SponsorableItem`](/docs/api/unions/sponsorable-item))
+
+The item at the end of the edge.

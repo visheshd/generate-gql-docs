@@ -1,0 +1,63 @@
+---
+id: tree-entry
+title: TreeEntry
+---
+
+Represents a Git tree entry.
+
+```graphql
+type TreeEntry {
+  extension: String
+  isGenerated: Boolean!
+  mode: Int!
+  name: String!
+  object: GitObject
+  oid: GitObjectID!
+  path: String
+  repository: Repository!
+  submodule: Submodule
+  type: String!
+}
+```
+
+### Fields
+
+#### `extension` ([`String`](/docs/api/scalars/string))
+
+The extension of the file
+
+#### `isGenerated` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this tree entry is generated
+
+#### `mode` ([`Int!`](/docs/api/scalars/int))
+
+Entry file mode.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+Entry file name.
+
+#### `object` ([`GitObject`](/docs/api/interfaces/git-object))
+
+Entry file object.
+
+#### `oid` ([`GitObjectID!`](/docs/api/scalars/git-object-id))
+
+Entry file Git object ID.
+
+#### `path` ([`String`](/docs/api/scalars/string))
+
+The full path of the file.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The Repository the tree entry belongs to
+
+#### `submodule` ([`Submodule`](/docs/api/objects/submodule))
+
+If the TreeEntry is for a directory occupied by a submodule project, this returns the corresponding submodule
+
+#### `type` ([`String!`](/docs/api/scalars/string))
+
+Entry file type.

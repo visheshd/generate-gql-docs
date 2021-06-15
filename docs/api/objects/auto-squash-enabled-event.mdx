@@ -1,0 +1,42 @@
+---
+id: auto-squash-enabled-event
+title: AutoSquashEnabledEvent
+---
+
+Represents a 'auto_squash_enabled' event on a given pull request.
+
+```graphql
+type AutoSquashEnabledEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  enabler: User
+  id: ID!
+  pullRequest: PullRequest
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `enabler` ([`User`](/docs/api/objects/user))
+
+The user who enabled auto-merge (squash) for this Pull Request
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

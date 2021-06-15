@@ -1,0 +1,347 @@
+---
+id: discussion
+title: Discussion
+---
+
+A discussion in a repository.
+
+```graphql
+type Discussion implements Comment, Deletable, Labelable, Lockable, Node, Reactable, RepositoryNode, Subscribable, Updatable, Votable {
+  activeLockReason: LockReason
+  answer: DiscussionComment
+  answerChosenAt: DateTime
+  answerChosenBy: Actor
+  author: Actor
+  authorAssociation: CommentAuthorAssociation!
+  body: String!
+  bodyHTML: HTML!
+  bodyText: String!
+  category: DiscussionCategory!
+  comments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): DiscussionCommentConnection!
+  createdAt: DateTime!
+  createdViaEmail: Boolean!
+  databaseId: Int
+  editor: Actor
+  id: ID!
+  includesCreatedEdit: Boolean!
+  labels(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: LabelOrder = "[object Object]"
+  ): LabelConnection
+  lastEditedAt: DateTime
+  locked: Boolean!
+  number: Int!
+  publishedAt: DateTime
+  reactionGroups: [ReactionGroup!]
+  reactions(
+    after: String
+    before: String
+    content: ReactionContent
+    first: Int = 0
+    last: Int = 0
+    orderBy: ReactionOrder
+  ): ReactionConnection!
+  repository: Repository!
+  resourcePath: URI!
+  title: String!
+  updatedAt: DateTime!
+  upvoteCount: Int!
+  url: URI!
+  userContentEdits(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserContentEditConnection
+  viewerCanDelete: Boolean!
+  viewerCanReact: Boolean!
+  viewerCanSubscribe: Boolean!
+  viewerCanUpdate: Boolean!
+  viewerCanUpvote: Boolean!
+  viewerDidAuthor: Boolean!
+  viewerHasUpvoted: Boolean!
+  viewerSubscription: SubscriptionState
+}
+```
+
+### Fields
+
+#### `activeLockReason` ([`LockReason`](/docs/api/enums/lock-reason))
+
+Reason that the conversation was locked.
+
+#### `answer` ([`DiscussionComment`](/docs/api/objects/discussion-comment))
+
+The comment chosen as this discussion's answer, if any.
+
+#### `answerChosenAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+The time when a user chose this discussion's answer, if answered.
+
+#### `answerChosenBy` ([`Actor`](/docs/api/interfaces/actor))
+
+The user who chose this discussion's answer, if answered.
+
+#### `author` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who authored the comment.
+
+#### `authorAssociation` ([`CommentAuthorAssociation!`](/docs/api/enums/comment-author-association))
+
+Author's association with the subject of the comment.
+
+#### `body` ([`String!`](/docs/api/scalars/string))
+
+The main text of the discussion post.
+
+#### `bodyHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The body rendered to HTML.
+
+#### `bodyText` ([`String!`](/docs/api/scalars/string))
+
+The body rendered to text.
+
+#### `category` ([`DiscussionCategory!`](/docs/api/objects/discussion-category))
+
+The category for this discussion.
+
+#### `comments` ([`DiscussionCommentConnection!`](/docs/api/objects/discussion-comment-connection))
+
+The replies to the discussion.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `createdViaEmail` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was created via an email reply.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `editor` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who edited the comment.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `includesCreatedEdit` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was edited and includes an edit with the creation data
+
+#### `labels` ([`LabelConnection`](/docs/api/objects/label-connection))
+
+A list of labels associated with the object.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`LabelOrder`](/docs/api/inputs/label-order))
+
+Ordering options for labels returned from the connection.
+
+#### `lastEditedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+The moment the editor made the last edit
+
+#### `locked` ([`Boolean!`](/docs/api/scalars/boolean))
+
+`true` if the object is locked
+
+#### `number` ([`Int!`](/docs/api/scalars/int))
+
+The number identifying this discussion within the repository.
+
+#### `publishedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the comment was published at.
+
+#### `reactionGroups` ([`[ReactionGroup!]`](/docs/api/objects/reaction-group))
+
+A list of reactions grouped by content left on the subject.
+
+#### `reactions` ([`ReactionConnection!`](/docs/api/objects/reaction-connection))
+
+A list of Reactions left on the Issue.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `content` ([`ReactionContent`](/docs/api/enums/reaction-content))
+
+Allows filtering Reactions by emoji.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ReactionOrder`](/docs/api/inputs/reaction-order))
+
+Allows specifying the order in which reactions are returned.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository associated with this node.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The path for this discussion.
+
+#### `title` ([`String!`](/docs/api/scalars/string))
+
+The title of this discussion.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `upvoteCount` ([`Int!`](/docs/api/scalars/int))
+
+Number of upvotes that this subject has received.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The URL for this discussion.
+
+#### `userContentEdits` ([`UserContentEditConnection`](/docs/api/objects/user-content-edit-connection))
+
+A list of edits to this content.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `viewerCanDelete` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can delete this object.
+
+#### `viewerCanReact` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can user react to this subject
+
+#### `viewerCanSubscribe` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the viewer is able to change their subscription status for the repository.
+
+#### `viewerCanUpdate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can update this object.
+
+#### `viewerCanUpvote` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the current user can add or remove an upvote on this subject.
+
+#### `viewerDidAuthor` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Did the viewer author this comment.
+
+#### `viewerHasUpvoted` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the current user has already upvoted this subject.
+
+#### `viewerSubscription` ([`SubscriptionState`](/docs/api/enums/subscription-state))
+
+Identifies if the viewer is watching, not watching, or ignoring the subscribable entity.
+
+### Interfaces
+
+#### [`Comment`](/docs/api/interfaces/comment)
+
+Represents a comment.
+
+#### [`Deletable`](/docs/api/interfaces/deletable)
+
+Entities that can be deleted.
+
+#### [`Labelable`](/docs/api/interfaces/labelable)
+
+An object that can have labels assigned to it.
+
+#### [`Lockable`](/docs/api/interfaces/lockable)
+
+An object that can be locked.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`Reactable`](/docs/api/interfaces/reactable)
+
+Represents a subject that can be reacted on.
+
+#### [`RepositoryNode`](/docs/api/interfaces/repository-node)
+
+Represents a object that belongs to a repository.
+
+#### [`Subscribable`](/docs/api/interfaces/subscribable)
+
+Entities that can be subscribed to for web and email notifications.
+
+#### [`Updatable`](/docs/api/interfaces/updatable)
+
+Entities that can be updated.
+
+#### [`Votable`](/docs/api/interfaces/votable)
+
+A subject that may be upvoted.

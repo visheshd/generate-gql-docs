@@ -1,0 +1,23 @@
+---
+id: team-discussion-order
+title: TeamDiscussionOrder
+---
+
+Ways in which team discussion connections can be ordered.
+
+```graphql
+type TeamDiscussionOrder {
+  direction: OrderDirection!
+  field: TeamDiscussionOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order nodes.
+
+#### `field` ([`TeamDiscussionOrderField!`](/docs/api/enums/team-discussion-order-field))
+
+The field by which to order nodes.

@@ -1,0 +1,42 @@
+---
+id: unlabeled-event
+title: UnlabeledEvent
+---
+
+Represents an 'unlabeled' event on a given issue or pull request.
+
+```graphql
+type UnlabeledEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  label: Label!
+  labelable: Labelable!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `label` ([`Label!`](/docs/api/objects/label))
+
+Identifies the label associated with the 'unlabeled' event.
+
+#### `labelable` ([`Labelable!`](/docs/api/interfaces/labelable))
+
+Identifies the `Labelable` associated with the event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,92 @@
+---
+id: verifiable-domain
+title: VerifiableDomain
+---
+
+A domain that can be verified or approved for an organization or an enterprise.
+
+```graphql
+type VerifiableDomain implements Node {
+  createdAt: DateTime!
+  databaseId: Int
+  dnsHostName: URI
+  domain: URI!
+  hasFoundHostName: Boolean!
+  hasFoundVerificationToken: Boolean!
+  id: ID!
+  isApproved: Boolean!
+  isRequiredForPolicyEnforcement: Boolean!
+  isVerified: Boolean!
+  owner: VerifiableDomainOwner!
+  punycodeEncodedDomain: URI!
+  tokenExpirationTime: DateTime
+  updatedAt: DateTime!
+  verificationToken: String
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `dnsHostName` ([`URI`](/docs/api/scalars/uri))
+
+The DNS host name that should be used for verification.
+
+#### `domain` ([`URI!`](/docs/api/scalars/uri))
+
+The unicode encoded domain.
+
+#### `hasFoundHostName` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether a TXT record for verification with the expected host name was found.
+
+#### `hasFoundVerificationToken` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether a TXT record for verification with the expected verification token was found.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isApproved` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the domain is approved.
+
+#### `isRequiredForPolicyEnforcement` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this domain is required to exist for an organization or enterprise policy to be enforced.
+
+#### `isVerified` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the domain is verified.
+
+#### `owner` ([`VerifiableDomainOwner!`](/docs/api/unions/verifiable-domain-owner))
+
+The owner of the domain.
+
+#### `punycodeEncodedDomain` ([`URI!`](/docs/api/scalars/uri))
+
+The punycode encoded domain.
+
+#### `tokenExpirationTime` ([`DateTime`](/docs/api/scalars/date-time))
+
+The time that the current verification token will expire.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `verificationToken` ([`String`](/docs/api/scalars/string))
+
+The current verification token for the domain.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

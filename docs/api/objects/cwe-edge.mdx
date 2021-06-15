@@ -1,0 +1,23 @@
+---
+id: cwe-edge
+title: CWEEdge
+---
+
+An edge in a connection.
+
+```graphql
+type CWEEdge {
+  cursor: String!
+  node: CWE
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`CWE`](/docs/api/objects/cwe))
+
+The item at the end of the edge.

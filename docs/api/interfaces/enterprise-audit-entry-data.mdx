@@ -1,0 +1,28 @@
+---
+id: enterprise-audit-entry-data
+title: EnterpriseAuditEntryData
+---
+
+Metadata for an audit entry containing enterprise account information.
+
+```graphql
+interface EnterpriseAuditEntryData {
+  enterpriseResourcePath: URI
+  enterpriseSlug: String
+  enterpriseUrl: URI
+}
+```
+
+### Fields
+
+#### `enterpriseResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for this enterprise.
+
+#### `enterpriseSlug` ([`String`](/docs/api/scalars/string))
+
+The slug of the enterprise.
+
+#### `enterpriseUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for this enterprise.

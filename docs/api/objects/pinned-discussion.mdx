@@ -1,0 +1,71 @@
+---
+id: pinned-discussion
+title: PinnedDiscussion
+---
+
+A Pinned Discussion is a discussion pinned to a repository's index page.
+
+```graphql
+type PinnedDiscussion implements Node, RepositoryNode {
+  createdAt: DateTime!
+  databaseId: Int
+  discussion: Discussion!
+  gradientStopColors: [String!]!
+  id: ID!
+  pattern: PinnedDiscussionPattern!
+  pinnedBy: Actor!
+  preconfiguredGradient: PinnedDiscussionGradient
+  repository: Repository!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `discussion` ([`Discussion!`](/docs/api/objects/discussion))
+
+The discussion that was pinned.
+
+#### `gradientStopColors` ([`[String!]!`](/docs/api/scalars/string))
+
+Color stops of the chosen gradient
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pattern` ([`PinnedDiscussionPattern!`](/docs/api/enums/pinned-discussion-pattern))
+
+Background texture pattern
+
+#### `pinnedBy` ([`Actor!`](/docs/api/interfaces/actor))
+
+The actor that pinned this discussion.
+
+#### `preconfiguredGradient` ([`PinnedDiscussionGradient`](/docs/api/enums/pinned-discussion-gradient))
+
+Preconfigured background gradient option
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository associated with this node.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`RepositoryNode`](/docs/api/interfaces/repository-node)
+
+Represents a object that belongs to a repository.

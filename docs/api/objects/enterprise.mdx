@@ -1,0 +1,209 @@
+---
+id: enterprise
+title: Enterprise
+---
+
+An account to manage multiple organizations with consolidated policy and billing.
+
+```graphql
+type Enterprise implements Node {
+  avatarUrl(size: Int = 0): URI!
+  billingInfo: EnterpriseBillingInfo
+  createdAt: DateTime!
+  databaseId: Int
+  description: String
+  descriptionHTML: HTML!
+  id: ID!
+  location: String
+  members(
+    after: String
+    before: String
+    deployment: EnterpriseUserDeployment
+    first: Int = 0
+    last: Int = 0
+    orderBy: EnterpriseMemberOrder = "[object Object]"
+    organizationLogins: [String!] = []
+    query: String
+    role: EnterpriseUserAccountMembershipRole
+  ): EnterpriseMemberConnection!
+  name: String!
+  organizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    query: String
+  ): OrganizationConnection!
+  ownerInfo: EnterpriseOwnerInfo
+  resourcePath: URI!
+  slug: String!
+  url: URI!
+  userAccounts(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): EnterpriseUserAccountConnection!
+  viewerIsAdmin: Boolean!
+  websiteUrl: URI
+}
+```
+
+### Fields
+
+#### `avatarUrl` ([`URI!`](/docs/api/scalars/uri))
+
+A URL pointing to the enterprise's public avatar.
+
+- ##### `size` ([`Int`](/docs/api/scalars/int))
+
+The size of the resulting square image.
+
+#### `billingInfo` ([`EnterpriseBillingInfo`](/docs/api/objects/enterprise-billing-info))
+
+Enterprise billing information visible to enterprise billing managers.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The description of the enterprise.
+
+#### `descriptionHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The description of the enterprise as HTML.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `location` ([`String`](/docs/api/scalars/string))
+
+The location of the enterprise.
+
+#### `members` ([`EnterpriseMemberConnection!`](/docs/api/objects/enterprise-member-connection))
+
+A list of users who are members of this enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `deployment` ([`EnterpriseUserDeployment`](/docs/api/enums/enterprise-user-deployment))
+
+Only return members within the selected GitHub Enterprise deployment
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`EnterpriseMemberOrder`](/docs/api/inputs/enterprise-member-order))
+
+Ordering options for members returned from the connection.
+
+- ##### `organizationLogins` ([`[String!]`](/docs/api/scalars/string))
+
+Only return members within the organizations with these logins
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+- ##### `role` ([`EnterpriseUserAccountMembershipRole`](/docs/api/enums/enterprise-user-account-membership-role))
+
+The role of the user in the enterprise organization or server.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the enterprise.
+
+#### `organizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of organizations that belong to this enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations returned from the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+#### `ownerInfo` ([`EnterpriseOwnerInfo`](/docs/api/objects/enterprise-owner-info))
+
+Enterprise information only visible to enterprise owners.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this enterprise.
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+The URL-friendly identifier for the enterprise.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this enterprise.
+
+#### `userAccounts` ([`EnterpriseUserAccountConnection!`](/docs/api/objects/enterprise-user-account-connection))
+
+A list of user accounts on this enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `viewerIsAdmin` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Is the current viewer an admin of this enterprise?
+
+#### `websiteUrl` ([`URI`](/docs/api/scalars/uri))
+
+The URL of the enterprise website.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

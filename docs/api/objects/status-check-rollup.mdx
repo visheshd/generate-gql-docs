@@ -1,0 +1,58 @@
+---
+id: status-check-rollup
+title: StatusCheckRollup
+---
+
+Represents the rollup for both the check runs and status for a commit.
+
+```graphql
+type StatusCheckRollup implements Node {
+  commit: Commit
+  contexts(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): StatusCheckRollupContextConnection!
+  id: ID!
+  state: StatusState!
+}
+```
+
+### Fields
+
+#### `commit` ([`Commit`](/docs/api/objects/commit))
+
+The commit the status and check runs are attached to.
+
+#### `contexts` ([`StatusCheckRollupContextConnection!`](/docs/api/objects/status-check-rollup-context-connection))
+
+A list of status contexts and check runs for this commit.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `state` ([`StatusState!`](/docs/api/enums/status-state))
+
+The combined status for the commit.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

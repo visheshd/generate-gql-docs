@@ -1,0 +1,23 @@
+---
+id: funding-link
+title: FundingLink
+---
+
+A funding platform link for a repository.
+
+```graphql
+type FundingLink {
+  platform: FundingPlatform!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `platform` ([`FundingPlatform!`](/docs/api/enums/funding-platform))
+
+The funding platform this link is for.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The configured URL for this funding link.

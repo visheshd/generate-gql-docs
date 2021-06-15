@@ -1,0 +1,43 @@
+---
+id: rate-limit
+title: RateLimit
+---
+
+Represents the client's rate limit.
+
+```graphql
+type RateLimit {
+  cost: Int!
+  limit: Int!
+  nodeCount: Int!
+  remaining: Int!
+  resetAt: DateTime!
+  used: Int!
+}
+```
+
+### Fields
+
+#### `cost` ([`Int!`](/docs/api/scalars/int))
+
+The point cost for the current query counting against the rate limit.
+
+#### `limit` ([`Int!`](/docs/api/scalars/int))
+
+The maximum number of points the client is permitted to consume in a 60 minute window.
+
+#### `nodeCount` ([`Int!`](/docs/api/scalars/int))
+
+The maximum number of nodes this query may return
+
+#### `remaining` ([`Int!`](/docs/api/scalars/int))
+
+The number of points remaining in the current rate limit window.
+
+#### `resetAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+The time at which the current rate limit window resets in UTC epoch seconds.
+
+#### `used` ([`Int!`](/docs/api/scalars/int))
+
+The number of points used in the current rate limit window.

@@ -1,0 +1,23 @@
+---
+id: package-file-order
+title: PackageFileOrder
+---
+
+Ways in which lists of package files can be ordered upon return.
+
+```graphql
+type PackageFileOrder {
+  direction: OrderDirection
+  field: PackageFileOrderField
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection`](/docs/api/enums/order-direction))
+
+The direction in which to order package files by the specified field.
+
+#### `field` ([`PackageFileOrderField`](/docs/api/enums/package-file-order-field))
+
+The field in which to order package files by.

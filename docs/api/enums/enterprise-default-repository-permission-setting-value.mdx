@@ -1,0 +1,38 @@
+---
+id: enterprise-default-repository-permission-setting-value
+title: EnterpriseDefaultRepositoryPermissionSettingValue
+---
+
+The possible values for the enterprise default repository permission setting.
+
+```graphql
+enum EnterpriseDefaultRepositoryPermissionSettingValue {
+  ADMIN
+  NONE
+  NO_POLICY
+  READ
+  WRITE
+}
+```
+
+### Values
+
+#### `ADMIN`
+
+Organization members will be able to clone, pull, push, and add new collaborators to all organization repositories.
+
+#### `NONE`
+
+Organization members will only be able to clone and pull public repositories.
+
+#### `NO_POLICY`
+
+Organizations in the enterprise choose default repository permissions for their members.
+
+#### `READ`
+
+Organization members will be able to clone and pull all organization repositories.
+
+#### `WRITE`
+
+Organization members will be able to clone, pull, and push all organization repositories.

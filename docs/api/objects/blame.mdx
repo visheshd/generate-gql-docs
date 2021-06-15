@@ -1,0 +1,18 @@
+---
+id: blame
+title: Blame
+---
+
+Represents a Git blame.
+
+```graphql
+type Blame {
+  ranges: [BlameRange!]!
+}
+```
+
+### Fields
+
+#### `ranges` ([`[BlameRange!]!`](/docs/api/objects/blame-range))
+
+The list of ranges from a Git blame.

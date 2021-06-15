@@ -1,0 +1,26 @@
+---
+id: stargazer-edge
+title: StargazerEdge
+---
+
+Represents a user that's starred a repository.
+
+```graphql
+type StargazerEdge {
+  cursor: String!
+  node: User!
+  starredAt: DateTime!
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`User!`](/docs/api/objects/user))
+
+#### `starredAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies when the item was starred.

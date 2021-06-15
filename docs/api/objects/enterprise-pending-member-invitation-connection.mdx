@@ -1,0 +1,38 @@
+---
+id: enterprise-pending-member-invitation-connection
+title: EnterprisePendingMemberInvitationConnection
+---
+
+The connection type for OrganizationInvitation.
+
+```graphql
+type EnterprisePendingMemberInvitationConnection {
+  edges: [EnterprisePendingMemberInvitationEdge]
+  nodes: [OrganizationInvitation]
+  pageInfo: PageInfo!
+  totalCount: Int!
+  totalUniqueUserCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[EnterprisePendingMemberInvitationEdge]`](/docs/api/objects/enterprise-pending-member-invitation-edge))
+
+A list of edges.
+
+#### `nodes` ([`[OrganizationInvitation]`](/docs/api/objects/organization-invitation))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.
+
+#### `totalUniqueUserCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of unique users in the connection.

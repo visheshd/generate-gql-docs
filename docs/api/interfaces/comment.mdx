@@ -1,0 +1,107 @@
+---
+id: comment
+title: Comment
+---
+
+Represents a comment.
+
+```graphql
+interface Comment {
+  author: Actor
+  authorAssociation: CommentAuthorAssociation!
+  body: String!
+  bodyHTML: HTML!
+  bodyText: String!
+  createdAt: DateTime!
+  createdViaEmail: Boolean!
+  editor: Actor
+  id: ID!
+  includesCreatedEdit: Boolean!
+  lastEditedAt: DateTime
+  publishedAt: DateTime
+  updatedAt: DateTime!
+  userContentEdits(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserContentEditConnection
+  viewerDidAuthor: Boolean!
+}
+```
+
+### Fields
+
+#### `author` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who authored the comment.
+
+#### `authorAssociation` ([`CommentAuthorAssociation!`](/docs/api/enums/comment-author-association))
+
+Author's association with the subject of the comment.
+
+#### `body` ([`String!`](/docs/api/scalars/string))
+
+The body as Markdown.
+
+#### `bodyHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The body rendered to HTML.
+
+#### `bodyText` ([`String!`](/docs/api/scalars/string))
+
+The body rendered to text.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `createdViaEmail` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was created via an email reply.
+
+#### `editor` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who edited the comment.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `includesCreatedEdit` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was edited and includes an edit with the creation data
+
+#### `lastEditedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+The moment the editor made the last edit
+
+#### `publishedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the comment was published at.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `userContentEdits` ([`UserContentEditConnection`](/docs/api/objects/user-content-edit-connection))
+
+A list of edits to this content.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `viewerDidAuthor` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Did the viewer author this comment.

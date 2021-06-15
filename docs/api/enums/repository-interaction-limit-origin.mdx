@@ -1,0 +1,28 @@
+---
+id: repository-interaction-limit-origin
+title: RepositoryInteractionLimitOrigin
+---
+
+Indicates where an interaction limit is configured.
+
+```graphql
+enum RepositoryInteractionLimitOrigin {
+  ORGANIZATION
+  REPOSITORY
+  USER
+}
+```
+
+### Values
+
+#### `ORGANIZATION`
+
+A limit that is configured at the organization level.
+
+#### `REPOSITORY`
+
+A limit that is configured at the repository level.
+
+#### `USER`
+
+A limit that is configured at the user-wide level.

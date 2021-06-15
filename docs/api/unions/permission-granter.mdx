@@ -1,0 +1,24 @@
+---
+id: permission-granter
+title: PermissionGranter
+---
+
+Types that can grant permissions on a repository to a user
+
+```graphql
+union PermissionGranter = Organization | Repository | Team
+```
+
+### Possible types
+
+#### [`Organization`](/docs/api/objects/organization)
+
+An account on GitHub, with one or more owners, that has repositories, members and teams.
+
+#### [`Repository`](/docs/api/objects/repository)
+
+A repository contains the content for a project.
+
+#### [`Team`](/docs/api/objects/team)
+
+A team of users in an organization.

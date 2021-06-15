@@ -1,0 +1,53 @@
+---
+id: check-step
+title: CheckStep
+---
+
+A single check step.
+
+```graphql
+type CheckStep {
+  completedAt: DateTime
+  conclusion: CheckConclusionState
+  externalId: String
+  name: String!
+  number: Int!
+  secondsToCompletion: Int
+  startedAt: DateTime
+  status: CheckStatusState!
+}
+```
+
+### Fields
+
+#### `completedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the check step was completed.
+
+#### `conclusion` ([`CheckConclusionState`](/docs/api/enums/check-conclusion-state))
+
+The conclusion of the check step.
+
+#### `externalId` ([`String`](/docs/api/scalars/string))
+
+A reference for the check step on the integrator's system.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The step's name.
+
+#### `number` ([`Int!`](/docs/api/scalars/int))
+
+The index of the step in the list of steps of the parent check run.
+
+#### `secondsToCompletion` ([`Int`](/docs/api/scalars/int))
+
+Number of seconds to completion.
+
+#### `startedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the check step was started.
+
+#### `status` ([`CheckStatusState!`](/docs/api/enums/check-status-state))
+
+The current status of the check step.

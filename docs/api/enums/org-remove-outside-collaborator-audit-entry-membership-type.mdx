@@ -1,0 +1,31 @@
+---
+id: org-remove-outside-collaborator-audit-entry-membership-type
+title: OrgRemoveOutsideCollaboratorAuditEntryMembershipType
+---
+
+The type of membership a user has with an Organization.
+
+```graphql
+enum OrgRemoveOutsideCollaboratorAuditEntryMembershipType {
+  BILLING_MANAGER
+  OUTSIDE_COLLABORATOR
+  UNAFFILIATED
+}
+```
+
+### Values
+
+#### `BILLING_MANAGER`
+
+A billing manager is a user who manages the billing settings for the Organization, such as updating payment information.
+
+#### `OUTSIDE_COLLABORATOR`
+
+An outside collaborator is a person who isn't explicitly a member of the
+Organization, but who has Read, Write, or Admin permissions to one or more
+repositories in the organization.
+
+#### `UNAFFILIATED`
+
+An unaffiliated collaborator is a person who is not a member of the
+Organization and does not have access to any repositories in the organization.

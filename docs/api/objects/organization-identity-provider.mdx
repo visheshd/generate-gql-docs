@@ -1,0 +1,78 @@
+---
+id: organization-identity-provider
+title: OrganizationIdentityProvider
+---
+
+An Identity Provider configured to provision SAML and SCIM identities for Organizations
+
+```graphql
+type OrganizationIdentityProvider implements Node {
+  digestMethod: URI
+  externalIdentities(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): ExternalIdentityConnection!
+  id: ID!
+  idpCertificate: X509Certificate
+  issuer: String
+  organization: Organization
+  signatureMethod: URI
+  ssoUrl: URI
+}
+```
+
+### Fields
+
+#### `digestMethod` ([`URI`](/docs/api/scalars/uri))
+
+The digest algorithm used to sign SAML requests for the Identity Provider.
+
+#### `externalIdentities` ([`ExternalIdentityConnection!`](/docs/api/objects/external-identity-connection))
+
+External Identities provisioned by this Identity Provider
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `idpCertificate` ([`X509Certificate`](/docs/api/scalars/x-509-certificate))
+
+The x509 certificate used by the Identity Provider to sign assertions and responses.
+
+#### `issuer` ([`String`](/docs/api/scalars/string))
+
+The Issuer Entity ID for the SAML Identity Provider
+
+#### `organization` ([`Organization`](/docs/api/objects/organization))
+
+Organization this Identity Provider belongs to
+
+#### `signatureMethod` ([`URI`](/docs/api/scalars/uri))
+
+The signature algorithm used to sign SAML requests for the Identity Provider.
+
+#### `ssoUrl` ([`URI`](/docs/api/scalars/uri))
+
+The URL endpoint for the Identity Provider's SAML SSO.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

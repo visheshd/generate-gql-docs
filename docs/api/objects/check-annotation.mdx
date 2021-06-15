@@ -1,0 +1,53 @@
+---
+id: check-annotation
+title: CheckAnnotation
+---
+
+A single check annotation.
+
+```graphql
+type CheckAnnotation {
+  annotationLevel: CheckAnnotationLevel
+  blobUrl: URI!
+  databaseId: Int
+  location: CheckAnnotationSpan!
+  message: String!
+  path: String!
+  rawDetails: String
+  title: String
+}
+```
+
+### Fields
+
+#### `annotationLevel` ([`CheckAnnotationLevel`](/docs/api/enums/check-annotation-level))
+
+The annotation's severity level.
+
+#### `blobUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The path to the file that this annotation was made on.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `location` ([`CheckAnnotationSpan!`](/docs/api/objects/check-annotation-span))
+
+The position of this annotation.
+
+#### `message` ([`String!`](/docs/api/scalars/string))
+
+The annotation's message.
+
+#### `path` ([`String!`](/docs/api/scalars/string))
+
+The path that this annotation was made on.
+
+#### `rawDetails` ([`String`](/docs/api/scalars/string))
+
+Additional information about the annotation.
+
+#### `title` ([`String`](/docs/api/scalars/string))
+
+The annotation's title

@@ -1,0 +1,157 @@
+---
+id: repository-info
+title: RepositoryInfo
+---
+
+A subset of repository info.
+
+```graphql
+interface RepositoryInfo {
+  createdAt: DateTime!
+  description: String
+  descriptionHTML: HTML!
+  forkCount: Int!
+  hasIssuesEnabled: Boolean!
+  hasProjectsEnabled: Boolean!
+  hasWikiEnabled: Boolean!
+  homepageUrl: URI
+  isArchived: Boolean!
+  isFork: Boolean!
+  isInOrganization: Boolean!
+  isLocked: Boolean!
+  isMirror: Boolean!
+  isPrivate: Boolean!
+  isTemplate: Boolean!
+  licenseInfo: License
+  lockReason: RepositoryLockReason
+  mirrorUrl: URI
+  name: String!
+  nameWithOwner: String!
+  openGraphImageUrl: URI!
+  owner: RepositoryOwner!
+  pushedAt: DateTime
+  resourcePath: URI!
+  shortDescriptionHTML(limit: Int = 200): HTML!
+  updatedAt: DateTime!
+  url: URI!
+  usesCustomOpenGraphImage: Boolean!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The description of the repository.
+
+#### `descriptionHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The description of the repository rendered to HTML.
+
+#### `forkCount` ([`Int!`](/docs/api/scalars/int))
+
+Returns how many forks there are of this repository in the whole network.
+
+#### `hasIssuesEnabled` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository has issues feature enabled.
+
+#### `hasProjectsEnabled` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository has the Projects feature enabled.
+
+#### `hasWikiEnabled` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository has wiki feature enabled.
+
+#### `homepageUrl` ([`URI`](/docs/api/scalars/uri))
+
+The repository's URL.
+
+#### `isArchived` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository is unmaintained.
+
+#### `isFork` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the repository is a fork.
+
+#### `isInOrganization` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if a repository is either owned by an organization, or is a private fork of an organization repository.
+
+#### `isLocked` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository has been locked or not.
+
+#### `isMirror` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the repository is a mirror.
+
+#### `isPrivate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the repository is private or internal.
+
+#### `isTemplate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the repository is a template that can be used to generate new repositories.
+
+#### `licenseInfo` ([`License`](/docs/api/objects/license))
+
+The license associated with the repository
+
+#### `lockReason` ([`RepositoryLockReason`](/docs/api/enums/repository-lock-reason))
+
+The reason the repository has been locked.
+
+#### `mirrorUrl` ([`URI`](/docs/api/scalars/uri))
+
+The repository's original mirror URL.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the repository.
+
+#### `nameWithOwner` ([`String!`](/docs/api/scalars/string))
+
+The repository's name with owner.
+
+#### `openGraphImageUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The image used to represent this repository in Open Graph data.
+
+#### `owner` ([`RepositoryOwner!`](/docs/api/interfaces/repository-owner))
+
+The User owner of the repository.
+
+#### `pushedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the repository was last pushed to.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this repository
+
+#### `shortDescriptionHTML` ([`HTML!`](/docs/api/scalars/html))
+
+A description of the repository, rendered to HTML without any links in it.
+
+- ##### `limit` ([`Int`](/docs/api/scalars/int))
+
+How many characters to return.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this repository
+
+#### `usesCustomOpenGraphImage` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this repository has a custom image to use with Open Graph as opposed to being represented by the owner's avatar.

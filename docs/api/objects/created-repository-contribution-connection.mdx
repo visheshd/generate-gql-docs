@@ -1,0 +1,33 @@
+---
+id: created-repository-contribution-connection
+title: CreatedRepositoryContributionConnection
+---
+
+The connection type for CreatedRepositoryContribution.
+
+```graphql
+type CreatedRepositoryContributionConnection {
+  edges: [CreatedRepositoryContributionEdge]
+  nodes: [CreatedRepositoryContribution]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CreatedRepositoryContributionEdge]`](/docs/api/objects/created-repository-contribution-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CreatedRepositoryContribution]`](/docs/api/objects/created-repository-contribution))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

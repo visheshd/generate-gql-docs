@@ -1,0 +1,33 @@
+---
+id: enterprise-server-user-account-email-connection
+title: EnterpriseServerUserAccountEmailConnection
+---
+
+The connection type for EnterpriseServerUserAccountEmail.
+
+```graphql
+type EnterpriseServerUserAccountEmailConnection {
+  edges: [EnterpriseServerUserAccountEmailEdge]
+  nodes: [EnterpriseServerUserAccountEmail]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[EnterpriseServerUserAccountEmailEdge]`](/docs/api/objects/enterprise-server-user-account-email-edge))
+
+A list of edges.
+
+#### `nodes` ([`[EnterpriseServerUserAccountEmail]`](/docs/api/objects/enterprise-server-user-account-email))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

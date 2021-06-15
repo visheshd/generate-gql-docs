@@ -1,0 +1,48 @@
+---
+id: auto-merge-request
+title: AutoMergeRequest
+---
+
+Represents an auto-merge request for a pull request
+
+```graphql
+type AutoMergeRequest {
+  authorEmail: String
+  commitBody: String
+  commitHeadline: String
+  enabledAt: DateTime
+  enabledBy: Actor
+  mergeMethod: PullRequestMergeMethod!
+  pullRequest: PullRequest!
+}
+```
+
+### Fields
+
+#### `authorEmail` ([`String`](/docs/api/scalars/string))
+
+The email address of the author of this auto-merge request.
+
+#### `commitBody` ([`String`](/docs/api/scalars/string))
+
+The commit message of the auto-merge request.
+
+#### `commitHeadline` ([`String`](/docs/api/scalars/string))
+
+The commit title of the auto-merge request.
+
+#### `enabledAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+When was this auto-merge request was enabled.
+
+#### `enabledBy` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who created the auto-merge request.
+
+#### `mergeMethod` ([`PullRequestMergeMethod!`](/docs/api/enums/pull-request-merge-method))
+
+The merge method of the auto-merge request.
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+The pull request that this auto-merge request is set against.

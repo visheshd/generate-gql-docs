@@ -1,0 +1,28 @@
+---
+id: org-remove-billing-manager-audit-entry-reason
+title: OrgRemoveBillingManagerAuditEntryReason
+---
+
+The reason a billing manager was removed from an Organization.
+
+```graphql
+enum OrgRemoveBillingManagerAuditEntryReason {
+  SAML_EXTERNAL_IDENTITY_MISSING
+  SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY
+  TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
+}
+```
+
+### Values
+
+#### `SAML_EXTERNAL_IDENTITY_MISSING`
+
+SAML external identity missing
+
+#### `SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY`
+
+SAML SSO enforcement requires an external identity
+
+#### `TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE`
+
+The organization required 2FA of its billing managers and this user did not have 2FA enabled.

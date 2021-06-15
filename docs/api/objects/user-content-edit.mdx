@@ -1,0 +1,57 @@
+---
+id: user-content-edit
+title: UserContentEdit
+---
+
+An edit on user content
+
+```graphql
+type UserContentEdit implements Node {
+  createdAt: DateTime!
+  deletedAt: DateTime
+  deletedBy: Actor
+  diff: String
+  editedAt: DateTime!
+  editor: Actor
+  id: ID!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `deletedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was deleted.
+
+#### `deletedBy` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who deleted this content
+
+#### `diff` ([`String`](/docs/api/scalars/string))
+
+A summary of the changes for this edit
+
+#### `editedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+When this content was edited
+
+#### `editor` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who edited this content
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

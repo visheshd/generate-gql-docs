@@ -1,0 +1,23 @@
+---
+id: pull-request-order
+title: PullRequestOrder
+---
+
+Ways in which lists of issues can be ordered upon return.
+
+```graphql
+type PullRequestOrder {
+  direction: OrderDirection!
+  field: PullRequestOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order pull requests by the specified field.
+
+#### `field` ([`PullRequestOrderField!`](/docs/api/enums/pull-request-order-field))
+
+The field in which to order pull requests by.

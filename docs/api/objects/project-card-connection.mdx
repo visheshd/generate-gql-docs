@@ -1,0 +1,33 @@
+---
+id: project-card-connection
+title: ProjectCardConnection
+---
+
+The connection type for ProjectCard.
+
+```graphql
+type ProjectCardConnection {
+  edges: [ProjectCardEdge]
+  nodes: [ProjectCard]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[ProjectCardEdge]`](/docs/api/objects/project-card-edge))
+
+A list of edges.
+
+#### `nodes` ([`[ProjectCard]`](/docs/api/objects/project-card))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

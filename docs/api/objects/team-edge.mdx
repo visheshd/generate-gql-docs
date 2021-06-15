@@ -1,0 +1,23 @@
+---
+id: team-edge
+title: TeamEdge
+---
+
+An edge in a connection.
+
+```graphql
+type TeamEdge {
+  cursor: String!
+  node: Team
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Team`](/docs/api/objects/team))
+
+The item at the end of the edge.

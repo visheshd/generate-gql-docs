@@ -1,0 +1,62 @@
+---
+id: deployment-status
+title: DeploymentStatus
+---
+
+Describes the status of a given deployment attempt.
+
+```graphql
+type DeploymentStatus implements Node {
+  createdAt: DateTime!
+  creator: Actor!
+  deployment: Deployment!
+  description: String
+  environmentUrl: URI
+  id: ID!
+  logUrl: URI
+  state: DeploymentStatusState!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `creator` ([`Actor!`](/docs/api/interfaces/actor))
+
+Identifies the actor who triggered the deployment.
+
+#### `deployment` ([`Deployment!`](/docs/api/objects/deployment))
+
+Identifies the deployment associated with status.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+Identifies the description of the deployment.
+
+#### `environmentUrl` ([`URI`](/docs/api/scalars/uri))
+
+Identifies the environment URL of the deployment.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `logUrl` ([`URI`](/docs/api/scalars/uri))
+
+Identifies the log URL of the deployment.
+
+#### `state` ([`DeploymentStatusState!`](/docs/api/enums/deployment-status-state))
+
+Identifies the current state of the deployment.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

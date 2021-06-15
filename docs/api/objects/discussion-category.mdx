@@ -1,0 +1,66 @@
+---
+id: discussion-category
+title: DiscussionCategory
+---
+
+A category for discussions in a repository.
+
+```graphql
+type DiscussionCategory implements Node, RepositoryNode {
+  createdAt: DateTime!
+  description: String
+  emoji: String!
+  emojiHTML: HTML!
+  id: ID!
+  isAnswerable: Boolean!
+  name: String!
+  repository: Repository!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+A description of this category.
+
+#### `emoji` ([`String!`](/docs/api/scalars/string))
+
+An emoji representing this category.
+
+#### `emojiHTML` ([`HTML!`](/docs/api/scalars/html))
+
+This category's emoji rendered as HTML.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isAnswerable` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not discussions in this category support choosing an answer with the markDiscussionCommentAsAnswer mutation.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of this category.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository associated with this node.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`RepositoryNode`](/docs/api/interfaces/repository-node)
+
+Represents a object that belongs to a repository.

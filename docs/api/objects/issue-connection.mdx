@@ -1,0 +1,33 @@
+---
+id: issue-connection
+title: IssueConnection
+---
+
+The connection type for Issue.
+
+```graphql
+type IssueConnection {
+  edges: [IssueEdge]
+  nodes: [Issue]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[IssueEdge]`](/docs/api/objects/issue-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Issue]`](/docs/api/objects/issue))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

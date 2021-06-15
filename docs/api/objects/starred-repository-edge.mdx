@@ -1,0 +1,26 @@
+---
+id: starred-repository-edge
+title: StarredRepositoryEdge
+---
+
+Represents a starred repository.
+
+```graphql
+type StarredRepositoryEdge {
+  cursor: String!
+  node: Repository!
+  starredAt: DateTime!
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Repository!`](/docs/api/objects/repository))
+
+#### `starredAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies when the item was starred.

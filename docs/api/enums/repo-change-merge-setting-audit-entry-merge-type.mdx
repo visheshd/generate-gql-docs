@@ -1,0 +1,28 @@
+---
+id: repo-change-merge-setting-audit-entry-merge-type
+title: RepoChangeMergeSettingAuditEntryMergeType
+---
+
+The merge options available for pull requests to this repository.
+
+```graphql
+enum RepoChangeMergeSettingAuditEntryMergeType {
+  MERGE
+  REBASE
+  SQUASH
+}
+```
+
+### Values
+
+#### `MERGE`
+
+The pull request is added to the base branch in a merge commit.
+
+#### `REBASE`
+
+Commits from the pull request are added onto the base branch individually without a merge commit.
+
+#### `SQUASH`
+
+The pull request's commits are squashed into a single commit before they are merged to the base branch.

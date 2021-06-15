@@ -1,0 +1,33 @@
+---
+id: deploy-key-connection
+title: DeployKeyConnection
+---
+
+The connection type for DeployKey.
+
+```graphql
+type DeployKeyConnection {
+  edges: [DeployKeyEdge]
+  nodes: [DeployKey]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[DeployKeyEdge]`](/docs/api/objects/deploy-key-edge))
+
+A list of edges.
+
+#### `nodes` ([`[DeployKey]`](/docs/api/objects/deploy-key))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

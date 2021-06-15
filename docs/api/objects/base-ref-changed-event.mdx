@@ -1,0 +1,52 @@
+---
+id: base-ref-changed-event
+title: BaseRefChangedEvent
+---
+
+Represents a 'base_ref_changed' event on a given issue or pull request.
+
+```graphql
+type BaseRefChangedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  currentRefName: String!
+  databaseId: Int
+  id: ID!
+  previousRefName: String!
+  pullRequest: PullRequest!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `currentRefName` ([`String!`](/docs/api/scalars/string))
+
+Identifies the name of the base ref for the pull request after it was changed.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `previousRefName` ([`String!`](/docs/api/scalars/string))
+
+Identifies the name of the base ref for the pull request before it was changed.
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,33 @@
+---
+id: pinnable-item-connection
+title: PinnableItemConnection
+---
+
+The connection type for PinnableItem.
+
+```graphql
+type PinnableItemConnection {
+  edges: [PinnableItemEdge]
+  nodes: [PinnableItem]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PinnableItemEdge]`](/docs/api/objects/pinnable-item-edge))
+
+A list of edges.
+
+#### `nodes` ([`[PinnableItem]`](/docs/api/unions/pinnable-item))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

@@ -1,0 +1,23 @@
+---
+id: enterprise-member-order
+title: EnterpriseMemberOrder
+---
+
+Ordering options for enterprise member connections.
+
+```graphql
+type EnterpriseMemberOrder {
+  direction: OrderDirection!
+  field: EnterpriseMemberOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`EnterpriseMemberOrderField!`](/docs/api/enums/enterprise-member-order-field))
+
+The field to order enterprise members by.

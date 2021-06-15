@@ -1,0 +1,23 @@
+---
+id: ip-allow-list-entry-edge
+title: IpAllowListEntryEdge
+---
+
+An edge in a connection.
+
+```graphql
+type IpAllowListEntryEdge {
+  cursor: String!
+  node: IpAllowListEntry
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`IpAllowListEntry`](/docs/api/objects/ip-allow-list-entry))
+
+The item at the end of the edge.

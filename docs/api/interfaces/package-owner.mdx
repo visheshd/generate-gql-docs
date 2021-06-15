@@ -1,0 +1,62 @@
+---
+id: package-owner
+title: PackageOwner
+---
+
+Represents an owner of a package.
+
+```graphql
+interface PackageOwner {
+  id: ID!
+  packages(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    names: [String] = []
+    orderBy: PackageOrder = "[object Object]"
+    packageType: PackageType
+    repositoryId: ID = 0
+  ): PackageConnection!
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `packages` ([`PackageConnection!`](/docs/api/objects/package-connection))
+
+A list of packages under the owner.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `names` ([`[String]`](/docs/api/scalars/string))
+
+Find packages by their names.
+
+- ##### `orderBy` ([`PackageOrder`](/docs/api/inputs/package-order))
+
+Ordering of the returned packages.
+
+- ##### `packageType` ([`PackageType`](/docs/api/enums/package-type))
+
+Filter registry package by type.
+
+- ##### `repositoryId` ([`ID`](/docs/api/scalars/id))
+
+Find packages in a repository by ID.

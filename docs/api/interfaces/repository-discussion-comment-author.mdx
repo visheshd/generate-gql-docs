@@ -1,0 +1,49 @@
+---
+id: repository-discussion-comment-author
+title: RepositoryDiscussionCommentAuthor
+---
+
+Represents an author of discussion comments in repositories.
+
+```graphql
+interface RepositoryDiscussionCommentAuthor {
+  repositoryDiscussionComments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    onlyAnswers: Boolean
+    repositoryId: ID = 0
+  ): DiscussionCommentConnection!
+}
+```
+
+### Fields
+
+#### `repositoryDiscussionComments` ([`DiscussionCommentConnection!`](/docs/api/objects/discussion-comment-connection))
+
+Discussion comments this user has authored.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `onlyAnswers` ([`Boolean`](/docs/api/scalars/boolean))
+
+Filter discussion comments to only those that were marked as the answer
+
+- ##### `repositoryId` ([`ID`](/docs/api/scalars/id))
+
+Filter discussion comments to only those in a specific repository.

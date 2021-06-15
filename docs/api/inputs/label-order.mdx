@@ -1,0 +1,23 @@
+---
+id: label-order
+title: LabelOrder
+---
+
+Ways in which lists of labels can be ordered upon return.
+
+```graphql
+type LabelOrder {
+  direction: OrderDirection!
+  field: LabelOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order labels by the specified field.
+
+#### `field` ([`LabelOrderField!`](/docs/api/enums/label-order-field))
+
+The field in which to order labels by.

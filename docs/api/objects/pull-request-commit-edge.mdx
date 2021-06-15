@@ -1,0 +1,23 @@
+---
+id: pull-request-commit-edge
+title: PullRequestCommitEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PullRequestCommitEdge {
+  cursor: String!
+  node: PullRequestCommit
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PullRequestCommit`](/docs/api/objects/pull-request-commit))
+
+The item at the end of the edge.

@@ -1,0 +1,28 @@
+---
+id: draft-pull-request-review-comment
+title: DraftPullRequestReviewComment
+---
+
+Specifies a review comment to be left with a Pull Request Review.
+
+```graphql
+type DraftPullRequestReviewComment {
+  body: String!
+  path: String!
+  position: Int!
+}
+```
+
+### Fields
+
+#### `body` ([`String!`](/docs/api/scalars/string))
+
+Body of the comment to leave.
+
+#### `path` ([`String!`](/docs/api/scalars/string))
+
+Path to the file being commented on.
+
+#### `position` ([`Int!`](/docs/api/scalars/int))
+
+Position in the file to leave a comment on.

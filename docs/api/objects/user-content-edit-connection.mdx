@@ -1,0 +1,33 @@
+---
+id: user-content-edit-connection
+title: UserContentEditConnection
+---
+
+A list of edits to content.
+
+```graphql
+type UserContentEditConnection {
+  edges: [UserContentEditEdge]
+  nodes: [UserContentEdit]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[UserContentEditEdge]`](/docs/api/objects/user-content-edit-edge))
+
+A list of edges.
+
+#### `nodes` ([`[UserContentEdit]`](/docs/api/objects/user-content-edit))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

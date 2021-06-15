@@ -1,0 +1,62 @@
+---
+id: marketplace-category
+title: MarketplaceCategory
+---
+
+A public description of a Marketplace category.
+
+```graphql
+type MarketplaceCategory implements Node {
+  description: String
+  howItWorks: String
+  id: ID!
+  name: String!
+  primaryListingCount: Int!
+  resourcePath: URI!
+  secondaryListingCount: Int!
+  slug: String!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The category's description.
+
+#### `howItWorks` ([`String`](/docs/api/scalars/string))
+
+The technical description of how apps listed in this category work with GitHub.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The category's name.
+
+#### `primaryListingCount` ([`Int!`](/docs/api/scalars/int))
+
+How many Marketplace listings have this as their primary category.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this Marketplace category.
+
+#### `secondaryListingCount` ([`Int!`](/docs/api/scalars/int))
+
+How many Marketplace listings have this as their secondary category.
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+The short name of the category used in its URL.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this Marketplace category.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

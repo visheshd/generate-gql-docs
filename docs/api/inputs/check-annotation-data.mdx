@@ -1,0 +1,43 @@
+---
+id: check-annotation-data
+title: CheckAnnotationData
+---
+
+Information from a check run analysis to specific lines of code.
+
+```graphql
+type CheckAnnotationData {
+  annotationLevel: CheckAnnotationLevel!
+  location: CheckAnnotationRange!
+  message: String!
+  path: String!
+  rawDetails: String
+  title: String
+}
+```
+
+### Fields
+
+#### `annotationLevel` ([`CheckAnnotationLevel!`](/docs/api/enums/check-annotation-level))
+
+Represents an annotation's information level
+
+#### `location` ([`CheckAnnotationRange!`](/docs/api/inputs/check-annotation-range))
+
+The location of the annotation
+
+#### `message` ([`String!`](/docs/api/scalars/string))
+
+A short description of the feedback for these lines of code.
+
+#### `path` ([`String!`](/docs/api/scalars/string))
+
+The path of the file to add an annotation to.
+
+#### `rawDetails` ([`String`](/docs/api/scalars/string))
+
+Details about this annotation.
+
+#### `title` ([`String`](/docs/api/scalars/string))
+
+The title that represents the annotation.

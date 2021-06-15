@@ -1,0 +1,38 @@
+---
+id: language-connection
+title: LanguageConnection
+---
+
+A list of languages associated with the parent.
+
+```graphql
+type LanguageConnection {
+  edges: [LanguageEdge]
+  nodes: [Language]
+  pageInfo: PageInfo!
+  totalCount: Int!
+  totalSize: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[LanguageEdge]`](/docs/api/objects/language-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Language]`](/docs/api/objects/language))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.
+
+#### `totalSize` ([`Int!`](/docs/api/scalars/int))
+
+The total size in bytes of files written in that language.

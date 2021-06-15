@@ -1,0 +1,33 @@
+---
+id: search-type
+title: SearchType
+---
+
+Represents the individual results of a search.
+
+```graphql
+enum SearchType {
+  DISCUSSION
+  ISSUE
+  REPOSITORY
+  USER
+}
+```
+
+### Values
+
+#### `DISCUSSION`
+
+Returns matching discussions in repositories.
+
+#### `ISSUE`
+
+Returns results matching issues in repositories.
+
+#### `REPOSITORY`
+
+Returns results matching repositories.
+
+#### `USER`
+
+Returns results matching users and organizations on GitHub.

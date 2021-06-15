@@ -1,0 +1,23 @@
+---
+id: verifiable-domain-edge
+title: VerifiableDomainEdge
+---
+
+An edge in a connection.
+
+```graphql
+type VerifiableDomainEdge {
+  cursor: String!
+  node: VerifiableDomain
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`VerifiableDomain`](/docs/api/objects/verifiable-domain))
+
+The item at the end of the edge.

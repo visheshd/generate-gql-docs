@@ -1,0 +1,23 @@
+---
+id: repository-invitation-order
+title: RepositoryInvitationOrder
+---
+
+Ordering options for repository invitation connections.
+
+```graphql
+type RepositoryInvitationOrder {
+  direction: OrderDirection!
+  field: RepositoryInvitationOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`RepositoryInvitationOrderField!`](/docs/api/enums/repository-invitation-order-field))
+
+The field to order repository invitations by.

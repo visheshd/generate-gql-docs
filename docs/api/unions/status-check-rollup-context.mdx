@@ -1,0 +1,20 @@
+---
+id: status-check-rollup-context
+title: StatusCheckRollupContext
+---
+
+Types that can be inside a StatusCheckRollup context.
+
+```graphql
+union StatusCheckRollupContext = CheckRun | StatusContext
+```
+
+### Possible types
+
+#### [`CheckRun`](/docs/api/objects/check-run)
+
+A check run.
+
+#### [`StatusContext`](/docs/api/objects/status-context)
+
+Represents an individual commit status context

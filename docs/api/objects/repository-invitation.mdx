@@ -1,0 +1,52 @@
+---
+id: repository-invitation
+title: RepositoryInvitation
+---
+
+An invitation for a user to be added to a repository.
+
+```graphql
+type RepositoryInvitation implements Node {
+  email: String
+  id: ID!
+  invitee: User
+  inviter: User!
+  permalink: URI!
+  permission: RepositoryPermission!
+  repository: RepositoryInfo
+}
+```
+
+### Fields
+
+#### `email` ([`String`](/docs/api/scalars/string))
+
+The email address that received the invitation.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `invitee` ([`User`](/docs/api/objects/user))
+
+The user who received the invitation.
+
+#### `inviter` ([`User!`](/docs/api/objects/user))
+
+The user who created the invitation.
+
+#### `permalink` ([`URI!`](/docs/api/scalars/uri))
+
+The permalink for this repository invitation.
+
+#### `permission` ([`RepositoryPermission!`](/docs/api/enums/repository-permission))
+
+The permission granted on this repository by this invitation.
+
+#### `repository` ([`RepositoryInfo`](/docs/api/interfaces/repository-info))
+
+The Repository the user is invited to.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,32 @@
+---
+id: language
+title: Language
+---
+
+Represents a given language found in repositories.
+
+```graphql
+type Language implements Node {
+  color: String
+  id: ID!
+  name: String!
+}
+```
+
+### Fields
+
+#### `color` ([`String`](/docs/api/scalars/string))
+
+The color defined for the current language.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the current language.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,48 @@
+---
+id: comment-cannot-update-reason
+title: CommentCannotUpdateReason
+---
+
+The possible errors that will prevent a user from updating a comment.
+
+```graphql
+enum CommentCannotUpdateReason {
+  ARCHIVED
+  DENIED
+  INSUFFICIENT_ACCESS
+  LOCKED
+  LOGIN_REQUIRED
+  MAINTENANCE
+  VERIFIED_EMAIL_REQUIRED
+}
+```
+
+### Values
+
+#### `ARCHIVED`
+
+Unable to create comment because repository is archived.
+
+#### `DENIED`
+
+You cannot update this comment
+
+#### `INSUFFICIENT_ACCESS`
+
+You must be the author or have write access to this repository to update this comment.
+
+#### `LOCKED`
+
+Unable to create comment because issue is locked.
+
+#### `LOGIN_REQUIRED`
+
+You must be logged in to update this comment.
+
+#### `MAINTENANCE`
+
+Repository is under maintenance.
+
+#### `VERIFIED_EMAIL_REQUIRED`
+
+At least one email address must be verified to update this comment.

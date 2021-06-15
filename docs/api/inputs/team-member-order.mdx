@@ -1,0 +1,23 @@
+---
+id: team-member-order
+title: TeamMemberOrder
+---
+
+Ordering options for team member connections
+
+```graphql
+type TeamMemberOrder {
+  direction: OrderDirection!
+  field: TeamMemberOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`TeamMemberOrderField!`](/docs/api/enums/team-member-order-field))
+
+The field to order team members by.

@@ -1,0 +1,33 @@
+---
+id: security-advisory-connection
+title: SecurityAdvisoryConnection
+---
+
+The connection type for SecurityAdvisory.
+
+```graphql
+type SecurityAdvisoryConnection {
+  edges: [SecurityAdvisoryEdge]
+  nodes: [SecurityAdvisory]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[SecurityAdvisoryEdge]`](/docs/api/objects/security-advisory-edge))
+
+A list of edges.
+
+#### `nodes` ([`[SecurityAdvisory]`](/docs/api/objects/security-advisory))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

@@ -1,0 +1,61 @@
+---
+id: enterprise-pending-collaborator-edge
+title: EnterprisePendingCollaboratorEdge
+---
+
+A user with an invitation to be a collaborator on a repository owned by an organization in an enterprise.
+
+```graphql
+type EnterprisePendingCollaboratorEdge {
+  cursor: String!
+  isUnlicensed: Boolean!
+  node: User
+  repositories(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: RepositoryOrder = "[object Object]"
+  ): EnterpriseRepositoryInfoConnection!
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `isUnlicensed` ([`Boolean!`](/docs/api/scalars/boolean))
+
+<span class="badge badge--warning">DEPRECATED: All pending collaborators consume a license Removal on 2021-01-01 UTC.</span>
+
+Whether the invited collaborator does not have a license for the enterprise.
+
+#### `node` ([`User`](/docs/api/objects/user))
+
+The item at the end of the edge.
+
+#### `repositories` ([`EnterpriseRepositoryInfoConnection!`](/docs/api/objects/enterprise-repository-info-connection))
+
+The enterprise organization repositories this user is a member of.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`RepositoryOrder`](/docs/api/inputs/repository-order))
+
+Ordering options for repositories.

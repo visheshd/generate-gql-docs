@@ -1,0 +1,23 @@
+---
+id: contribution-calendar-week
+title: ContributionCalendarWeek
+---
+
+A week of contributions in a user's contribution graph.
+
+```graphql
+type ContributionCalendarWeek {
+  contributionDays: [ContributionCalendarDay!]!
+  firstDay: Date!
+}
+```
+
+### Fields
+
+#### `contributionDays` ([`[ContributionCalendarDay!]!`](/docs/api/objects/contribution-calendar-day))
+
+The days of contributions in this week.
+
+#### `firstDay` ([`Date!`](/docs/api/scalars/date))
+
+The date of the earliest square in this week.

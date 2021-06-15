@@ -1,0 +1,23 @@
+---
+id: release-order
+title: ReleaseOrder
+---
+
+Ways in which lists of releases can be ordered upon return.
+
+```graphql
+type ReleaseOrder {
+  direction: OrderDirection!
+  field: ReleaseOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order releases by the specified field.
+
+#### `field` ([`ReleaseOrderField!`](/docs/api/enums/release-order-field))
+
+The field in which to order releases by.

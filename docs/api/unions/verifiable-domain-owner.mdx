@@ -1,0 +1,20 @@
+---
+id: verifiable-domain-owner
+title: VerifiableDomainOwner
+---
+
+Types that can own a verifiable domain.
+
+```graphql
+union VerifiableDomainOwner = Enterprise | Organization
+```
+
+### Possible types
+
+#### [`Enterprise`](/docs/api/objects/enterprise)
+
+An account to manage multiple organizations with consolidated policy and billing.
+
+#### [`Organization`](/docs/api/objects/organization)
+
+An account on GitHub, with one or more owners, that has repositories, members and teams.

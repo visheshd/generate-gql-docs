@@ -1,0 +1,53 @@
+---
+id: org-update-member-repository-creation-permission-audit-entry-visibility
+title: OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility
+---
+
+The permissions available for repository creation on an Organization.
+
+```graphql
+enum OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility {
+  ALL
+  INTERNAL
+  NONE
+  PRIVATE
+  PRIVATE_INTERNAL
+  PUBLIC
+  PUBLIC_INTERNAL
+  PUBLIC_PRIVATE
+}
+```
+
+### Values
+
+#### `ALL`
+
+All organization members are restricted from creating any repositories.
+
+#### `INTERNAL`
+
+All organization members are restricted from creating internal repositories.
+
+#### `NONE`
+
+All organization members are allowed to create any repositories.
+
+#### `PRIVATE`
+
+All organization members are restricted from creating private repositories.
+
+#### `PRIVATE_INTERNAL`
+
+All organization members are restricted from creating private or internal repositories.
+
+#### `PUBLIC`
+
+All organization members are restricted from creating public repositories.
+
+#### `PUBLIC_INTERNAL`
+
+All organization members are restricted from creating public or internal repositories.
+
+#### `PUBLIC_PRIVATE`
+
+All organization members are restricted from creating public or private repositories.

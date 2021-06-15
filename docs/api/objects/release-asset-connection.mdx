@@ -1,0 +1,33 @@
+---
+id: release-asset-connection
+title: ReleaseAssetConnection
+---
+
+The connection type for ReleaseAsset.
+
+```graphql
+type ReleaseAssetConnection {
+  edges: [ReleaseAssetEdge]
+  nodes: [ReleaseAsset]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[ReleaseAssetEdge]`](/docs/api/objects/release-asset-edge))
+
+A list of edges.
+
+#### `nodes` ([`[ReleaseAsset]`](/docs/api/objects/release-asset))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

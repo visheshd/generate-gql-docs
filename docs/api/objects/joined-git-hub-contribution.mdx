@@ -1,0 +1,46 @@
+---
+id: joined-git-hub-contribution
+title: JoinedGitHubContribution
+---
+
+Represents a user signing up for a GitHub account.
+
+```graphql
+type JoinedGitHubContribution implements Contribution {
+  isRestricted: Boolean!
+  occurredAt: DateTime!
+  resourcePath: URI!
+  url: URI!
+  user: User!
+}
+```
+
+### Fields
+
+#### `isRestricted` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this contribution is associated with a record you do not have access to. For
+example, your own 'first issue' contribution may have been made on a repository you can no
+longer access.
+
+#### `occurredAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+When this contribution was made.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this contribution.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this contribution.
+
+#### `user` ([`User!`](/docs/api/objects/user))
+
+The user who made this contribution.
+
+### Interfaces
+
+#### [`Contribution`](/docs/api/interfaces/contribution)
+
+Represents a contribution a user made on GitHub, such as opening an issue.

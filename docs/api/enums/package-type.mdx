@@ -1,0 +1,50 @@
+---
+id: package-type
+title: PackageType
+---
+
+The possible types of a package.
+
+```graphql
+enum PackageType {
+  DEBIAN
+  DOCKER
+  MAVEN
+  NPM
+  NUGET
+  PYPI
+  RUBYGEMS
+}
+```
+
+### Values
+
+#### `DEBIAN`
+
+A debian package.
+
+#### `DOCKER`
+
+<span class="badge badge--warning">DEPRECATED: DOCKER will be removed from this enum as this type will be migrated to only be used by the Packages REST API. Removal on 2021-06-21 UTC.</span>
+
+A docker image.
+
+#### `MAVEN`
+
+A maven package.
+
+#### `NPM`
+
+An npm package.
+
+#### `NUGET`
+
+A nuget package.
+
+#### `PYPI`
+
+A python package.
+
+#### `RUBYGEMS`
+
+A rubygems package.

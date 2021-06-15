@@ -1,0 +1,47 @@
+---
+id: push
+title: Push
+---
+
+A Git push.
+
+```graphql
+type Push implements Node {
+  id: ID!
+  nextSha: GitObjectID
+  permalink: URI!
+  previousSha: GitObjectID
+  pusher: User!
+  repository: Repository!
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `nextSha` ([`GitObjectID`](/docs/api/scalars/git-object-id))
+
+The SHA after the push
+
+#### `permalink` ([`URI!`](/docs/api/scalars/uri))
+
+The permalink for this push.
+
+#### `previousSha` ([`GitObjectID`](/docs/api/scalars/git-object-id))
+
+The SHA before the push
+
+#### `pusher` ([`User!`](/docs/api/objects/user))
+
+The user who pushed
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository that was pushed to
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

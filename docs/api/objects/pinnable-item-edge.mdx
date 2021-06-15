@@ -1,0 +1,23 @@
+---
+id: pinnable-item-edge
+title: PinnableItemEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PinnableItemEdge {
+  cursor: String!
+  node: PinnableItem
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PinnableItem`](/docs/api/unions/pinnable-item))
+
+The item at the end of the edge.

@@ -1,0 +1,28 @@
+---
+id: votable
+title: Votable
+---
+
+A subject that may be upvoted.
+
+```graphql
+interface Votable {
+  upvoteCount: Int!
+  viewerCanUpvote: Boolean!
+  viewerHasUpvoted: Boolean!
+}
+```
+
+### Fields
+
+#### `upvoteCount` ([`Int!`](/docs/api/scalars/int))
+
+Number of upvotes that this subject has received.
+
+#### `viewerCanUpvote` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the current user can add or remove an upvote on this subject.
+
+#### `viewerHasUpvoted` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the current user has already upvoted this subject.

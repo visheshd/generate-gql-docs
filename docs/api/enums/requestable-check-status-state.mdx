@@ -1,0 +1,38 @@
+---
+id: requestable-check-status-state
+title: RequestableCheckStatusState
+---
+
+The possible states that can be requested when creating a check run.
+
+```graphql
+enum RequestableCheckStatusState {
+  COMPLETED
+  IN_PROGRESS
+  PENDING
+  QUEUED
+  WAITING
+}
+```
+
+### Values
+
+#### `COMPLETED`
+
+The check suite or run has been completed.
+
+#### `IN_PROGRESS`
+
+The check suite or run is in progress.
+
+#### `PENDING`
+
+The check suite or run is in pending state.
+
+#### `QUEUED`
+
+The check suite or run has been queued.
+
+#### `WAITING`
+
+The check suite or run is in waiting state.

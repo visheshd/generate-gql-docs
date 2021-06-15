@@ -1,0 +1,23 @@
+---
+id: package-order
+title: PackageOrder
+---
+
+Ways in which lists of packages can be ordered upon return.
+
+```graphql
+type PackageOrder {
+  direction: OrderDirection
+  field: PackageOrderField
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection`](/docs/api/enums/order-direction))
+
+The direction in which to order packages by the specified field.
+
+#### `field` ([`PackageOrderField`](/docs/api/enums/package-order-field))
+
+The field in which to order packages by.

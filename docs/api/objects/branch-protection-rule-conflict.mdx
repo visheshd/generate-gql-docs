@@ -1,0 +1,28 @@
+---
+id: branch-protection-rule-conflict
+title: BranchProtectionRuleConflict
+---
+
+A conflict between two branch protection rules.
+
+```graphql
+type BranchProtectionRuleConflict {
+  branchProtectionRule: BranchProtectionRule
+  conflictingBranchProtectionRule: BranchProtectionRule
+  ref: Ref
+}
+```
+
+### Fields
+
+#### `branchProtectionRule` ([`BranchProtectionRule`](/docs/api/objects/branch-protection-rule))
+
+Identifies the branch protection rule.
+
+#### `conflictingBranchProtectionRule` ([`BranchProtectionRule`](/docs/api/objects/branch-protection-rule))
+
+Identifies the conflicting branch protection rule.
+
+#### `ref` ([`Ref`](/docs/api/objects/ref))
+
+Identifies the branch ref that has conflicting rules

@@ -1,0 +1,47 @@
+---
+id: connected-event
+title: ConnectedEvent
+---
+
+Represents a 'connected' event on a given issue or pull request.
+
+```graphql
+type ConnectedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  isCrossRepository: Boolean!
+  source: ReferencedSubject!
+  subject: ReferencedSubject!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isCrossRepository` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Reference originated in a different repository.
+
+#### `source` ([`ReferencedSubject!`](/docs/api/unions/referenced-subject))
+
+Issue or pull request that made the reference.
+
+#### `subject` ([`ReferencedSubject!`](/docs/api/unions/referenced-subject))
+
+Issue or pull request which was connected.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

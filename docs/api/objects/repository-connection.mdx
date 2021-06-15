@@ -1,0 +1,38 @@
+---
+id: repository-connection
+title: RepositoryConnection
+---
+
+A list of repositories owned by the subject.
+
+```graphql
+type RepositoryConnection {
+  edges: [RepositoryEdge]
+  nodes: [Repository]
+  pageInfo: PageInfo!
+  totalCount: Int!
+  totalDiskUsage: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[RepositoryEdge]`](/docs/api/objects/repository-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Repository]`](/docs/api/objects/repository))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.
+
+#### `totalDiskUsage` ([`Int!`](/docs/api/scalars/int))
+
+The total size in kilobytes of all repositories in the connection.

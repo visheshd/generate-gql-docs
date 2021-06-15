@@ -1,0 +1,1254 @@
+---
+id: user
+title: User
+---
+
+A user is an individual's account on GitHub that owns repositories and can make new content.
+
+```graphql
+type User implements Actor, Node, PackageOwner, ProfileOwner, ProjectOwner, RepositoryDiscussionAuthor, RepositoryDiscussionCommentAuthor, RepositoryOwner, Sponsorable, UniformResourceLocatable {
+  anyPinnableItems(type: PinnableItemType): Boolean!
+  avatarUrl(size: Int = 0): URI!
+  bio: String
+  bioHTML: HTML!
+  canReceiveOrganizationEmailsWhenNotificationsRestricted(
+    login: String!
+  ): Boolean!
+  commitComments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): CommitCommentConnection!
+  company: String
+  companyHTML: HTML!
+  contributionsCollection(
+    from: DateTime
+    organizationID: ID = 0
+    to: DateTime
+  ): ContributionsCollection!
+  createdAt: DateTime!
+  databaseId: Int
+  email: String!
+  followers(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): FollowerConnection!
+  following(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): FollowingConnection!
+  gist(name: String!): Gist
+  gistComments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): GistCommentConnection!
+  gists(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: GistOrder
+    privacy: GistPrivacy
+  ): GistConnection!
+  hasSponsorsListing: Boolean!
+  hovercard(primarySubjectId: ID = 0): Hovercard!
+  id: ID!
+  interactionAbility: RepositoryInteractionAbility
+  isBountyHunter: Boolean!
+  isCampusExpert: Boolean!
+  isDeveloperProgramMember: Boolean!
+  isEmployee: Boolean!
+  isGitHubStar: Boolean!
+  isHireable: Boolean!
+  isSiteAdmin: Boolean!
+  isSponsoredBy(accountLogin: String!): Boolean!
+  isSponsoringViewer: Boolean!
+  isViewer: Boolean!
+  issueComments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: IssueCommentOrder
+  ): IssueCommentConnection!
+  issues(
+    after: String
+    before: String
+    filterBy: IssueFilters
+    first: Int = 0
+    labels: [String!] = []
+    last: Int = 0
+    orderBy: IssueOrder
+    states: [IssueState!] = []
+  ): IssueConnection!
+  itemShowcase: ProfileItemShowcase!
+  location: String
+  login: String!
+  name: String
+  organization(login: String!): Organization
+  organizationVerifiedDomainEmails(login: String!): [String!]!
+  organizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): OrganizationConnection!
+  packages(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    names: [String] = []
+    orderBy: PackageOrder = "[object Object]"
+    packageType: PackageType
+    repositoryId: ID = 0
+  ): PackageConnection!
+  pinnableItems(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    types: [PinnableItemType!] = []
+  ): PinnableItemConnection!
+  pinnedItems(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    types: [PinnableItemType!] = []
+  ): PinnableItemConnection!
+  pinnedItemsRemaining: Int!
+  project(number: Int!): Project
+  projects(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: ProjectOrder
+    search: String
+    states: [ProjectState!] = []
+  ): ProjectConnection!
+  projectsResourcePath: URI!
+  projectsUrl: URI!
+  publicKeys(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): PublicKeyConnection!
+  pullRequests(
+    after: String
+    baseRefName: String
+    before: String
+    first: Int = 0
+    headRefName: String
+    labels: [String!] = []
+    last: Int = 0
+    orderBy: IssueOrder
+    states: [PullRequestState!] = []
+  ): PullRequestConnection!
+  repositories(
+    affiliations: [RepositoryAffiliation] = []
+    after: String
+    before: String
+    first: Int = 0
+    isFork: Boolean
+    isLocked: Boolean
+    last: Int = 0
+    orderBy: RepositoryOrder
+    ownerAffiliations: [RepositoryAffiliation] = [OWNER, COLLABORATOR]
+    privacy: RepositoryPrivacy
+  ): RepositoryConnection!
+  repositoriesContributedTo(
+    after: String
+    before: String
+    contributionTypes: [RepositoryContributionType] = []
+    first: Int = 0
+    includeUserRepositories: Boolean
+    isLocked: Boolean
+    last: Int = 0
+    orderBy: RepositoryOrder
+    privacy: RepositoryPrivacy
+  ): RepositoryConnection!
+  repository(name: String!): Repository
+  repositoryDiscussionComments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    onlyAnswers: Boolean
+    repositoryId: ID = 0
+  ): DiscussionCommentConnection!
+  repositoryDiscussions(
+    after: String
+    answered: Boolean
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: DiscussionOrder = "[object Object]"
+    repositoryId: ID = 0
+  ): DiscussionConnection!
+  resourcePath: URI!
+  savedReplies(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: SavedReplyOrder = "[object Object]"
+  ): SavedReplyConnection
+  sponsorsListing: SponsorsListing
+  sponsorshipForViewerAsSponsor: Sponsorship
+  sponsorshipsAsMaintainer(
+    after: String
+    before: String
+    first: Int = 0
+    includePrivate: Boolean
+    last: Int = 0
+    orderBy: SponsorshipOrder
+  ): SponsorshipConnection!
+  sponsorshipsAsSponsor(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: SponsorshipOrder
+  ): SponsorshipConnection!
+  starredRepositories(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: StarOrder
+    ownedByViewer: Boolean
+  ): StarredRepositoryConnection!
+  status: UserStatus
+  topRepositories(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: RepositoryOrder!
+    since: DateTime
+  ): RepositoryConnection!
+  twitterUsername: String
+  updatedAt: DateTime!
+  url: URI!
+  viewerCanChangePinnedItems: Boolean!
+  viewerCanCreateProjects: Boolean!
+  viewerCanFollow: Boolean!
+  viewerCanSponsor: Boolean!
+  viewerIsFollowing: Boolean!
+  viewerIsSponsoring: Boolean!
+  watching(
+    affiliations: [RepositoryAffiliation] = []
+    after: String
+    before: String
+    first: Int = 0
+    isLocked: Boolean
+    last: Int = 0
+    orderBy: RepositoryOrder
+    ownerAffiliations: [RepositoryAffiliation] = [OWNER, COLLABORATOR]
+    privacy: RepositoryPrivacy
+  ): RepositoryConnection!
+  websiteUrl: URI
+}
+```
+
+### Fields
+
+#### `anyPinnableItems` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Determine if this repository owner has any items that can be pinned to their profile.
+
+- ##### `type` ([`PinnableItemType`](/docs/api/enums/pinnable-item-type))
+
+Filter to only a particular kind of pinnable item.
+
+#### `avatarUrl` ([`URI!`](/docs/api/scalars/uri))
+
+A URL pointing to the user's public avatar.
+
+- ##### `size` ([`Int`](/docs/api/scalars/int))
+
+The size of the resulting square image.
+
+#### `bio` ([`String`](/docs/api/scalars/string))
+
+The user's public profile bio.
+
+#### `bioHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The user's public profile bio as HTML.
+
+#### `canReceiveOrganizationEmailsWhenNotificationsRestricted` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Could this user receive email notifications, if the organization had notification restrictions enabled?
+
+- ##### `login` ([`String!`](/docs/api/scalars/string))
+
+The login of the organization to check.
+
+#### `commitComments` ([`CommitCommentConnection!`](/docs/api/objects/commit-comment-connection))
+
+A list of commit comments made by this user.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `company` ([`String`](/docs/api/scalars/string))
+
+The user's public profile company.
+
+#### `companyHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The user's public profile company as HTML.
+
+#### `contributionsCollection` ([`ContributionsCollection!`](/docs/api/objects/contributions-collection))
+
+The collection of contributions this user has made to different repositories.
+
+- ##### `from` ([`DateTime`](/docs/api/scalars/date-time))
+
+Only contributions made at this time or later will be counted. If omitted, defaults to a year ago.
+
+- ##### `organizationID` ([`ID`](/docs/api/scalars/id))
+
+The ID of the organization used to filter contributions.
+
+- ##### `to` ([`DateTime`](/docs/api/scalars/date-time))
+
+Only contributions made before and up to and including this time will be
+counted. If omitted, defaults to the current time.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `email` ([`String!`](/docs/api/scalars/string))
+
+The user's publicly visible profile email.
+
+#### `followers` ([`FollowerConnection!`](/docs/api/objects/follower-connection))
+
+A list of users the given user is followed by.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `following` ([`FollowingConnection!`](/docs/api/objects/following-connection))
+
+A list of users the given user is following.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `gist` ([`Gist`](/docs/api/objects/gist))
+
+Find gist by repo name.
+
+- ##### `name` ([`String!`](/docs/api/scalars/string))
+
+The gist name to find.
+
+#### `gistComments` ([`GistCommentConnection!`](/docs/api/objects/gist-comment-connection))
+
+A list of gist comments made by this user.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `gists` ([`GistConnection!`](/docs/api/objects/gist-connection))
+
+A list of the Gists the user has created.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`GistOrder`](/docs/api/inputs/gist-order))
+
+Ordering options for gists returned from the connection
+
+- ##### `privacy` ([`GistPrivacy`](/docs/api/enums/gist-privacy))
+
+Filters Gists according to privacy.
+
+#### `hasSponsorsListing` ([`Boolean!`](/docs/api/scalars/boolean))
+
+True if this user/organization has a GitHub Sponsors listing.
+
+#### `hovercard` ([`Hovercard!`](/docs/api/objects/hovercard))
+
+The hovercard information for this user in a given context
+
+- ##### `primarySubjectId` ([`ID`](/docs/api/scalars/id))
+
+The ID of the subject to get the hovercard in the context of
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `interactionAbility` ([`RepositoryInteractionAbility`](/docs/api/objects/repository-interaction-ability))
+
+The interaction ability settings for this user.
+
+#### `isBountyHunter` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this user is a participant in the GitHub Security Bug Bounty.
+
+#### `isCampusExpert` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this user is a participant in the GitHub Campus Experts Program.
+
+#### `isDeveloperProgramMember` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this user is a GitHub Developer Program member.
+
+#### `isEmployee` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this user is a GitHub employee.
+
+#### `isGitHubStar` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this user is a member of the GitHub Stars Program.
+
+#### `isHireable` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the user has marked themselves as for hire.
+
+#### `isSiteAdmin` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this user is a site administrator.
+
+#### `isSponsoredBy` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the given account is sponsoring this user/organization.
+
+- ##### `accountLogin` ([`String!`](/docs/api/scalars/string))
+
+The target account's login.
+
+#### `isSponsoringViewer` ([`Boolean!`](/docs/api/scalars/boolean))
+
+True if the viewer is sponsored by this user/organization.
+
+#### `isViewer` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this user is the viewing user.
+
+#### `issueComments` ([`IssueCommentConnection!`](/docs/api/objects/issue-comment-connection))
+
+A list of issue comments made by this user.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`IssueCommentOrder`](/docs/api/inputs/issue-comment-order))
+
+Ordering options for issue comments returned from the connection.
+
+#### `issues` ([`IssueConnection!`](/docs/api/objects/issue-connection))
+
+A list of issues associated with this user.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `filterBy` ([`IssueFilters`](/docs/api/inputs/issue-filters))
+
+Filtering options for issues returned from the connection.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `labels` ([`[String!]`](/docs/api/scalars/string))
+
+A list of label names to filter the pull requests by.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`IssueOrder`](/docs/api/inputs/issue-order))
+
+Ordering options for issues returned from the connection.
+
+- ##### `states` ([`[IssueState!]`](/docs/api/enums/issue-state))
+
+A list of states to filter the issues by.
+
+#### `itemShowcase` ([`ProfileItemShowcase!`](/docs/api/objects/profile-item-showcase))
+
+Showcases a selection of repositories and gists that the profile owner has
+either curated or that have been selected automatically based on popularity.
+
+#### `location` ([`String`](/docs/api/scalars/string))
+
+The user's public profile location.
+
+#### `login` ([`String!`](/docs/api/scalars/string))
+
+The username used to login.
+
+#### `name` ([`String`](/docs/api/scalars/string))
+
+The user's public profile name.
+
+#### `organization` ([`Organization`](/docs/api/objects/organization))
+
+Find an organization by its login that the user belongs to.
+
+- ##### `login` ([`String!`](/docs/api/scalars/string))
+
+The login of the organization to find.
+
+#### `organizationVerifiedDomainEmails` ([`[String!]!`](/docs/api/scalars/string))
+
+Verified email addresses that match verified domains for a specified organization the user is a member of.
+
+- ##### `login` ([`String!`](/docs/api/scalars/string))
+
+The login of the organization to match verified domains from.
+
+#### `organizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of organizations the user belongs to.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `packages` ([`PackageConnection!`](/docs/api/objects/package-connection))
+
+A list of packages under the owner.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `names` ([`[String]`](/docs/api/scalars/string))
+
+Find packages by their names.
+
+- ##### `orderBy` ([`PackageOrder`](/docs/api/inputs/package-order))
+
+Ordering of the returned packages.
+
+- ##### `packageType` ([`PackageType`](/docs/api/enums/package-type))
+
+Filter registry package by type.
+
+- ##### `repositoryId` ([`ID`](/docs/api/scalars/id))
+
+Find packages in a repository by ID.
+
+#### `pinnableItems` ([`PinnableItemConnection!`](/docs/api/objects/pinnable-item-connection))
+
+A list of repositories and gists this profile owner can pin to their profile.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `types` ([`[PinnableItemType!]`](/docs/api/enums/pinnable-item-type))
+
+Filter the types of pinnable items that are returned.
+
+#### `pinnedItems` ([`PinnableItemConnection!`](/docs/api/objects/pinnable-item-connection))
+
+A list of repositories and gists this profile owner has pinned to their profile
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `types` ([`[PinnableItemType!]`](/docs/api/enums/pinnable-item-type))
+
+Filter the types of pinned items that are returned.
+
+#### `pinnedItemsRemaining` ([`Int!`](/docs/api/scalars/int))
+
+Returns how many more items this profile owner can pin to their profile.
+
+#### `project` ([`Project`](/docs/api/objects/project))
+
+Find project by number.
+
+- ##### `number` ([`Int!`](/docs/api/scalars/int))
+
+The project number to find.
+
+#### `projects` ([`ProjectConnection!`](/docs/api/objects/project-connection))
+
+A list of projects under the owner.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ProjectOrder`](/docs/api/inputs/project-order))
+
+Ordering options for projects returned from the connection
+
+- ##### `search` ([`String`](/docs/api/scalars/string))
+
+Query to search projects by, currently only searching by name.
+
+- ##### `states` ([`[ProjectState!]`](/docs/api/enums/project-state))
+
+A list of states to filter the projects by.
+
+#### `projectsResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path listing user's projects
+
+#### `projectsUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL listing user's projects
+
+#### `publicKeys` ([`PublicKeyConnection!`](/docs/api/objects/public-key-connection))
+
+A list of public keys associated with this user.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `pullRequests` ([`PullRequestConnection!`](/docs/api/objects/pull-request-connection))
+
+A list of pull requests associated with this user.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `baseRefName` ([`String`](/docs/api/scalars/string))
+
+The base ref name to filter the pull requests by.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `headRefName` ([`String`](/docs/api/scalars/string))
+
+The head ref name to filter the pull requests by.
+
+- ##### `labels` ([`[String!]`](/docs/api/scalars/string))
+
+A list of label names to filter the pull requests by.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`IssueOrder`](/docs/api/inputs/issue-order))
+
+Ordering options for pull requests returned from the connection.
+
+- ##### `states` ([`[PullRequestState!]`](/docs/api/enums/pull-request-state))
+
+A list of states to filter the pull requests by.
+
+#### `repositories` ([`RepositoryConnection!`](/docs/api/objects/repository-connection))
+
+A list of repositories that the user owns.
+
+- ##### `affiliations` ([`[RepositoryAffiliation]`](/docs/api/enums/repository-affiliation))
+
+Array of viewer's affiliation options for repositories returned from the
+connection. For example, OWNER will include only repositories that the
+current viewer owns.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `isFork` ([`Boolean`](/docs/api/scalars/boolean))
+
+If non-null, filters repositories according to whether they are forks of another repository
+
+- ##### `isLocked` ([`Boolean`](/docs/api/scalars/boolean))
+
+If non-null, filters repositories according to whether they have been locked
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`RepositoryOrder`](/docs/api/inputs/repository-order))
+
+Ordering options for repositories returned from the connection
+
+- ##### `ownerAffiliations` ([`[RepositoryAffiliation]`](/docs/api/enums/repository-affiliation))
+
+Array of owner's affiliation options for repositories returned from the
+connection. For example, OWNER will include only repositories that the
+organization or user being viewed owns.
+
+- ##### `privacy` ([`RepositoryPrivacy`](/docs/api/enums/repository-privacy))
+
+If non-null, filters repositories according to privacy
+
+#### `repositoriesContributedTo` ([`RepositoryConnection!`](/docs/api/objects/repository-connection))
+
+A list of repositories that the user recently contributed to.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `contributionTypes` ([`[RepositoryContributionType]`](/docs/api/enums/repository-contribution-type))
+
+If non-null, include only the specified types of contributions. The
+GitHub.com UI uses [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY]
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `includeUserRepositories` ([`Boolean`](/docs/api/scalars/boolean))
+
+If true, include user repositories
+
+- ##### `isLocked` ([`Boolean`](/docs/api/scalars/boolean))
+
+If non-null, filters repositories according to whether they have been locked
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`RepositoryOrder`](/docs/api/inputs/repository-order))
+
+Ordering options for repositories returned from the connection
+
+- ##### `privacy` ([`RepositoryPrivacy`](/docs/api/enums/repository-privacy))
+
+If non-null, filters repositories according to privacy
+
+#### `repository` ([`Repository`](/docs/api/objects/repository))
+
+Find Repository.
+
+- ##### `name` ([`String!`](/docs/api/scalars/string))
+
+Name of Repository to find.
+
+#### `repositoryDiscussionComments` ([`DiscussionCommentConnection!`](/docs/api/objects/discussion-comment-connection))
+
+Discussion comments this user has authored.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `onlyAnswers` ([`Boolean`](/docs/api/scalars/boolean))
+
+Filter discussion comments to only those that were marked as the answer
+
+- ##### `repositoryId` ([`ID`](/docs/api/scalars/id))
+
+Filter discussion comments to only those in a specific repository.
+
+#### `repositoryDiscussions` ([`DiscussionConnection!`](/docs/api/objects/discussion-connection))
+
+Discussions this user has started.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `answered` ([`Boolean`](/docs/api/scalars/boolean))
+
+Filter discussions to only those that have been answered or not. Defaults to
+including both answered and unanswered discussions.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`DiscussionOrder`](/docs/api/inputs/discussion-order))
+
+Ordering options for discussions returned from the connection.
+
+- ##### `repositoryId` ([`ID`](/docs/api/scalars/id))
+
+Filter discussions to only those in a specific repository.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this user
+
+#### `savedReplies` ([`SavedReplyConnection`](/docs/api/objects/saved-reply-connection))
+
+Replies this user has saved
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`SavedReplyOrder`](/docs/api/inputs/saved-reply-order))
+
+The field to order saved replies by.
+
+#### `sponsorsListing` ([`SponsorsListing`](/docs/api/objects/sponsors-listing))
+
+The GitHub Sponsors listing for this user or organization.
+
+#### `sponsorshipForViewerAsSponsor` ([`Sponsorship`](/docs/api/objects/sponsorship))
+
+The viewer's sponsorship of this entity.
+
+#### `sponsorshipsAsMaintainer` ([`SponsorshipConnection!`](/docs/api/objects/sponsorship-connection))
+
+This object's sponsorships as the maintainer.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `includePrivate` ([`Boolean`](/docs/api/scalars/boolean))
+
+Whether or not to include private sponsorships in the result set
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`SponsorshipOrder`](/docs/api/inputs/sponsorship-order))
+
+Ordering options for sponsorships returned from this connection. If left
+blank, the sponsorships will be ordered based on relevancy to the viewer.
+
+#### `sponsorshipsAsSponsor` ([`SponsorshipConnection!`](/docs/api/objects/sponsorship-connection))
+
+This object's sponsorships as the sponsor.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`SponsorshipOrder`](/docs/api/inputs/sponsorship-order))
+
+Ordering options for sponsorships returned from this connection. If left
+blank, the sponsorships will be ordered based on relevancy to the viewer.
+
+#### `starredRepositories` ([`StarredRepositoryConnection!`](/docs/api/objects/starred-repository-connection))
+
+Repositories the user has starred.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`StarOrder`](/docs/api/inputs/star-order))
+
+Order for connection
+
+- ##### `ownedByViewer` ([`Boolean`](/docs/api/scalars/boolean))
+
+Filters starred repositories to only return repositories owned by the viewer.
+
+#### `status` ([`UserStatus`](/docs/api/objects/user-status))
+
+The user's description of what they're currently doing.
+
+#### `topRepositories` ([`RepositoryConnection!`](/docs/api/objects/repository-connection))
+
+Repositories the user has contributed to, ordered by contribution rank, plus repositories the user has created
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`RepositoryOrder!`](/docs/api/inputs/repository-order))
+
+Ordering options for repositories returned from the connection
+
+- ##### `since` ([`DateTime`](/docs/api/scalars/date-time))
+
+How far back in time to fetch contributed repositories
+
+#### `twitterUsername` ([`String`](/docs/api/scalars/string))
+
+The user's Twitter username.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this user
+
+#### `viewerCanChangePinnedItems` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the viewer pin repositories and gists to the profile?
+
+#### `viewerCanCreateProjects` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer create new projects on this owner.
+
+#### `viewerCanFollow` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the viewer is able to follow the user.
+
+#### `viewerCanSponsor` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the viewer is able to sponsor this user/organization.
+
+#### `viewerIsFollowing` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not this user is followed by the viewer.
+
+#### `viewerIsSponsoring` ([`Boolean!`](/docs/api/scalars/boolean))
+
+True if the viewer is sponsoring this user/organization.
+
+#### `watching` ([`RepositoryConnection!`](/docs/api/objects/repository-connection))
+
+A list of repositories the given user is watching.
+
+- ##### `affiliations` ([`[RepositoryAffiliation]`](/docs/api/enums/repository-affiliation))
+
+Affiliation options for repositories returned from the connection. If none
+specified, the results will include repositories for which the current
+viewer is an owner or collaborator, or member.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `isLocked` ([`Boolean`](/docs/api/scalars/boolean))
+
+If non-null, filters repositories according to whether they have been locked
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`RepositoryOrder`](/docs/api/inputs/repository-order))
+
+Ordering options for repositories returned from the connection
+
+- ##### `ownerAffiliations` ([`[RepositoryAffiliation]`](/docs/api/enums/repository-affiliation))
+
+Array of owner's affiliation options for repositories returned from the
+connection. For example, OWNER will include only repositories that the
+organization or user being viewed owns.
+
+- ##### `privacy` ([`RepositoryPrivacy`](/docs/api/enums/repository-privacy))
+
+If non-null, filters repositories according to privacy
+
+#### `websiteUrl` ([`URI`](/docs/api/scalars/uri))
+
+A URL pointing to the user's public website/blog.
+
+### Interfaces
+
+#### [`Actor`](/docs/api/interfaces/actor)
+
+Represents an object which can take actions on GitHub. Typically a User or Bot.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`PackageOwner`](/docs/api/interfaces/package-owner)
+
+Represents an owner of a package.
+
+#### [`ProfileOwner`](/docs/api/interfaces/profile-owner)
+
+Represents any entity on GitHub that has a profile page.
+
+#### [`ProjectOwner`](/docs/api/interfaces/project-owner)
+
+Represents an owner of a Project.
+
+#### [`RepositoryDiscussionAuthor`](/docs/api/interfaces/repository-discussion-author)
+
+Represents an author of discussions in repositories.
+
+#### [`RepositoryDiscussionCommentAuthor`](/docs/api/interfaces/repository-discussion-comment-author)
+
+Represents an author of discussion comments in repositories.
+
+#### [`RepositoryOwner`](/docs/api/interfaces/repository-owner)
+
+Represents an owner of a Repository.
+
+#### [`Sponsorable`](/docs/api/interfaces/sponsorable)
+
+Entities that can be sponsored through GitHub Sponsors
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

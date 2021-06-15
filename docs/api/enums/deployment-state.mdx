@@ -1,0 +1,63 @@
+---
+id: deployment-state
+title: DeploymentState
+---
+
+The possible states in which a deployment can be.
+
+```graphql
+enum DeploymentState {
+  ABANDONED
+  ACTIVE
+  DESTROYED
+  ERROR
+  FAILURE
+  INACTIVE
+  IN_PROGRESS
+  PENDING
+  QUEUED
+  WAITING
+}
+```
+
+### Values
+
+#### `ABANDONED`
+
+The pending deployment was not updated after 30 minutes.
+
+#### `ACTIVE`
+
+The deployment is currently active.
+
+#### `DESTROYED`
+
+An inactive transient deployment.
+
+#### `ERROR`
+
+The deployment experienced an error.
+
+#### `FAILURE`
+
+The deployment has failed.
+
+#### `INACTIVE`
+
+The deployment is inactive.
+
+#### `IN_PROGRESS`
+
+The deployment is in progress.
+
+#### `PENDING`
+
+The deployment is pending.
+
+#### `QUEUED`
+
+The deployment has queued
+
+#### `WAITING`
+
+The deployment is waiting.

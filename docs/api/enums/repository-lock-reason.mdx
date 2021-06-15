@@ -1,0 +1,33 @@
+---
+id: repository-lock-reason
+title: RepositoryLockReason
+---
+
+The possible reasons a given repository could be in a locked state.
+
+```graphql
+enum RepositoryLockReason {
+  BILLING
+  MIGRATING
+  MOVING
+  RENAME
+}
+```
+
+### Values
+
+#### `BILLING`
+
+The repository is locked due to a billing related reason.
+
+#### `MIGRATING`
+
+The repository is locked due to a migration.
+
+#### `MOVING`
+
+The repository is locked due to a move.
+
+#### `RENAME`
+
+The repository is locked due to a rename.

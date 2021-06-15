@@ -1,0 +1,55 @@
+---
+id: public-key
+title: PublicKey
+---
+
+A user's public key.
+
+```graphql
+type PublicKey implements Node {
+  accessedAt: DateTime
+  createdAt: DateTime
+  fingerprint: String!
+  id: ID!
+  isReadOnly: Boolean
+  key: String!
+  updatedAt: DateTime
+}
+```
+
+### Fields
+
+#### `accessedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+The last time this authorization was used to perform an action. Values will be null for keys not owned by the user.
+
+#### `createdAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the key was created. Keys created before
+March 5th, 2014 have inaccurate values. Values will be null for keys not owned by the user.
+
+#### `fingerprint` ([`String!`](/docs/api/scalars/string))
+
+The fingerprint for this PublicKey.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isReadOnly` ([`Boolean`](/docs/api/scalars/boolean))
+
+Whether this PublicKey is read-only or not. Values will be null for keys not owned by the user.
+
+#### `key` ([`String!`](/docs/api/scalars/string))
+
+The public key string.
+
+#### `updatedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the key was updated. Keys created before
+March 5th, 2014 may have inaccurate values. Values will be null for keys not
+owned by the user.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

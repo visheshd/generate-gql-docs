@@ -1,0 +1,33 @@
+---
+id: enterprise-pending-collaborator-connection
+title: EnterprisePendingCollaboratorConnection
+---
+
+The connection type for User.
+
+```graphql
+type EnterprisePendingCollaboratorConnection {
+  edges: [EnterprisePendingCollaboratorEdge]
+  nodes: [User]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[EnterprisePendingCollaboratorEdge]`](/docs/api/objects/enterprise-pending-collaborator-edge))
+
+A list of edges.
+
+#### `nodes` ([`[User]`](/docs/api/objects/user))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

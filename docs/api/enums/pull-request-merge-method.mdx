@@ -1,0 +1,28 @@
+---
+id: pull-request-merge-method
+title: PullRequestMergeMethod
+---
+
+Represents available types of methods to use when merging a pull request.
+
+```graphql
+enum PullRequestMergeMethod {
+  MERGE
+  REBASE
+  SQUASH
+}
+```
+
+### Values
+
+#### `MERGE`
+
+Add all commits from the head branch to the base branch with a merge commit.
+
+#### `REBASE`
+
+Add all commits from the head branch onto the base branch individually.
+
+#### `SQUASH`
+
+Combine all commits from the head branch into a single commit in the base branch.

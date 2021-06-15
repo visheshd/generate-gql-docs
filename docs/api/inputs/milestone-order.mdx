@@ -1,0 +1,23 @@
+---
+id: milestone-order
+title: MilestoneOrder
+---
+
+Ordering options for milestone connections.
+
+```graphql
+type MilestoneOrder {
+  direction: OrderDirection!
+  field: MilestoneOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`MilestoneOrderField!`](/docs/api/enums/milestone-order-field))
+
+The field to order milestones by.

@@ -1,0 +1,33 @@
+---
+id: check-run-filter
+title: CheckRunFilter
+---
+
+The filters that are available when fetching check runs.
+
+```graphql
+type CheckRunFilter {
+  appId: Int
+  checkName: String
+  checkType: CheckRunType
+  status: CheckStatusState
+}
+```
+
+### Fields
+
+#### `appId` ([`Int`](/docs/api/scalars/int))
+
+Filters the check runs created by this application ID.
+
+#### `checkName` ([`String`](/docs/api/scalars/string))
+
+Filters the check runs by this name.
+
+#### `checkType` ([`CheckRunType`](/docs/api/enums/check-run-type))
+
+Filters the check runs by this type.
+
+#### `status` ([`CheckStatusState`](/docs/api/enums/check-status-state))
+
+Filters the check runs by this status.

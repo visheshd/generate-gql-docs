@@ -1,0 +1,52 @@
+---
+id: auto-merge-disabled-event
+title: AutoMergeDisabledEvent
+---
+
+Represents a 'auto_merge_disabled' event on a given pull request.
+
+```graphql
+type AutoMergeDisabledEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  disabler: User
+  id: ID!
+  pullRequest: PullRequest
+  reason: String
+  reasonCode: String
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `disabler` ([`User`](/docs/api/objects/user))
+
+The user who disabled auto-merge for this Pull Request
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event
+
+#### `reason` ([`String`](/docs/api/scalars/string))
+
+The reason auto-merge was disabled
+
+#### `reasonCode` ([`String`](/docs/api/scalars/string))
+
+The reason_code relating to why auto-merge was disabled
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,23 @@
+---
+id: package-version-edge
+title: PackageVersionEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PackageVersionEdge {
+  cursor: String!
+  node: PackageVersion
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PackageVersion`](/docs/api/objects/package-version))
+
+The item at the end of the edge.

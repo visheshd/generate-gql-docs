@@ -1,0 +1,41 @@
+---
+id: repository-topic
+title: RepositoryTopic
+---
+
+A repository-topic connects a repository to a topic.
+
+```graphql
+type RepositoryTopic implements Node, UniformResourceLocatable {
+  id: ID!
+  resourcePath: URI!
+  topic: Topic!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this repository-topic.
+
+#### `topic` ([`Topic!`](/docs/api/objects/topic))
+
+The topic.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this repository-topic.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

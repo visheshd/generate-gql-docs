@@ -1,0 +1,72 @@
+---
+id: release-asset
+title: ReleaseAsset
+---
+
+A release asset contains the content for a release asset.
+
+```graphql
+type ReleaseAsset implements Node {
+  contentType: String!
+  createdAt: DateTime!
+  downloadCount: Int!
+  downloadUrl: URI!
+  id: ID!
+  name: String!
+  release: Release
+  size: Int!
+  updatedAt: DateTime!
+  uploadedBy: User!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `contentType` ([`String!`](/docs/api/scalars/string))
+
+The asset's content-type
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `downloadCount` ([`Int!`](/docs/api/scalars/int))
+
+The number of times this asset was downloaded
+
+#### `downloadUrl` ([`URI!`](/docs/api/scalars/uri))
+
+Identifies the URL where you can download the release asset via the browser.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+Identifies the title of the release asset.
+
+#### `release` ([`Release`](/docs/api/objects/release))
+
+Release that the asset is associated with
+
+#### `size` ([`Int!`](/docs/api/scalars/int))
+
+The size (in bytes) of the asset
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `uploadedBy` ([`User!`](/docs/api/objects/user))
+
+The user that performed the upload
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+Identifies the URL of the release asset.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

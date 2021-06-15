@@ -1,0 +1,23 @@
+---
+id: git-actor-edge
+title: GitActorEdge
+---
+
+An edge in a connection.
+
+```graphql
+type GitActorEdge {
+  cursor: String!
+  node: GitActor
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`GitActor`](/docs/api/objects/git-actor))
+
+The item at the end of the edge.

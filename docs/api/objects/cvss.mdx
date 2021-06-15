@@ -1,0 +1,23 @@
+---
+id: cvss
+title: CVSS
+---
+
+The Common Vulnerability Scoring System
+
+```graphql
+type CVSS {
+  score: Float!
+  vectorString: String
+}
+```
+
+### Fields
+
+#### `score` ([`Float!`](/docs/api/scalars/float))
+
+The CVSS score associated with this advisory
+
+#### `vectorString` ([`String`](/docs/api/scalars/string))
+
+The CVSS vector string associated with this advisory

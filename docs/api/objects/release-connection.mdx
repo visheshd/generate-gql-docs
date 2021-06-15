@@ -1,0 +1,33 @@
+---
+id: release-connection
+title: ReleaseConnection
+---
+
+The connection type for Release.
+
+```graphql
+type ReleaseConnection {
+  edges: [ReleaseEdge]
+  nodes: [Release]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[ReleaseEdge]`](/docs/api/objects/release-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Release]`](/docs/api/objects/release))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

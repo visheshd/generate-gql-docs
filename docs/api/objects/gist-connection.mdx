@@ -1,0 +1,33 @@
+---
+id: gist-connection
+title: GistConnection
+---
+
+The connection type for Gist.
+
+```graphql
+type GistConnection {
+  edges: [GistEdge]
+  nodes: [Gist]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[GistEdge]`](/docs/api/objects/gist-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Gist]`](/docs/api/objects/gist))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

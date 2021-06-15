@@ -1,0 +1,190 @@
+---
+id: check-run
+title: CheckRun
+---
+
+A check run.
+
+```graphql
+type CheckRun implements Node, RequirableByPullRequest, UniformResourceLocatable {
+  annotations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): CheckAnnotationConnection
+  checkSuite: CheckSuite!
+  completedAt: DateTime
+  conclusion: CheckConclusionState
+  databaseId: Int
+  deployment: Deployment
+  detailsUrl: URI
+  externalId: String
+  id: ID!
+  isRequired(pullRequestId: ID = 0, pullRequestNumber: Int = 0): Boolean!
+  name: String!
+  pendingDeploymentRequest: DeploymentRequest
+  permalink: URI!
+  repository: Repository!
+  resourcePath: URI!
+  startedAt: DateTime
+  status: CheckStatusState!
+  steps(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    number: Int = 0
+  ): CheckStepConnection
+  summary: String
+  text: String
+  title: String
+  url: URI!
+}
+```
+
+### Fields
+
+#### `annotations` ([`CheckAnnotationConnection`](/docs/api/objects/check-annotation-connection))
+
+The check run's annotations
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `checkSuite` ([`CheckSuite!`](/docs/api/objects/check-suite))
+
+The check suite that this run is a part of.
+
+#### `completedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the check run was completed.
+
+#### `conclusion` ([`CheckConclusionState`](/docs/api/enums/check-conclusion-state))
+
+The conclusion of the check run.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `deployment` ([`Deployment`](/docs/api/objects/deployment))
+
+The corresponding deployment for this job, if any
+
+#### `detailsUrl` ([`URI`](/docs/api/scalars/uri))
+
+The URL from which to find full details of the check run on the integrator's site.
+
+#### `externalId` ([`String`](/docs/api/scalars/string))
+
+A reference for the check run on the integrator's system.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isRequired` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this is required to pass before merging for a specific pull request.
+
+- ##### `pullRequestId` ([`ID`](/docs/api/scalars/id))
+
+The id of the pull request this is required for
+
+- ##### `pullRequestNumber` ([`Int`](/docs/api/scalars/int))
+
+The number of the pull request this is required for
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the check for this check run.
+
+#### `pendingDeploymentRequest` ([`DeploymentRequest`](/docs/api/objects/deployment-request))
+
+Information about a pending deployment, if any, in this check run
+
+#### `permalink` ([`URI!`](/docs/api/scalars/uri))
+
+The permalink to the check run summary.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository associated with this check run.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this check run.
+
+#### `startedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the check run was started.
+
+#### `status` ([`CheckStatusState!`](/docs/api/enums/check-status-state))
+
+The current status of the check run.
+
+#### `steps` ([`CheckStepConnection`](/docs/api/objects/check-step-connection))
+
+The check run's steps
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `number` ([`Int`](/docs/api/scalars/int))
+
+Step number
+
+#### `summary` ([`String`](/docs/api/scalars/string))
+
+A string representing the check run's summary
+
+#### `text` ([`String`](/docs/api/scalars/string))
+
+A string representing the check run's text
+
+#### `title` ([`String`](/docs/api/scalars/string))
+
+A string representing the check run
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this check run.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`RequirableByPullRequest`](/docs/api/interfaces/requirable-by-pull-request)
+
+Represents a type that can be required by a pull request for merging.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

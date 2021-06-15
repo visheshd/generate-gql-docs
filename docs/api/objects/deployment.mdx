@@ -1,0 +1,128 @@
+---
+id: deployment
+title: Deployment
+---
+
+Represents triggered deployment instance.
+
+```graphql
+type Deployment implements Node {
+  commit: Commit
+  commitOid: String!
+  createdAt: DateTime!
+  creator: Actor!
+  databaseId: Int
+  description: String
+  environment: String
+  id: ID!
+  latestEnvironment: String
+  latestStatus: DeploymentStatus
+  originalEnvironment: String
+  payload: String
+  ref: Ref
+  repository: Repository!
+  state: DeploymentState
+  statuses(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): DeploymentStatusConnection
+  task: String
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `commit` ([`Commit`](/docs/api/objects/commit))
+
+Identifies the commit sha of the deployment.
+
+#### `commitOid` ([`String!`](/docs/api/scalars/string))
+
+Identifies the oid of the deployment commit, even if the commit has been deleted.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `creator` ([`Actor!`](/docs/api/interfaces/actor))
+
+Identifies the actor who triggered the deployment.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The deployment description.
+
+#### `environment` ([`String`](/docs/api/scalars/string))
+
+The latest environment to which this deployment was made.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `latestEnvironment` ([`String`](/docs/api/scalars/string))
+
+The latest environment to which this deployment was made.
+
+#### `latestStatus` ([`DeploymentStatus`](/docs/api/objects/deployment-status))
+
+The latest status of this deployment.
+
+#### `originalEnvironment` ([`String`](/docs/api/scalars/string))
+
+The original environment to which this deployment was made.
+
+#### `payload` ([`String`](/docs/api/scalars/string))
+
+Extra information that a deployment system might need.
+
+#### `ref` ([`Ref`](/docs/api/objects/ref))
+
+Identifies the Ref of the deployment, if the deployment was created by ref.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+Identifies the repository associated with the deployment.
+
+#### `state` ([`DeploymentState`](/docs/api/enums/deployment-state))
+
+The current state of the deployment.
+
+#### `statuses` ([`DeploymentStatusConnection`](/docs/api/objects/deployment-status-connection))
+
+A list of statuses associated with the deployment.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `task` ([`String`](/docs/api/scalars/string))
+
+The deployment task.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,302 @@
+---
+id: organization-audit-entry
+title: OrganizationAuditEntry
+---
+
+An audit entry in an organization audit log.
+
+```graphql
+union OrganizationAuditEntry =
+    MembersCanDeleteReposClearAuditEntry
+  | MembersCanDeleteReposDisableAuditEntry
+  | MembersCanDeleteReposEnableAuditEntry
+  | OauthApplicationCreateAuditEntry
+  | OrgAddBillingManagerAuditEntry
+  | OrgAddMemberAuditEntry
+  | OrgBlockUserAuditEntry
+  | OrgConfigDisableCollaboratorsOnlyAuditEntry
+  | OrgConfigEnableCollaboratorsOnlyAuditEntry
+  | OrgCreateAuditEntry
+  | OrgDisableOauthAppRestrictionsAuditEntry
+  | OrgDisableSamlAuditEntry
+  | OrgDisableTwoFactorRequirementAuditEntry
+  | OrgEnableOauthAppRestrictionsAuditEntry
+  | OrgEnableSamlAuditEntry
+  | OrgEnableTwoFactorRequirementAuditEntry
+  | OrgInviteMemberAuditEntry
+  | OrgInviteToBusinessAuditEntry
+  | OrgOauthAppAccessApprovedAuditEntry
+  | OrgOauthAppAccessDeniedAuditEntry
+  | OrgOauthAppAccessRequestedAuditEntry
+  | OrgRemoveBillingManagerAuditEntry
+  | OrgRemoveMemberAuditEntry
+  | OrgRemoveOutsideCollaboratorAuditEntry
+  | OrgRestoreMemberAuditEntry
+  | OrgUnblockUserAuditEntry
+  | OrgUpdateDefaultRepositoryPermissionAuditEntry
+  | OrgUpdateMemberAuditEntry
+  | OrgUpdateMemberRepositoryCreationPermissionAuditEntry
+  | OrgUpdateMemberRepositoryInvitationPermissionAuditEntry
+  | PrivateRepositoryForkingDisableAuditEntry
+  | PrivateRepositoryForkingEnableAuditEntry
+  | RepoAccessAuditEntry
+  | RepoAddMemberAuditEntry
+  | RepoAddTopicAuditEntry
+  | RepoArchivedAuditEntry
+  | RepoChangeMergeSettingAuditEntry
+  | RepoConfigDisableAnonymousGitAccessAuditEntry
+  | RepoConfigDisableCollaboratorsOnlyAuditEntry
+  | RepoConfigDisableContributorsOnlyAuditEntry
+  | RepoConfigDisableSockpuppetDisallowedAuditEntry
+  | RepoConfigEnableAnonymousGitAccessAuditEntry
+  | RepoConfigEnableCollaboratorsOnlyAuditEntry
+  | RepoConfigEnableContributorsOnlyAuditEntry
+  | RepoConfigEnableSockpuppetDisallowedAuditEntry
+  | RepoConfigLockAnonymousGitAccessAuditEntry
+  | RepoConfigUnlockAnonymousGitAccessAuditEntry
+  | RepoCreateAuditEntry
+  | RepoDestroyAuditEntry
+  | RepoRemoveMemberAuditEntry
+  | RepoRemoveTopicAuditEntry
+  | RepositoryVisibilityChangeDisableAuditEntry
+  | RepositoryVisibilityChangeEnableAuditEntry
+  | TeamAddMemberAuditEntry
+  | TeamAddRepositoryAuditEntry
+  | TeamChangeParentTeamAuditEntry
+  | TeamRemoveMemberAuditEntry
+  | TeamRemoveRepositoryAuditEntry
+```
+
+### Possible types
+
+#### [`MembersCanDeleteReposClearAuditEntry`](/docs/api/objects/members-can-delete-repos-clear-audit-entry)
+
+Audit log entry for a members_can_delete_repos.clear event.
+
+#### [`MembersCanDeleteReposDisableAuditEntry`](/docs/api/objects/members-can-delete-repos-disable-audit-entry)
+
+Audit log entry for a members_can_delete_repos.disable event.
+
+#### [`MembersCanDeleteReposEnableAuditEntry`](/docs/api/objects/members-can-delete-repos-enable-audit-entry)
+
+Audit log entry for a members_can_delete_repos.enable event.
+
+#### [`OauthApplicationCreateAuditEntry`](/docs/api/objects/oauth-application-create-audit-entry)
+
+Audit log entry for a oauth_application.create event.
+
+#### [`OrgAddBillingManagerAuditEntry`](/docs/api/objects/org-add-billing-manager-audit-entry)
+
+Audit log entry for a org.add_billing_manager
+
+#### [`OrgAddMemberAuditEntry`](/docs/api/objects/org-add-member-audit-entry)
+
+Audit log entry for a org.add_member
+
+#### [`OrgBlockUserAuditEntry`](/docs/api/objects/org-block-user-audit-entry)
+
+Audit log entry for a org.block_user
+
+#### [`OrgConfigDisableCollaboratorsOnlyAuditEntry`](/docs/api/objects/org-config-disable-collaborators-only-audit-entry)
+
+Audit log entry for a org.config.disable_collaborators_only event.
+
+#### [`OrgConfigEnableCollaboratorsOnlyAuditEntry`](/docs/api/objects/org-config-enable-collaborators-only-audit-entry)
+
+Audit log entry for a org.config.enable_collaborators_only event.
+
+#### [`OrgCreateAuditEntry`](/docs/api/objects/org-create-audit-entry)
+
+Audit log entry for a org.create event.
+
+#### [`OrgDisableOauthAppRestrictionsAuditEntry`](/docs/api/objects/org-disable-oauth-app-restrictions-audit-entry)
+
+Audit log entry for a org.disable_oauth_app_restrictions event.
+
+#### [`OrgDisableSamlAuditEntry`](/docs/api/objects/org-disable-saml-audit-entry)
+
+Audit log entry for a org.disable_saml event.
+
+#### [`OrgDisableTwoFactorRequirementAuditEntry`](/docs/api/objects/org-disable-two-factor-requirement-audit-entry)
+
+Audit log entry for a org.disable_two_factor_requirement event.
+
+#### [`OrgEnableOauthAppRestrictionsAuditEntry`](/docs/api/objects/org-enable-oauth-app-restrictions-audit-entry)
+
+Audit log entry for a org.enable_oauth_app_restrictions event.
+
+#### [`OrgEnableSamlAuditEntry`](/docs/api/objects/org-enable-saml-audit-entry)
+
+Audit log entry for a org.enable_saml event.
+
+#### [`OrgEnableTwoFactorRequirementAuditEntry`](/docs/api/objects/org-enable-two-factor-requirement-audit-entry)
+
+Audit log entry for a org.enable_two_factor_requirement event.
+
+#### [`OrgInviteMemberAuditEntry`](/docs/api/objects/org-invite-member-audit-entry)
+
+Audit log entry for a org.invite_member event.
+
+#### [`OrgInviteToBusinessAuditEntry`](/docs/api/objects/org-invite-to-business-audit-entry)
+
+Audit log entry for a org.invite_to_business event.
+
+#### [`OrgOauthAppAccessApprovedAuditEntry`](/docs/api/objects/org-oauth-app-access-approved-audit-entry)
+
+Audit log entry for a org.oauth_app_access_approved event.
+
+#### [`OrgOauthAppAccessDeniedAuditEntry`](/docs/api/objects/org-oauth-app-access-denied-audit-entry)
+
+Audit log entry for a org.oauth_app_access_denied event.
+
+#### [`OrgOauthAppAccessRequestedAuditEntry`](/docs/api/objects/org-oauth-app-access-requested-audit-entry)
+
+Audit log entry for a org.oauth_app_access_requested event.
+
+#### [`OrgRemoveBillingManagerAuditEntry`](/docs/api/objects/org-remove-billing-manager-audit-entry)
+
+Audit log entry for a org.remove_billing_manager event.
+
+#### [`OrgRemoveMemberAuditEntry`](/docs/api/objects/org-remove-member-audit-entry)
+
+Audit log entry for a org.remove_member event.
+
+#### [`OrgRemoveOutsideCollaboratorAuditEntry`](/docs/api/objects/org-remove-outside-collaborator-audit-entry)
+
+Audit log entry for a org.remove_outside_collaborator event.
+
+#### [`OrgRestoreMemberAuditEntry`](/docs/api/objects/org-restore-member-audit-entry)
+
+Audit log entry for a org.restore_member event.
+
+#### [`OrgUnblockUserAuditEntry`](/docs/api/objects/org-unblock-user-audit-entry)
+
+Audit log entry for a org.unblock_user
+
+#### [`OrgUpdateDefaultRepositoryPermissionAuditEntry`](/docs/api/objects/org-update-default-repository-permission-audit-entry)
+
+Audit log entry for a org.update_default_repository_permission
+
+#### [`OrgUpdateMemberAuditEntry`](/docs/api/objects/org-update-member-audit-entry)
+
+Audit log entry for a org.update_member event.
+
+#### [`OrgUpdateMemberRepositoryCreationPermissionAuditEntry`](/docs/api/objects/org-update-member-repository-creation-permission-audit-entry)
+
+Audit log entry for a org.update_member_repository_creation_permission event.
+
+#### [`OrgUpdateMemberRepositoryInvitationPermissionAuditEntry`](/docs/api/objects/org-update-member-repository-invitation-permission-audit-entry)
+
+Audit log entry for a org.update_member_repository_invitation_permission event.
+
+#### [`PrivateRepositoryForkingDisableAuditEntry`](/docs/api/objects/private-repository-forking-disable-audit-entry)
+
+Audit log entry for a private_repository_forking.disable event.
+
+#### [`PrivateRepositoryForkingEnableAuditEntry`](/docs/api/objects/private-repository-forking-enable-audit-entry)
+
+Audit log entry for a private_repository_forking.enable event.
+
+#### [`RepoAccessAuditEntry`](/docs/api/objects/repo-access-audit-entry)
+
+Audit log entry for a repo.access event.
+
+#### [`RepoAddMemberAuditEntry`](/docs/api/objects/repo-add-member-audit-entry)
+
+Audit log entry for a repo.add_member event.
+
+#### [`RepoAddTopicAuditEntry`](/docs/api/objects/repo-add-topic-audit-entry)
+
+Audit log entry for a repo.add_topic event.
+
+#### [`RepoArchivedAuditEntry`](/docs/api/objects/repo-archived-audit-entry)
+
+Audit log entry for a repo.archived event.
+
+#### [`RepoChangeMergeSettingAuditEntry`](/docs/api/objects/repo-change-merge-setting-audit-entry)
+
+Audit log entry for a repo.change_merge_setting event.
+
+#### [`RepoConfigDisableAnonymousGitAccessAuditEntry`](/docs/api/objects/repo-config-disable-anonymous-git-access-audit-entry)
+
+Audit log entry for a repo.config.disable_anonymous_git_access event.
+
+#### [`RepoConfigDisableCollaboratorsOnlyAuditEntry`](/docs/api/objects/repo-config-disable-collaborators-only-audit-entry)
+
+Audit log entry for a repo.config.disable_collaborators_only event.
+
+#### [`RepoConfigDisableContributorsOnlyAuditEntry`](/docs/api/objects/repo-config-disable-contributors-only-audit-entry)
+
+Audit log entry for a repo.config.disable_contributors_only event.
+
+#### [`RepoConfigDisableSockpuppetDisallowedAuditEntry`](/docs/api/objects/repo-config-disable-sockpuppet-disallowed-audit-entry)
+
+Audit log entry for a repo.config.disable_sockpuppet_disallowed event.
+
+#### [`RepoConfigEnableAnonymousGitAccessAuditEntry`](/docs/api/objects/repo-config-enable-anonymous-git-access-audit-entry)
+
+Audit log entry for a repo.config.enable_anonymous_git_access event.
+
+#### [`RepoConfigEnableCollaboratorsOnlyAuditEntry`](/docs/api/objects/repo-config-enable-collaborators-only-audit-entry)
+
+Audit log entry for a repo.config.enable_collaborators_only event.
+
+#### [`RepoConfigEnableContributorsOnlyAuditEntry`](/docs/api/objects/repo-config-enable-contributors-only-audit-entry)
+
+Audit log entry for a repo.config.enable_contributors_only event.
+
+#### [`RepoConfigEnableSockpuppetDisallowedAuditEntry`](/docs/api/objects/repo-config-enable-sockpuppet-disallowed-audit-entry)
+
+Audit log entry for a repo.config.enable_sockpuppet_disallowed event.
+
+#### [`RepoConfigLockAnonymousGitAccessAuditEntry`](/docs/api/objects/repo-config-lock-anonymous-git-access-audit-entry)
+
+Audit log entry for a repo.config.lock_anonymous_git_access event.
+
+#### [`RepoConfigUnlockAnonymousGitAccessAuditEntry`](/docs/api/objects/repo-config-unlock-anonymous-git-access-audit-entry)
+
+Audit log entry for a repo.config.unlock_anonymous_git_access event.
+
+#### [`RepoCreateAuditEntry`](/docs/api/objects/repo-create-audit-entry)
+
+Audit log entry for a repo.create event.
+
+#### [`RepoDestroyAuditEntry`](/docs/api/objects/repo-destroy-audit-entry)
+
+Audit log entry for a repo.destroy event.
+
+#### [`RepoRemoveMemberAuditEntry`](/docs/api/objects/repo-remove-member-audit-entry)
+
+Audit log entry for a repo.remove_member event.
+
+#### [`RepoRemoveTopicAuditEntry`](/docs/api/objects/repo-remove-topic-audit-entry)
+
+Audit log entry for a repo.remove_topic event.
+
+#### [`RepositoryVisibilityChangeDisableAuditEntry`](/docs/api/objects/repository-visibility-change-disable-audit-entry)
+
+Audit log entry for a repository_visibility_change.disable event.
+
+#### [`RepositoryVisibilityChangeEnableAuditEntry`](/docs/api/objects/repository-visibility-change-enable-audit-entry)
+
+Audit log entry for a repository_visibility_change.enable event.
+
+#### [`TeamAddMemberAuditEntry`](/docs/api/objects/team-add-member-audit-entry)
+
+Audit log entry for a team.add_member event.
+
+#### [`TeamAddRepositoryAuditEntry`](/docs/api/objects/team-add-repository-audit-entry)
+
+Audit log entry for a team.add_repository event.
+
+#### [`TeamChangeParentTeamAuditEntry`](/docs/api/objects/team-change-parent-team-audit-entry)
+
+Audit log entry for a team.change_parent_team event.
+
+#### [`TeamRemoveMemberAuditEntry`](/docs/api/objects/team-remove-member-audit-entry)
+
+Audit log entry for a team.remove_member event.
+
+#### [`TeamRemoveRepositoryAuditEntry`](/docs/api/objects/team-remove-repository-audit-entry)
+
+Audit log entry for a team.remove_repository event.

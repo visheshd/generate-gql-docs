@@ -1,0 +1,52 @@
+---
+id: base-ref-force-pushed-event
+title: BaseRefForcePushedEvent
+---
+
+Represents a 'base_ref_force_pushed' event on a given pull request.
+
+```graphql
+type BaseRefForcePushedEvent implements Node {
+  actor: Actor
+  afterCommit: Commit
+  beforeCommit: Commit
+  createdAt: DateTime!
+  id: ID!
+  pullRequest: PullRequest!
+  ref: Ref
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `afterCommit` ([`Commit`](/docs/api/objects/commit))
+
+Identifies the after commit SHA for the 'base_ref_force_pushed' event.
+
+#### `beforeCommit` ([`Commit`](/docs/api/objects/commit))
+
+Identifies the before commit SHA for the 'base_ref_force_pushed' event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+#### `ref` ([`Ref`](/docs/api/objects/ref))
+
+Identifies the fully qualified ref name for the 'base_ref_force_pushed' event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

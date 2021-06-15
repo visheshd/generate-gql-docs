@@ -1,0 +1,42 @@
+---
+id: locked-event
+title: LockedEvent
+---
+
+Represents a 'locked' event on a given issue or pull request.
+
+```graphql
+type LockedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  lockReason: LockReason
+  lockable: Lockable!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `lockReason` ([`LockReason`](/docs/api/enums/lock-reason))
+
+Reason that the conversation was locked (optional).
+
+#### `lockable` ([`Lockable!`](/docs/api/interfaces/lockable))
+
+Object that was locked.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

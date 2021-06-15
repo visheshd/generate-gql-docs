@@ -1,0 +1,23 @@
+---
+id: ip-allow-list-entry-order
+title: IpAllowListEntryOrder
+---
+
+Ordering options for IP allow list entry connections.
+
+```graphql
+type IpAllowListEntryOrder {
+  direction: OrderDirection!
+  field: IpAllowListEntryOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`IpAllowListEntryOrderField!`](/docs/api/enums/ip-allow-list-entry-order-field))
+
+The field to order IP allow list entries by.

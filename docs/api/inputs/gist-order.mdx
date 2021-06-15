@@ -1,0 +1,23 @@
+---
+id: gist-order
+title: GistOrder
+---
+
+Ordering options for gist connections
+
+```graphql
+type GistOrder {
+  direction: OrderDirection!
+  field: GistOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`GistOrderField!`](/docs/api/enums/gist-order-field))
+
+The field to order repositories by.

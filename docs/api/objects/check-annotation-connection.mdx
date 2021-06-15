@@ -1,0 +1,33 @@
+---
+id: check-annotation-connection
+title: CheckAnnotationConnection
+---
+
+The connection type for CheckAnnotation.
+
+```graphql
+type CheckAnnotationConnection {
+  edges: [CheckAnnotationEdge]
+  nodes: [CheckAnnotation]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CheckAnnotationEdge]`](/docs/api/objects/check-annotation-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CheckAnnotation]`](/docs/api/objects/check-annotation))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

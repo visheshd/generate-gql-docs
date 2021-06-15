@@ -1,0 +1,25 @@
+---
+id: resource
+title: resource
+---
+
+Lookup resource by a URL.
+
+```graphql
+resource(
+  url: URI!
+): UniformResourceLocatable
+
+```
+
+### Arguments
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The URL.
+
+### Type
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

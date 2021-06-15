@@ -1,0 +1,103 @@
+---
+id: ref
+title: Ref
+---
+
+Represents a Git reference.
+
+```graphql
+type Ref implements Node {
+  associatedPullRequests(
+    after: String
+    baseRefName: String
+    before: String
+    first: Int = 0
+    headRefName: String
+    labels: [String!] = []
+    last: Int = 0
+    orderBy: IssueOrder
+    states: [PullRequestState!] = []
+  ): PullRequestConnection!
+  branchProtectionRule: BranchProtectionRule
+  id: ID!
+  name: String!
+  prefix: String!
+  refUpdateRule: RefUpdateRule
+  repository: Repository!
+  target: GitObject
+}
+```
+
+### Fields
+
+#### `associatedPullRequests` ([`PullRequestConnection!`](/docs/api/objects/pull-request-connection))
+
+A list of pull requests with this ref as the head ref.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `baseRefName` ([`String`](/docs/api/scalars/string))
+
+The base ref name to filter the pull requests by.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `headRefName` ([`String`](/docs/api/scalars/string))
+
+The head ref name to filter the pull requests by.
+
+- ##### `labels` ([`[String!]`](/docs/api/scalars/string))
+
+A list of label names to filter the pull requests by.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`IssueOrder`](/docs/api/inputs/issue-order))
+
+Ordering options for pull requests returned from the connection.
+
+- ##### `states` ([`[PullRequestState!]`](/docs/api/enums/pull-request-state))
+
+A list of states to filter the pull requests by.
+
+#### `branchProtectionRule` ([`BranchProtectionRule`](/docs/api/objects/branch-protection-rule))
+
+Branch protection rules for this ref
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The ref name.
+
+#### `prefix` ([`String!`](/docs/api/scalars/string))
+
+The ref's prefix, such as `refs/heads/` or `refs/tags/`.
+
+#### `refUpdateRule` ([`RefUpdateRule`](/docs/api/objects/ref-update-rule))
+
+Branch protection rules that are viewable by non-admins
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository the ref belongs to.
+
+#### `target` ([`GitObject`](/docs/api/interfaces/git-object))
+
+The object the ref points to. Returns null when object does not exist.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

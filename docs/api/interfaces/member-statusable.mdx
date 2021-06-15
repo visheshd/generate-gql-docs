@@ -1,0 +1,44 @@
+---
+id: member-statusable
+title: MemberStatusable
+---
+
+Entities that have members who can set status messages.
+
+```graphql
+interface MemberStatusable {
+  memberStatuses(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: UserStatusOrder = "[object Object]"
+  ): UserStatusConnection!
+}
+```
+
+### Fields
+
+#### `memberStatuses` ([`UserStatusConnection!`](/docs/api/objects/user-status-connection))
+
+Get the status messages members of this entity have set that are either public or visible only to the organization.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`UserStatusOrder`](/docs/api/inputs/user-status-order))
+
+Ordering options for user statuses returned from the connection.

@@ -1,0 +1,63 @@
+---
+id: deployment-protection-rule
+title: DeploymentProtectionRule
+---
+
+A protection rule.
+
+```graphql
+type DeploymentProtectionRule implements Node {
+  databaseId: Int
+  id: ID!
+  reviewers(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): DeploymentReviewerConnection!
+  timeout: Int!
+  type: DeploymentProtectionRuleType!
+}
+```
+
+### Fields
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `reviewers` ([`DeploymentReviewerConnection!`](/docs/api/objects/deployment-reviewer-connection))
+
+The teams or users that can review the deployment
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `timeout` ([`Int!`](/docs/api/scalars/int))
+
+The timeout in minutes for this protection rule.
+
+#### `type` ([`DeploymentProtectionRuleType!`](/docs/api/enums/deployment-protection-rule-type))
+
+The type of protection rule.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

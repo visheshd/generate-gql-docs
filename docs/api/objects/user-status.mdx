@@ -1,0 +1,67 @@
+---
+id: user-status
+title: UserStatus
+---
+
+The user's description of what they're currently doing.
+
+```graphql
+type UserStatus implements Node {
+  createdAt: DateTime!
+  emoji: String
+  emojiHTML: HTML
+  expiresAt: DateTime
+  id: ID!
+  indicatesLimitedAvailability: Boolean!
+  message: String
+  organization: Organization
+  updatedAt: DateTime!
+  user: User!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `emoji` ([`String`](/docs/api/scalars/string))
+
+An emoji summarizing the user's status.
+
+#### `emojiHTML` ([`HTML`](/docs/api/scalars/html))
+
+The status emoji as HTML.
+
+#### `expiresAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+If set, the status will not be shown after this date.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `indicatesLimitedAvailability` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this status indicates the user is not fully available on GitHub.
+
+#### `message` ([`String`](/docs/api/scalars/string))
+
+A brief message describing what the user is doing.
+
+#### `organization` ([`Organization`](/docs/api/objects/organization))
+
+The organization whose members can see this status. If null, this status is publicly visible.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `user` ([`User!`](/docs/api/objects/user))
+
+The user who has this status.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

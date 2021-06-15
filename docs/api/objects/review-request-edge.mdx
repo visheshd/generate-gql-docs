@@ -1,0 +1,23 @@
+---
+id: review-request-edge
+title: ReviewRequestEdge
+---
+
+An edge in a connection.
+
+```graphql
+type ReviewRequestEdge {
+  cursor: String!
+  node: ReviewRequest
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`ReviewRequest`](/docs/api/objects/review-request))
+
+The item at the end of the edge.

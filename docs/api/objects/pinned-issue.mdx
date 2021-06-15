@@ -1,0 +1,42 @@
+---
+id: pinned-issue
+title: PinnedIssue
+---
+
+A Pinned Issue is a issue pinned to a repository's index page.
+
+```graphql
+type PinnedIssue implements Node {
+  databaseId: Int
+  id: ID!
+  issue: Issue!
+  pinnedBy: Actor!
+  repository: Repository!
+}
+```
+
+### Fields
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `issue` ([`Issue!`](/docs/api/objects/issue))
+
+The issue that was pinned.
+
+#### `pinnedBy` ([`Actor!`](/docs/api/interfaces/actor))
+
+The actor that pinned this issue.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository that this issue was pinned to.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

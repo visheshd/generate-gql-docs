@@ -1,0 +1,20 @@
+---
+id: ip-allow-list-owner
+title: IpAllowListOwner
+---
+
+Types that can own an IP allow list.
+
+```graphql
+union IpAllowListOwner = Enterprise | Organization
+```
+
+### Possible types
+
+#### [`Enterprise`](/docs/api/objects/enterprise)
+
+An account to manage multiple organizations with consolidated policy and billing.
+
+#### [`Organization`](/docs/api/objects/organization)
+
+An account on GitHub, with one or more owners, that has repositories, members and teams.

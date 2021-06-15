@@ -1,0 +1,26 @@
+---
+id: team-repository-edge
+title: TeamRepositoryEdge
+---
+
+Represents a team repository.
+
+```graphql
+type TeamRepositoryEdge {
+  cursor: String!
+  node: Repository!
+  permission: RepositoryPermission!
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Repository!`](/docs/api/objects/repository))
+
+#### `permission` ([`RepositoryPermission!`](/docs/api/enums/repository-permission))
+
+The permission level the team has on the repository

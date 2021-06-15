@@ -1,0 +1,48 @@
+---
+id: operation-type
+title: OperationType
+---
+
+The corresponding operation type for the action
+
+```graphql
+enum OperationType {
+  ACCESS
+  AUTHENTICATION
+  CREATE
+  MODIFY
+  REMOVE
+  RESTORE
+  TRANSFER
+}
+```
+
+### Values
+
+#### `ACCESS`
+
+An existing resource was accessed
+
+#### `AUTHENTICATION`
+
+A resource performed an authentication event
+
+#### `CREATE`
+
+A new resource was created
+
+#### `MODIFY`
+
+An existing resource was modified
+
+#### `REMOVE`
+
+An existing resource was removed
+
+#### `RESTORE`
+
+An existing resource was restored
+
+#### `TRANSFER`
+
+An existing resource was transferred between multiple resources

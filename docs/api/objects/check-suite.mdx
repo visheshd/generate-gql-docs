@@ -1,0 +1,174 @@
+---
+id: check-suite
+title: CheckSuite
+---
+
+A check suite.
+
+```graphql
+type CheckSuite implements Node {
+  app: App
+  branch: Ref
+  checkRuns(
+    after: String
+    before: String
+    filterBy: CheckRunFilter
+    first: Int = 0
+    last: Int = 0
+  ): CheckRunConnection
+  commit: Commit!
+  conclusion: CheckConclusionState
+  createdAt: DateTime!
+  creator: User
+  databaseId: Int
+  id: ID!
+  matchingPullRequests(
+    after: String
+    baseRefName: String
+    before: String
+    first: Int = 0
+    headRefName: String
+    labels: [String!] = []
+    last: Int = 0
+    orderBy: IssueOrder
+    states: [PullRequestState!] = []
+  ): PullRequestConnection
+  push: Push
+  repository: Repository!
+  resourcePath: URI!
+  status: CheckStatusState!
+  updatedAt: DateTime!
+  url: URI!
+  workflowRun: WorkflowRun
+}
+```
+
+### Fields
+
+#### `app` ([`App`](/docs/api/objects/app))
+
+The GitHub App which created this check suite.
+
+#### `branch` ([`Ref`](/docs/api/objects/ref))
+
+The name of the branch for this check suite.
+
+#### `checkRuns` ([`CheckRunConnection`](/docs/api/objects/check-run-connection))
+
+The check runs associated with a check suite.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `filterBy` ([`CheckRunFilter`](/docs/api/inputs/check-run-filter))
+
+Filters the check runs by this type.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `commit` ([`Commit!`](/docs/api/objects/commit))
+
+The commit for this check suite
+
+#### `conclusion` ([`CheckConclusionState`](/docs/api/enums/check-conclusion-state))
+
+The conclusion of this check suite.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `creator` ([`User`](/docs/api/objects/user))
+
+The user who triggered the check suite.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `matchingPullRequests` ([`PullRequestConnection`](/docs/api/objects/pull-request-connection))
+
+A list of open pull requests matching the check suite.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `baseRefName` ([`String`](/docs/api/scalars/string))
+
+The base ref name to filter the pull requests by.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `headRefName` ([`String`](/docs/api/scalars/string))
+
+The head ref name to filter the pull requests by.
+
+- ##### `labels` ([`[String!]`](/docs/api/scalars/string))
+
+A list of label names to filter the pull requests by.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`IssueOrder`](/docs/api/inputs/issue-order))
+
+Ordering options for pull requests returned from the connection.
+
+- ##### `states` ([`[PullRequestState!]`](/docs/api/enums/pull-request-state))
+
+A list of states to filter the pull requests by.
+
+#### `push` ([`Push`](/docs/api/objects/push))
+
+The push that triggered this check suite.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository associated with this check suite.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this check suite
+
+#### `status` ([`CheckStatusState!`](/docs/api/enums/check-status-state))
+
+The status of this check suite.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this check suite
+
+#### `workflowRun` ([`WorkflowRun`](/docs/api/objects/workflow-run))
+
+The workflow run associated with this check suite.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

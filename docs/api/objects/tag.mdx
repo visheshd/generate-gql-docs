@@ -1,0 +1,71 @@
+---
+id: tag
+title: Tag
+---
+
+Represents a Git tag.
+
+```graphql
+type Tag implements GitObject, Node {
+  abbreviatedOid: String!
+  commitResourcePath: URI!
+  commitUrl: URI!
+  id: ID!
+  message: String
+  name: String!
+  oid: GitObjectID!
+  repository: Repository!
+  tagger: GitActor
+  target: GitObject!
+}
+```
+
+### Fields
+
+#### `abbreviatedOid` ([`String!`](/docs/api/scalars/string))
+
+An abbreviated version of the Git object ID
+
+#### `commitResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this Git object
+
+#### `commitUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this Git object
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `message` ([`String`](/docs/api/scalars/string))
+
+The Git tag message.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The Git tag name.
+
+#### `oid` ([`GitObjectID!`](/docs/api/scalars/git-object-id))
+
+The Git object ID
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The Repository the Git object belongs to
+
+#### `tagger` ([`GitActor`](/docs/api/objects/git-actor))
+
+Details about the tag author.
+
+#### `target` ([`GitObject!`](/docs/api/interfaces/git-object))
+
+The Git object the tag points to.
+
+### Interfaces
+
+#### [`GitObject`](/docs/api/interfaces/git-object)
+
+Represents a Git object.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

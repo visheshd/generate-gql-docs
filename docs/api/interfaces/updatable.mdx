@@ -1,0 +1,18 @@
+---
+id: updatable
+title: Updatable
+---
+
+Entities that can be updated.
+
+```graphql
+interface Updatable {
+  viewerCanUpdate: Boolean!
+}
+```
+
+### Fields
+
+#### `viewerCanUpdate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can update this object.

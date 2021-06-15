@@ -1,0 +1,28 @@
+---
+id: check-run-output-image
+title: CheckRunOutputImage
+---
+
+Images attached to the check run output displayed in the GitHub pull request UI.
+
+```graphql
+type CheckRunOutputImage {
+  alt: String!
+  caption: String
+  imageUrl: URI!
+}
+```
+
+### Fields
+
+#### `alt` ([`String!`](/docs/api/scalars/string))
+
+The alternative text for the image.
+
+#### `caption` ([`String`](/docs/api/scalars/string))
+
+A short image description.
+
+#### `imageUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The full URL of the image.

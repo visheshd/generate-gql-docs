@@ -1,0 +1,23 @@
+---
+id: pull-request-update-state
+title: PullRequestUpdateState
+---
+
+The possible target states when updating a pull request.
+
+```graphql
+enum PullRequestUpdateState {
+  CLOSED
+  OPEN
+}
+```
+
+### Values
+
+#### `CLOSED`
+
+A pull request that has been closed without being merged.
+
+#### `OPEN`
+
+A pull request that is still open.

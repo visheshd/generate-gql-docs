@@ -1,0 +1,33 @@
+---
+id: commit-comment-connection
+title: CommitCommentConnection
+---
+
+The connection type for CommitComment.
+
+```graphql
+type CommitCommentConnection {
+  edges: [CommitCommentEdge]
+  nodes: [CommitComment]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CommitCommentEdge]`](/docs/api/objects/commit-comment-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CommitComment]`](/docs/api/objects/commit-comment))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

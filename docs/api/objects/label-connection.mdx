@@ -1,0 +1,33 @@
+---
+id: label-connection
+title: LabelConnection
+---
+
+The connection type for Label.
+
+```graphql
+type LabelConnection {
+  edges: [LabelEdge]
+  nodes: [Label]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[LabelEdge]`](/docs/api/objects/label-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Label]`](/docs/api/objects/label))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

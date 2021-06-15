@@ -1,0 +1,28 @@
+---
+id: search-result-item-edge
+title: SearchResultItemEdge
+---
+
+An edge in a connection.
+
+```graphql
+type SearchResultItemEdge {
+  cursor: String!
+  node: SearchResultItem
+  textMatches: [TextMatch]
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`SearchResultItem`](/docs/api/unions/search-result-item))
+
+The item at the end of the edge.
+
+#### `textMatches` ([`[TextMatch]`](/docs/api/objects/text-match))
+
+Text matches on the result found.

@@ -1,0 +1,440 @@
+---
+id: contributions-collection
+title: ContributionsCollection
+---
+
+A contributions collection aggregates contributions such as opened issues and commits created by a user.
+
+```graphql
+type ContributionsCollection {
+  commitContributionsByRepository(
+    maxRepositories: Int = 25
+  ): [CommitContributionsByRepository!]!
+  contributionCalendar: ContributionCalendar!
+  contributionYears: [Int!]!
+  doesEndInCurrentMonth: Boolean!
+  earliestRestrictedContributionDate: Date
+  endedAt: DateTime!
+  firstIssueContribution: CreatedIssueOrRestrictedContribution
+  firstPullRequestContribution: CreatedPullRequestOrRestrictedContribution
+  firstRepositoryContribution: CreatedRepositoryOrRestrictedContribution
+  hasActivityInThePast: Boolean!
+  hasAnyContributions: Boolean!
+  hasAnyRestrictedContributions: Boolean!
+  isSingleDay: Boolean!
+  issueContributions(
+    after: String
+    before: String
+    excludeFirst: Boolean
+    excludePopular: Boolean
+    first: Int = 0
+    last: Int = 0
+    orderBy: ContributionOrder = "[object Object]"
+  ): CreatedIssueContributionConnection!
+  issueContributionsByRepository(
+    excludeFirst: Boolean
+    excludePopular: Boolean
+    maxRepositories: Int = 25
+  ): [IssueContributionsByRepository!]!
+  joinedGitHubContribution: JoinedGitHubContribution
+  latestRestrictedContributionDate: Date
+  mostRecentCollectionWithActivity: ContributionsCollection
+  mostRecentCollectionWithoutActivity: ContributionsCollection
+  popularIssueContribution: CreatedIssueContribution
+  popularPullRequestContribution: CreatedPullRequestContribution
+  pullRequestContributions(
+    after: String
+    before: String
+    excludeFirst: Boolean
+    excludePopular: Boolean
+    first: Int = 0
+    last: Int = 0
+    orderBy: ContributionOrder = "[object Object]"
+  ): CreatedPullRequestContributionConnection!
+  pullRequestContributionsByRepository(
+    excludeFirst: Boolean
+    excludePopular: Boolean
+    maxRepositories: Int = 25
+  ): [PullRequestContributionsByRepository!]!
+  pullRequestReviewContributions(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: ContributionOrder = "[object Object]"
+  ): CreatedPullRequestReviewContributionConnection!
+  pullRequestReviewContributionsByRepository(
+    maxRepositories: Int = 25
+  ): [PullRequestReviewContributionsByRepository!]!
+  repositoryContributions(
+    after: String
+    before: String
+    excludeFirst: Boolean
+    first: Int = 0
+    last: Int = 0
+    orderBy: ContributionOrder = "[object Object]"
+  ): CreatedRepositoryContributionConnection!
+  restrictedContributionsCount: Int!
+  startedAt: DateTime!
+  totalCommitContributions: Int!
+  totalIssueContributions(excludeFirst: Boolean, excludePopular: Boolean): Int!
+  totalPullRequestContributions(
+    excludeFirst: Boolean
+    excludePopular: Boolean
+  ): Int!
+  totalPullRequestReviewContributions: Int!
+  totalRepositoriesWithContributedCommits: Int!
+  totalRepositoriesWithContributedIssues(
+    excludeFirst: Boolean
+    excludePopular: Boolean
+  ): Int!
+  totalRepositoriesWithContributedPullRequestReviews: Int!
+  totalRepositoriesWithContributedPullRequests(
+    excludeFirst: Boolean
+    excludePopular: Boolean
+  ): Int!
+  totalRepositoryContributions(excludeFirst: Boolean): Int!
+  user: User!
+}
+```
+
+### Fields
+
+#### `commitContributionsByRepository` ([`[CommitContributionsByRepository!]!`](/docs/api/objects/commit-contributions-by-repository))
+
+Commit contributions made by the user, grouped by repository.
+
+- ##### `maxRepositories` ([`Int`](/docs/api/scalars/int))
+
+How many repositories should be included.
+
+#### `contributionCalendar` ([`ContributionCalendar!`](/docs/api/objects/contribution-calendar))
+
+A calendar of this user's contributions on GitHub.
+
+#### `contributionYears` ([`[Int!]!`](/docs/api/scalars/int))
+
+The years the user has been making contributions with the most recent year first.
+
+#### `doesEndInCurrentMonth` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Determine if this collection's time span ends in the current month.
+
+#### `earliestRestrictedContributionDate` ([`Date`](/docs/api/scalars/date))
+
+The date of the first restricted contribution the user made in this time
+period. Can only be non-null when the user has enabled private contribution counts.
+
+#### `endedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+The ending date and time of this collection.
+
+#### `firstIssueContribution` ([`CreatedIssueOrRestrictedContribution`](/docs/api/unions/created-issue-or-restricted-contribution))
+
+The first issue the user opened on GitHub. This will be null if that issue was
+opened outside the collection's time range and ignoreTimeRange is false. If
+the issue is not visible but the user has opted to show private contributions,
+a RestrictedContribution will be returned.
+
+#### `firstPullRequestContribution` ([`CreatedPullRequestOrRestrictedContribution`](/docs/api/unions/created-pull-request-or-restricted-contribution))
+
+The first pull request the user opened on GitHub. This will be null if that
+pull request was opened outside the collection's time range and
+ignoreTimeRange is not true. If the pull request is not visible but the user
+has opted to show private contributions, a RestrictedContribution will be returned.
+
+#### `firstRepositoryContribution` ([`CreatedRepositoryOrRestrictedContribution`](/docs/api/unions/created-repository-or-restricted-contribution))
+
+The first repository the user created on GitHub. This will be null if that
+first repository was created outside the collection's time range and
+ignoreTimeRange is false. If the repository is not visible, then a
+RestrictedContribution is returned.
+
+#### `hasActivityInThePast` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Does the user have any more activity in the timeline that occurred prior to the collection's time range?
+
+#### `hasAnyContributions` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Determine if there are any contributions in this collection.
+
+#### `hasAnyRestrictedContributions` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Determine if the user made any contributions in this time frame whose details
+are not visible because they were made in a private repository. Can only be
+true if the user enabled private contribution counts.
+
+#### `isSingleDay` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the collector's time span is all within the same day.
+
+#### `issueContributions` ([`CreatedIssueContributionConnection!`](/docs/api/objects/created-issue-contribution-connection))
+
+A list of issues the user opened.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first issue ever be excluded from the result.
+
+- ##### `excludePopular` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's most commented issue be excluded from the result.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ContributionOrder`](/docs/api/inputs/contribution-order))
+
+Ordering options for contributions returned from the connection.
+
+#### `issueContributionsByRepository` ([`[IssueContributionsByRepository!]!`](/docs/api/objects/issue-contributions-by-repository))
+
+Issue contributions made by the user, grouped by repository.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first issue ever be excluded from the result.
+
+- ##### `excludePopular` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's most commented issue be excluded from the result.
+
+- ##### `maxRepositories` ([`Int`](/docs/api/scalars/int))
+
+How many repositories should be included.
+
+#### `joinedGitHubContribution` ([`JoinedGitHubContribution`](/docs/api/objects/joined-git-hub-contribution))
+
+When the user signed up for GitHub. This will be null if that sign up date
+falls outside the collection's time range and ignoreTimeRange is false.
+
+#### `latestRestrictedContributionDate` ([`Date`](/docs/api/scalars/date))
+
+The date of the most recent restricted contribution the user made in this time
+period. Can only be non-null when the user has enabled private contribution counts.
+
+#### `mostRecentCollectionWithActivity` ([`ContributionsCollection`](/docs/api/objects/contributions-collection))
+
+When this collection's time range does not include any activity from the user, use this
+to get a different collection from an earlier time range that does have activity.
+
+#### `mostRecentCollectionWithoutActivity` ([`ContributionsCollection`](/docs/api/objects/contributions-collection))
+
+Returns a different contributions collection from an earlier time range than this one
+that does not have any contributions.
+
+#### `popularIssueContribution` ([`CreatedIssueContribution`](/docs/api/objects/created-issue-contribution))
+
+The issue the user opened on GitHub that received the most comments in the specified
+time frame.
+
+#### `popularPullRequestContribution` ([`CreatedPullRequestContribution`](/docs/api/objects/created-pull-request-contribution))
+
+The pull request the user opened on GitHub that received the most comments in the
+specified time frame.
+
+#### `pullRequestContributions` ([`CreatedPullRequestContributionConnection!`](/docs/api/objects/created-pull-request-contribution-connection))
+
+Pull request contributions made by the user.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first pull request ever be excluded from the result.
+
+- ##### `excludePopular` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's most commented pull request be excluded from the result.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ContributionOrder`](/docs/api/inputs/contribution-order))
+
+Ordering options for contributions returned from the connection.
+
+#### `pullRequestContributionsByRepository` ([`[PullRequestContributionsByRepository!]!`](/docs/api/objects/pull-request-contributions-by-repository))
+
+Pull request contributions made by the user, grouped by repository.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first pull request ever be excluded from the result.
+
+- ##### `excludePopular` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's most commented pull request be excluded from the result.
+
+- ##### `maxRepositories` ([`Int`](/docs/api/scalars/int))
+
+How many repositories should be included.
+
+#### `pullRequestReviewContributions` ([`CreatedPullRequestReviewContributionConnection!`](/docs/api/objects/created-pull-request-review-contribution-connection))
+
+Pull request review contributions made by the user.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ContributionOrder`](/docs/api/inputs/contribution-order))
+
+Ordering options for contributions returned from the connection.
+
+#### `pullRequestReviewContributionsByRepository` ([`[PullRequestReviewContributionsByRepository!]!`](/docs/api/objects/pull-request-review-contributions-by-repository))
+
+Pull request review contributions made by the user, grouped by repository.
+
+- ##### `maxRepositories` ([`Int`](/docs/api/scalars/int))
+
+How many repositories should be included.
+
+#### `repositoryContributions` ([`CreatedRepositoryContributionConnection!`](/docs/api/objects/created-repository-contribution-connection))
+
+A list of repositories owned by the user that the user created in this time range.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first repository ever be excluded from the result.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ContributionOrder`](/docs/api/inputs/contribution-order))
+
+Ordering options for contributions returned from the connection.
+
+#### `restrictedContributionsCount` ([`Int!`](/docs/api/scalars/int))
+
+A count of contributions made by the user that the viewer cannot access. Only
+non-zero when the user has chosen to share their private contribution counts.
+
+#### `startedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+The beginning date and time of this collection.
+
+#### `totalCommitContributions` ([`Int!`](/docs/api/scalars/int))
+
+How many commits were made by the user in this time span.
+
+#### `totalIssueContributions` ([`Int!`](/docs/api/scalars/int))
+
+How many issues the user opened.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first issue ever be excluded from this count.
+
+- ##### `excludePopular` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's most commented issue be excluded from this count.
+
+#### `totalPullRequestContributions` ([`Int!`](/docs/api/scalars/int))
+
+How many pull requests the user opened.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first pull request ever be excluded from this count.
+
+- ##### `excludePopular` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's most commented pull request be excluded from this count.
+
+#### `totalPullRequestReviewContributions` ([`Int!`](/docs/api/scalars/int))
+
+How many pull request reviews the user left.
+
+#### `totalRepositoriesWithContributedCommits` ([`Int!`](/docs/api/scalars/int))
+
+How many different repositories the user committed to.
+
+#### `totalRepositoriesWithContributedIssues` ([`Int!`](/docs/api/scalars/int))
+
+How many different repositories the user opened issues in.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first issue ever be excluded from this count.
+
+- ##### `excludePopular` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's most commented issue be excluded from this count.
+
+#### `totalRepositoriesWithContributedPullRequestReviews` ([`Int!`](/docs/api/scalars/int))
+
+How many different repositories the user left pull request reviews in.
+
+#### `totalRepositoriesWithContributedPullRequests` ([`Int!`](/docs/api/scalars/int))
+
+How many different repositories the user opened pull requests in.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first pull request ever be excluded from this count.
+
+- ##### `excludePopular` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's most commented pull request be excluded from this count.
+
+#### `totalRepositoryContributions` ([`Int!`](/docs/api/scalars/int))
+
+How many repositories the user created.
+
+- ##### `excludeFirst` ([`Boolean`](/docs/api/scalars/boolean))
+
+Should the user's first repository ever be excluded from this count.
+
+#### `user` ([`User!`](/docs/api/objects/user))
+
+The user who made the contributions in this collection.

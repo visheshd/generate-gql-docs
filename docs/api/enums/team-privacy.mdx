@@ -1,0 +1,23 @@
+---
+id: team-privacy
+title: TeamPrivacy
+---
+
+The possible team privacy values.
+
+```graphql
+enum TeamPrivacy {
+  SECRET
+  VISIBLE
+}
+```
+
+### Values
+
+#### `SECRET`
+
+A secret team can only be seen by its members.
+
+#### `VISIBLE`
+
+A visible team can be seen and @mentioned by every member of the organization.

@@ -1,0 +1,23 @@
+---
+id: repository-topic-edge
+title: RepositoryTopicEdge
+---
+
+An edge in a connection.
+
+```graphql
+type RepositoryTopicEdge {
+  cursor: String!
+  node: RepositoryTopic
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`RepositoryTopic`](/docs/api/objects/repository-topic))
+
+The item at the end of the edge.

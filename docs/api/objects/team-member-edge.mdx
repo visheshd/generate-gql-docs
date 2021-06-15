@@ -1,0 +1,36 @@
+---
+id: team-member-edge
+title: TeamMemberEdge
+---
+
+Represents a user who is a member of a team.
+
+```graphql
+type TeamMemberEdge {
+  cursor: String!
+  memberAccessResourcePath: URI!
+  memberAccessUrl: URI!
+  node: User!
+  role: TeamMemberRole!
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `memberAccessResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path to the organization's member access page.
+
+#### `memberAccessUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL to the organization's member access page.
+
+#### `node` ([`User!`](/docs/api/objects/user))
+
+#### `role` ([`TeamMemberRole!`](/docs/api/enums/team-member-role))
+
+The role the member has on the team.

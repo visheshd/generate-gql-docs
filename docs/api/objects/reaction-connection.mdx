@@ -1,0 +1,38 @@
+---
+id: reaction-connection
+title: ReactionConnection
+---
+
+A list of reactions that have been left on the subject.
+
+```graphql
+type ReactionConnection {
+  edges: [ReactionEdge]
+  nodes: [Reaction]
+  pageInfo: PageInfo!
+  totalCount: Int!
+  viewerHasReacted: Boolean!
+}
+```
+
+### Fields
+
+#### `edges` ([`[ReactionEdge]`](/docs/api/objects/reaction-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Reaction]`](/docs/api/objects/reaction))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.
+
+#### `viewerHasReacted` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the authenticated user has left a reaction on the subject.

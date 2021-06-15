@@ -1,0 +1,28 @@
+---
+id: assignee
+title: Assignee
+---
+
+Types that can be assigned to issues.
+
+```graphql
+union Assignee = Bot | Mannequin | Organization | User
+```
+
+### Possible types
+
+#### [`Bot`](/docs/api/objects/bot)
+
+A special type of user which takes actions on behalf of GitHub Apps.
+
+#### [`Mannequin`](/docs/api/objects/mannequin)
+
+A placeholder user for attribution of imported data on GitHub.
+
+#### [`Organization`](/docs/api/objects/organization)
+
+An account on GitHub, with one or more owners, that has repositories, members and teams.
+
+#### [`User`](/docs/api/objects/user)
+
+A user is an individual's account on GitHub that owns repositories and can make new content.

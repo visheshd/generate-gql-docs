@@ -1,0 +1,26 @@
+---
+id: requirable-by-pull-request
+title: RequirableByPullRequest
+---
+
+Represents a type that can be required by a pull request for merging.
+
+```graphql
+interface RequirableByPullRequest {
+  isRequired(pullRequestId: ID = 0, pullRequestNumber: Int = 0): Boolean!
+}
+```
+
+### Fields
+
+#### `isRequired` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this is required to pass before merging for a specific pull request.
+
+- ##### `pullRequestId` ([`ID`](/docs/api/scalars/id))
+
+The id of the pull request this is required for
+
+- ##### `pullRequestNumber` ([`Int`](/docs/api/scalars/int))
+
+The number of the pull request this is required for

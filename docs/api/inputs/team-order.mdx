@@ -1,0 +1,23 @@
+---
+id: team-order
+title: TeamOrder
+---
+
+Ways in which team connections can be ordered.
+
+```graphql
+type TeamOrder {
+  direction: OrderDirection!
+  field: TeamOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order nodes.
+
+#### `field` ([`TeamOrderField!`](/docs/api/enums/team-order-field))
+
+The field in which to order nodes by.

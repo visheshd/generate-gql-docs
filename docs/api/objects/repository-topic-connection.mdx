@@ -1,0 +1,33 @@
+---
+id: repository-topic-connection
+title: RepositoryTopicConnection
+---
+
+The connection type for RepositoryTopic.
+
+```graphql
+type RepositoryTopicConnection {
+  edges: [RepositoryTopicEdge]
+  nodes: [RepositoryTopic]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[RepositoryTopicEdge]`](/docs/api/objects/repository-topic-edge))
+
+A list of edges.
+
+#### `nodes` ([`[RepositoryTopic]`](/docs/api/objects/repository-topic))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

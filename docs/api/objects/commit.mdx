@@ -1,0 +1,470 @@
+---
+id: commit
+title: Commit
+---
+
+Represents a Git commit.
+
+```graphql
+type Commit implements GitObject, Node, Subscribable, UniformResourceLocatable {
+  abbreviatedOid: String!
+  additions: Int!
+  associatedPullRequests(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: PullRequestOrder = "[object Object]"
+  ): PullRequestConnection
+  author: GitActor
+  authoredByCommitter: Boolean!
+  authoredDate: DateTime!
+  authors(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): GitActorConnection!
+  blame(path: String!): Blame!
+  changedFiles: Int!
+  checkSuites(
+    after: String
+    before: String
+    filterBy: CheckSuiteFilter
+    first: Int = 0
+    last: Int = 0
+  ): CheckSuiteConnection
+  comments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): CommitCommentConnection!
+  commitResourcePath: URI!
+  commitUrl: URI!
+  committedDate: DateTime!
+  committedViaWeb: Boolean!
+  committer: GitActor
+  deletions: Int!
+  deployments(
+    after: String
+    before: String
+    environments: [String!] = []
+    first: Int = 0
+    last: Int = 0
+    orderBy: DeploymentOrder = "[object Object]"
+  ): DeploymentConnection
+  file(path: String!): TreeEntry
+  history(
+    after: String
+    author: CommitAuthor
+    before: String
+    first: Int = 0
+    last: Int = 0
+    path: String
+    since: GitTimestamp
+    until: GitTimestamp
+  ): CommitHistoryConnection!
+  id: ID!
+  message: String!
+  messageBody: String!
+  messageBodyHTML: HTML!
+  messageHeadline: String!
+  messageHeadlineHTML: HTML!
+  oid: GitObjectID!
+  onBehalfOf: Organization
+  parents(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): CommitConnection!
+  pushedDate: DateTime
+  repository: Repository!
+  resourcePath: URI!
+  signature: GitSignature
+  status: Status
+  statusCheckRollup: StatusCheckRollup
+  submodules(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): SubmoduleConnection!
+  tarballUrl: URI!
+  tree: Tree!
+  treeResourcePath: URI!
+  treeUrl: URI!
+  url: URI!
+  viewerCanSubscribe: Boolean!
+  viewerSubscription: SubscriptionState
+  zipballUrl: URI!
+}
+```
+
+### Fields
+
+#### `abbreviatedOid` ([`String!`](/docs/api/scalars/string))
+
+An abbreviated version of the Git object ID
+
+#### `additions` ([`Int!`](/docs/api/scalars/int))
+
+The number of additions in this commit.
+
+#### `associatedPullRequests` ([`PullRequestConnection`](/docs/api/objects/pull-request-connection))
+
+The merged Pull Request that introduced the commit to the repository. If the
+commit is not present in the default branch, additionally returns open Pull
+Requests associated with the commit
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`PullRequestOrder`](/docs/api/inputs/pull-request-order))
+
+Ordering options for pull requests.
+
+#### `author` ([`GitActor`](/docs/api/objects/git-actor))
+
+Authorship details of the commit.
+
+#### `authoredByCommitter` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the committer and the author match.
+
+#### `authoredDate` ([`DateTime!`](/docs/api/scalars/date-time))
+
+The datetime when this commit was authored.
+
+#### `authors` ([`GitActorConnection!`](/docs/api/objects/git-actor-connection))
+
+The list of authors for this commit based on the git author and the Co-authored-by
+message trailer. The git author will always be first.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `blame` ([`Blame!`](/docs/api/objects/blame))
+
+Fetches `git blame` information.
+
+- ##### `path` ([`String!`](/docs/api/scalars/string))
+
+The file whose Git blame information you want.
+
+#### `changedFiles` ([`Int!`](/docs/api/scalars/int))
+
+The number of changed files in this commit.
+
+#### `checkSuites` ([`CheckSuiteConnection`](/docs/api/objects/check-suite-connection))
+
+The check suites associated with a commit.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `filterBy` ([`CheckSuiteFilter`](/docs/api/inputs/check-suite-filter))
+
+Filters the check suites by this type.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `comments` ([`CommitCommentConnection!`](/docs/api/objects/commit-comment-connection))
+
+Comments made on the commit.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `commitResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this Git object
+
+#### `commitUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this Git object
+
+#### `committedDate` ([`DateTime!`](/docs/api/scalars/date-time))
+
+The datetime when this commit was committed.
+
+#### `committedViaWeb` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if committed via GitHub web UI.
+
+#### `committer` ([`GitActor`](/docs/api/objects/git-actor))
+
+Committer details of the commit.
+
+#### `deletions` ([`Int!`](/docs/api/scalars/int))
+
+The number of deletions in this commit.
+
+#### `deployments` ([`DeploymentConnection`](/docs/api/objects/deployment-connection))
+
+The deployments associated with a commit.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `environments` ([`[String!]`](/docs/api/scalars/string))
+
+Environments to list deployments for
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`DeploymentOrder`](/docs/api/inputs/deployment-order))
+
+Ordering options for deployments returned from the connection.
+
+#### `file` ([`TreeEntry`](/docs/api/objects/tree-entry))
+
+The tree entry representing the file located at the given path.
+
+- ##### `path` ([`String!`](/docs/api/scalars/string))
+
+The path for the file
+
+#### `history` ([`CommitHistoryConnection!`](/docs/api/objects/commit-history-connection))
+
+The linear commit history starting from (and including) this commit, in the same order as `git log`.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `author` ([`CommitAuthor`](/docs/api/inputs/commit-author))
+
+If non-null, filters history to only show commits with matching authorship.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `path` ([`String`](/docs/api/scalars/string))
+
+If non-null, filters history to only show commits touching files under this path.
+
+- ##### `since` ([`GitTimestamp`](/docs/api/scalars/git-timestamp))
+
+Allows specifying a beginning time or date for fetching commits.
+
+- ##### `until` ([`GitTimestamp`](/docs/api/scalars/git-timestamp))
+
+Allows specifying an ending time or date for fetching commits.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `message` ([`String!`](/docs/api/scalars/string))
+
+The Git commit message
+
+#### `messageBody` ([`String!`](/docs/api/scalars/string))
+
+The Git commit message body
+
+#### `messageBodyHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The commit message body rendered to HTML.
+
+#### `messageHeadline` ([`String!`](/docs/api/scalars/string))
+
+The Git commit message headline
+
+#### `messageHeadlineHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The commit message headline rendered to HTML.
+
+#### `oid` ([`GitObjectID!`](/docs/api/scalars/git-object-id))
+
+The Git object ID
+
+#### `onBehalfOf` ([`Organization`](/docs/api/objects/organization))
+
+The organization this commit was made on behalf of.
+
+#### `parents` ([`CommitConnection!`](/docs/api/objects/commit-connection))
+
+The parents of a commit.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `pushedDate` ([`DateTime`](/docs/api/scalars/date-time))
+
+The datetime when this commit was pushed.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The Repository this commit belongs to
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this commit
+
+#### `signature` ([`GitSignature`](/docs/api/interfaces/git-signature))
+
+Commit signing information, if present.
+
+#### `status` ([`Status`](/docs/api/objects/status))
+
+Status information for this commit
+
+#### `statusCheckRollup` ([`StatusCheckRollup`](/docs/api/objects/status-check-rollup))
+
+Check and Status rollup information for this commit.
+
+#### `submodules` ([`SubmoduleConnection!`](/docs/api/objects/submodule-connection))
+
+Returns a list of all submodules in this repository as of this Commit parsed from the .gitmodules file.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `tarballUrl` ([`URI!`](/docs/api/scalars/uri))
+
+Returns a URL to download a tarball archive for a repository.
+Note: For private repositories, these links are temporary and expire after five minutes.
+
+#### `tree` ([`Tree!`](/docs/api/objects/tree))
+
+Commit's root Tree
+
+#### `treeResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for the tree of this commit
+
+#### `treeUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for the tree of this commit
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this commit
+
+#### `viewerCanSubscribe` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the viewer is able to change their subscription status for the repository.
+
+#### `viewerSubscription` ([`SubscriptionState`](/docs/api/enums/subscription-state))
+
+Identifies if the viewer is watching, not watching, or ignoring the subscribable entity.
+
+#### `zipballUrl` ([`URI!`](/docs/api/scalars/uri))
+
+Returns a URL to download a zipball archive for a repository.
+Note: For private repositories, these links are temporary and expire after five minutes.
+
+### Interfaces
+
+#### [`GitObject`](/docs/api/interfaces/git-object)
+
+Represents a Git object.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`Subscribable`](/docs/api/interfaces/subscribable)
+
+Entities that can be subscribed to for web and email notifications.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

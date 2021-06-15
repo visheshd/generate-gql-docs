@@ -1,0 +1,39 @@
+---
+id: org-restore-member-membership-team-audit-entry-data
+title: OrgRestoreMemberMembershipTeamAuditEntryData
+---
+
+Metadata for a team membership for org.restore_member actions
+
+```graphql
+type OrgRestoreMemberMembershipTeamAuditEntryData implements TeamAuditEntryData {
+  team: Team
+  teamName: String
+  teamResourcePath: URI
+  teamUrl: URI
+}
+```
+
+### Fields
+
+#### `team` ([`Team`](/docs/api/objects/team))
+
+The team associated with the action
+
+#### `teamName` ([`String`](/docs/api/scalars/string))
+
+The name of the team
+
+#### `teamResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for this team
+
+#### `teamUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for this team
+
+### Interfaces
+
+#### [`TeamAuditEntryData`](/docs/api/interfaces/team-audit-entry-data)
+
+Metadata for an audit entry with action team.\*

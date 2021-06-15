@@ -1,0 +1,28 @@
+---
+id: identity-provider-configuration-state
+title: IdentityProviderConfigurationState
+---
+
+The possible states in which authentication can be configured with an identity provider.
+
+```graphql
+enum IdentityProviderConfigurationState {
+  CONFIGURED
+  ENFORCED
+  UNCONFIGURED
+}
+```
+
+### Values
+
+#### `CONFIGURED`
+
+Authentication with an identity provider is configured but not enforced.
+
+#### `ENFORCED`
+
+Authentication with an identity provider is configured and enforced.
+
+#### `UNCONFIGURED`
+
+Authentication with an identity provider is not configured.

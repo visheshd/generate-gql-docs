@@ -1,0 +1,33 @@
+---
+id: milestone-order-field
+title: MilestoneOrderField
+---
+
+Properties by which milestone connections can be ordered.
+
+```graphql
+enum MilestoneOrderField {
+  CREATED_AT
+  DUE_DATE
+  NUMBER
+  UPDATED_AT
+}
+```
+
+### Values
+
+#### `CREATED_AT`
+
+Order milestones by when they were created.
+
+#### `DUE_DATE`
+
+Order milestones by when they are due.
+
+#### `NUMBER`
+
+Order milestones by their number.
+
+#### `UPDATED_AT`
+
+Order milestones by when they were last updated.

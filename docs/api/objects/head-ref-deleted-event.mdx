@@ -1,0 +1,47 @@
+---
+id: head-ref-deleted-event
+title: HeadRefDeletedEvent
+---
+
+Represents a 'head_ref_deleted' event on a given pull request.
+
+```graphql
+type HeadRefDeletedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  headRef: Ref
+  headRefName: String!
+  id: ID!
+  pullRequest: PullRequest!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `headRef` ([`Ref`](/docs/api/objects/ref))
+
+Identifies the Ref associated with the `head_ref_deleted` event.
+
+#### `headRefName` ([`String!`](/docs/api/scalars/string))
+
+Identifies the name of the Ref associated with the `head_ref_deleted` event.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

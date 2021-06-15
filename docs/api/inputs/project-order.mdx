@@ -1,0 +1,23 @@
+---
+id: project-order
+title: ProjectOrder
+---
+
+Ways in which lists of projects can be ordered upon return.
+
+```graphql
+type ProjectOrder {
+  direction: OrderDirection!
+  field: ProjectOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order projects by the specified field.
+
+#### `field` ([`ProjectOrderField!`](/docs/api/enums/project-order-field))
+
+The field in which to order projects by.

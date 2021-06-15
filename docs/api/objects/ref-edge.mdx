@@ -1,0 +1,23 @@
+---
+id: ref-edge
+title: RefEdge
+---
+
+An edge in a connection.
+
+```graphql
+type RefEdge {
+  cursor: String!
+  node: Ref
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Ref`](/docs/api/objects/ref))
+
+The item at the end of the edge.

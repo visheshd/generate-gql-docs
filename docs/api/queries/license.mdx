@@ -1,0 +1,25 @@
+---
+id: license
+title: license
+---
+
+Look up an open source license by its key
+
+```graphql
+license(
+  key: String!
+): License
+
+```
+
+### Arguments
+
+#### `key` ([`String!`](/docs/api/scalars/string))
+
+The license's downcased SPDX ID
+
+### Type
+
+#### [`License`](/docs/api/objects/license)
+
+A repository's open source license

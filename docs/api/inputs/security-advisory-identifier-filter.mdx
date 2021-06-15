@@ -1,0 +1,23 @@
+---
+id: security-advisory-identifier-filter
+title: SecurityAdvisoryIdentifierFilter
+---
+
+An advisory identifier to filter results on.
+
+```graphql
+type SecurityAdvisoryIdentifierFilter {
+  type: SecurityAdvisoryIdentifierType!
+  value: String!
+}
+```
+
+### Fields
+
+#### `type` ([`SecurityAdvisoryIdentifierType!`](/docs/api/enums/security-advisory-identifier-type))
+
+The identifier type.
+
+#### `value` ([`String!`](/docs/api/scalars/string))
+
+The identifier string. Supports exact or partial matching.

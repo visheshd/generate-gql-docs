@@ -1,0 +1,23 @@
+---
+id: saved-reply-edge
+title: SavedReplyEdge
+---
+
+An edge in a connection.
+
+```graphql
+type SavedReplyEdge {
+  cursor: String!
+  node: SavedReply
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`SavedReply`](/docs/api/objects/saved-reply))
+
+The item at the end of the edge.

@@ -1,0 +1,23 @@
+---
+id: package-file-edge
+title: PackageFileEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PackageFileEdge {
+  cursor: String!
+  node: PackageFile
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PackageFile`](/docs/api/objects/package-file))
+
+The item at the end of the edge.

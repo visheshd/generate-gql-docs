@@ -1,0 +1,133 @@
+---
+id: pull-request-review-thread
+title: PullRequestReviewThread
+---
+
+A threaded list of comments for a given pull request.
+
+```graphql
+type PullRequestReviewThread implements Node {
+  comments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    skip: Int = 0
+  ): PullRequestReviewCommentConnection!
+  diffSide: DiffSide!
+  id: ID!
+  isCollapsed: Boolean!
+  isOutdated: Boolean!
+  isResolved: Boolean!
+  line: Int
+  originalLine: Int
+  originalStartLine: Int
+  path: String!
+  pullRequest: PullRequest!
+  repository: Repository!
+  resolvedBy: User
+  startDiffSide: DiffSide
+  startLine: Int
+  viewerCanReply: Boolean!
+  viewerCanResolve: Boolean!
+  viewerCanUnresolve: Boolean!
+}
+```
+
+### Fields
+
+#### `comments` ([`PullRequestReviewCommentConnection!`](/docs/api/objects/pull-request-review-comment-connection))
+
+A list of pull request comments associated with the thread.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `skip` ([`Int`](/docs/api/scalars/int))
+
+Skips the first _n_ elements in the list.
+
+#### `diffSide` ([`DiffSide!`](/docs/api/enums/diff-side))
+
+The side of the diff on which this thread was placed.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isCollapsed` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the thread has been collapsed (outdated or resolved)
+
+#### `isOutdated` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates whether this thread was outdated by newer changes.
+
+#### `isResolved` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this thread has been resolved
+
+#### `line` ([`Int`](/docs/api/scalars/int))
+
+The line in the file to which this thread refers
+
+#### `originalLine` ([`Int`](/docs/api/scalars/int))
+
+The original line in the file to which this thread refers.
+
+#### `originalStartLine` ([`Int`](/docs/api/scalars/int))
+
+The original start line in the file to which this thread refers (multi-line only).
+
+#### `path` ([`String!`](/docs/api/scalars/string))
+
+Identifies the file path of this thread.
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+Identifies the pull request associated with this thread.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+Identifies the repository associated with this thread.
+
+#### `resolvedBy` ([`User`](/docs/api/objects/user))
+
+The user who resolved this thread
+
+#### `startDiffSide` ([`DiffSide`](/docs/api/enums/diff-side))
+
+The side of the diff that the first line of the thread starts on (multi-line only)
+
+#### `startLine` ([`Int`](/docs/api/scalars/int))
+
+The start line in the file to which this thread refers (multi-line only)
+
+#### `viewerCanReply` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates whether the current viewer can reply to this thread.
+
+#### `viewerCanResolve` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the viewer can resolve this thread
+
+#### `viewerCanUnresolve` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the viewer can unresolve this thread
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

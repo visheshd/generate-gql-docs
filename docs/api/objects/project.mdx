@@ -1,0 +1,167 @@
+---
+id: project
+title: Project
+---
+
+Projects manage issues, pull requests and notes within a project owner.
+
+```graphql
+type Project implements Closable, Node, Updatable {
+  body: String
+  bodyHTML: HTML!
+  closed: Boolean!
+  closedAt: DateTime
+  columns(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): ProjectColumnConnection!
+  createdAt: DateTime!
+  creator: Actor
+  databaseId: Int
+  id: ID!
+  name: String!
+  number: Int!
+  owner: ProjectOwner!
+  pendingCards(
+    after: String
+    archivedStates: [ProjectCardArchivedState] = [ARCHIVED, NOT_ARCHIVED]
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): ProjectCardConnection!
+  progress: ProjectProgress!
+  resourcePath: URI!
+  state: ProjectState!
+  updatedAt: DateTime!
+  url: URI!
+  viewerCanUpdate: Boolean!
+}
+```
+
+### Fields
+
+#### `body` ([`String`](/docs/api/scalars/string))
+
+The project's description body.
+
+#### `bodyHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The projects description body rendered to HTML.
+
+#### `closed` ([`Boolean!`](/docs/api/scalars/boolean))
+
+`true` if the object is closed (definition of closed may depend on type)
+
+#### `closedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was closed.
+
+#### `columns` ([`ProjectColumnConnection!`](/docs/api/objects/project-column-connection))
+
+List of columns in the project
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `creator` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who originally created the project.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The project's name.
+
+#### `number` ([`Int!`](/docs/api/scalars/int))
+
+The project's number.
+
+#### `owner` ([`ProjectOwner!`](/docs/api/interfaces/project-owner))
+
+The project's owner. Currently limited to repositories, organizations, and users.
+
+#### `pendingCards` ([`ProjectCardConnection!`](/docs/api/objects/project-card-connection))
+
+List of pending cards in this project
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `archivedStates` ([`[ProjectCardArchivedState]`](/docs/api/enums/project-card-archived-state))
+
+A list of archived states to filter the cards by
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `progress` ([`ProjectProgress!`](/docs/api/objects/project-progress))
+
+Project progress details.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this project
+
+#### `state` ([`ProjectState!`](/docs/api/enums/project-state))
+
+Whether the project is open or closed.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this project
+
+#### `viewerCanUpdate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can update this object.
+
+### Interfaces
+
+#### [`Closable`](/docs/api/interfaces/closable)
+
+An object that can be closed
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`Updatable`](/docs/api/interfaces/updatable)
+
+Entities that can be updated.

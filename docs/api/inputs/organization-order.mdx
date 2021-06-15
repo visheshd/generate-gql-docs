@@ -1,0 +1,23 @@
+---
+id: organization-order
+title: OrganizationOrder
+---
+
+Ordering options for organization connections.
+
+```graphql
+type OrganizationOrder {
+  direction: OrderDirection!
+  field: OrganizationOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`OrganizationOrderField!`](/docs/api/enums/organization-order-field))
+
+The field to order organizations by.

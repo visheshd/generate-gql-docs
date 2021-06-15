@@ -1,0 +1,93 @@
+---
+id: enterprise-server-user-account
+title: EnterpriseServerUserAccount
+---
+
+A user account on an Enterprise Server installation.
+
+```graphql
+type EnterpriseServerUserAccount implements Node {
+  createdAt: DateTime!
+  emails(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: EnterpriseServerUserAccountEmailOrder = "[object Object]"
+  ): EnterpriseServerUserAccountEmailConnection!
+  enterpriseServerInstallation: EnterpriseServerInstallation!
+  id: ID!
+  isSiteAdmin: Boolean!
+  login: String!
+  profileName: String
+  remoteCreatedAt: DateTime!
+  remoteUserId: Int!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `emails` ([`EnterpriseServerUserAccountEmailConnection!`](/docs/api/objects/enterprise-server-user-account-email-connection))
+
+User emails belonging to this user account.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`EnterpriseServerUserAccountEmailOrder`](/docs/api/inputs/enterprise-server-user-account-email-order))
+
+Ordering options for Enterprise Server user account emails returned from the connection.
+
+#### `enterpriseServerInstallation` ([`EnterpriseServerInstallation!`](/docs/api/objects/enterprise-server-installation))
+
+The Enterprise Server installation on which this user account exists.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isSiteAdmin` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the user account is a site administrator on the Enterprise Server installation.
+
+#### `login` ([`String!`](/docs/api/scalars/string))
+
+The login of the user account on the Enterprise Server installation.
+
+#### `profileName` ([`String`](/docs/api/scalars/string))
+
+The profile name of the user account on the Enterprise Server installation.
+
+#### `remoteCreatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+The date and time when the user account was created on the Enterprise Server installation.
+
+#### `remoteUserId` ([`Int!`](/docs/api/scalars/int))
+
+The ID of the user account on the Enterprise Server installation.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

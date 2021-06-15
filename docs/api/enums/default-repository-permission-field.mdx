@@ -1,0 +1,33 @@
+---
+id: default-repository-permission-field
+title: DefaultRepositoryPermissionField
+---
+
+The possible default permissions for repositories.
+
+```graphql
+enum DefaultRepositoryPermissionField {
+  ADMIN
+  NONE
+  READ
+  WRITE
+}
+```
+
+### Values
+
+#### `ADMIN`
+
+Can read, write, and administrate repos by default
+
+#### `NONE`
+
+No access
+
+#### `READ`
+
+Can read repos by default
+
+#### `WRITE`
+
+Can read and write repos by default

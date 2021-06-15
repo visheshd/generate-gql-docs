@@ -1,0 +1,33 @@
+---
+id: repository-audit-entry-data
+title: RepositoryAuditEntryData
+---
+
+Metadata for an audit entry with action repo.\*
+
+```graphql
+interface RepositoryAuditEntryData {
+  repository: Repository
+  repositoryName: String
+  repositoryResourcePath: URI
+  repositoryUrl: URI
+}
+```
+
+### Fields
+
+#### `repository` ([`Repository`](/docs/api/objects/repository))
+
+The repository associated with the action
+
+#### `repositoryName` ([`String`](/docs/api/scalars/string))
+
+The name of the repository
+
+#### `repositoryResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for the repository
+
+#### `repositoryUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for the repository

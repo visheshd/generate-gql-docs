@@ -1,0 +1,28 @@
+---
+id: oauth-application-audit-entry-data
+title: OauthApplicationAuditEntryData
+---
+
+Metadata for an audit entry with action oauth_application.\*
+
+```graphql
+interface OauthApplicationAuditEntryData {
+  oauthApplicationName: String
+  oauthApplicationResourcePath: URI
+  oauthApplicationUrl: URI
+}
+```
+
+### Fields
+
+#### `oauthApplicationName` ([`String`](/docs/api/scalars/string))
+
+The name of the OAuth Application.
+
+#### `oauthApplicationResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for the OAuth Application
+
+#### `oauthApplicationUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for the OAuth Application

@@ -1,0 +1,28 @@
+---
+id: enterprise-organization-membership-edge
+title: EnterpriseOrganizationMembershipEdge
+---
+
+An enterprise organization that a user is a member of.
+
+```graphql
+type EnterpriseOrganizationMembershipEdge {
+  cursor: String!
+  node: Organization
+  role: EnterpriseUserAccountMembershipRole!
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Organization`](/docs/api/objects/organization))
+
+The item at the end of the edge.
+
+#### `role` ([`EnterpriseUserAccountMembershipRole!`](/docs/api/enums/enterprise-user-account-membership-role))
+
+The role of the user in the enterprise membership.

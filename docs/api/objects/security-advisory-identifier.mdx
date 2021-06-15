@@ -1,0 +1,23 @@
+---
+id: security-advisory-identifier
+title: SecurityAdvisoryIdentifier
+---
+
+A GitHub Security Advisory Identifier
+
+```graphql
+type SecurityAdvisoryIdentifier {
+  type: String!
+  value: String!
+}
+```
+
+### Fields
+
+#### `type` ([`String!`](/docs/api/scalars/string))
+
+The identifier type, e.g. GHSA, CVE
+
+#### `value` ([`String!`](/docs/api/scalars/string))
+
+The identifier

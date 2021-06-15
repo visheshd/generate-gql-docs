@@ -1,0 +1,23 @@
+---
+id: user-status-edge
+title: UserStatusEdge
+---
+
+An edge in a connection.
+
+```graphql
+type UserStatusEdge {
+  cursor: String!
+  node: UserStatus
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`UserStatus`](/docs/api/objects/user-status))
+
+The item at the end of the edge.

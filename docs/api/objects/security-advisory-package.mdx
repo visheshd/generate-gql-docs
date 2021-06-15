@@ -1,0 +1,23 @@
+---
+id: security-advisory-package
+title: SecurityAdvisoryPackage
+---
+
+An individual package
+
+```graphql
+type SecurityAdvisoryPackage {
+  ecosystem: SecurityAdvisoryEcosystem!
+  name: String!
+}
+```
+
+### Fields
+
+#### `ecosystem` ([`SecurityAdvisoryEcosystem!`](/docs/api/enums/security-advisory-ecosystem))
+
+The ecosystem the package belongs to, e.g. RUBYGEMS, NPM
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The package name

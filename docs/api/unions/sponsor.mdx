@@ -1,0 +1,20 @@
+---
+id: sponsor
+title: Sponsor
+---
+
+Entities that can sponsor others via GitHub Sponsors
+
+```graphql
+union Sponsor = Organization | User
+```
+
+### Possible types
+
+#### [`Organization`](/docs/api/objects/organization)
+
+An account on GitHub, with one or more owners, that has repositories, members and teams.
+
+#### [`User`](/docs/api/objects/user)
+
+A user is an individual's account on GitHub that owns repositories and can make new content.

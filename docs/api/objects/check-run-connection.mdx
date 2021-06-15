@@ -1,0 +1,33 @@
+---
+id: check-run-connection
+title: CheckRunConnection
+---
+
+The connection type for CheckRun.
+
+```graphql
+type CheckRunConnection {
+  edges: [CheckRunEdge]
+  nodes: [CheckRun]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CheckRunEdge]`](/docs/api/objects/check-run-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CheckRun]`](/docs/api/objects/check-run))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

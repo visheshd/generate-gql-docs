@@ -1,0 +1,28 @@
+---
+id: minimizable
+title: Minimizable
+---
+
+Entities that can be minimized.
+
+```graphql
+interface Minimizable {
+  isMinimized: Boolean!
+  minimizedReason: String
+  viewerCanMinimize: Boolean!
+}
+```
+
+### Fields
+
+#### `isMinimized` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Returns whether or not a comment has been minimized.
+
+#### `minimizedReason` ([`String`](/docs/api/scalars/string))
+
+Returns why the comment was minimized.
+
+#### `viewerCanMinimize` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can minimize this object.

@@ -1,0 +1,23 @@
+---
+id: enterprise-server-user-account-email-order
+title: EnterpriseServerUserAccountEmailOrder
+---
+
+Ordering options for Enterprise Server user account email connections.
+
+```graphql
+type EnterpriseServerUserAccountEmailOrder {
+  direction: OrderDirection!
+  field: EnterpriseServerUserAccountEmailOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`EnterpriseServerUserAccountEmailOrderField!`](/docs/api/enums/enterprise-server-user-account-email-order-field))
+
+The field to order emails by.

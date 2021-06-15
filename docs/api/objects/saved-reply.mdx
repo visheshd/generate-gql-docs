@@ -1,0 +1,47 @@
+---
+id: saved-reply
+title: SavedReply
+---
+
+A Saved Reply is text a user can use to reply quickly.
+
+```graphql
+type SavedReply implements Node {
+  body: String!
+  bodyHTML: HTML!
+  databaseId: Int
+  id: ID!
+  title: String!
+  user: Actor
+}
+```
+
+### Fields
+
+#### `body` ([`String!`](/docs/api/scalars/string))
+
+The body of the saved reply.
+
+#### `bodyHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The saved reply body rendered to HTML.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `title` ([`String!`](/docs/api/scalars/string))
+
+The title of the saved reply.
+
+#### `user` ([`Actor`](/docs/api/interfaces/actor))
+
+The user that saved this reply.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

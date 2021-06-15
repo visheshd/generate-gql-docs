@@ -1,0 +1,23 @@
+---
+id: environment-edge
+title: EnvironmentEdge
+---
+
+An edge in a connection.
+
+```graphql
+type EnvironmentEdge {
+  cursor: String!
+  node: Environment
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Environment`](/docs/api/objects/environment))
+
+The item at the end of the edge.

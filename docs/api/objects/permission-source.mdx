@@ -1,0 +1,28 @@
+---
+id: permission-source
+title: PermissionSource
+---
+
+A level of permission and source for a user's access to a repository.
+
+```graphql
+type PermissionSource {
+  organization: Organization!
+  permission: DefaultRepositoryPermissionField!
+  source: PermissionGranter!
+}
+```
+
+### Fields
+
+#### `organization` ([`Organization!`](/docs/api/objects/organization))
+
+The organization the repository belongs to.
+
+#### `permission` ([`DefaultRepositoryPermissionField!`](/docs/api/enums/default-repository-permission-field))
+
+The level of access this source has granted to the user.
+
+#### `source` ([`PermissionGranter!`](/docs/api/unions/permission-granter))
+
+The source of this permission.

@@ -1,0 +1,24 @@
+---
+id: push-allowance-actor
+title: PushAllowanceActor
+---
+
+Types that can be an actor.
+
+```graphql
+union PushAllowanceActor = App | Team | User
+```
+
+### Possible types
+
+#### [`App`](/docs/api/objects/app)
+
+A GitHub App.
+
+#### [`Team`](/docs/api/objects/team)
+
+A team of users in an organization.
+
+#### [`User`](/docs/api/objects/user)
+
+A user is an individual's account on GitHub that owns repositories and can make new content.

@@ -1,0 +1,33 @@
+---
+id: organization-audit-entry-connection
+title: OrganizationAuditEntryConnection
+---
+
+The connection type for OrganizationAuditEntry.
+
+```graphql
+type OrganizationAuditEntryConnection {
+  edges: [OrganizationAuditEntryEdge]
+  nodes: [OrganizationAuditEntry]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[OrganizationAuditEntryEdge]`](/docs/api/objects/organization-audit-entry-edge))
+
+A list of edges.
+
+#### `nodes` ([`[OrganizationAuditEntry]`](/docs/api/unions/organization-audit-entry))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

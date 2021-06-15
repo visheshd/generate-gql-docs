@@ -1,0 +1,33 @@
+---
+id: gist-comment-connection
+title: GistCommentConnection
+---
+
+The connection type for GistComment.
+
+```graphql
+type GistCommentConnection {
+  edges: [GistCommentEdge]
+  nodes: [GistComment]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[GistCommentEdge]`](/docs/api/objects/gist-comment-edge))
+
+A list of edges.
+
+#### `nodes` ([`[GistComment]`](/docs/api/objects/gist-comment))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

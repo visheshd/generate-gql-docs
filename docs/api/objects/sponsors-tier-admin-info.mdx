@@ -1,0 +1,50 @@
+---
+id: sponsors-tier-admin-info
+title: SponsorsTierAdminInfo
+---
+
+SponsorsTier information only visible to users that can administer the associated Sponsors listing.
+
+```graphql
+type SponsorsTierAdminInfo {
+  sponsorships(
+    after: String
+    before: String
+    first: Int = 0
+    includePrivate: Boolean
+    last: Int = 0
+    orderBy: SponsorshipOrder
+  ): SponsorshipConnection!
+}
+```
+
+### Fields
+
+#### `sponsorships` ([`SponsorshipConnection!`](/docs/api/objects/sponsorship-connection))
+
+The sponsorships associated with this tier.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `includePrivate` ([`Boolean`](/docs/api/scalars/boolean))
+
+Whether or not to include private sponsorships in the result set
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`SponsorshipOrder`](/docs/api/inputs/sponsorship-order))
+
+Ordering options for sponsorships returned from this connection. If left
+blank, the sponsorships will be ordered based on relevancy to the viewer.

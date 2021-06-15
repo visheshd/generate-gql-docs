@@ -1,0 +1,49 @@
+---
+id: issue-contributions-by-repository
+title: IssueContributionsByRepository
+---
+
+This aggregates issues opened by a user within one repository.
+
+```graphql
+type IssueContributionsByRepository {
+  contributions(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: ContributionOrder = "[object Object]"
+  ): CreatedIssueContributionConnection!
+  repository: Repository!
+}
+```
+
+### Fields
+
+#### `contributions` ([`CreatedIssueContributionConnection!`](/docs/api/objects/created-issue-contribution-connection))
+
+The issue contributions.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ContributionOrder`](/docs/api/inputs/contribution-order))
+
+Ordering options for contributions returned from the connection.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository in which the issues were opened.

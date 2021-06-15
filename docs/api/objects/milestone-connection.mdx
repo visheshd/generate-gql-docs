@@ -1,0 +1,33 @@
+---
+id: milestone-connection
+title: MilestoneConnection
+---
+
+The connection type for Milestone.
+
+```graphql
+type MilestoneConnection {
+  edges: [MilestoneEdge]
+  nodes: [Milestone]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[MilestoneEdge]`](/docs/api/objects/milestone-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Milestone]`](/docs/api/objects/milestone))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

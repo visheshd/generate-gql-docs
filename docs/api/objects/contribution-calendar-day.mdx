@@ -1,0 +1,39 @@
+---
+id: contribution-calendar-day
+title: ContributionCalendarDay
+---
+
+Represents a single day of contributions on GitHub by a user.
+
+```graphql
+type ContributionCalendarDay {
+  color: String!
+  contributionCount: Int!
+  contributionLevel: ContributionLevel!
+  date: Date!
+  weekday: Int!
+}
+```
+
+### Fields
+
+#### `color` ([`String!`](/docs/api/scalars/string))
+
+The hex color code that represents how many contributions were made on this day compared to others in the calendar.
+
+#### `contributionCount` ([`Int!`](/docs/api/scalars/int))
+
+How many contributions were made by the user on this day.
+
+#### `contributionLevel` ([`ContributionLevel!`](/docs/api/enums/contribution-level))
+
+Indication of contributions, relative to other days. Can be used to indicate
+which color to represent this day on a calendar.
+
+#### `date` ([`Date!`](/docs/api/scalars/date))
+
+The day this square represents.
+
+#### `weekday` ([`Int!`](/docs/api/scalars/int))
+
+A number representing which day of the week this square represents, e.g., 1 is Monday.

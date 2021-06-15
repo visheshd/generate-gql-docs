@@ -1,0 +1,173 @@
+---
+id: gist-comment
+title: GistComment
+---
+
+Represents a comment on an Gist.
+
+```graphql
+type GistComment implements Comment, Deletable, Minimizable, Node, Updatable, UpdatableComment {
+  author: Actor
+  authorAssociation: CommentAuthorAssociation!
+  body: String!
+  bodyHTML: HTML!
+  bodyText: String!
+  createdAt: DateTime!
+  createdViaEmail: Boolean!
+  databaseId: Int
+  editor: Actor
+  gist: Gist!
+  id: ID!
+  includesCreatedEdit: Boolean!
+  isMinimized: Boolean!
+  lastEditedAt: DateTime
+  minimizedReason: String
+  publishedAt: DateTime
+  updatedAt: DateTime!
+  userContentEdits(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserContentEditConnection
+  viewerCanDelete: Boolean!
+  viewerCanMinimize: Boolean!
+  viewerCanUpdate: Boolean!
+  viewerCannotUpdateReasons: [CommentCannotUpdateReason!]!
+  viewerDidAuthor: Boolean!
+}
+```
+
+### Fields
+
+#### `author` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who authored the comment.
+
+#### `authorAssociation` ([`CommentAuthorAssociation!`](/docs/api/enums/comment-author-association))
+
+Author's association with the gist.
+
+#### `body` ([`String!`](/docs/api/scalars/string))
+
+Identifies the comment body.
+
+#### `bodyHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The body rendered to HTML.
+
+#### `bodyText` ([`String!`](/docs/api/scalars/string))
+
+The body rendered to text.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `createdViaEmail` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was created via an email reply.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `editor` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who edited the comment.
+
+#### `gist` ([`Gist!`](/docs/api/objects/gist))
+
+The associated gist.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `includesCreatedEdit` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was edited and includes an edit with the creation data
+
+#### `isMinimized` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Returns whether or not a comment has been minimized.
+
+#### `lastEditedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+The moment the editor made the last edit
+
+#### `minimizedReason` ([`String`](/docs/api/scalars/string))
+
+Returns why the comment was minimized.
+
+#### `publishedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the comment was published at.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `userContentEdits` ([`UserContentEditConnection`](/docs/api/objects/user-content-edit-connection))
+
+A list of edits to this content.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `viewerCanDelete` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can delete this object.
+
+#### `viewerCanMinimize` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can minimize this object.
+
+#### `viewerCanUpdate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can update this object.
+
+#### `viewerCannotUpdateReasons` ([`[CommentCannotUpdateReason!]!`](/docs/api/enums/comment-cannot-update-reason))
+
+Reasons why the current viewer can not update this comment.
+
+#### `viewerDidAuthor` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Did the viewer author this comment.
+
+### Interfaces
+
+#### [`Comment`](/docs/api/interfaces/comment)
+
+Represents a comment.
+
+#### [`Deletable`](/docs/api/interfaces/deletable)
+
+Entities that can be deleted.
+
+#### [`Minimizable`](/docs/api/interfaces/minimizable)
+
+Entities that can be minimized.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`Updatable`](/docs/api/interfaces/updatable)
+
+Entities that can be updated.
+
+#### [`UpdatableComment`](/docs/api/interfaces/updatable-comment)
+
+Comments that can be updated.

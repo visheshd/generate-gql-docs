@@ -1,0 +1,33 @@
+---
+id: check-suite-connection
+title: CheckSuiteConnection
+---
+
+The connection type for CheckSuite.
+
+```graphql
+type CheckSuiteConnection {
+  edges: [CheckSuiteEdge]
+  nodes: [CheckSuite]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CheckSuiteEdge]`](/docs/api/objects/check-suite-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CheckSuite]`](/docs/api/objects/check-suite))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

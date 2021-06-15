@@ -1,0 +1,23 @@
+---
+id: pull-request-review-comment-edge
+title: PullRequestReviewCommentEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PullRequestReviewCommentEdge {
+  cursor: String!
+  node: PullRequestReviewComment
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PullRequestReviewComment`](/docs/api/objects/pull-request-review-comment))
+
+The item at the end of the edge.

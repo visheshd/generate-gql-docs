@@ -1,0 +1,35 @@
+---
+id: review-status-hovercard-context
+title: ReviewStatusHovercardContext
+---
+
+A hovercard context with a message describing the current code review state of the pull
+request.
+
+```graphql
+type ReviewStatusHovercardContext implements HovercardContext {
+  message: String!
+  octicon: String!
+  reviewDecision: PullRequestReviewDecision
+}
+```
+
+### Fields
+
+#### `message` ([`String!`](/docs/api/scalars/string))
+
+A string describing this context
+
+#### `octicon` ([`String!`](/docs/api/scalars/string))
+
+An octicon to accompany this context
+
+#### `reviewDecision` ([`PullRequestReviewDecision`](/docs/api/enums/pull-request-review-decision))
+
+The current status of the pull request with respect to code review.
+
+### Interfaces
+
+#### [`HovercardContext`](/docs/api/interfaces/hovercard-context)
+
+An individual line of a hovercard

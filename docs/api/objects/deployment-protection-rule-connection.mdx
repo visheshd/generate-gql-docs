@@ -1,0 +1,33 @@
+---
+id: deployment-protection-rule-connection
+title: DeploymentProtectionRuleConnection
+---
+
+The connection type for DeploymentProtectionRule.
+
+```graphql
+type DeploymentProtectionRuleConnection {
+  edges: [DeploymentProtectionRuleEdge]
+  nodes: [DeploymentProtectionRule]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[DeploymentProtectionRuleEdge]`](/docs/api/objects/deployment-protection-rule-edge))
+
+A list of edges.
+
+#### `nodes` ([`[DeploymentProtectionRule]`](/docs/api/objects/deployment-protection-rule))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

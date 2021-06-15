@@ -1,0 +1,56 @@
+---
+id: closed-event
+title: ClosedEvent
+---
+
+Represents a 'closed' event on any `Closable`.
+
+```graphql
+type ClosedEvent implements Node, UniformResourceLocatable {
+  actor: Actor
+  closable: Closable!
+  closer: Closer
+  createdAt: DateTime!
+  id: ID!
+  resourcePath: URI!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `closable` ([`Closable!`](/docs/api/interfaces/closable))
+
+Object that was closed.
+
+#### `closer` ([`Closer`](/docs/api/unions/closer))
+
+Object which triggered the creation of this event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this closed event.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this closed event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

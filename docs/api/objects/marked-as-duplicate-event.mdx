@@ -1,0 +1,47 @@
+---
+id: marked-as-duplicate-event
+title: MarkedAsDuplicateEvent
+---
+
+Represents a 'marked_as_duplicate' event on a given issue or pull request.
+
+```graphql
+type MarkedAsDuplicateEvent implements Node {
+  actor: Actor
+  canonical: IssueOrPullRequest
+  createdAt: DateTime!
+  duplicate: IssueOrPullRequest
+  id: ID!
+  isCrossRepository: Boolean!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `canonical` ([`IssueOrPullRequest`](/docs/api/unions/issue-or-pull-request))
+
+The authoritative issue or pull request which has been duplicated by another.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `duplicate` ([`IssueOrPullRequest`](/docs/api/unions/issue-or-pull-request))
+
+The issue or pull request which has been marked as a duplicate of another.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isCrossRepository` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Canonical and duplicate belong to different repositories.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,42 @@
+---
+id: transferred-event
+title: TransferredEvent
+---
+
+Represents a 'transferred' event on a given issue or pull request.
+
+```graphql
+type TransferredEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  fromRepository: Repository
+  id: ID!
+  issue: Issue!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `fromRepository` ([`Repository`](/docs/api/objects/repository))
+
+The repository this came from
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `issue` ([`Issue!`](/docs/api/objects/issue))
+
+Identifies the issue associated with the event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

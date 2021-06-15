@@ -1,0 +1,23 @@
+---
+id: enterprise-server-installation-order
+title: EnterpriseServerInstallationOrder
+---
+
+Ordering options for Enterprise Server installation connections.
+
+```graphql
+type EnterpriseServerInstallationOrder {
+  direction: OrderDirection!
+  field: EnterpriseServerInstallationOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`EnterpriseServerInstallationOrderField!`](/docs/api/enums/enterprise-server-installation-order-field))
+
+The field to order Enterprise Server installations by.

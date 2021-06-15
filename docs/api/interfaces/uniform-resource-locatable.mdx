@@ -1,0 +1,23 @@
+---
+id: uniform-resource-locatable
+title: UniformResourceLocatable
+---
+
+Represents a type that can be retrieved by a URL.
+
+```graphql
+interface UniformResourceLocatable {
+  resourcePath: URI!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTML path to this resource.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The URL to this resource.

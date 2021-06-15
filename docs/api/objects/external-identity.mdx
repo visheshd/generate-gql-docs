@@ -1,0 +1,47 @@
+---
+id: external-identity
+title: ExternalIdentity
+---
+
+An external identity provisioned by SAML SSO or SCIM.
+
+```graphql
+type ExternalIdentity implements Node {
+  guid: String!
+  id: ID!
+  organizationInvitation: OrganizationInvitation
+  samlIdentity: ExternalIdentitySamlAttributes
+  scimIdentity: ExternalIdentityScimAttributes
+  user: User
+}
+```
+
+### Fields
+
+#### `guid` ([`String!`](/docs/api/scalars/string))
+
+The GUID for this identity
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `organizationInvitation` ([`OrganizationInvitation`](/docs/api/objects/organization-invitation))
+
+Organization invitation for this SCIM-provisioned external identity
+
+#### `samlIdentity` ([`ExternalIdentitySamlAttributes`](/docs/api/objects/external-identity-saml-attributes))
+
+SAML Identity attributes
+
+#### `scimIdentity` ([`ExternalIdentityScimAttributes`](/docs/api/objects/external-identity-scim-attributes))
+
+SCIM Identity attributes
+
+#### `user` ([`User`](/docs/api/objects/user))
+
+User linked to this external identity. Will be NULL if this identity has not been claimed by an organization member.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,23 @@
+---
+id: org-add-member-audit-entry-permission
+title: OrgAddMemberAuditEntryPermission
+---
+
+The permissions available to members on an Organization.
+
+```graphql
+enum OrgAddMemberAuditEntryPermission {
+  ADMIN
+  READ
+}
+```
+
+### Values
+
+#### `ADMIN`
+
+Can read, clone, push, and add collaborators to repositories.
+
+#### `READ`
+
+Can read and clone repositories.

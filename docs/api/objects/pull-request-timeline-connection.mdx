@@ -1,0 +1,33 @@
+---
+id: pull-request-timeline-connection
+title: PullRequestTimelineConnection
+---
+
+The connection type for PullRequestTimelineItem.
+
+```graphql
+type PullRequestTimelineConnection {
+  edges: [PullRequestTimelineItemEdge]
+  nodes: [PullRequestTimelineItem]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PullRequestTimelineItemEdge]`](/docs/api/objects/pull-request-timeline-item-edge))
+
+A list of edges.
+
+#### `nodes` ([`[PullRequestTimelineItem]`](/docs/api/unions/pull-request-timeline-item))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

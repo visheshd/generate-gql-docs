@@ -1,0 +1,83 @@
+---
+id: status-context
+title: StatusContext
+---
+
+Represents an individual commit status context
+
+```graphql
+type StatusContext implements Node, RequirableByPullRequest {
+  avatarUrl(size: Int = 40): URI
+  commit: Commit
+  context: String!
+  createdAt: DateTime!
+  creator: Actor
+  description: String
+  id: ID!
+  isRequired(pullRequestId: ID = 0, pullRequestNumber: Int = 0): Boolean!
+  state: StatusState!
+  targetUrl: URI
+}
+```
+
+### Fields
+
+#### `avatarUrl` ([`URI`](/docs/api/scalars/uri))
+
+The avatar of the OAuth application or the user that created the status
+
+- ##### `size` ([`Int`](/docs/api/scalars/int))
+
+The size of the resulting square image.
+
+#### `commit` ([`Commit`](/docs/api/objects/commit))
+
+This commit this status context is attached to.
+
+#### `context` ([`String!`](/docs/api/scalars/string))
+
+The name of this status context.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `creator` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who created this status context.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The description for this status context.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isRequired` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this is required to pass before merging for a specific pull request.
+
+- ##### `pullRequestId` ([`ID`](/docs/api/scalars/id))
+
+The id of the pull request this is required for
+
+- ##### `pullRequestNumber` ([`Int`](/docs/api/scalars/int))
+
+The number of the pull request this is required for
+
+#### `state` ([`StatusState!`](/docs/api/enums/status-state))
+
+The state of this status context.
+
+#### `targetUrl` ([`URI`](/docs/api/scalars/uri))
+
+The URL for this status context.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`RequirableByPullRequest`](/docs/api/interfaces/requirable-by-pull-request)
+
+Represents a type that can be required by a pull request for merging.

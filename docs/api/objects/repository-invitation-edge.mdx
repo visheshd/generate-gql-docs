@@ -1,0 +1,23 @@
+---
+id: repository-invitation-edge
+title: RepositoryInvitationEdge
+---
+
+An edge in a connection.
+
+```graphql
+type RepositoryInvitationEdge {
+  cursor: String!
+  node: RepositoryInvitation
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`RepositoryInvitation`](/docs/api/objects/repository-invitation))
+
+The item at the end of the edge.

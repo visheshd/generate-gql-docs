@@ -1,0 +1,44 @@
+---
+id: labelable
+title: Labelable
+---
+
+An object that can have labels assigned to it.
+
+```graphql
+interface Labelable {
+  labels(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: LabelOrder = "[object Object]"
+  ): LabelConnection
+}
+```
+
+### Fields
+
+#### `labels` ([`LabelConnection`](/docs/api/objects/label-connection))
+
+A list of labels associated with the object.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`LabelOrder`](/docs/api/inputs/label-order))
+
+Ordering options for labels returned from the connection.

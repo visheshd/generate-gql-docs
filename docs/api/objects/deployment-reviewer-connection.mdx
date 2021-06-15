@@ -1,0 +1,33 @@
+---
+id: deployment-reviewer-connection
+title: DeploymentReviewerConnection
+---
+
+The connection type for DeploymentReviewer.
+
+```graphql
+type DeploymentReviewerConnection {
+  edges: [DeploymentReviewerEdge]
+  nodes: [DeploymentReviewer]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[DeploymentReviewerEdge]`](/docs/api/objects/deployment-reviewer-edge))
+
+A list of edges.
+
+#### `nodes` ([`[DeploymentReviewer]`](/docs/api/unions/deployment-reviewer))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

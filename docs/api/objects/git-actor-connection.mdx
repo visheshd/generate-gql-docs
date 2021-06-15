@@ -1,0 +1,33 @@
+---
+id: git-actor-connection
+title: GitActorConnection
+---
+
+The connection type for GitActor.
+
+```graphql
+type GitActorConnection {
+  edges: [GitActorEdge]
+  nodes: [GitActor]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[GitActorEdge]`](/docs/api/objects/git-actor-edge))
+
+A list of edges.
+
+#### `nodes` ([`[GitActor]`](/docs/api/objects/git-actor))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

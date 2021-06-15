@@ -1,0 +1,33 @@
+---
+id: enterprise-member-connection
+title: EnterpriseMemberConnection
+---
+
+The connection type for EnterpriseMember.
+
+```graphql
+type EnterpriseMemberConnection {
+  edges: [EnterpriseMemberEdge]
+  nodes: [EnterpriseMember]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[EnterpriseMemberEdge]`](/docs/api/objects/enterprise-member-edge))
+
+A list of edges.
+
+#### `nodes` ([`[EnterpriseMember]`](/docs/api/unions/enterprise-member))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

@@ -1,0 +1,23 @@
+---
+id: check-step-edge
+title: CheckStepEdge
+---
+
+An edge in a connection.
+
+```graphql
+type CheckStepEdge {
+  cursor: String!
+  node: CheckStep
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`CheckStep`](/docs/api/objects/check-step))
+
+The item at the end of the edge.

@@ -1,0 +1,57 @@
+---
+id: referenced-event
+title: ReferencedEvent
+---
+
+Represents a 'referenced' event on a given `ReferencedSubject`.
+
+```graphql
+type ReferencedEvent implements Node {
+  actor: Actor
+  commit: Commit
+  commitRepository: Repository!
+  createdAt: DateTime!
+  id: ID!
+  isCrossRepository: Boolean!
+  isDirectReference: Boolean!
+  subject: ReferencedSubject!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `commit` ([`Commit`](/docs/api/objects/commit))
+
+Identifies the commit associated with the 'referenced' event.
+
+#### `commitRepository` ([`Repository!`](/docs/api/objects/repository))
+
+Identifies the repository associated with the 'referenced' event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isCrossRepository` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Reference originated in a different repository.
+
+#### `isDirectReference` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Checks if the commit message itself references the subject. Can be false in the case of a commit comment reference.
+
+#### `subject` ([`ReferencedSubject!`](/docs/api/unions/referenced-subject))
+
+Object referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

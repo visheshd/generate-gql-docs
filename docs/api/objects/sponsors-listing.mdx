@@ -1,0 +1,88 @@
+---
+id: sponsors-listing
+title: SponsorsListing
+---
+
+A GitHub Sponsors listing.
+
+```graphql
+type SponsorsListing implements Node {
+  activeGoal: SponsorsGoal
+  createdAt: DateTime!
+  fullDescription: String!
+  fullDescriptionHTML: HTML!
+  id: ID!
+  name: String!
+  shortDescription: String!
+  slug: String!
+  tiers(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: SponsorsTierOrder = "[object Object]"
+  ): SponsorsTierConnection
+}
+```
+
+### Fields
+
+#### `activeGoal` ([`SponsorsGoal`](/docs/api/objects/sponsors-goal))
+
+The current goal the maintainer is trying to reach with GitHub Sponsors, if any.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `fullDescription` ([`String!`](/docs/api/scalars/string))
+
+The full description of the listing.
+
+#### `fullDescriptionHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The full description of the listing rendered to HTML.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The listing's full name.
+
+#### `shortDescription` ([`String!`](/docs/api/scalars/string))
+
+The short description of the listing.
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+The short name of the listing.
+
+#### `tiers` ([`SponsorsTierConnection`](/docs/api/objects/sponsors-tier-connection))
+
+The published tiers for this GitHub Sponsors listing.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`SponsorsTierOrder`](/docs/api/inputs/sponsors-tier-order))
+
+Ordering options for Sponsors tiers returned from the connection.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,23 @@
+---
+id: pinned-issue-edge
+title: PinnedIssueEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PinnedIssueEdge {
+  cursor: String!
+  node: PinnedIssue
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PinnedIssue`](/docs/api/objects/pinned-issue))
+
+The item at the end of the edge.

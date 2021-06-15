@@ -1,0 +1,221 @@
+---
+id: branch-protection-rule
+title: BranchProtectionRule
+---
+
+A branch protection rule.
+
+```graphql
+type BranchProtectionRule implements Node {
+  allowsDeletions: Boolean!
+  allowsForcePushes: Boolean!
+  branchProtectionRuleConflicts(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): BranchProtectionRuleConflictConnection!
+  creator: Actor
+  databaseId: Int
+  dismissesStaleReviews: Boolean!
+  id: ID!
+  isAdminEnforced: Boolean!
+  matchingRefs(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    query: String
+  ): RefConnection!
+  pattern: String!
+  pushAllowances(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): PushAllowanceConnection!
+  repository: Repository
+  requiredApprovingReviewCount: Int
+  requiredStatusCheckContexts: [String]
+  requiresApprovingReviews: Boolean!
+  requiresCodeOwnerReviews: Boolean!
+  requiresCommitSignatures: Boolean!
+  requiresLinearHistory: Boolean!
+  requiresStatusChecks: Boolean!
+  requiresStrictStatusChecks: Boolean!
+  restrictsPushes: Boolean!
+  restrictsReviewDismissals: Boolean!
+  reviewDismissalAllowances(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): ReviewDismissalAllowanceConnection!
+}
+```
+
+### Fields
+
+#### `allowsDeletions` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can this branch be deleted.
+
+#### `allowsForcePushes` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are force pushes allowed on this branch.
+
+#### `branchProtectionRuleConflicts` ([`BranchProtectionRuleConflictConnection!`](/docs/api/objects/branch-protection-rule-conflict-connection))
+
+A list of conflicts matching branches protection rule and other branch protection rules
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `creator` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who created this branch protection rule.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `dismissesStaleReviews` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Will new commits pushed to matching branches dismiss pull request review approvals.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isAdminEnforced` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can admins overwrite branch protection.
+
+#### `matchingRefs` ([`RefConnection!`](/docs/api/objects/ref-connection))
+
+Repository refs that are protected by this rule
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+Filters refs with query on name
+
+#### `pattern` ([`String!`](/docs/api/scalars/string))
+
+Identifies the protection rule pattern.
+
+#### `pushAllowances` ([`PushAllowanceConnection!`](/docs/api/objects/push-allowance-connection))
+
+A list push allowances for this branch protection rule.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `repository` ([`Repository`](/docs/api/objects/repository))
+
+The repository associated with this branch protection rule.
+
+#### `requiredApprovingReviewCount` ([`Int`](/docs/api/scalars/int))
+
+Number of approving reviews required to update matching branches.
+
+#### `requiredStatusCheckContexts` ([`[String]`](/docs/api/scalars/string))
+
+List of required status check contexts that must pass for commits to be accepted to matching branches.
+
+#### `requiresApprovingReviews` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are approving reviews required to update matching branches.
+
+#### `requiresCodeOwnerReviews` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are reviews from code owners required to update matching branches.
+
+#### `requiresCommitSignatures` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are commits required to be signed.
+
+#### `requiresLinearHistory` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are merge commits prohibited from being pushed to this branch.
+
+#### `requiresStatusChecks` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are status checks required to update matching branches.
+
+#### `requiresStrictStatusChecks` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are branches required to be up to date before merging.
+
+#### `restrictsPushes` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Is pushing to matching branches restricted.
+
+#### `restrictsReviewDismissals` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Is dismissal of pull request reviews restricted.
+
+#### `reviewDismissalAllowances` ([`ReviewDismissalAllowanceConnection!`](/docs/api/objects/review-dismissal-allowance-connection))
+
+A list review dismissal allowances for this branch protection rule.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

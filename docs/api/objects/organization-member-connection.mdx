@@ -1,0 +1,33 @@
+---
+id: organization-member-connection
+title: OrganizationMemberConnection
+---
+
+The connection type for User.
+
+```graphql
+type OrganizationMemberConnection {
+  edges: [OrganizationMemberEdge]
+  nodes: [User]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[OrganizationMemberEdge]`](/docs/api/objects/organization-member-edge))
+
+A list of edges.
+
+#### `nodes` ([`[User]`](/docs/api/objects/user))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

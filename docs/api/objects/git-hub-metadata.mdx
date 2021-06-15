@@ -1,0 +1,43 @@
+---
+id: git-hub-metadata
+title: GitHubMetadata
+---
+
+Represents information about the GitHub instance.
+
+```graphql
+type GitHubMetadata {
+  gitHubServicesSha: GitObjectID!
+  gitIpAddresses: [String!]
+  hookIpAddresses: [String!]
+  importerIpAddresses: [String!]
+  isPasswordAuthenticationVerifiable: Boolean!
+  pagesIpAddresses: [String!]
+}
+```
+
+### Fields
+
+#### `gitHubServicesSha` ([`GitObjectID!`](/docs/api/scalars/git-object-id))
+
+Returns a String that's a SHA of `github-services`
+
+#### `gitIpAddresses` ([`[String!]`](/docs/api/scalars/string))
+
+IP addresses that users connect to for git operations
+
+#### `hookIpAddresses` ([`[String!]`](/docs/api/scalars/string))
+
+IP addresses that service hooks are sent from
+
+#### `importerIpAddresses` ([`[String!]`](/docs/api/scalars/string))
+
+IP addresses that the importer connects from
+
+#### `isPasswordAuthenticationVerifiable` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not users are verified
+
+#### `pagesIpAddresses` ([`[String!]`](/docs/api/scalars/string))
+
+IP addresses for GitHub Pages' A records

@@ -1,0 +1,33 @@
+---
+id: public-key-connection
+title: PublicKeyConnection
+---
+
+The connection type for PublicKey.
+
+```graphql
+type PublicKeyConnection {
+  edges: [PublicKeyEdge]
+  nodes: [PublicKey]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PublicKeyEdge]`](/docs/api/objects/public-key-edge))
+
+A list of edges.
+
+#### `nodes` ([`[PublicKey]`](/docs/api/objects/public-key))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

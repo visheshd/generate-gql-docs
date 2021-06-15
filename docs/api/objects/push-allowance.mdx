@@ -1,0 +1,32 @@
+---
+id: push-allowance
+title: PushAllowance
+---
+
+A team, user or app who has the ability to push to a protected branch.
+
+```graphql
+type PushAllowance implements Node {
+  actor: PushAllowanceActor
+  branchProtectionRule: BranchProtectionRule
+  id: ID!
+}
+```
+
+### Fields
+
+#### `actor` ([`PushAllowanceActor`](/docs/api/unions/push-allowance-actor))
+
+The actor that can push.
+
+#### `branchProtectionRule` ([`BranchProtectionRule`](/docs/api/objects/branch-protection-rule))
+
+Identifies the branch protection rule associated with the allowed user or team.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

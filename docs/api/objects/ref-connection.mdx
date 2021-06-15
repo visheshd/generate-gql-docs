@@ -1,0 +1,33 @@
+---
+id: ref-connection
+title: RefConnection
+---
+
+The connection type for Ref.
+
+```graphql
+type RefConnection {
+  edges: [RefEdge]
+  nodes: [Ref]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[RefEdge]`](/docs/api/objects/ref-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Ref]`](/docs/api/objects/ref))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

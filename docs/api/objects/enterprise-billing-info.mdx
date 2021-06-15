@@ -1,0 +1,77 @@
+---
+id: enterprise-billing-info
+title: EnterpriseBillingInfo
+---
+
+Enterprise billing information visible to enterprise billing managers and owners.
+
+```graphql
+type EnterpriseBillingInfo {
+  allLicensableUsersCount: Int!
+  assetPacks: Int!
+  availableSeats: Int!
+  bandwidthQuota: Float!
+  bandwidthUsage: Float!
+  bandwidthUsagePercentage: Int!
+  seats: Int!
+  storageQuota: Float!
+  storageUsage: Float!
+  storageUsagePercentage: Int!
+  totalAvailableLicenses: Int!
+  totalLicenses: Int!
+}
+```
+
+### Fields
+
+#### `allLicensableUsersCount` ([`Int!`](/docs/api/scalars/int))
+
+The number of licenseable users/emails across the enterprise.
+
+#### `assetPacks` ([`Int!`](/docs/api/scalars/int))
+
+The number of data packs used by all organizations owned by the enterprise.
+
+#### `availableSeats` ([`Int!`](/docs/api/scalars/int))
+
+<span class="badge badge--warning">DEPRECATED: `availableSeats` will be replaced with `totalAvailableLicenses` to provide more clarity on the value being returned Use EnterpriseBillingInfo.totalAvailableLicenses instead. Removal on 2020-01-01 UTC.</span>
+
+The number of available seats across all owned organizations based on the unique number of billable users.
+
+#### `bandwidthQuota` ([`Float!`](/docs/api/scalars/float))
+
+The bandwidth quota in GB for all organizations owned by the enterprise.
+
+#### `bandwidthUsage` ([`Float!`](/docs/api/scalars/float))
+
+The bandwidth usage in GB for all organizations owned by the enterprise.
+
+#### `bandwidthUsagePercentage` ([`Int!`](/docs/api/scalars/int))
+
+The bandwidth usage as a percentage of the bandwidth quota.
+
+#### `seats` ([`Int!`](/docs/api/scalars/int))
+
+<span class="badge badge--warning">DEPRECATED: `seats` will be replaced with `totalLicenses` to provide more clarity on the value being returned Use EnterpriseBillingInfo.totalLicenses instead. Removal on 2020-01-01 UTC.</span>
+
+The total seats across all organizations owned by the enterprise.
+
+#### `storageQuota` ([`Float!`](/docs/api/scalars/float))
+
+The storage quota in GB for all organizations owned by the enterprise.
+
+#### `storageUsage` ([`Float!`](/docs/api/scalars/float))
+
+The storage usage in GB for all organizations owned by the enterprise.
+
+#### `storageUsagePercentage` ([`Int!`](/docs/api/scalars/int))
+
+The storage usage as a percentage of the storage quota.
+
+#### `totalAvailableLicenses` ([`Int!`](/docs/api/scalars/int))
+
+The number of available licenses across all owned organizations based on the unique number of billable users.
+
+#### `totalLicenses` ([`Int!`](/docs/api/scalars/int))
+
+The total number of licenses allocated.

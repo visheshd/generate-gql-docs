@@ -1,0 +1,33 @@
+---
+id: org-update-default-repository-permission-audit-entry-permission
+title: OrgUpdateDefaultRepositoryPermissionAuditEntryPermission
+---
+
+The default permission a repository can have in an Organization.
+
+```graphql
+enum OrgUpdateDefaultRepositoryPermissionAuditEntryPermission {
+  ADMIN
+  NONE
+  READ
+  WRITE
+}
+```
+
+### Values
+
+#### `ADMIN`
+
+Can read, clone, push, and add collaborators to repositories.
+
+#### `NONE`
+
+No default permission value.
+
+#### `READ`
+
+Can read and clone repositories.
+
+#### `WRITE`
+
+Can read, clone and push to repositories.

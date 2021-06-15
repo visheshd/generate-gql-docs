@@ -1,0 +1,33 @@
+---
+id: branch-protection-rule-conflict-connection
+title: BranchProtectionRuleConflictConnection
+---
+
+The connection type for BranchProtectionRuleConflict.
+
+```graphql
+type BranchProtectionRuleConflictConnection {
+  edges: [BranchProtectionRuleConflictEdge]
+  nodes: [BranchProtectionRuleConflict]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[BranchProtectionRuleConflictEdge]`](/docs/api/objects/branch-protection-rule-conflict-edge))
+
+A list of edges.
+
+#### `nodes` ([`[BranchProtectionRuleConflict]`](/docs/api/objects/branch-protection-rule-conflict))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

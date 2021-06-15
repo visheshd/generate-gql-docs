@@ -1,0 +1,33 @@
+---
+id: review-dismissal-allowance-connection
+title: ReviewDismissalAllowanceConnection
+---
+
+The connection type for ReviewDismissalAllowance.
+
+```graphql
+type ReviewDismissalAllowanceConnection {
+  edges: [ReviewDismissalAllowanceEdge]
+  nodes: [ReviewDismissalAllowance]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[ReviewDismissalAllowanceEdge]`](/docs/api/objects/review-dismissal-allowance-edge))
+
+A list of edges.
+
+#### `nodes` ([`[ReviewDismissalAllowance]`](/docs/api/objects/review-dismissal-allowance))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

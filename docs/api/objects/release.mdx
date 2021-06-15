@@ -1,0 +1,201 @@
+---
+id: release
+title: Release
+---
+
+A release contains the content for a release.
+
+```graphql
+type Release implements Node, Reactable, UniformResourceLocatable {
+  author: User
+  createdAt: DateTime!
+  databaseId: Int
+  description: String
+  descriptionHTML: HTML
+  id: ID!
+  isDraft: Boolean!
+  isLatest: Boolean!
+  isPrerelease: Boolean!
+  name: String
+  publishedAt: DateTime
+  reactionGroups: [ReactionGroup!]
+  reactions(
+    after: String
+    before: String
+    content: ReactionContent
+    first: Int = 0
+    last: Int = 0
+    orderBy: ReactionOrder
+  ): ReactionConnection!
+  releaseAssets(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    name: String
+  ): ReleaseAssetConnection!
+  repository: Repository!
+  resourcePath: URI!
+  shortDescriptionHTML(limit: Int = 200): HTML
+  tag: Ref
+  tagCommit: Commit
+  tagName: String!
+  updatedAt: DateTime!
+  url: URI!
+  viewerCanReact: Boolean!
+}
+```
+
+### Fields
+
+#### `author` ([`User`](/docs/api/objects/user))
+
+The author of the release
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The description of the release.
+
+#### `descriptionHTML` ([`HTML`](/docs/api/scalars/html))
+
+The description of this release rendered to HTML.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isDraft` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the release is a draft
+
+#### `isLatest` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the release is the latest releast
+
+#### `isPrerelease` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the release is a prerelease
+
+#### `name` ([`String`](/docs/api/scalars/string))
+
+The title of the release.
+
+#### `publishedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the release was created.
+
+#### `reactionGroups` ([`[ReactionGroup!]`](/docs/api/objects/reaction-group))
+
+A list of reactions grouped by content left on the subject.
+
+#### `reactions` ([`ReactionConnection!`](/docs/api/objects/reaction-connection))
+
+A list of Reactions left on the Issue.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `content` ([`ReactionContent`](/docs/api/enums/reaction-content))
+
+Allows filtering Reactions by emoji.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ReactionOrder`](/docs/api/inputs/reaction-order))
+
+Allows specifying the order in which reactions are returned.
+
+#### `releaseAssets` ([`ReleaseAssetConnection!`](/docs/api/objects/release-asset-connection))
+
+List of releases assets which are dependent on this release.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `name` ([`String`](/docs/api/scalars/string))
+
+A list of names to filter the assets by.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository that the release belongs to.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this issue
+
+#### `shortDescriptionHTML` ([`HTML`](/docs/api/scalars/html))
+
+A description of the release, rendered to HTML without any links in it.
+
+- ##### `limit` ([`Int`](/docs/api/scalars/int))
+
+How many characters to return.
+
+#### `tag` ([`Ref`](/docs/api/objects/ref))
+
+The Git tag the release points to
+
+#### `tagCommit` ([`Commit`](/docs/api/objects/commit))
+
+The tag commit for this release.
+
+#### `tagName` ([`String!`](/docs/api/scalars/string))
+
+The name of the release's Git tag
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this issue
+
+#### `viewerCanReact` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can user react to this subject
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`Reactable`](/docs/api/interfaces/reactable)
+
+Represents a subject that can be reacted on.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

@@ -1,0 +1,23 @@
+---
+id: team-discussion-comment-order
+title: TeamDiscussionCommentOrder
+---
+
+Ways in which team discussion comment connections can be ordered.
+
+```graphql
+type TeamDiscussionCommentOrder {
+  direction: OrderDirection!
+  field: TeamDiscussionCommentOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order nodes.
+
+#### `field` ([`TeamDiscussionCommentOrderField!`](/docs/api/enums/team-discussion-comment-order-field))
+
+The field by which to order nodes.

@@ -1,0 +1,43 @@
+---
+id: reported-content-classifiers
+title: ReportedContentClassifiers
+---
+
+The reasons a piece of content can be reported or minimized.
+
+```graphql
+enum ReportedContentClassifiers {
+  ABUSE
+  DUPLICATE
+  OFF_TOPIC
+  OUTDATED
+  RESOLVED
+  SPAM
+}
+```
+
+### Values
+
+#### `ABUSE`
+
+An abusive or harassing piece of content
+
+#### `DUPLICATE`
+
+A duplicated piece of content
+
+#### `OFF_TOPIC`
+
+An irrelevant piece of content
+
+#### `OUTDATED`
+
+An outdated piece of content
+
+#### `RESOLVED`
+
+The content has been resolved
+
+#### `SPAM`
+
+A spammy piece of content

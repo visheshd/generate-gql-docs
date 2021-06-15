@@ -1,0 +1,45 @@
+---
+id: sponsorship-connection
+title: SponsorshipConnection
+---
+
+The connection type for Sponsorship.
+
+```graphql
+type SponsorshipConnection {
+  edges: [SponsorshipEdge]
+  nodes: [Sponsorship]
+  pageInfo: PageInfo!
+  totalCount: Int!
+  totalRecurringMonthlyPriceInCents: Int!
+  totalRecurringMonthlyPriceInDollars: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[SponsorshipEdge]`](/docs/api/objects/sponsorship-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Sponsorship]`](/docs/api/objects/sponsorship))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.
+
+#### `totalRecurringMonthlyPriceInCents` ([`Int!`](/docs/api/scalars/int))
+
+The total amount in cents of all recurring sponsorships in the connection
+whose amount you can view. Does not include one-time sponsorships.
+
+#### `totalRecurringMonthlyPriceInDollars` ([`Int!`](/docs/api/scalars/int))
+
+The total dollar amount of all recurring sponsorships in the connection whose
+amount you can view. Does not include one-time sponsorships.

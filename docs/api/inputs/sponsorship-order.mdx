@@ -1,0 +1,23 @@
+---
+id: sponsorship-order
+title: SponsorshipOrder
+---
+
+Ordering options for sponsorship connections.
+
+```graphql
+type SponsorshipOrder {
+  direction: OrderDirection!
+  field: SponsorshipOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`SponsorshipOrderField!`](/docs/api/enums/sponsorship-order-field))
+
+The field to order sponsorship by.

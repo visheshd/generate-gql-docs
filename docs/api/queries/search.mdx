@@ -1,0 +1,50 @@
+---
+id: search
+title: search
+---
+
+Perform a search across resources.
+
+```graphql
+search(
+  after: String
+  before: String
+  first: Int = 0
+  last: Int = 0
+  query: String!
+  type: SearchType!
+): SearchResultItemConnection!
+
+```
+
+### Arguments
+
+#### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+#### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+#### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+#### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `query` ([`String!`](/docs/api/scalars/string))
+
+The search string to look for.
+
+#### `type` ([`SearchType!`](/docs/api/enums/search-type))
+
+The types of search items to search within.
+
+### Type
+
+#### [`SearchResultItemConnection`](/docs/api/objects/search-result-item-connection)
+
+A list of results that matched against a search query.

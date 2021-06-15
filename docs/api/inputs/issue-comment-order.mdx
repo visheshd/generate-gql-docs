@@ -1,0 +1,23 @@
+---
+id: issue-comment-order
+title: IssueCommentOrder
+---
+
+Ways in which lists of issue comments can be ordered upon return.
+
+```graphql
+type IssueCommentOrder {
+  direction: OrderDirection!
+  field: IssueCommentOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order issue comments by the specified field.
+
+#### `field` ([`IssueCommentOrderField!`](/docs/api/enums/issue-comment-order-field))
+
+The field in which to order issue comments by.

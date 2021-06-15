@@ -1,0 +1,23 @@
+---
+id: deployment-request-edge
+title: DeploymentRequestEdge
+---
+
+An edge in a connection.
+
+```graphql
+type DeploymentRequestEdge {
+  cursor: String!
+  node: DeploymentRequest
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`DeploymentRequest`](/docs/api/objects/deployment-request))
+
+The item at the end of the edge.

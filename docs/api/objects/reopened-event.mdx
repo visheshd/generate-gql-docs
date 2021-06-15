@@ -1,0 +1,37 @@
+---
+id: reopened-event
+title: ReopenedEvent
+---
+
+Represents a 'reopened' event on any `Closable`.
+
+```graphql
+type ReopenedEvent implements Node {
+  actor: Actor
+  closable: Closable!
+  createdAt: DateTime!
+  id: ID!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `closable` ([`Closable!`](/docs/api/interfaces/closable))
+
+Object that was reopened.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

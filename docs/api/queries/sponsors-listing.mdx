@@ -1,0 +1,27 @@
+---
+id: sponsors-listing
+title: sponsorsListing
+---
+
+<span class="badge badge--warning">DEPRECATED: `Query.sponsorsListing` will be removed. Use `Sponsorable.sponsorsListing` instead. Removal on 2020-04-01 UTC.</span>
+
+Look up a single Sponsors Listing
+
+```graphql
+sponsorsListing(
+  slug: String!
+): SponsorsListing
+
+```
+
+### Arguments
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+Select the Sponsors listing which matches this slug
+
+### Type
+
+#### [`SponsorsListing`](/docs/api/objects/sponsors-listing)
+
+A GitHub Sponsors listing.

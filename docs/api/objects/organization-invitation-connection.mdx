@@ -1,0 +1,33 @@
+---
+id: organization-invitation-connection
+title: OrganizationInvitationConnection
+---
+
+The connection type for OrganizationInvitation.
+
+```graphql
+type OrganizationInvitationConnection {
+  edges: [OrganizationInvitationEdge]
+  nodes: [OrganizationInvitation]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[OrganizationInvitationEdge]`](/docs/api/objects/organization-invitation-edge))
+
+A list of edges.
+
+#### `nodes` ([`[OrganizationInvitation]`](/docs/api/objects/organization-invitation))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

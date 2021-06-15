@@ -1,0 +1,23 @@
+---
+id: check-suite-auto-trigger-preference
+title: CheckSuiteAutoTriggerPreference
+---
+
+The auto-trigger preferences that are available for check suites.
+
+```graphql
+type CheckSuiteAutoTriggerPreference {
+  appId: ID!
+  setting: Boolean!
+}
+```
+
+### Fields
+
+#### `appId` ([`ID!`](/docs/api/scalars/id))
+
+The node ID of the application that owns the check suite.
+
+#### `setting` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository.

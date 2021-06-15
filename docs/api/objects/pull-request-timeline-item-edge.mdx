@@ -1,0 +1,23 @@
+---
+id: pull-request-timeline-item-edge
+title: PullRequestTimelineItemEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PullRequestTimelineItemEdge {
+  cursor: String!
+  node: PullRequestTimelineItem
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PullRequestTimelineItem`](/docs/api/unions/pull-request-timeline-item))
+
+The item at the end of the edge.

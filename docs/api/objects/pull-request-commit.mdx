@@ -1,0 +1,46 @@
+---
+id: pull-request-commit
+title: PullRequestCommit
+---
+
+Represents a Git commit part of a pull request.
+
+```graphql
+type PullRequestCommit implements Node, UniformResourceLocatable {
+  commit: Commit!
+  id: ID!
+  pullRequest: PullRequest!
+  resourcePath: URI!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `commit` ([`Commit!`](/docs/api/objects/commit))
+
+The Git commit object
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+The pull request this commit belongs to
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this pull request commit
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this pull request commit
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

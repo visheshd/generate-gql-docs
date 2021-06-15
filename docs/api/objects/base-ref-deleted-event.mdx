@@ -1,0 +1,42 @@
+---
+id: base-ref-deleted-event
+title: BaseRefDeletedEvent
+---
+
+Represents a 'base_ref_deleted' event on a given pull request.
+
+```graphql
+type BaseRefDeletedEvent implements Node {
+  actor: Actor
+  baseRefName: String
+  createdAt: DateTime!
+  id: ID!
+  pullRequest: PullRequest
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `baseRefName` ([`String`](/docs/api/scalars/string))
+
+Identifies the name of the Ref associated with the `base_ref_deleted` event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

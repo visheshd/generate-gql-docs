@@ -1,0 +1,47 @@
+---
+id: reaction
+title: Reaction
+---
+
+An emoji reaction to a particular piece of content.
+
+```graphql
+type Reaction implements Node {
+  content: ReactionContent!
+  createdAt: DateTime!
+  databaseId: Int
+  id: ID!
+  reactable: Reactable!
+  user: User
+}
+```
+
+### Fields
+
+#### `content` ([`ReactionContent!`](/docs/api/enums/reaction-content))
+
+Identifies the emoji reaction.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `reactable` ([`Reactable!`](/docs/api/interfaces/reactable))
+
+The reactable piece of content
+
+#### `user` ([`User`](/docs/api/objects/user))
+
+Identifies the user who created this reaction.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

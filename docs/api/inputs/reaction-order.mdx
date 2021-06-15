@@ -1,0 +1,23 @@
+---
+id: reaction-order
+title: ReactionOrder
+---
+
+Ways in which lists of reactions can be ordered upon return.
+
+```graphql
+type ReactionOrder {
+  direction: OrderDirection!
+  field: ReactionOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order reactions by the specified field.
+
+#### `field` ([`ReactionOrderField!`](/docs/api/enums/reaction-order-field))
+
+The field in which to order reactions by.

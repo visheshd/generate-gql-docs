@@ -1,0 +1,23 @@
+---
+id: pinned-discussion-edge
+title: PinnedDiscussionEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PinnedDiscussionEdge {
+  cursor: String!
+  node: PinnedDiscussion
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PinnedDiscussion`](/docs/api/objects/pinned-discussion))
+
+The item at the end of the edge.

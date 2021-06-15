@@ -1,0 +1,23 @@
+---
+id: sponsorable-order
+title: SponsorableOrder
+---
+
+Ordering options for connections to get sponsorable entities for GitHub Sponsors.
+
+```graphql
+type SponsorableOrder {
+  direction: OrderDirection!
+  field: SponsorableOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`SponsorableOrderField!`](/docs/api/enums/sponsorable-order-field))
+
+The field to order sponsorable entities by.

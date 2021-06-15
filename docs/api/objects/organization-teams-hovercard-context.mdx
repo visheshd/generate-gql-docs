@@ -1,0 +1,70 @@
+---
+id: organization-teams-hovercard-context
+title: OrganizationTeamsHovercardContext
+---
+
+An organization teams hovercard context
+
+```graphql
+type OrganizationTeamsHovercardContext implements HovercardContext {
+  message: String!
+  octicon: String!
+  relevantTeams(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): TeamConnection!
+  teamsResourcePath: URI!
+  teamsUrl: URI!
+  totalTeamCount: Int!
+}
+```
+
+### Fields
+
+#### `message` ([`String!`](/docs/api/scalars/string))
+
+A string describing this context
+
+#### `octicon` ([`String!`](/docs/api/scalars/string))
+
+An octicon to accompany this context
+
+#### `relevantTeams` ([`TeamConnection!`](/docs/api/objects/team-connection))
+
+Teams in this organization the user is a member of that are relevant
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `teamsResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The path for the full team list for this user
+
+#### `teamsUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The URL for the full team list for this user
+
+#### `totalTeamCount` ([`Int!`](/docs/api/scalars/int))
+
+The total number of teams the user is on in the organization
+
+### Interfaces
+
+#### [`HovercardContext`](/docs/api/interfaces/hovercard-context)
+
+An individual line of a hovercard

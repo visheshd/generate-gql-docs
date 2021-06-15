@@ -1,0 +1,33 @@
+---
+id: organization-member-edge
+title: OrganizationMemberEdge
+---
+
+Represents a user within an organization.
+
+```graphql
+type OrganizationMemberEdge {
+  cursor: String!
+  hasTwoFactorEnabled: Boolean
+  node: User
+  role: OrganizationMemberRole
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `hasTwoFactorEnabled` ([`Boolean`](/docs/api/scalars/boolean))
+
+Whether the organization member has two factor enabled or not. Returns null if information is not available to viewer.
+
+#### `node` ([`User`](/docs/api/objects/user))
+
+The item at the end of the edge.
+
+#### `role` ([`OrganizationMemberRole`](/docs/api/enums/organization-member-role))
+
+The role this user has in the organization.

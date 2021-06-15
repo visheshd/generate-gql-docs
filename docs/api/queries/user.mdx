@@ -1,0 +1,25 @@
+---
+id: user
+title: user
+---
+
+Lookup a user by login.
+
+```graphql
+user(
+  login: String!
+): User
+
+```
+
+### Arguments
+
+#### `login` ([`String!`](/docs/api/scalars/string))
+
+The user's login.
+
+### Type
+
+#### [`User`](/docs/api/objects/user)
+
+A user is an individual's account on GitHub that owns repositories and can make new content.

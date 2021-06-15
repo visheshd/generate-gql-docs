@@ -1,0 +1,23 @@
+---
+id: check-suite-filter
+title: CheckSuiteFilter
+---
+
+The filters that are available when fetching check suites.
+
+```graphql
+type CheckSuiteFilter {
+  appId: Int
+  checkName: String
+}
+```
+
+### Fields
+
+#### `appId` ([`Int`](/docs/api/scalars/int))
+
+Filters the check suites created by this application ID.
+
+#### `checkName` ([`String`](/docs/api/scalars/string))
+
+Filters the check suites by this name.

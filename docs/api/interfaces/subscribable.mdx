@@ -1,0 +1,26 @@
+---
+id: subscribable
+title: Subscribable
+---
+
+Entities that can be subscribed to for web and email notifications.
+
+```graphql
+interface Subscribable {
+  id: ID!
+  viewerCanSubscribe: Boolean!
+  viewerSubscription: SubscriptionState
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `viewerCanSubscribe` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the viewer is able to change their subscription status for the repository.
+
+#### `viewerSubscription` ([`SubscriptionState`](/docs/api/enums/subscription-state))
+
+Identifies if the viewer is watching, not watching, or ignoring the subscribable entity.

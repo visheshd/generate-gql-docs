@@ -1,0 +1,30 @@
+---
+id: repository
+title: repository
+---
+
+Lookup a given repository by the owner and repository name.
+
+```graphql
+repository(
+  name: String!
+  owner: String!
+): Repository
+
+```
+
+### Arguments
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the repository
+
+#### `owner` ([`String!`](/docs/api/scalars/string))
+
+The login field of a user or organization
+
+### Type
+
+#### [`Repository`](/docs/api/objects/repository)
+
+A repository contains the content for a project.

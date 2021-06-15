@@ -1,0 +1,28 @@
+---
+id: organization-members-can-create-repositories-setting-value
+title: OrganizationMembersCanCreateRepositoriesSettingValue
+---
+
+The possible values for the members can create repositories setting on an organization.
+
+```graphql
+enum OrganizationMembersCanCreateRepositoriesSettingValue {
+  ALL
+  DISABLED
+  PRIVATE
+}
+```
+
+### Values
+
+#### `ALL`
+
+Members will be able to create public and private repositories.
+
+#### `DISABLED`
+
+Members will not be able to create public or private repositories.
+
+#### `PRIVATE`
+
+Members will be able to create only private repositories.

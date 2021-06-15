@@ -1,0 +1,33 @@
+---
+id: pull-request-review-comment-connection
+title: PullRequestReviewCommentConnection
+---
+
+The connection type for PullRequestReviewComment.
+
+```graphql
+type PullRequestReviewCommentConnection {
+  edges: [PullRequestReviewCommentEdge]
+  nodes: [PullRequestReviewComment]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PullRequestReviewCommentEdge]`](/docs/api/objects/pull-request-review-comment-edge))
+
+A list of edges.
+
+#### `nodes` ([`[PullRequestReviewComment]`](/docs/api/objects/pull-request-review-comment))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

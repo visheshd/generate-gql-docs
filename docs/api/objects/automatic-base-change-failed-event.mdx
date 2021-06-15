@@ -1,0 +1,47 @@
+---
+id: automatic-base-change-failed-event
+title: AutomaticBaseChangeFailedEvent
+---
+
+Represents a 'automatic_base_change_failed' event on a given pull request.
+
+```graphql
+type AutomaticBaseChangeFailedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  newBase: String!
+  oldBase: String!
+  pullRequest: PullRequest!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `newBase` ([`String!`](/docs/api/scalars/string))
+
+The new base for this PR
+
+#### `oldBase` ([`String!`](/docs/api/scalars/string))
+
+The old base for this PR
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

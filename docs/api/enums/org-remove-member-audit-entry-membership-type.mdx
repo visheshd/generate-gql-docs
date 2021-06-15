@@ -1,0 +1,44 @@
+---
+id: org-remove-member-audit-entry-membership-type
+title: OrgRemoveMemberAuditEntryMembershipType
+---
+
+The type of membership a user has with an Organization.
+
+```graphql
+enum OrgRemoveMemberAuditEntryMembershipType {
+  ADMIN
+  BILLING_MANAGER
+  DIRECT_MEMBER
+  OUTSIDE_COLLABORATOR
+  UNAFFILIATED
+}
+```
+
+### Values
+
+#### `ADMIN`
+
+Organization administrators have full access and can change several settings,
+including the names of repositories that belong to the Organization and Owners
+team membership. In addition, organization admins can delete the organization
+and all of its repositories.
+
+#### `BILLING_MANAGER`
+
+A billing manager is a user who manages the billing settings for the Organization, such as updating payment information.
+
+#### `DIRECT_MEMBER`
+
+A direct member is a user that is a member of the Organization.
+
+#### `OUTSIDE_COLLABORATOR`
+
+An outside collaborator is a person who isn't explicitly a member of the
+Organization, but who has Read, Write, or Admin permissions to one or more
+repositories in the organization.
+
+#### `UNAFFILIATED`
+
+An unaffiliated collaborator is a person who is not a member of the
+Organization and does not have access to any repositories in the Organization.

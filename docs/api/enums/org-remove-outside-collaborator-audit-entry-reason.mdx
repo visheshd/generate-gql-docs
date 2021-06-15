@@ -1,0 +1,23 @@
+---
+id: org-remove-outside-collaborator-audit-entry-reason
+title: OrgRemoveOutsideCollaboratorAuditEntryReason
+---
+
+The reason an outside collaborator was removed from an Organization.
+
+```graphql
+enum OrgRemoveOutsideCollaboratorAuditEntryReason {
+  SAML_EXTERNAL_IDENTITY_MISSING
+  TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
+}
+```
+
+### Values
+
+#### `SAML_EXTERNAL_IDENTITY_MISSING`
+
+SAML external identity missing
+
+#### `TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE`
+
+The organization required 2FA of its billing managers and this user did not have 2FA enabled.

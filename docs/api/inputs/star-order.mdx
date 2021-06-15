@@ -1,0 +1,23 @@
+---
+id: star-order
+title: StarOrder
+---
+
+Ways in which star connections can be ordered.
+
+```graphql
+type StarOrder {
+  direction: OrderDirection!
+  field: StarOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The direction in which to order nodes.
+
+#### `field` ([`StarOrderField!`](/docs/api/enums/star-order-field))
+
+The field in which to order nodes by.

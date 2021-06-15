@@ -1,0 +1,425 @@
+---
+id: team
+title: Team
+---
+
+A team of users in an organization.
+
+```graphql
+type Team implements MemberStatusable, Node, Subscribable {
+  ancestors(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): TeamConnection!
+  avatarUrl(size: Int = 400): URI
+  childTeams(
+    after: String
+    before: String
+    first: Int = 0
+    immediateOnly: Boolean = "true"
+    last: Int = 0
+    orderBy: TeamOrder
+    userLogins: [String!] = []
+  ): TeamConnection!
+  combinedSlug: String!
+  createdAt: DateTime!
+  databaseId: Int
+  description: String
+  discussion(number: Int!): TeamDiscussion
+  discussions(
+    after: String
+    before: String
+    first: Int = 0
+    isPinned: Boolean
+    last: Int = 0
+    orderBy: TeamDiscussionOrder
+  ): TeamDiscussionConnection!
+  discussionsResourcePath: URI!
+  discussionsUrl: URI!
+  editTeamResourcePath: URI!
+  editTeamUrl: URI!
+  id: ID!
+  invitations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): OrganizationInvitationConnection
+  memberStatuses(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: UserStatusOrder = "[object Object]"
+  ): UserStatusConnection!
+  members(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    membership: TeamMembershipType = "ALL"
+    orderBy: TeamMemberOrder
+    query: String
+    role: TeamMemberRole
+  ): TeamMemberConnection!
+  membersResourcePath: URI!
+  membersUrl: URI!
+  name: String!
+  newTeamResourcePath: URI!
+  newTeamUrl: URI!
+  organization: Organization!
+  parentTeam: Team
+  privacy: TeamPrivacy!
+  repositories(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: TeamRepositoryOrder
+    query: String
+  ): TeamRepositoryConnection!
+  repositoriesResourcePath: URI!
+  repositoriesUrl: URI!
+  resourcePath: URI!
+  slug: String!
+  teamsResourcePath: URI!
+  teamsUrl: URI!
+  updatedAt: DateTime!
+  url: URI!
+  viewerCanAdminister: Boolean!
+  viewerCanSubscribe: Boolean!
+  viewerSubscription: SubscriptionState
+}
+```
+
+### Fields
+
+#### `ancestors` ([`TeamConnection!`](/docs/api/objects/team-connection))
+
+A list of teams that are ancestors of this team.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `avatarUrl` ([`URI`](/docs/api/scalars/uri))
+
+A URL pointing to the team's avatar.
+
+- ##### `size` ([`Int`](/docs/api/scalars/int))
+
+The size in pixels of the resulting square image.
+
+#### `childTeams` ([`TeamConnection!`](/docs/api/objects/team-connection))
+
+List of child teams belonging to this team
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `immediateOnly` ([`Boolean`](/docs/api/scalars/boolean))
+
+Whether to list immediate child teams or all descendant child teams.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`TeamOrder`](/docs/api/inputs/team-order))
+
+Order for connection
+
+- ##### `userLogins` ([`[String!]`](/docs/api/scalars/string))
+
+User logins to filter by
+
+#### `combinedSlug` ([`String!`](/docs/api/scalars/string))
+
+The slug corresponding to the organization and team.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The description of the team.
+
+#### `discussion` ([`TeamDiscussion`](/docs/api/objects/team-discussion))
+
+Find a team discussion by its number.
+
+- ##### `number` ([`Int!`](/docs/api/scalars/int))
+
+The sequence number of the discussion to find.
+
+#### `discussions` ([`TeamDiscussionConnection!`](/docs/api/objects/team-discussion-connection))
+
+A list of team discussions.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `isPinned` ([`Boolean`](/docs/api/scalars/boolean))
+
+If provided, filters discussions according to whether or not they are pinned.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`TeamDiscussionOrder`](/docs/api/inputs/team-discussion-order))
+
+Order for connection
+
+#### `discussionsResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for team discussions
+
+#### `discussionsUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for team discussions
+
+#### `editTeamResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for editing this team
+
+#### `editTeamUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for editing this team
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `invitations` ([`OrganizationInvitationConnection`](/docs/api/objects/organization-invitation-connection))
+
+A list of pending invitations for users to this team
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `memberStatuses` ([`UserStatusConnection!`](/docs/api/objects/user-status-connection))
+
+Get the status messages members of this entity have set that are either public or visible only to the organization.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`UserStatusOrder`](/docs/api/inputs/user-status-order))
+
+Ordering options for user statuses returned from the connection.
+
+#### `members` ([`TeamMemberConnection!`](/docs/api/objects/team-member-connection))
+
+A list of users who are members of this team.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `membership` ([`TeamMembershipType`](/docs/api/enums/team-membership-type))
+
+Filter by membership type
+
+- ##### `orderBy` ([`TeamMemberOrder`](/docs/api/inputs/team-member-order))
+
+Order for the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+- ##### `role` ([`TeamMemberRole`](/docs/api/enums/team-member-role))
+
+Filter by team member role
+
+#### `membersResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for the team' members
+
+#### `membersUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for the team' members
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the team.
+
+#### `newTeamResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path creating a new team
+
+#### `newTeamUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL creating a new team
+
+#### `organization` ([`Organization!`](/docs/api/objects/organization))
+
+The organization that owns this team.
+
+#### `parentTeam` ([`Team`](/docs/api/objects/team))
+
+The parent team of the team.
+
+#### `privacy` ([`TeamPrivacy!`](/docs/api/enums/team-privacy))
+
+The level of privacy the team has.
+
+#### `repositories` ([`TeamRepositoryConnection!`](/docs/api/objects/team-repository-connection))
+
+A list of repositories this team has access to.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`TeamRepositoryOrder`](/docs/api/inputs/team-repository-order))
+
+Order for the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+#### `repositoriesResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this team's repositories
+
+#### `repositoriesUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this team's repositories
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this team
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+The slug corresponding to the team.
+
+#### `teamsResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this team's teams
+
+#### `teamsUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this team's teams
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this team
+
+#### `viewerCanAdminister` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Team is adminable by the viewer.
+
+#### `viewerCanSubscribe` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the viewer is able to change their subscription status for the repository.
+
+#### `viewerSubscription` ([`SubscriptionState`](/docs/api/enums/subscription-state))
+
+Identifies if the viewer is watching, not watching, or ignoring the subscribable entity.
+
+### Interfaces
+
+#### [`MemberStatusable`](/docs/api/interfaces/member-statusable)
+
+Entities that have members who can set status messages.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`Subscribable`](/docs/api/interfaces/subscribable)
+
+Entities that can be subscribed to for web and email notifications.

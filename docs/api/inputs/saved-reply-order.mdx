@@ -1,0 +1,23 @@
+---
+id: saved-reply-order
+title: SavedReplyOrder
+---
+
+Ordering options for saved reply connections.
+
+```graphql
+type SavedReplyOrder {
+  direction: OrderDirection!
+  field: SavedReplyOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`SavedReplyOrderField!`](/docs/api/enums/saved-reply-order-field))
+
+The field to order saved replies by.

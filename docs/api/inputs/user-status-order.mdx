@@ -1,0 +1,23 @@
+---
+id: user-status-order
+title: UserStatusOrder
+---
+
+Ordering options for user status connections.
+
+```graphql
+type UserStatusOrder {
+  direction: OrderDirection!
+  field: UserStatusOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`UserStatusOrderField!`](/docs/api/enums/user-status-order-field))
+
+The field to order user statuses by.

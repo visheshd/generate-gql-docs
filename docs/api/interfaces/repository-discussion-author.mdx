@@ -1,0 +1,55 @@
+---
+id: repository-discussion-author
+title: RepositoryDiscussionAuthor
+---
+
+Represents an author of discussions in repositories.
+
+```graphql
+interface RepositoryDiscussionAuthor {
+  repositoryDiscussions(
+    after: String
+    answered: Boolean
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: DiscussionOrder = "[object Object]"
+    repositoryId: ID = 0
+  ): DiscussionConnection!
+}
+```
+
+### Fields
+
+#### `repositoryDiscussions` ([`DiscussionConnection!`](/docs/api/objects/discussion-connection))
+
+Discussions this user has started.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `answered` ([`Boolean`](/docs/api/scalars/boolean))
+
+Filter discussions to only those that have been answered or not. Defaults to
+including both answered and unanswered discussions.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`DiscussionOrder`](/docs/api/inputs/discussion-order))
+
+Ordering options for discussions returned from the connection.
+
+- ##### `repositoryId` ([`ID`](/docs/api/scalars/id))
+
+Filter discussions to only those in a specific repository.

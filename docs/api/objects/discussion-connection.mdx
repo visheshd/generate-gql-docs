@@ -1,0 +1,33 @@
+---
+id: discussion-connection
+title: DiscussionConnection
+---
+
+The connection type for Discussion.
+
+```graphql
+type DiscussionConnection {
+  edges: [DiscussionEdge]
+  nodes: [Discussion]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[DiscussionEdge]`](/docs/api/objects/discussion-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Discussion]`](/docs/api/objects/discussion))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

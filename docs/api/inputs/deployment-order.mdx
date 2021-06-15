@@ -1,0 +1,23 @@
+---
+id: deployment-order
+title: DeploymentOrder
+---
+
+Ordering options for deployment connections
+
+```graphql
+type DeploymentOrder {
+  direction: OrderDirection!
+  field: DeploymentOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`DeploymentOrderField!`](/docs/api/enums/deployment-order-field))
+
+The field to order deployments by.

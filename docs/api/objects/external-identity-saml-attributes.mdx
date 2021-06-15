@@ -1,0 +1,43 @@
+---
+id: external-identity-saml-attributes
+title: ExternalIdentitySamlAttributes
+---
+
+SAML attributes for the External Identity
+
+```graphql
+type ExternalIdentitySamlAttributes {
+  emails: [UserEmailMetadata!]
+  familyName: String
+  givenName: String
+  groups: [String!]
+  nameId: String
+  username: String
+}
+```
+
+### Fields
+
+#### `emails` ([`[UserEmailMetadata!]`](/docs/api/objects/user-email-metadata))
+
+The emails associated with the SAML identity
+
+#### `familyName` ([`String`](/docs/api/scalars/string))
+
+Family name of the SAML identity
+
+#### `givenName` ([`String`](/docs/api/scalars/string))
+
+Given name of the SAML identity
+
+#### `groups` ([`[String!]`](/docs/api/scalars/string))
+
+The groups linked to this identity in IDP
+
+#### `nameId` ([`String`](/docs/api/scalars/string))
+
+The NameID of the SAML identity
+
+#### `username` ([`String`](/docs/api/scalars/string))
+
+The userName of the SAML identity

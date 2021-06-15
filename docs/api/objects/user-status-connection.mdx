@@ -1,0 +1,33 @@
+---
+id: user-status-connection
+title: UserStatusConnection
+---
+
+The connection type for UserStatus.
+
+```graphql
+type UserStatusConnection {
+  edges: [UserStatusEdge]
+  nodes: [UserStatus]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[UserStatusEdge]`](/docs/api/objects/user-status-edge))
+
+A list of edges.
+
+#### `nodes` ([`[UserStatus]`](/docs/api/objects/user-status))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

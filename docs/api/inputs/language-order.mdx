@@ -1,0 +1,23 @@
+---
+id: language-order
+title: LanguageOrder
+---
+
+Ordering options for language connections.
+
+```graphql
+type LanguageOrder {
+  direction: OrderDirection!
+  field: LanguageOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`LanguageOrderField!`](/docs/api/enums/language-order-field))
+
+The field to order languages by.

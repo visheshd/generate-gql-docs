@@ -1,0 +1,33 @@
+---
+id: issue-timeline-connection
+title: IssueTimelineConnection
+---
+
+The connection type for IssueTimelineItem.
+
+```graphql
+type IssueTimelineConnection {
+  edges: [IssueTimelineItemEdge]
+  nodes: [IssueTimelineItem]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[IssueTimelineItemEdge]`](/docs/api/objects/issue-timeline-item-edge))
+
+A list of edges.
+
+#### `nodes` ([`[IssueTimelineItem]`](/docs/api/unions/issue-timeline-item))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

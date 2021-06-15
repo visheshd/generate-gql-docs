@@ -1,0 +1,28 @@
+---
+id: pull-request-review-decision
+title: PullRequestReviewDecision
+---
+
+The review status of a pull request.
+
+```graphql
+enum PullRequestReviewDecision {
+  APPROVED
+  CHANGES_REQUESTED
+  REVIEW_REQUIRED
+}
+```
+
+### Values
+
+#### `APPROVED`
+
+The pull request has received an approving review.
+
+#### `CHANGES_REQUESTED`
+
+Changes have been requested on the pull request.
+
+#### `REVIEW_REQUIRED`
+
+A review is required before the pull request can be merged.

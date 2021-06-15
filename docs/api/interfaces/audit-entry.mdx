@@ -1,0 +1,78 @@
+---
+id: audit-entry
+title: AuditEntry
+---
+
+An entry in the audit log.
+
+```graphql
+interface AuditEntry {
+  action: String!
+  actor: AuditEntryActor
+  actorIp: String
+  actorLocation: ActorLocation
+  actorLogin: String
+  actorResourcePath: URI
+  actorUrl: URI
+  createdAt: PreciseDateTime!
+  operationType: OperationType
+  user: User
+  userLogin: String
+  userResourcePath: URI
+  userUrl: URI
+}
+```
+
+### Fields
+
+#### `action` ([`String!`](/docs/api/scalars/string))
+
+The action name
+
+#### `actor` ([`AuditEntryActor`](/docs/api/unions/audit-entry-actor))
+
+The user who initiated the action
+
+#### `actorIp` ([`String`](/docs/api/scalars/string))
+
+The IP address of the actor
+
+#### `actorLocation` ([`ActorLocation`](/docs/api/objects/actor-location))
+
+A readable representation of the actor's location
+
+#### `actorLogin` ([`String`](/docs/api/scalars/string))
+
+The username of the user who initiated the action
+
+#### `actorResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for the actor.
+
+#### `actorUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for the actor.
+
+#### `createdAt` ([`PreciseDateTime!`](/docs/api/scalars/precise-date-time))
+
+The time the action was initiated
+
+#### `operationType` ([`OperationType`](/docs/api/enums/operation-type))
+
+The corresponding operation type for the action
+
+#### `user` ([`User`](/docs/api/objects/user))
+
+The user affected by the action
+
+#### `userLogin` ([`String`](/docs/api/scalars/string))
+
+For actions involving two users, the actor is the initiator and the user is the affected user.
+
+#### `userResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for the user.
+
+#### `userUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for the user.

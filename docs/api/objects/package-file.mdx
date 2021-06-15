@@ -1,0 +1,62 @@
+---
+id: package-file
+title: PackageFile
+---
+
+A file in a package version.
+
+```graphql
+type PackageFile implements Node {
+  id: ID!
+  md5: String
+  name: String!
+  packageVersion: PackageVersion
+  sha1: String
+  sha256: String
+  size: Int
+  updatedAt: DateTime!
+  url: URI
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `md5` ([`String`](/docs/api/scalars/string))
+
+MD5 hash of the file.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+Name of the file.
+
+#### `packageVersion` ([`PackageVersion`](/docs/api/objects/package-version))
+
+The package version this file belongs to.
+
+#### `sha1` ([`String`](/docs/api/scalars/string))
+
+SHA1 hash of the file.
+
+#### `sha256` ([`String`](/docs/api/scalars/string))
+
+SHA256 hash of the file.
+
+#### `size` ([`Int`](/docs/api/scalars/int))
+
+Size of the file in bytes.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI`](/docs/api/scalars/uri))
+
+URL to download the asset.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

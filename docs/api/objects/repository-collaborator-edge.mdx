@@ -1,0 +1,31 @@
+---
+id: repository-collaborator-edge
+title: RepositoryCollaboratorEdge
+---
+
+Represents a user who is a collaborator of a repository.
+
+```graphql
+type RepositoryCollaboratorEdge {
+  cursor: String!
+  node: User!
+  permission: RepositoryPermission!
+  permissionSources: [PermissionSource!]
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`User!`](/docs/api/objects/user))
+
+#### `permission` ([`RepositoryPermission!`](/docs/api/enums/repository-permission))
+
+The permission the user has on the repository.
+
+#### `permissionSources` ([`[PermissionSource!]`](/docs/api/objects/permission-source))
+
+A list of sources for the user's access to the repository.

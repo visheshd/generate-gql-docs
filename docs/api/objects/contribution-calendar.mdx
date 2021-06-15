@@ -1,0 +1,38 @@
+---
+id: contribution-calendar
+title: ContributionCalendar
+---
+
+A calendar of contributions made on GitHub by a user.
+
+```graphql
+type ContributionCalendar {
+  colors: [String!]!
+  isHalloween: Boolean!
+  months: [ContributionCalendarMonth!]!
+  totalContributions: Int!
+  weeks: [ContributionCalendarWeek!]!
+}
+```
+
+### Fields
+
+#### `colors` ([`[String!]!`](/docs/api/scalars/string))
+
+A list of hex color codes used in this calendar. The darker the color, the more contributions it represents.
+
+#### `isHalloween` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Determine if the color set was chosen because it's currently Halloween.
+
+#### `months` ([`[ContributionCalendarMonth!]!`](/docs/api/objects/contribution-calendar-month))
+
+A list of the months of contributions in this calendar.
+
+#### `totalContributions` ([`Int!`](/docs/api/scalars/int))
+
+The count of total contributions in the calendar.
+
+#### `weeks` ([`[ContributionCalendarWeek!]!`](/docs/api/objects/contribution-calendar-week))
+
+A list of the weeks of contributions in this calendar.

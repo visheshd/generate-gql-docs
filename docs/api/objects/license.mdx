@@ -1,0 +1,92 @@
+---
+id: license
+title: License
+---
+
+A repository's open source license
+
+```graphql
+type License implements Node {
+  body: String!
+  conditions: [LicenseRule]!
+  description: String
+  featured: Boolean!
+  hidden: Boolean!
+  id: ID!
+  implementation: String
+  key: String!
+  limitations: [LicenseRule]!
+  name: String!
+  nickname: String
+  permissions: [LicenseRule]!
+  pseudoLicense: Boolean!
+  spdxId: String
+  url: URI
+}
+```
+
+### Fields
+
+#### `body` ([`String!`](/docs/api/scalars/string))
+
+The full text of the license
+
+#### `conditions` ([`[LicenseRule]!`](/docs/api/objects/license-rule))
+
+The conditions set by the license
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+A human-readable description of the license
+
+#### `featured` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the license should be featured
+
+#### `hidden` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the license should be displayed in license pickers
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `implementation` ([`String`](/docs/api/scalars/string))
+
+Instructions on how to implement the license
+
+#### `key` ([`String!`](/docs/api/scalars/string))
+
+The lowercased SPDX ID of the license
+
+#### `limitations` ([`[LicenseRule]!`](/docs/api/objects/license-rule))
+
+The limitations set by the license
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The license full name specified by <https://spdx.org/licenses>
+
+#### `nickname` ([`String`](/docs/api/scalars/string))
+
+Customary short name if applicable (e.g, GPLv3)
+
+#### `permissions` ([`[LicenseRule]!`](/docs/api/objects/license-rule))
+
+The permissions set by the license
+
+#### `pseudoLicense` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the license is a pseudo-license placeholder (e.g., other, no-license)
+
+#### `spdxId` ([`String`](/docs/api/scalars/string))
+
+Short identifier specified by <https://spdx.org/licenses>
+
+#### `url` ([`URI`](/docs/api/scalars/uri))
+
+URL to the license on <https://choosealicense.com>
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

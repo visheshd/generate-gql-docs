@@ -1,0 +1,47 @@
+---
+id: deploy-key
+title: DeployKey
+---
+
+A repository deploy key.
+
+```graphql
+type DeployKey implements Node {
+  createdAt: DateTime!
+  id: ID!
+  key: String!
+  readOnly: Boolean!
+  title: String!
+  verified: Boolean!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `key` ([`String!`](/docs/api/scalars/string))
+
+The deploy key.
+
+#### `readOnly` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the deploy key is read only.
+
+#### `title` ([`String!`](/docs/api/scalars/string))
+
+The deploy key title.
+
+#### `verified` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the deploy key has been verified.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

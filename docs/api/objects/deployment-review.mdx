@@ -1,0 +1,68 @@
+---
+id: deployment-review
+title: DeploymentReview
+---
+
+A deployment review.
+
+```graphql
+type DeploymentReview implements Node {
+  comment: String!
+  databaseId: Int
+  environments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): EnvironmentConnection!
+  id: ID!
+  state: DeploymentReviewState!
+  user: User!
+}
+```
+
+### Fields
+
+#### `comment` ([`String!`](/docs/api/scalars/string))
+
+The comment the user left.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `environments` ([`EnvironmentConnection!`](/docs/api/objects/environment-connection))
+
+The environments approved or rejected
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `state` ([`DeploymentReviewState!`](/docs/api/enums/deployment-review-state))
+
+The decision of the user.
+
+#### `user` ([`User!`](/docs/api/objects/user))
+
+The user that reviewed the deployment.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

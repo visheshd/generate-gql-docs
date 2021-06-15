@@ -1,0 +1,33 @@
+---
+id: team-connection
+title: TeamConnection
+---
+
+The connection type for Team.
+
+```graphql
+type TeamConnection {
+  edges: [TeamEdge]
+  nodes: [Team]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[TeamEdge]`](/docs/api/objects/team-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Team]`](/docs/api/objects/team))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

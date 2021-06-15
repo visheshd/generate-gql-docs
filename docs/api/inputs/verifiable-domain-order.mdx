@@ -1,0 +1,23 @@
+---
+id: verifiable-domain-order
+title: VerifiableDomainOrder
+---
+
+Ordering options for verifiable domain connections.
+
+```graphql
+type VerifiableDomainOrder {
+  direction: OrderDirection!
+  field: VerifiableDomainOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`VerifiableDomainOrderField!`](/docs/api/enums/verifiable-domain-order-field))
+
+The field to order verifiable domains by.

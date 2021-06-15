@@ -1,0 +1,87 @@
+---
+id: package
+title: Package
+---
+
+Information for an uploaded package.
+
+```graphql
+type Package implements Node {
+  id: ID!
+  latestVersion: PackageVersion
+  name: String!
+  packageType: PackageType!
+  repository: Repository
+  statistics: PackageStatistics
+  version(version: String!): PackageVersion
+  versions(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: PackageVersionOrder = "[object Object]"
+  ): PackageVersionConnection!
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `latestVersion` ([`PackageVersion`](/docs/api/objects/package-version))
+
+Find the latest version for the package.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+Identifies the name of the package.
+
+#### `packageType` ([`PackageType!`](/docs/api/enums/package-type))
+
+Identifies the type of the package.
+
+#### `repository` ([`Repository`](/docs/api/objects/repository))
+
+The repository this package belongs to.
+
+#### `statistics` ([`PackageStatistics`](/docs/api/objects/package-statistics))
+
+Statistics about package activity.
+
+#### `version` ([`PackageVersion`](/docs/api/objects/package-version))
+
+Find package version by version string.
+
+- ##### `version` ([`String!`](/docs/api/scalars/string))
+
+The package version.
+
+#### `versions` ([`PackageVersionConnection!`](/docs/api/objects/package-version-connection))
+
+list of versions for this package
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`PackageVersionOrder`](/docs/api/inputs/package-version-order))
+
+Ordering of the returned packages.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

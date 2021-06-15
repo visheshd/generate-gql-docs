@@ -1,0 +1,35 @@
+---
+id: enterprise-administrator-invitation
+title: enterpriseAdministratorInvitation
+---
+
+Look up a pending enterprise administrator invitation by invitee, enterprise and role.
+
+```graphql
+enterpriseAdministratorInvitation(
+  enterpriseSlug: String!
+  role: EnterpriseAdministratorRole!
+  userLogin: String!
+): EnterpriseAdministratorInvitation
+
+```
+
+### Arguments
+
+#### `enterpriseSlug` ([`String!`](/docs/api/scalars/string))
+
+The slug of the enterprise the user was invited to join.
+
+#### `role` ([`EnterpriseAdministratorRole!`](/docs/api/enums/enterprise-administrator-role))
+
+The role for the business member invitation.
+
+#### `userLogin` ([`String!`](/docs/api/scalars/string))
+
+The login of the user invited to join the business.
+
+### Type
+
+#### [`EnterpriseAdministratorInvitation`](/docs/api/objects/enterprise-administrator-invitation)
+
+An invitation for a user to become an owner or billing manager of an enterprise.

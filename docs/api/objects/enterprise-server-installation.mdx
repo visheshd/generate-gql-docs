@@ -1,0 +1,109 @@
+---
+id: enterprise-server-installation
+title: EnterpriseServerInstallation
+---
+
+An Enterprise Server installation.
+
+```graphql
+type EnterpriseServerInstallation implements Node {
+  createdAt: DateTime!
+  customerName: String!
+  hostName: String!
+  id: ID!
+  isConnected: Boolean!
+  updatedAt: DateTime!
+  userAccounts(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: EnterpriseServerUserAccountOrder = "[object Object]"
+  ): EnterpriseServerUserAccountConnection!
+  userAccountsUploads(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: EnterpriseServerUserAccountsUploadOrder = "[object Object]"
+  ): EnterpriseServerUserAccountsUploadConnection!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `customerName` ([`String!`](/docs/api/scalars/string))
+
+The customer name to which the Enterprise Server installation belongs.
+
+#### `hostName` ([`String!`](/docs/api/scalars/string))
+
+The host name of the Enterprise Server installation.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isConnected` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the installation is connected to an Enterprise Server installation via GitHub Connect.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `userAccounts` ([`EnterpriseServerUserAccountConnection!`](/docs/api/objects/enterprise-server-user-account-connection))
+
+User accounts on this Enterprise Server installation.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`EnterpriseServerUserAccountOrder`](/docs/api/inputs/enterprise-server-user-account-order))
+
+Ordering options for Enterprise Server user accounts returned from the connection.
+
+#### `userAccountsUploads` ([`EnterpriseServerUserAccountsUploadConnection!`](/docs/api/objects/enterprise-server-user-accounts-upload-connection))
+
+User accounts uploads for the Enterprise Server installation.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`EnterpriseServerUserAccountsUploadOrder`](/docs/api/inputs/enterprise-server-user-accounts-upload-order))
+
+Ordering options for Enterprise Server user accounts uploads returned from the connection.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

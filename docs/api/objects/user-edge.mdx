@@ -1,0 +1,23 @@
+---
+id: user-edge
+title: UserEdge
+---
+
+Represents a user.
+
+```graphql
+type UserEdge {
+  cursor: String!
+  node: User
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`User`](/docs/api/objects/user))
+
+The item at the end of the edge.

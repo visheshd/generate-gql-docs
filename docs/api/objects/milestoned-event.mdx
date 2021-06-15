@@ -1,0 +1,42 @@
+---
+id: milestoned-event
+title: MilestonedEvent
+---
+
+Represents a 'milestoned' event on a given issue or pull request.
+
+```graphql
+type MilestonedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  milestoneTitle: String!
+  subject: MilestoneItem!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `milestoneTitle` ([`String!`](/docs/api/scalars/string))
+
+Identifies the milestone title associated with the 'milestoned' event.
+
+#### `subject` ([`MilestoneItem!`](/docs/api/unions/milestone-item))
+
+Object referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,28 @@
+---
+id: file-viewed-state
+title: FileViewedState
+---
+
+The possible viewed states of a file .
+
+```graphql
+enum FileViewedState {
+  DISMISSED
+  UNVIEWED
+  VIEWED
+}
+```
+
+### Values
+
+#### `DISMISSED`
+
+The file has new changes since last viewed.
+
+#### `UNVIEWED`
+
+The file has not been marked as viewed.
+
+#### `VIEWED`
+
+The file has been marked as viewed.

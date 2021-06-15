@@ -1,0 +1,39 @@
+---
+id: org-restore-member-membership-organization-audit-entry-data
+title: OrgRestoreMemberMembershipOrganizationAuditEntryData
+---
+
+Metadata for an organization membership for org.restore_member actions
+
+```graphql
+type OrgRestoreMemberMembershipOrganizationAuditEntryData implements OrganizationAuditEntryData {
+  organization: Organization
+  organizationName: String
+  organizationResourcePath: URI
+  organizationUrl: URI
+}
+```
+
+### Fields
+
+#### `organization` ([`Organization`](/docs/api/objects/organization))
+
+The Organization associated with the Audit Entry.
+
+#### `organizationName` ([`String`](/docs/api/scalars/string))
+
+The name of the Organization.
+
+#### `organizationResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for the organization
+
+#### `organizationUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for the organization
+
+### Interfaces
+
+#### [`OrganizationAuditEntryData`](/docs/api/interfaces/organization-audit-entry-data)
+
+Metadata for an audit entry with action org.\*

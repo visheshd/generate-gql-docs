@@ -1,0 +1,23 @@
+---
+id: enterprise-server-user-account-order
+title: EnterpriseServerUserAccountOrder
+---
+
+Ordering options for Enterprise Server user account connections.
+
+```graphql
+type EnterpriseServerUserAccountOrder {
+  direction: OrderDirection!
+  field: EnterpriseServerUserAccountOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`EnterpriseServerUserAccountOrderField!`](/docs/api/enums/enterprise-server-user-account-order-field))
+
+The field to order user accounts by.

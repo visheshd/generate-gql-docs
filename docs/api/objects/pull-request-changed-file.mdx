@@ -1,0 +1,33 @@
+---
+id: pull-request-changed-file
+title: PullRequestChangedFile
+---
+
+A file changed in a pull request.
+
+```graphql
+type PullRequestChangedFile {
+  additions: Int!
+  deletions: Int!
+  path: String!
+  viewerViewedState: FileViewedState!
+}
+```
+
+### Fields
+
+#### `additions` ([`Int!`](/docs/api/scalars/int))
+
+The number of additions to the file.
+
+#### `deletions` ([`Int!`](/docs/api/scalars/int))
+
+The number of deletions to the file.
+
+#### `path` ([`String!`](/docs/api/scalars/string))
+
+The path of the file.
+
+#### `viewerViewedState` ([`FileViewedState!`](/docs/api/enums/file-viewed-state))
+
+The state of the file for the viewer.

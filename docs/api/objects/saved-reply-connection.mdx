@@ -1,0 +1,33 @@
+---
+id: saved-reply-connection
+title: SavedReplyConnection
+---
+
+The connection type for SavedReply.
+
+```graphql
+type SavedReplyConnection {
+  edges: [SavedReplyEdge]
+  nodes: [SavedReply]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[SavedReplyEdge]`](/docs/api/objects/saved-reply-edge))
+
+A list of edges.
+
+#### `nodes` ([`[SavedReply]`](/docs/api/objects/saved-reply))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

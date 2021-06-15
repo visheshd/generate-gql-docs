@@ -1,0 +1,121 @@
+---
+id: sponsorable
+title: Sponsorable
+---
+
+Entities that can be sponsored through GitHub Sponsors
+
+```graphql
+interface Sponsorable {
+  hasSponsorsListing: Boolean!
+  isSponsoredBy(accountLogin: String!): Boolean!
+  isSponsoringViewer: Boolean!
+  sponsorsListing: SponsorsListing
+  sponsorshipForViewerAsSponsor: Sponsorship
+  sponsorshipsAsMaintainer(
+    after: String
+    before: String
+    first: Int = 0
+    includePrivate: Boolean
+    last: Int = 0
+    orderBy: SponsorshipOrder
+  ): SponsorshipConnection!
+  sponsorshipsAsSponsor(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: SponsorshipOrder
+  ): SponsorshipConnection!
+  viewerCanSponsor: Boolean!
+  viewerIsSponsoring: Boolean!
+}
+```
+
+### Fields
+
+#### `hasSponsorsListing` ([`Boolean!`](/docs/api/scalars/boolean))
+
+True if this user/organization has a GitHub Sponsors listing.
+
+#### `isSponsoredBy` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the given account is sponsoring this user/organization.
+
+- ##### `accountLogin` ([`String!`](/docs/api/scalars/string))
+
+The target account's login.
+
+#### `isSponsoringViewer` ([`Boolean!`](/docs/api/scalars/boolean))
+
+True if the viewer is sponsored by this user/organization.
+
+#### `sponsorsListing` ([`SponsorsListing`](/docs/api/objects/sponsors-listing))
+
+The GitHub Sponsors listing for this user or organization.
+
+#### `sponsorshipForViewerAsSponsor` ([`Sponsorship`](/docs/api/objects/sponsorship))
+
+The viewer's sponsorship of this entity.
+
+#### `sponsorshipsAsMaintainer` ([`SponsorshipConnection!`](/docs/api/objects/sponsorship-connection))
+
+This object's sponsorships as the maintainer.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `includePrivate` ([`Boolean`](/docs/api/scalars/boolean))
+
+Whether or not to include private sponsorships in the result set
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`SponsorshipOrder`](/docs/api/inputs/sponsorship-order))
+
+Ordering options for sponsorships returned from this connection. If left
+blank, the sponsorships will be ordered based on relevancy to the viewer.
+
+#### `sponsorshipsAsSponsor` ([`SponsorshipConnection!`](/docs/api/objects/sponsorship-connection))
+
+This object's sponsorships as the sponsor.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`SponsorshipOrder`](/docs/api/inputs/sponsorship-order))
+
+Ordering options for sponsorships returned from this connection. If left
+blank, the sponsorships will be ordered based on relevancy to the viewer.
+
+#### `viewerCanSponsor` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the viewer is able to sponsor this user/organization.
+
+#### `viewerIsSponsoring` ([`Boolean!`](/docs/api/scalars/boolean))
+
+True if the viewer is sponsoring this user/organization.

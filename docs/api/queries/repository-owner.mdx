@@ -1,0 +1,25 @@
+---
+id: repository-owner
+title: repositoryOwner
+---
+
+Lookup a repository owner (ie. either a User or an Organization) by login.
+
+```graphql
+repositoryOwner(
+  login: String!
+): RepositoryOwner
+
+```
+
+### Arguments
+
+#### `login` ([`String!`](/docs/api/scalars/string))
+
+The username to lookup the owner by.
+
+### Type
+
+#### [`RepositoryOwner`](/docs/api/interfaces/repository-owner)
+
+Represents an owner of a Repository.

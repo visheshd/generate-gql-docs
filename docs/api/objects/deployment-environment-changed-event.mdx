@@ -1,0 +1,42 @@
+---
+id: deployment-environment-changed-event
+title: DeploymentEnvironmentChangedEvent
+---
+
+Represents a 'deployment_environment_changed' event on a given pull request.
+
+```graphql
+type DeploymentEnvironmentChangedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  deploymentStatus: DeploymentStatus!
+  id: ID!
+  pullRequest: PullRequest!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `deploymentStatus` ([`DeploymentStatus!`](/docs/api/objects/deployment-status))
+
+The deployment status that updated the deployment environment.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

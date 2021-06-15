@@ -1,0 +1,68 @@
+---
+id: sponsorables
+title: sponsorables
+---
+
+Users and organizations who can be sponsored via GitHub Sponsors.
+
+```graphql
+sponsorables(
+  after: String
+  before: String
+  dependencyEcosystem: SecurityAdvisoryEcosystem
+  first: Int = 0
+  last: Int = 0
+  onlyDependencies: Boolean
+  orderBy: SponsorableOrder = "[object Object]"
+  orgLoginForDependencies: String
+): SponsorableItemConnection!
+
+```
+
+### Arguments
+
+#### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+#### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+#### `dependencyEcosystem` ([`SecurityAdvisoryEcosystem`](/docs/api/enums/security-advisory-ecosystem))
+
+Optional filter for which dependencies should be checked for sponsorable
+owners. Only sponsorable owners of dependencies in this ecosystem will be
+included. Used when onlyDependencies = true.
+
+#### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+#### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `onlyDependencies` ([`Boolean`](/docs/api/scalars/boolean))
+
+Whether only sponsorables who own the viewer's dependencies will be
+returned. Must be authenticated to use. Can check an organization instead
+for their dependencies owned by sponsorables by passing
+orgLoginForDependencies.
+
+#### `orderBy` ([`SponsorableOrder`](/docs/api/inputs/sponsorable-order))
+
+Ordering options for users and organizations returned from the connection.
+
+#### `orgLoginForDependencies` ([`String`](/docs/api/scalars/string))
+
+Optional organization username for whose dependencies should be checked.
+Used when onlyDependencies = true. Omit to check your own dependencies. If
+you are not an administrator of the organization, only dependencies from its
+public repositories will be considered.
+
+### Type
+
+#### [`SponsorableItemConnection`](/docs/api/objects/sponsorable-item-connection)
+
+The connection type for SponsorableItem.

@@ -1,0 +1,60 @@
+---
+id: organizations-hovercard-context
+title: OrganizationsHovercardContext
+---
+
+An organization list hovercard context
+
+```graphql
+type OrganizationsHovercardContext implements HovercardContext {
+  message: String!
+  octicon: String!
+  relevantOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): OrganizationConnection!
+  totalOrganizationCount: Int!
+}
+```
+
+### Fields
+
+#### `message` ([`String!`](/docs/api/scalars/string))
+
+A string describing this context
+
+#### `octicon` ([`String!`](/docs/api/scalars/string))
+
+An octicon to accompany this context
+
+#### `relevantOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+Organizations this user is a member of that are relevant
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `totalOrganizationCount` ([`Int!`](/docs/api/scalars/int))
+
+The total number of organizations this user is in
+
+### Interfaces
+
+#### [`HovercardContext`](/docs/api/interfaces/hovercard-context)
+
+An individual line of a hovercard

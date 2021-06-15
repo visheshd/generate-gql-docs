@@ -1,0 +1,33 @@
+---
+id: organization-connection
+title: OrganizationConnection
+---
+
+The connection type for Organization.
+
+```graphql
+type OrganizationConnection {
+  edges: [OrganizationEdge]
+  nodes: [Organization]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[OrganizationEdge]`](/docs/api/objects/organization-edge))
+
+A list of edges.
+
+#### `nodes` ([`[Organization]`](/docs/api/objects/organization))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

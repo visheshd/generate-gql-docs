@@ -1,0 +1,52 @@
+---
+id: deployed-event
+title: DeployedEvent
+---
+
+Represents a 'deployed' event on a given pull request.
+
+```graphql
+type DeployedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  databaseId: Int
+  deployment: Deployment!
+  id: ID!
+  pullRequest: PullRequest!
+  ref: Ref
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `deployment` ([`Deployment!`](/docs/api/objects/deployment))
+
+The deployment associated with the 'deployed' event.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+#### `ref` ([`Ref`](/docs/api/objects/ref))
+
+The ref associated with the 'deployed' event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

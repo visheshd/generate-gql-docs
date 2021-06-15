@@ -1,0 +1,33 @@
+---
+id: contribution-calendar-month
+title: ContributionCalendarMonth
+---
+
+A month of contributions in a user's contribution graph.
+
+```graphql
+type ContributionCalendarMonth {
+  firstDay: Date!
+  name: String!
+  totalWeeks: Int!
+  year: Int!
+}
+```
+
+### Fields
+
+#### `firstDay` ([`Date!`](/docs/api/scalars/date))
+
+The date of the first day of this month.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the month.
+
+#### `totalWeeks` ([`Int!`](/docs/api/scalars/int))
+
+How many weeks started in this month.
+
+#### `year` ([`Int!`](/docs/api/scalars/int))
+
+The year the month occurred in.

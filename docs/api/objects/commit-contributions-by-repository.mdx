@@ -1,0 +1,59 @@
+---
+id: commit-contributions-by-repository
+title: CommitContributionsByRepository
+---
+
+This aggregates commits made by a user within one repository.
+
+```graphql
+type CommitContributionsByRepository {
+  contributions(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: CommitContributionOrder = "[object Object]"
+  ): CreatedCommitContributionConnection!
+  repository: Repository!
+  resourcePath: URI!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `contributions` ([`CreatedCommitContributionConnection!`](/docs/api/objects/created-commit-contribution-connection))
+
+The commit contributions, each representing a day.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`CommitContributionOrder`](/docs/api/inputs/commit-contribution-order))
+
+Ordering options for commit contributions returned from the connection.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository in which the commits were made.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for the user's commits to the repository in this time range.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for the user's commits to the repository in this time range.

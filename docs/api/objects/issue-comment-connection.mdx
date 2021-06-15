@@ -1,0 +1,33 @@
+---
+id: issue-comment-connection
+title: IssueCommentConnection
+---
+
+The connection type for IssueComment.
+
+```graphql
+type IssueCommentConnection {
+  edges: [IssueCommentEdge]
+  nodes: [IssueComment]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[IssueCommentEdge]`](/docs/api/objects/issue-comment-edge))
+
+A list of edges.
+
+#### `nodes` ([`[IssueComment]`](/docs/api/objects/issue-comment))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

@@ -1,0 +1,42 @@
+---
+id: review-requested-event
+title: ReviewRequestedEvent
+---
+
+Represents an 'review_requested' event on a given pull request.
+
+```graphql
+type ReviewRequestedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  pullRequest: PullRequest!
+  requestedReviewer: RequestedReviewer
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+#### `requestedReviewer` ([`RequestedReviewer`](/docs/api/unions/requested-reviewer))
+
+Identifies the reviewer whose review was requested.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

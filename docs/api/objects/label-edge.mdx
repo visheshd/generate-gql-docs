@@ -1,0 +1,23 @@
+---
+id: label-edge
+title: LabelEdge
+---
+
+An edge in a connection.
+
+```graphql
+type LabelEdge {
+  cursor: String!
+  node: Label
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Label`](/docs/api/objects/label))
+
+The item at the end of the edge.

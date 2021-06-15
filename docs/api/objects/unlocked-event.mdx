@@ -1,0 +1,37 @@
+---
+id: unlocked-event
+title: UnlockedEvent
+---
+
+Represents an 'unlocked' event on a given issue or pull request.
+
+```graphql
+type UnlockedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  lockable: Lockable!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `lockable` ([`Lockable!`](/docs/api/interfaces/lockable))
+
+Object that was unlocked.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

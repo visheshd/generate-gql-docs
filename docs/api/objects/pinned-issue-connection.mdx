@@ -1,0 +1,33 @@
+---
+id: pinned-issue-connection
+title: PinnedIssueConnection
+---
+
+The connection type for PinnedIssue.
+
+```graphql
+type PinnedIssueConnection {
+  edges: [PinnedIssueEdge]
+  nodes: [PinnedIssue]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PinnedIssueEdge]`](/docs/api/objects/pinned-issue-edge))
+
+A list of edges.
+
+#### `nodes` ([`[PinnedIssue]`](/docs/api/objects/pinned-issue))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

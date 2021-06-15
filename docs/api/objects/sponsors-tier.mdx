@@ -1,0 +1,85 @@
+---
+id: sponsors-tier
+title: SponsorsTier
+---
+
+A GitHub Sponsors tier associated with a GitHub Sponsors listing.
+
+```graphql
+type SponsorsTier implements Node {
+  adminInfo: SponsorsTierAdminInfo
+  closestLesserValueTier: SponsorsTier
+  createdAt: DateTime!
+  description: String!
+  descriptionHTML: HTML!
+  id: ID!
+  isCustomAmount: Boolean!
+  isOneTime: Boolean!
+  monthlyPriceInCents: Int!
+  monthlyPriceInDollars: Int!
+  name: String!
+  sponsorsListing: SponsorsListing!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `adminInfo` ([`SponsorsTierAdminInfo`](/docs/api/objects/sponsors-tier-admin-info))
+
+SponsorsTier information only visible to users that can administer the associated Sponsors listing.
+
+#### `closestLesserValueTier` ([`SponsorsTier`](/docs/api/objects/sponsors-tier))
+
+Get a different tier for this tier's maintainer that is at the same frequency
+as this tier but with a lesser cost. Returns the published tier with the
+monthly price closest to this tier's without going over.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `description` ([`String!`](/docs/api/scalars/string))
+
+The description of the tier.
+
+#### `descriptionHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The tier description rendered to HTML
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isCustomAmount` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this tier was chosen at checkout time by the sponsor rather than
+defined ahead of time by the maintainer who manages the Sponsors listing.
+
+#### `isOneTime` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this tier is only for use with one-time sponsorships.
+
+#### `monthlyPriceInCents` ([`Int!`](/docs/api/scalars/int))
+
+How much this tier costs per month in cents.
+
+#### `monthlyPriceInDollars` ([`Int!`](/docs/api/scalars/int))
+
+How much this tier costs per month in dollars.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the tier.
+
+#### `sponsorsListing` ([`SponsorsListing!`](/docs/api/objects/sponsors-listing))
+
+The sponsors listing that this tier belongs to.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

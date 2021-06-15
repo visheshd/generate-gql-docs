@@ -1,0 +1,33 @@
+---
+id: status-check-rollup-context-connection
+title: StatusCheckRollupContextConnection
+---
+
+The connection type for StatusCheckRollupContext.
+
+```graphql
+type StatusCheckRollupContextConnection {
+  edges: [StatusCheckRollupContextEdge]
+  nodes: [StatusCheckRollupContext]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[StatusCheckRollupContextEdge]`](/docs/api/objects/status-check-rollup-context-edge))
+
+A list of edges.
+
+#### `nodes` ([`[StatusCheckRollupContext]`](/docs/api/unions/status-check-rollup-context))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

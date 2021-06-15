@@ -1,0 +1,37 @@
+---
+id: enterprise-repository-info
+title: EnterpriseRepositoryInfo
+---
+
+A subset of repository information queryable from an enterprise.
+
+```graphql
+type EnterpriseRepositoryInfo implements Node {
+  id: ID!
+  isPrivate: Boolean!
+  name: String!
+  nameWithOwner: String!
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isPrivate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the repository is private or internal.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The repository's name.
+
+#### `nameWithOwner` ([`String!`](/docs/api/scalars/string))
+
+The repository's name with owner.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

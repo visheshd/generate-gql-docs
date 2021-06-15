@@ -1,0 +1,128 @@
+---
+id: profile-owner
+title: ProfileOwner
+---
+
+Represents any entity on GitHub that has a profile page.
+
+```graphql
+interface ProfileOwner {
+  anyPinnableItems(type: PinnableItemType): Boolean!
+  email: String
+  id: ID!
+  itemShowcase: ProfileItemShowcase!
+  location: String
+  login: String!
+  name: String
+  pinnableItems(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    types: [PinnableItemType!] = []
+  ): PinnableItemConnection!
+  pinnedItems(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    types: [PinnableItemType!] = []
+  ): PinnableItemConnection!
+  pinnedItemsRemaining: Int!
+  viewerCanChangePinnedItems: Boolean!
+  websiteUrl: URI
+}
+```
+
+### Fields
+
+#### `anyPinnableItems` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Determine if this repository owner has any items that can be pinned to their profile.
+
+- ##### `type` ([`PinnableItemType`](/docs/api/enums/pinnable-item-type))
+
+Filter to only a particular kind of pinnable item.
+
+#### `email` ([`String`](/docs/api/scalars/string))
+
+The public profile email.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `itemShowcase` ([`ProfileItemShowcase!`](/docs/api/objects/profile-item-showcase))
+
+Showcases a selection of repositories and gists that the profile owner has
+either curated or that have been selected automatically based on popularity.
+
+#### `location` ([`String`](/docs/api/scalars/string))
+
+The public profile location.
+
+#### `login` ([`String!`](/docs/api/scalars/string))
+
+The username used to login.
+
+#### `name` ([`String`](/docs/api/scalars/string))
+
+The public profile name.
+
+#### `pinnableItems` ([`PinnableItemConnection!`](/docs/api/objects/pinnable-item-connection))
+
+A list of repositories and gists this profile owner can pin to their profile.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `types` ([`[PinnableItemType!]`](/docs/api/enums/pinnable-item-type))
+
+Filter the types of pinnable items that are returned.
+
+#### `pinnedItems` ([`PinnableItemConnection!`](/docs/api/objects/pinnable-item-connection))
+
+A list of repositories and gists this profile owner has pinned to their profile
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `types` ([`[PinnableItemType!]`](/docs/api/enums/pinnable-item-type))
+
+Filter the types of pinned items that are returned.
+
+#### `pinnedItemsRemaining` ([`Int!`](/docs/api/scalars/int))
+
+Returns how many more items this profile owner can pin to their profile.
+
+#### `viewerCanChangePinnedItems` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the viewer pin repositories and gists to the profile?
+
+#### `websiteUrl` ([`URI`](/docs/api/scalars/uri))
+
+The public profile website URL.

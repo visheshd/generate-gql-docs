@@ -1,0 +1,23 @@
+---
+id: team-repository-order
+title: TeamRepositoryOrder
+---
+
+Ordering options for team repository connections
+
+```graphql
+type TeamRepositoryOrder {
+  direction: OrderDirection!
+  field: TeamRepositoryOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`TeamRepositoryOrderField!`](/docs/api/enums/team-repository-order-field))
+
+The field to order repositories by.

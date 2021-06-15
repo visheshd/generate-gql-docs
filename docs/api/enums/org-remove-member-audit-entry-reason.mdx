@@ -1,0 +1,38 @@
+---
+id: org-remove-member-audit-entry-reason
+title: OrgRemoveMemberAuditEntryReason
+---
+
+The reason a member was removed from an Organization.
+
+```graphql
+enum OrgRemoveMemberAuditEntryReason {
+  SAML_EXTERNAL_IDENTITY_MISSING
+  SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY
+  TWO_FACTOR_ACCOUNT_RECOVERY
+  TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
+  USER_ACCOUNT_DELETED
+}
+```
+
+### Values
+
+#### `SAML_EXTERNAL_IDENTITY_MISSING`
+
+SAML external identity missing
+
+#### `SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY`
+
+SAML SSO enforcement requires an external identity
+
+#### `TWO_FACTOR_ACCOUNT_RECOVERY`
+
+User was removed from organization during account recovery
+
+#### `TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE`
+
+The organization required 2FA of its billing managers and this user did not have 2FA enabled.
+
+#### `USER_ACCOUNT_DELETED`
+
+User account has been deleted

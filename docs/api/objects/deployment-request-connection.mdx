@@ -1,0 +1,33 @@
+---
+id: deployment-request-connection
+title: DeploymentRequestConnection
+---
+
+The connection type for DeploymentRequest.
+
+```graphql
+type DeploymentRequestConnection {
+  edges: [DeploymentRequestEdge]
+  nodes: [DeploymentRequest]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[DeploymentRequestEdge]`](/docs/api/objects/deployment-request-edge))
+
+A list of edges.
+
+#### `nodes` ([`[DeploymentRequest]`](/docs/api/objects/deployment-request))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

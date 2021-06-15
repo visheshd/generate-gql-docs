@@ -1,0 +1,58 @@
+---
+id: check-conclusion-state
+title: CheckConclusionState
+---
+
+The possible states for a check suite or run conclusion.
+
+```graphql
+enum CheckConclusionState {
+  ACTION_REQUIRED
+  CANCELLED
+  FAILURE
+  NEUTRAL
+  SKIPPED
+  STALE
+  STARTUP_FAILURE
+  SUCCESS
+  TIMED_OUT
+}
+```
+
+### Values
+
+#### `ACTION_REQUIRED`
+
+The check suite or run requires action.
+
+#### `CANCELLED`
+
+The check suite or run has been cancelled.
+
+#### `FAILURE`
+
+The check suite or run has failed.
+
+#### `NEUTRAL`
+
+The check suite or run was neutral.
+
+#### `SKIPPED`
+
+The check suite or run was skipped.
+
+#### `STALE`
+
+The check suite or run was marked stale by GitHub. Only GitHub can use this conclusion.
+
+#### `STARTUP_FAILURE`
+
+The check suite or run has failed at startup.
+
+#### `SUCCESS`
+
+The check suite or run has succeeded.
+
+#### `TIMED_OUT`
+
+The check suite or run has timed out.

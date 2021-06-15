@@ -1,0 +1,81 @@
+---
+id: review-dismissed-event
+title: ReviewDismissedEvent
+---
+
+Represents a 'review_dismissed' event on a given issue or pull request.
+
+```graphql
+type ReviewDismissedEvent implements Node, UniformResourceLocatable {
+  actor: Actor
+  createdAt: DateTime!
+  databaseId: Int
+  dismissalMessage: String
+  dismissalMessageHTML: String
+  id: ID!
+  previousReviewState: PullRequestReviewState!
+  pullRequest: PullRequest!
+  pullRequestCommit: PullRequestCommit
+  resourcePath: URI!
+  review: PullRequestReview
+  url: URI!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `dismissalMessage` ([`String`](/docs/api/scalars/string))
+
+Identifies the optional message associated with the 'review_dismissed' event.
+
+#### `dismissalMessageHTML` ([`String`](/docs/api/scalars/string))
+
+Identifies the optional message associated with the event, rendered to HTML.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `previousReviewState` ([`PullRequestReviewState!`](/docs/api/enums/pull-request-review-state))
+
+Identifies the previous state of the review with the 'review_dismissed' event.
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+#### `pullRequestCommit` ([`PullRequestCommit`](/docs/api/objects/pull-request-commit))
+
+Identifies the commit which caused the review to become stale.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this review dismissed event.
+
+#### `review` ([`PullRequestReview`](/docs/api/objects/pull-request-review))
+
+Identifies the review associated with the 'review_dismissed' event.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this review dismissed event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

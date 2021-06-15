@@ -1,0 +1,35 @@
+---
+id: marketplace-categories
+title: marketplaceCategories
+---
+
+Get alphabetically sorted list of Marketplace categories
+
+```graphql
+marketplaceCategories(
+  excludeEmpty: Boolean
+  excludeSubcategories: Boolean
+  includeCategories: [String!] = []
+): [MarketplaceCategory!]!
+
+```
+
+### Arguments
+
+#### `excludeEmpty` ([`Boolean`](/docs/api/scalars/boolean))
+
+Exclude categories with no listings.
+
+#### `excludeSubcategories` ([`Boolean`](/docs/api/scalars/boolean))
+
+Returns top level categories only, excluding any subcategories.
+
+#### `includeCategories` ([`[String!]`](/docs/api/scalars/string))
+
+Return only the specified categories.
+
+### Type
+
+#### [`MarketplaceCategory`](/docs/api/objects/marketplace-category)
+
+A public description of a Marketplace category.

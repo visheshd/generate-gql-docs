@@ -1,0 +1,38 @@
+---
+id: status-state
+title: StatusState
+---
+
+The possible commit status states.
+
+```graphql
+enum StatusState {
+  ERROR
+  EXPECTED
+  FAILURE
+  PENDING
+  SUCCESS
+}
+```
+
+### Values
+
+#### `ERROR`
+
+Status is errored.
+
+#### `EXPECTED`
+
+Status is expected.
+
+#### `FAILURE`
+
+Status is failing.
+
+#### `PENDING`
+
+Status is pending.
+
+#### `SUCCESS`
+
+Status is successful.

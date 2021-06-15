@@ -1,0 +1,28 @@
+---
+id: text-match
+title: TextMatch
+---
+
+A text match within a search result.
+
+```graphql
+type TextMatch {
+  fragment: String!
+  highlights: [TextMatchHighlight!]!
+  property: String!
+}
+```
+
+### Fields
+
+#### `fragment` ([`String!`](/docs/api/scalars/string))
+
+The specific text fragment within the property matched on.
+
+#### `highlights` ([`[TextMatchHighlight!]!`](/docs/api/objects/text-match-highlight))
+
+Highlights within the matched fragment.
+
+#### `property` ([`String!`](/docs/api/scalars/string))
+
+The property matched on.

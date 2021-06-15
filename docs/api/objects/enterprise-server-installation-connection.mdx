@@ -1,0 +1,33 @@
+---
+id: enterprise-server-installation-connection
+title: EnterpriseServerInstallationConnection
+---
+
+The connection type for EnterpriseServerInstallation.
+
+```graphql
+type EnterpriseServerInstallationConnection {
+  edges: [EnterpriseServerInstallationEdge]
+  nodes: [EnterpriseServerInstallation]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[EnterpriseServerInstallationEdge]`](/docs/api/objects/enterprise-server-installation-edge))
+
+A list of edges.
+
+#### `nodes` ([`[EnterpriseServerInstallation]`](/docs/api/objects/enterprise-server-installation))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

@@ -1,0 +1,33 @@
+---
+id: pull-request-review-connection
+title: PullRequestReviewConnection
+---
+
+The connection type for PullRequestReview.
+
+```graphql
+type PullRequestReviewConnection {
+  edges: [PullRequestReviewEdge]
+  nodes: [PullRequestReview]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PullRequestReviewEdge]`](/docs/api/objects/pull-request-review-edge))
+
+A list of edges.
+
+#### `nodes` ([`[PullRequestReview]`](/docs/api/objects/pull-request-review))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

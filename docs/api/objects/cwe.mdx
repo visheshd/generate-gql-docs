@@ -1,0 +1,39 @@
+---
+id: cwe
+title: CWE
+---
+
+A common weakness enumeration
+
+```graphql
+type CWE implements Node {
+  cweId: String!
+  description: String!
+  id: ID!
+  name: String!
+}
+```
+
+### Fields
+
+#### `cweId` ([`String!`](/docs/api/scalars/string))
+
+The id of the CWE
+
+#### `description` ([`String!`](/docs/api/scalars/string))
+
+A detailed description of this CWE
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+ID of the object.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of this CWE
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,191 @@
+---
+id: gist
+title: Gist
+---
+
+A Gist.
+
+```graphql
+type Gist implements Node, Starrable, UniformResourceLocatable {
+  comments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): GistCommentConnection!
+  createdAt: DateTime!
+  description: String
+  files(limit: Int = 10, oid: GitObjectID): [GistFile]
+  forks(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: GistOrder
+  ): GistConnection!
+  id: ID!
+  isFork: Boolean!
+  isPublic: Boolean!
+  name: String!
+  owner: RepositoryOwner
+  pushedAt: DateTime
+  resourcePath: URI!
+  stargazerCount: Int!
+  stargazers(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: StarOrder
+  ): StargazerConnection!
+  updatedAt: DateTime!
+  url: URI!
+  viewerHasStarred: Boolean!
+}
+```
+
+### Fields
+
+#### `comments` ([`GistCommentConnection!`](/docs/api/objects/gist-comment-connection))
+
+A list of comments associated with the gist
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The gist description.
+
+#### `files` ([`[GistFile]`](/docs/api/objects/gist-file))
+
+The files in this gist.
+
+- ##### `limit` ([`Int`](/docs/api/scalars/int))
+
+The maximum number of files to return.
+
+- ##### `oid` ([`GitObjectID`](/docs/api/scalars/git-object-id))
+
+The oid of the files to return
+
+#### `forks` ([`GistConnection!`](/docs/api/objects/gist-connection))
+
+A list of forks associated with the gist
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`GistOrder`](/docs/api/inputs/gist-order))
+
+Ordering options for gists returned from the connection
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isFork` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the gist is a fork.
+
+#### `isPublic` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the gist is public or not.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The gist name.
+
+#### `owner` ([`RepositoryOwner`](/docs/api/interfaces/repository-owner))
+
+The gist owner.
+
+#### `pushedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the gist was last pushed to.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTML path to this resource.
+
+#### `stargazerCount` ([`Int!`](/docs/api/scalars/int))
+
+Returns a count of how many stargazers there are on this object
+
+#### `stargazers` ([`StargazerConnection!`](/docs/api/objects/stargazer-connection))
+
+A list of users who have starred this starrable.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`StarOrder`](/docs/api/inputs/star-order))
+
+Order for connection
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this Gist.
+
+#### `viewerHasStarred` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Returns a boolean indicating whether the viewing user has starred this starrable.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`Starrable`](/docs/api/interfaces/starrable)
+
+Things that can be starred.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

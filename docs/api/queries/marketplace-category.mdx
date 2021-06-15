@@ -1,0 +1,30 @@
+---
+id: marketplace-category
+title: marketplaceCategory
+---
+
+Look up a Marketplace category by its slug.
+
+```graphql
+marketplaceCategory(
+  slug: String!
+  useTopicAliases: Boolean
+): MarketplaceCategory
+
+```
+
+### Arguments
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+The URL slug of the category.
+
+#### `useTopicAliases` ([`Boolean`](/docs/api/scalars/boolean))
+
+Also check topic aliases for the category slug
+
+### Type
+
+#### [`MarketplaceCategory`](/docs/api/objects/marketplace-category)
+
+A public description of a Marketplace category.

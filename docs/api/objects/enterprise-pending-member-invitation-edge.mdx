@@ -1,0 +1,30 @@
+---
+id: enterprise-pending-member-invitation-edge
+title: EnterprisePendingMemberInvitationEdge
+---
+
+An invitation to be a member in an enterprise organization.
+
+```graphql
+type EnterprisePendingMemberInvitationEdge {
+  cursor: String!
+  isUnlicensed: Boolean!
+  node: OrganizationInvitation
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `isUnlicensed` ([`Boolean!`](/docs/api/scalars/boolean))
+
+<span class="badge badge--warning">DEPRECATED: All pending members consume a license Removal on 2020-07-01 UTC.</span>
+
+Whether the invitation has a license for the enterprise.
+
+#### `node` ([`OrganizationInvitation`](/docs/api/objects/organization-invitation))
+
+The item at the end of the edge.

@@ -1,0 +1,81 @@
+---
+id: project-owner
+title: ProjectOwner
+---
+
+Represents an owner of a Project.
+
+```graphql
+interface ProjectOwner {
+  id: ID!
+  project(number: Int!): Project
+  projects(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: ProjectOrder
+    search: String
+    states: [ProjectState!] = []
+  ): ProjectConnection!
+  projectsResourcePath: URI!
+  projectsUrl: URI!
+  viewerCanCreateProjects: Boolean!
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `project` ([`Project`](/docs/api/objects/project))
+
+Find project by number.
+
+- ##### `number` ([`Int!`](/docs/api/scalars/int))
+
+The project number to find.
+
+#### `projects` ([`ProjectConnection!`](/docs/api/objects/project-connection))
+
+A list of projects under the owner.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ProjectOrder`](/docs/api/inputs/project-order))
+
+Ordering options for projects returned from the connection
+
+- ##### `search` ([`String`](/docs/api/scalars/string))
+
+Query to search projects by, currently only searching by name.
+
+- ##### `states` ([`[ProjectState!]`](/docs/api/enums/project-state))
+
+A list of states to filter the projects by.
+
+#### `projectsResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path listing owners projects
+
+#### `projectsUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL listing owners projects
+
+#### `viewerCanCreateProjects` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer create new projects on this owner.

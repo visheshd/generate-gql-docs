@@ -1,0 +1,22 @@
+---
+id: created-repository-or-restricted-contribution
+title: CreatedRepositoryOrRestrictedContribution
+---
+
+Represents either a repository the viewer can access or a restricted contribution.
+
+```graphql
+union CreatedRepositoryOrRestrictedContribution =
+    CreatedRepositoryContribution
+  | RestrictedContribution
+```
+
+### Possible types
+
+#### [`CreatedRepositoryContribution`](/docs/api/objects/created-repository-contribution)
+
+Represents the contribution a user made on GitHub by creating a repository.
+
+#### [`RestrictedContribution`](/docs/api/objects/restricted-contribution)
+
+Represents a private contribution a user made on GitHub.

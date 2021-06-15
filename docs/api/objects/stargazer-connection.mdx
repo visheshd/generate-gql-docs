@@ -1,0 +1,33 @@
+---
+id: stargazer-connection
+title: StargazerConnection
+---
+
+The connection type for User.
+
+```graphql
+type StargazerConnection {
+  edges: [StargazerEdge]
+  nodes: [User]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[StargazerEdge]`](/docs/api/objects/stargazer-edge))
+
+A list of edges.
+
+#### `nodes` ([`[User]`](/docs/api/objects/user))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

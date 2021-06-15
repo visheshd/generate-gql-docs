@@ -1,0 +1,37 @@
+---
+id: unpinned-event
+title: UnpinnedEvent
+---
+
+Represents an 'unpinned' event on a given issue or pull request.
+
+```graphql
+type UnpinnedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  issue: Issue!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `issue` ([`Issue!`](/docs/api/objects/issue))
+
+Identifies the issue associated with the event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

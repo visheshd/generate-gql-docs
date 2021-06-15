@@ -1,0 +1,42 @@
+---
+id: auto-rebase-enabled-event
+title: AutoRebaseEnabledEvent
+---
+
+Represents a 'auto_rebase_enabled' event on a given pull request.
+
+```graphql
+type AutoRebaseEnabledEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  enabler: User
+  id: ID!
+  pullRequest: PullRequest
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `enabler` ([`User`](/docs/api/objects/user))
+
+The user who enabled auto-merge (rebase) for this Pull Request
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

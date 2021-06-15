@@ -1,0 +1,23 @@
+---
+id: package-version-order
+title: PackageVersionOrder
+---
+
+Ways in which lists of package versions can be ordered upon return.
+
+```graphql
+type PackageVersionOrder {
+  direction: OrderDirection
+  field: PackageVersionOrderField
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection`](/docs/api/enums/order-direction))
+
+The direction in which to order package versions by the specified field.
+
+#### `field` ([`PackageVersionOrderField`](/docs/api/enums/package-version-order-field))
+
+The field in which to order package versions by.

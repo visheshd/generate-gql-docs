@@ -1,0 +1,33 @@
+---
+id: lock-reason
+title: LockReason
+---
+
+The possible reasons that an issue or pull request was locked.
+
+```graphql
+enum LockReason {
+  OFF_TOPIC
+  RESOLVED
+  SPAM
+  TOO_HEATED
+}
+```
+
+### Values
+
+#### `OFF_TOPIC`
+
+The issue or pull request was locked because the conversation was off-topic.
+
+#### `RESOLVED`
+
+The issue or pull request was locked because the conversation was resolved.
+
+#### `SPAM`
+
+The issue or pull request was locked because the conversation was spam.
+
+#### `TOO_HEATED`
+
+The issue or pull request was locked because the conversation was too heated.

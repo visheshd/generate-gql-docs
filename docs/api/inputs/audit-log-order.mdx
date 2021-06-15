@@ -1,0 +1,23 @@
+---
+id: audit-log-order
+title: AuditLogOrder
+---
+
+Ordering options for Audit Log connections.
+
+```graphql
+type AuditLogOrder {
+  direction: OrderDirection
+  field: AuditLogOrderField
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`AuditLogOrderField`](/docs/api/enums/audit-log-order-field))
+
+The field to order Audit Logs by.

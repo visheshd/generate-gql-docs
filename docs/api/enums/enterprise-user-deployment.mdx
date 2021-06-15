@@ -1,0 +1,23 @@
+---
+id: enterprise-user-deployment
+title: EnterpriseUserDeployment
+---
+
+The possible GitHub Enterprise deployments where this user can exist.
+
+```graphql
+enum EnterpriseUserDeployment {
+  CLOUD
+  SERVER
+}
+```
+
+### Values
+
+#### `CLOUD`
+
+The user is part of a GitHub Enterprise Cloud deployment.
+
+#### `SERVER`
+
+The user is part of a GitHub Enterprise Server deployment.

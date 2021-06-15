@@ -1,0 +1,531 @@
+---
+id: issue
+title: Issue
+---
+
+An Issue is a place to discuss ideas, enhancements, tasks, and bugs for a project.
+
+```graphql
+type Issue implements Assignable, Closable, Comment, Labelable, Lockable, Node, Reactable, RepositoryNode, Subscribable, UniformResourceLocatable, Updatable, UpdatableComment {
+  activeLockReason: LockReason
+  assignees(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserConnection!
+  author: Actor
+  authorAssociation: CommentAuthorAssociation!
+  body: String!
+  bodyHTML: HTML!
+  bodyResourcePath: URI!
+  bodyText: String!
+  bodyUrl: URI!
+  closed: Boolean!
+  closedAt: DateTime
+  comments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: IssueCommentOrder
+  ): IssueCommentConnection!
+  createdAt: DateTime!
+  createdViaEmail: Boolean!
+  databaseId: Int
+  editor: Actor
+  hovercard(includeNotificationContexts: Boolean = "true"): Hovercard!
+  id: ID!
+  includesCreatedEdit: Boolean!
+  isPinned: Boolean
+  isReadByViewer: Boolean
+  labels(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: LabelOrder = "[object Object]"
+  ): LabelConnection
+  lastEditedAt: DateTime
+  locked: Boolean!
+  milestone: Milestone
+  number: Int!
+  participants(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserConnection!
+  projectCards(
+    after: String
+    archivedStates: [ProjectCardArchivedState] = [ARCHIVED, NOT_ARCHIVED]
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): ProjectCardConnection!
+  publishedAt: DateTime
+  reactionGroups: [ReactionGroup!]
+  reactions(
+    after: String
+    before: String
+    content: ReactionContent
+    first: Int = 0
+    last: Int = 0
+    orderBy: ReactionOrder
+  ): ReactionConnection!
+  repository: Repository!
+  resourcePath: URI!
+  state: IssueState!
+  timeline(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    since: DateTime
+  ): IssueTimelineConnection!
+  timelineItems(
+    after: String
+    before: String
+    first: Int = 0
+    itemTypes: [IssueTimelineItemsItemType!] = []
+    last: Int = 0
+    since: DateTime
+    skip: Int = 0
+  ): IssueTimelineItemsConnection!
+  title: String!
+  updatedAt: DateTime!
+  url: URI!
+  userContentEdits(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserContentEditConnection
+  viewerCanReact: Boolean!
+  viewerCanSubscribe: Boolean!
+  viewerCanUpdate: Boolean!
+  viewerCannotUpdateReasons: [CommentCannotUpdateReason!]!
+  viewerDidAuthor: Boolean!
+  viewerSubscription: SubscriptionState
+}
+```
+
+### Fields
+
+#### `activeLockReason` ([`LockReason`](/docs/api/enums/lock-reason))
+
+Reason that the conversation was locked.
+
+#### `assignees` ([`UserConnection!`](/docs/api/objects/user-connection))
+
+A list of Users assigned to this object.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `author` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who authored the comment.
+
+#### `authorAssociation` ([`CommentAuthorAssociation!`](/docs/api/enums/comment-author-association))
+
+Author's association with the subject of the comment.
+
+#### `body` ([`String!`](/docs/api/scalars/string))
+
+Identifies the body of the issue.
+
+#### `bodyHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The body rendered to HTML.
+
+#### `bodyResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The http path for this issue body
+
+#### `bodyText` ([`String!`](/docs/api/scalars/string))
+
+Identifies the body of the issue rendered to text.
+
+#### `bodyUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The http URL for this issue body
+
+#### `closed` ([`Boolean!`](/docs/api/scalars/boolean))
+
+`true` if the object is closed (definition of closed may depend on type)
+
+#### `closedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was closed.
+
+#### `comments` ([`IssueCommentConnection!`](/docs/api/objects/issue-comment-connection))
+
+A list of comments associated with the Issue.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`IssueCommentOrder`](/docs/api/inputs/issue-comment-order))
+
+Ordering options for issue comments returned from the connection.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `createdViaEmail` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was created via an email reply.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `editor` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who edited the comment.
+
+#### `hovercard` ([`Hovercard!`](/docs/api/objects/hovercard))
+
+The hovercard information for this issue
+
+- ##### `includeNotificationContexts` ([`Boolean`](/docs/api/scalars/boolean))
+
+Whether or not to include notification contexts
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `includesCreatedEdit` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if this comment was edited and includes an edit with the creation data
+
+#### `isPinned` ([`Boolean`](/docs/api/scalars/boolean))
+
+Indicates whether or not this issue is currently pinned to the repository issues list
+
+#### `isReadByViewer` ([`Boolean`](/docs/api/scalars/boolean))
+
+Is this issue read by the viewer
+
+#### `labels` ([`LabelConnection`](/docs/api/objects/label-connection))
+
+A list of labels associated with the object.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`LabelOrder`](/docs/api/inputs/label-order))
+
+Ordering options for labels returned from the connection.
+
+#### `lastEditedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+The moment the editor made the last edit
+
+#### `locked` ([`Boolean!`](/docs/api/scalars/boolean))
+
+`true` if the object is locked
+
+#### `milestone` ([`Milestone`](/docs/api/objects/milestone))
+
+Identifies the milestone associated with the issue.
+
+#### `number` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the issue number.
+
+#### `participants` ([`UserConnection!`](/docs/api/objects/user-connection))
+
+A list of Users that are participating in the Issue conversation.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `projectCards` ([`ProjectCardConnection!`](/docs/api/objects/project-card-connection))
+
+List of project cards associated with this issue.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `archivedStates` ([`[ProjectCardArchivedState]`](/docs/api/enums/project-card-archived-state))
+
+A list of archived states to filter the cards by
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `publishedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the comment was published at.
+
+#### `reactionGroups` ([`[ReactionGroup!]`](/docs/api/objects/reaction-group))
+
+A list of reactions grouped by content left on the subject.
+
+#### `reactions` ([`ReactionConnection!`](/docs/api/objects/reaction-connection))
+
+A list of Reactions left on the Issue.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `content` ([`ReactionContent`](/docs/api/enums/reaction-content))
+
+Allows filtering Reactions by emoji.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ReactionOrder`](/docs/api/inputs/reaction-order))
+
+Allows specifying the order in which reactions are returned.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository associated with this node.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this issue
+
+#### `state` ([`IssueState!`](/docs/api/enums/issue-state))
+
+Identifies the state of the issue.
+
+#### `timeline` ([`IssueTimelineConnection!`](/docs/api/objects/issue-timeline-connection))
+
+<span class="badge badge--warning">DEPRECATED: `timeline` will be removed Use Issue.timelineItems instead. Removal on 2020-10-01 UTC.</span>
+
+A list of events, comments, commits, etc. associated with the issue.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `since` ([`DateTime`](/docs/api/scalars/date-time))
+
+Allows filtering timeline events by a `since` timestamp.
+
+#### `timelineItems` ([`IssueTimelineItemsConnection!`](/docs/api/objects/issue-timeline-items-connection))
+
+A list of events, comments, commits, etc. associated with the issue.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `itemTypes` ([`[IssueTimelineItemsItemType!]`](/docs/api/enums/issue-timeline-items-item-type))
+
+Filter timeline items by type.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `since` ([`DateTime`](/docs/api/scalars/date-time))
+
+Filter timeline items by a `since` timestamp.
+
+- ##### `skip` ([`Int`](/docs/api/scalars/int))
+
+Skips the first _n_ elements in the list.
+
+#### `title` ([`String!`](/docs/api/scalars/string))
+
+Identifies the issue title.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this issue
+
+#### `userContentEdits` ([`UserContentEditConnection`](/docs/api/objects/user-content-edit-connection))
+
+A list of edits to this content.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `viewerCanReact` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can user react to this subject
+
+#### `viewerCanSubscribe` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the viewer is able to change their subscription status for the repository.
+
+#### `viewerCanUpdate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can update this object.
+
+#### `viewerCannotUpdateReasons` ([`[CommentCannotUpdateReason!]!`](/docs/api/enums/comment-cannot-update-reason))
+
+Reasons why the current viewer can not update this comment.
+
+#### `viewerDidAuthor` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Did the viewer author this comment.
+
+#### `viewerSubscription` ([`SubscriptionState`](/docs/api/enums/subscription-state))
+
+Identifies if the viewer is watching, not watching, or ignoring the subscribable entity.
+
+### Interfaces
+
+#### [`Assignable`](/docs/api/interfaces/assignable)
+
+An object that can have users assigned to it.
+
+#### [`Closable`](/docs/api/interfaces/closable)
+
+An object that can be closed
+
+#### [`Comment`](/docs/api/interfaces/comment)
+
+Represents a comment.
+
+#### [`Labelable`](/docs/api/interfaces/labelable)
+
+An object that can have labels assigned to it.
+
+#### [`Lockable`](/docs/api/interfaces/lockable)
+
+An object that can be locked.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`Reactable`](/docs/api/interfaces/reactable)
+
+Represents a subject that can be reacted on.
+
+#### [`RepositoryNode`](/docs/api/interfaces/repository-node)
+
+Represents a object that belongs to a repository.
+
+#### [`Subscribable`](/docs/api/interfaces/subscribable)
+
+Entities that can be subscribed to for web and email notifications.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.
+
+#### [`Updatable`](/docs/api/interfaces/updatable)
+
+Entities that can be updated.
+
+#### [`UpdatableComment`](/docs/api/interfaces/updatable-comment)
+
+Comments that can be updated.

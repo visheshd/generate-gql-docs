@@ -1,0 +1,42 @@
+---
+id: user-blocked-event
+title: UserBlockedEvent
+---
+
+Represents a 'user_blocked' event on a given user.
+
+```graphql
+type UserBlockedEvent implements Node {
+  actor: Actor
+  blockDuration: UserBlockDuration!
+  createdAt: DateTime!
+  id: ID!
+  subject: User
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `blockDuration` ([`UserBlockDuration!`](/docs/api/enums/user-block-duration))
+
+Number of days that the user was blocked for.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `subject` ([`User`](/docs/api/objects/user))
+
+The user who was blocked.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

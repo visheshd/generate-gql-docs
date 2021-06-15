@@ -1,0 +1,308 @@
+---
+id: marketplace-listing
+title: MarketplaceListing
+---
+
+A listing in the GitHub integration marketplace.
+
+```graphql
+type MarketplaceListing implements Node {
+  app: App
+  companyUrl: URI
+  configurationResourcePath: URI!
+  configurationUrl: URI!
+  documentationUrl: URI
+  extendedDescription: String
+  extendedDescriptionHTML: HTML!
+  fullDescription: String!
+  fullDescriptionHTML: HTML!
+  hasPublishedFreeTrialPlans: Boolean!
+  hasTermsOfService: Boolean!
+  hasVerifiedOwner: Boolean!
+  howItWorks: String
+  howItWorksHTML: HTML!
+  id: ID!
+  installationUrl: URI
+  installedForViewer: Boolean!
+  isArchived: Boolean!
+  isDraft: Boolean!
+  isPaid: Boolean!
+  isPublic: Boolean!
+  isRejected: Boolean!
+  isUnverified: Boolean!
+  isUnverifiedPending: Boolean!
+  isVerificationPendingFromDraft: Boolean!
+  isVerificationPendingFromUnverified: Boolean!
+  isVerified: Boolean!
+  logoBackgroundColor: String!
+  logoUrl(size: Int = 400): URI
+  name: String!
+  normalizedShortDescription: String!
+  pricingUrl: URI
+  primaryCategory: MarketplaceCategory!
+  privacyPolicyUrl: URI!
+  resourcePath: URI!
+  screenshotUrls: [String]!
+  secondaryCategory: MarketplaceCategory
+  shortDescription: String!
+  slug: String!
+  statusUrl: URI
+  supportEmail: String
+  supportUrl: URI!
+  termsOfServiceUrl: URI
+  url: URI!
+  viewerCanAddPlans: Boolean!
+  viewerCanApprove: Boolean!
+  viewerCanDelist: Boolean!
+  viewerCanEdit: Boolean!
+  viewerCanEditCategories: Boolean!
+  viewerCanEditPlans: Boolean!
+  viewerCanRedraft: Boolean!
+  viewerCanReject: Boolean!
+  viewerCanRequestApproval: Boolean!
+  viewerHasPurchased: Boolean!
+  viewerHasPurchasedForAllOrganizations: Boolean!
+  viewerIsListingAdmin: Boolean!
+}
+```
+
+### Fields
+
+#### `app` ([`App`](/docs/api/objects/app))
+
+The GitHub App this listing represents.
+
+#### `companyUrl` ([`URI`](/docs/api/scalars/uri))
+
+URL to the listing owner's company site.
+
+#### `configurationResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for configuring access to the listing's integration or OAuth app
+
+#### `configurationUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for configuring access to the listing's integration or OAuth app
+
+#### `documentationUrl` ([`URI`](/docs/api/scalars/uri))
+
+URL to the listing's documentation.
+
+#### `extendedDescription` ([`String`](/docs/api/scalars/string))
+
+The listing's detailed description.
+
+#### `extendedDescriptionHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The listing's detailed description rendered to HTML.
+
+#### `fullDescription` ([`String!`](/docs/api/scalars/string))
+
+The listing's introductory description.
+
+#### `fullDescriptionHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The listing's introductory description rendered to HTML.
+
+#### `hasPublishedFreeTrialPlans` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Does this listing have any plans with a free trial?
+
+#### `hasTermsOfService` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Does this listing have a terms of service link?
+
+#### `hasVerifiedOwner` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the creator of the app is a verified org
+
+#### `howItWorks` ([`String`](/docs/api/scalars/string))
+
+A technical description of how this app works with GitHub.
+
+#### `howItWorksHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The listing's technical description rendered to HTML.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `installationUrl` ([`URI`](/docs/api/scalars/uri))
+
+URL to install the product to the viewer's account or organization.
+
+#### `installedForViewer` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this listing's app has been installed for the current viewer
+
+#### `isArchived` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this listing has been removed from the Marketplace.
+
+#### `isDraft` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this listing is still an editable draft that has not been submitted
+for review and is not publicly visible in the Marketplace.
+
+#### `isPaid` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the product this listing represents is available as part of a paid plan.
+
+#### `isPublic` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this listing has been approved for display in the Marketplace.
+
+#### `isRejected` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this listing has been rejected by GitHub for display in the Marketplace.
+
+#### `isUnverified` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this listing has been approved for unverified display in the Marketplace.
+
+#### `isUnverifiedPending` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this draft listing has been submitted for review for approval to be unverified in the Marketplace.
+
+#### `isVerificationPendingFromDraft` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this draft listing has been submitted for review from GitHub for approval to be verified in the Marketplace.
+
+#### `isVerificationPendingFromUnverified` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this unverified listing has been submitted for review from GitHub for approval to be verified in the Marketplace.
+
+#### `isVerified` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this listing has been approved for verified display in the Marketplace.
+
+#### `logoBackgroundColor` ([`String!`](/docs/api/scalars/string))
+
+The hex color code, without the leading '#', for the logo background.
+
+#### `logoUrl` ([`URI`](/docs/api/scalars/uri))
+
+URL for the listing's logo image.
+
+- ##### `size` ([`Int`](/docs/api/scalars/int))
+
+The size in pixels of the resulting square image.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The listing's full name.
+
+#### `normalizedShortDescription` ([`String!`](/docs/api/scalars/string))
+
+The listing's very short description without a trailing period or ampersands.
+
+#### `pricingUrl` ([`URI`](/docs/api/scalars/uri))
+
+URL to the listing's detailed pricing.
+
+#### `primaryCategory` ([`MarketplaceCategory!`](/docs/api/objects/marketplace-category))
+
+The category that best describes the listing.
+
+#### `privacyPolicyUrl` ([`URI!`](/docs/api/scalars/uri))
+
+URL to the listing's privacy policy, may return an empty string for listings that do not require a privacy policy URL.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for the Marketplace listing.
+
+#### `screenshotUrls` ([`[String]!`](/docs/api/scalars/string))
+
+The URLs for the listing's screenshots.
+
+#### `secondaryCategory` ([`MarketplaceCategory`](/docs/api/objects/marketplace-category))
+
+An alternate category that describes the listing.
+
+#### `shortDescription` ([`String!`](/docs/api/scalars/string))
+
+The listing's very short description.
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+The short name of the listing used in its URL.
+
+#### `statusUrl` ([`URI`](/docs/api/scalars/uri))
+
+URL to the listing's status page.
+
+#### `supportEmail` ([`String`](/docs/api/scalars/string))
+
+An email address for support for this listing's app.
+
+#### `supportUrl` ([`URI!`](/docs/api/scalars/uri))
+
+Either a URL or an email address for support for this listing's app, may
+return an empty string for listings that do not require a support URL.
+
+#### `termsOfServiceUrl` ([`URI`](/docs/api/scalars/uri))
+
+URL to the listing's terms of service.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for the Marketplace listing.
+
+#### `viewerCanAddPlans` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer add plans for this Marketplace listing.
+
+#### `viewerCanApprove` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer approve this Marketplace listing.
+
+#### `viewerCanDelist` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer delist this Marketplace listing.
+
+#### `viewerCanEdit` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer edit this Marketplace listing.
+
+#### `viewerCanEditCategories` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer edit the primary and secondary category of this
+Marketplace listing.
+
+#### `viewerCanEditPlans` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer edit the plans for this Marketplace listing.
+
+#### `viewerCanRedraft` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer return this Marketplace listing to draft state
+so it becomes editable again.
+
+#### `viewerCanReject` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer reject this Marketplace listing by returning it to
+an editable draft state or rejecting it entirely.
+
+#### `viewerCanRequestApproval` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer request this listing be reviewed for display in
+the Marketplace as verified.
+
+#### `viewerHasPurchased` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates whether the current user has an active subscription to this Marketplace listing.
+
+#### `viewerHasPurchasedForAllOrganizations` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the current user has purchased a subscription to this Marketplace listing
+for all of the organizations the user owns.
+
+#### `viewerIsListingAdmin` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Does the current viewer role allow them to administer this Marketplace listing.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

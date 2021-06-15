@@ -1,0 +1,33 @@
+---
+id: enterprise-server-user-account-connection
+title: EnterpriseServerUserAccountConnection
+---
+
+The connection type for EnterpriseServerUserAccount.
+
+```graphql
+type EnterpriseServerUserAccountConnection {
+  edges: [EnterpriseServerUserAccountEdge]
+  nodes: [EnterpriseServerUserAccount]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[EnterpriseServerUserAccountEdge]`](/docs/api/objects/enterprise-server-user-account-edge))
+
+A list of edges.
+
+#### `nodes` ([`[EnterpriseServerUserAccount]`](/docs/api/objects/enterprise-server-user-account))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

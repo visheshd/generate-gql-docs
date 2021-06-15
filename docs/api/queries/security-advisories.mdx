@@ -1,0 +1,60 @@
+---
+id: security-advisories
+title: securityAdvisories
+---
+
+GitHub Security Advisories
+
+```graphql
+securityAdvisories(
+  after: String
+  before: String
+  first: Int = 0
+  identifier: SecurityAdvisoryIdentifierFilter
+  last: Int = 0
+  orderBy: SecurityAdvisoryOrder = "[object Object]"
+  publishedSince: DateTime
+  updatedSince: DateTime
+): SecurityAdvisoryConnection!
+
+```
+
+### Arguments
+
+#### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+#### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+#### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+#### `identifier` ([`SecurityAdvisoryIdentifierFilter`](/docs/api/inputs/security-advisory-identifier-filter))
+
+Filter advisories by identifier, e.g. GHSA or CVE.
+
+#### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `orderBy` ([`SecurityAdvisoryOrder`](/docs/api/inputs/security-advisory-order))
+
+Ordering options for the returned topics.
+
+#### `publishedSince` ([`DateTime`](/docs/api/scalars/date-time))
+
+Filter advisories to those published since a time in the past.
+
+#### `updatedSince` ([`DateTime`](/docs/api/scalars/date-time))
+
+Filter advisories to those updated since a time in the past.
+
+### Type
+
+#### [`SecurityAdvisoryConnection`](/docs/api/objects/security-advisory-connection)
+
+The connection type for SecurityAdvisory.

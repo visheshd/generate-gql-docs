@@ -1,0 +1,23 @@
+---
+id: marketplace-listing-edge
+title: MarketplaceListingEdge
+---
+
+An edge in a connection.
+
+```graphql
+type MarketplaceListingEdge {
+  cursor: String!
+  node: MarketplaceListing
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`MarketplaceListing`](/docs/api/objects/marketplace-listing))
+
+The item at the end of the edge.

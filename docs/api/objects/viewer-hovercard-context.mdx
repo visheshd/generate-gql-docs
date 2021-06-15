@@ -1,0 +1,34 @@
+---
+id: viewer-hovercard-context
+title: ViewerHovercardContext
+---
+
+A hovercard context with a message describing how the viewer is related.
+
+```graphql
+type ViewerHovercardContext implements HovercardContext {
+  message: String!
+  octicon: String!
+  viewer: User!
+}
+```
+
+### Fields
+
+#### `message` ([`String!`](/docs/api/scalars/string))
+
+A string describing this context
+
+#### `octicon` ([`String!`](/docs/api/scalars/string))
+
+An octicon to accompany this context
+
+#### `viewer` ([`User!`](/docs/api/objects/user))
+
+Identifies the user who is related to this context.
+
+### Interfaces
+
+#### [`HovercardContext`](/docs/api/interfaces/hovercard-context)
+
+An individual line of a hovercard

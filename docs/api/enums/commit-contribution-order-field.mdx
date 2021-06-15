@@ -1,0 +1,23 @@
+---
+id: commit-contribution-order-field
+title: CommitContributionOrderField
+---
+
+Properties by which commit contribution connections can be ordered.
+
+```graphql
+enum CommitContributionOrderField {
+  COMMIT_COUNT
+  OCCURRED_AT
+}
+```
+
+### Values
+
+#### `COMMIT_COUNT`
+
+Order commit contributions by how many commits they represent.
+
+#### `OCCURRED_AT`
+
+Order commit contributions by when they were made.

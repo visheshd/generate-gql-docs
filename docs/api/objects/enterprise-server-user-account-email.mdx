@@ -1,0 +1,47 @@
+---
+id: enterprise-server-user-account-email
+title: EnterpriseServerUserAccountEmail
+---
+
+An email belonging to a user account on an Enterprise Server installation.
+
+```graphql
+type EnterpriseServerUserAccountEmail implements Node {
+  createdAt: DateTime!
+  email: String!
+  id: ID!
+  isPrimary: Boolean!
+  updatedAt: DateTime!
+  userAccount: EnterpriseServerUserAccount!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `email` ([`String!`](/docs/api/scalars/string))
+
+The email address.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isPrimary` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates whether this is the primary email of the associated user account.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `userAccount` ([`EnterpriseServerUserAccount!`](/docs/api/objects/enterprise-server-user-account))
+
+The user account to which the email belongs.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

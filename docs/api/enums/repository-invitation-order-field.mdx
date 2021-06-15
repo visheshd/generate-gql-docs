@@ -1,0 +1,25 @@
+---
+id: repository-invitation-order-field
+title: RepositoryInvitationOrderField
+---
+
+Properties by which repository invitation connections can be ordered.
+
+```graphql
+enum RepositoryInvitationOrderField {
+  CREATED_AT
+  INVITEE_LOGIN
+}
+```
+
+### Values
+
+#### `CREATED_AT`
+
+Order repository invitations by creation time
+
+#### `INVITEE_LOGIN`
+
+<span class="badge badge--warning">DEPRECATED: `INVITEE_LOGIN` is no longer a valid field value. Repository invitations can now be associated with an email, not only an invitee. Removal on 2020-10-01 UTC.</span>
+
+Order repository invitations by invitee login

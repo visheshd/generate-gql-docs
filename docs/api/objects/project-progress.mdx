@@ -1,0 +1,48 @@
+---
+id: project-progress
+title: ProjectProgress
+---
+
+Project progress stats.
+
+```graphql
+type ProjectProgress {
+  doneCount: Int!
+  donePercentage: Float!
+  enabled: Boolean!
+  inProgressCount: Int!
+  inProgressPercentage: Float!
+  todoCount: Int!
+  todoPercentage: Float!
+}
+```
+
+### Fields
+
+#### `doneCount` ([`Int!`](/docs/api/scalars/int))
+
+The number of done cards.
+
+#### `donePercentage` ([`Float!`](/docs/api/scalars/float))
+
+The percentage of done cards.
+
+#### `enabled` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether progress tracking is enabled and cards with purpose exist for this project
+
+#### `inProgressCount` ([`Int!`](/docs/api/scalars/int))
+
+The number of in-progress cards.
+
+#### `inProgressPercentage` ([`Float!`](/docs/api/scalars/float))
+
+The percentage of in-progress cards.
+
+#### `todoCount` ([`Int!`](/docs/api/scalars/int))
+
+The number of to do cards.
+
+#### `todoPercentage` ([`Float!`](/docs/api/scalars/float))
+
+The percentage of to do cards.

@@ -1,0 +1,83 @@
+---
+id: enterprise-identity-provider
+title: EnterpriseIdentityProvider
+---
+
+An identity provider configured to provision identities for an enterprise.
+
+```graphql
+type EnterpriseIdentityProvider implements Node {
+  digestMethod: SamlDigestAlgorithm
+  enterprise: Enterprise
+  externalIdentities(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): ExternalIdentityConnection!
+  id: ID!
+  idpCertificate: X509Certificate
+  issuer: String
+  recoveryCodes: [String!]
+  signatureMethod: SamlSignatureAlgorithm
+  ssoUrl: URI
+}
+```
+
+### Fields
+
+#### `digestMethod` ([`SamlDigestAlgorithm`](/docs/api/enums/saml-digest-algorithm))
+
+The digest algorithm used to sign SAML requests for the identity provider.
+
+#### `enterprise` ([`Enterprise`](/docs/api/objects/enterprise))
+
+The enterprise this identity provider belongs to.
+
+#### `externalIdentities` ([`ExternalIdentityConnection!`](/docs/api/objects/external-identity-connection))
+
+ExternalIdentities provisioned by this identity provider.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `idpCertificate` ([`X509Certificate`](/docs/api/scalars/x-509-certificate))
+
+The x509 certificate used by the identity provider to sign assertions and responses.
+
+#### `issuer` ([`String`](/docs/api/scalars/string))
+
+The Issuer Entity ID for the SAML identity provider.
+
+#### `recoveryCodes` ([`[String!]`](/docs/api/scalars/string))
+
+Recovery codes that can be used by admins to access the enterprise if the identity provider is unavailable.
+
+#### `signatureMethod` ([`SamlSignatureAlgorithm`](/docs/api/enums/saml-signature-algorithm))
+
+The signature algorithm used to sign SAML requests for the identity provider.
+
+#### `ssoUrl` ([`URI`](/docs/api/scalars/uri))
+
+The URL endpoint for the identity provider's SAML SSO.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,23 @@
+---
+id: commit-contribution-order
+title: CommitContributionOrder
+---
+
+Ordering options for commit contribution connections.
+
+```graphql
+type CommitContributionOrder {
+  direction: OrderDirection!
+  field: CommitContributionOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`CommitContributionOrderField!`](/docs/api/enums/commit-contribution-order-field))
+
+The field by which to order commit contributions.

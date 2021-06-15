@@ -1,0 +1,67 @@
+---
+id: reactable
+title: Reactable
+---
+
+Represents a subject that can be reacted on.
+
+```graphql
+interface Reactable {
+  databaseId: Int
+  id: ID!
+  reactionGroups: [ReactionGroup!]
+  reactions(
+    after: String
+    before: String
+    content: ReactionContent
+    first: Int = 0
+    last: Int = 0
+    orderBy: ReactionOrder
+  ): ReactionConnection!
+  viewerCanReact: Boolean!
+}
+```
+
+### Fields
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `reactionGroups` ([`[ReactionGroup!]`](/docs/api/objects/reaction-group))
+
+A list of reactions grouped by content left on the subject.
+
+#### `reactions` ([`ReactionConnection!`](/docs/api/objects/reaction-connection))
+
+A list of Reactions left on the Issue.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `content` ([`ReactionContent`](/docs/api/enums/reaction-content))
+
+Allows filtering Reactions by emoji.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ReactionOrder`](/docs/api/inputs/reaction-order))
+
+Allows specifying the order in which reactions are returned.
+
+#### `viewerCanReact` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can user react to this subject

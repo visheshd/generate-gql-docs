@@ -1,0 +1,28 @@
+---
+id: project-column-purpose
+title: ProjectColumnPurpose
+---
+
+The semantic purpose of the column - todo, in progress, or done.
+
+```graphql
+enum ProjectColumnPurpose {
+  DONE
+  IN_PROGRESS
+  TODO
+}
+```
+
+### Values
+
+#### `DONE`
+
+The column contains cards which are complete
+
+#### `IN_PROGRESS`
+
+The column contains cards which are currently being worked on
+
+#### `TODO`
+
+The column contains cards still to be worked on

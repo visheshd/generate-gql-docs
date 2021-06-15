@@ -1,0 +1,48 @@
+---
+id: pull-request-timeline-items-connection
+title: PullRequestTimelineItemsConnection
+---
+
+The connection type for PullRequestTimelineItems.
+
+```graphql
+type PullRequestTimelineItemsConnection {
+  edges: [PullRequestTimelineItemsEdge]
+  filteredCount: Int!
+  nodes: [PullRequestTimelineItems]
+  pageCount: Int!
+  pageInfo: PageInfo!
+  totalCount: Int!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PullRequestTimelineItemsEdge]`](/docs/api/objects/pull-request-timeline-items-edge))
+
+A list of edges.
+
+#### `filteredCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the count of items after applying `before` and `after` filters.
+
+#### `nodes` ([`[PullRequestTimelineItems]`](/docs/api/unions/pull-request-timeline-items))
+
+A list of nodes.
+
+#### `pageCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the count of items after applying `before`/`after` filters and `first`/`last`/`skip` slicing.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the timeline was last updated.

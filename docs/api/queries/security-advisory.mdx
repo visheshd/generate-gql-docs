@@ -1,0 +1,25 @@
+---
+id: security-advisory
+title: securityAdvisory
+---
+
+Fetch a Security Advisory by its GHSA ID
+
+```graphql
+securityAdvisory(
+  ghsaId: String!
+): SecurityAdvisory
+
+```
+
+### Arguments
+
+#### `ghsaId` ([`String!`](/docs/api/scalars/string))
+
+GitHub Security Advisory ID.
+
+### Type
+
+#### [`SecurityAdvisory`](/docs/api/objects/security-advisory)
+
+A GitHub Security Advisory

@@ -1,0 +1,23 @@
+---
+id: commit-comment-edge
+title: CommitCommentEdge
+---
+
+An edge in a connection.
+
+```graphql
+type CommitCommentEdge {
+  cursor: String!
+  node: CommitComment
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`CommitComment`](/docs/api/objects/commit-comment))
+
+The item at the end of the edge.

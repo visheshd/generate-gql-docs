@@ -1,0 +1,52 @@
+---
+id: search-result-item
+title: SearchResultItem
+---
+
+The results of a search.
+
+```graphql
+union SearchResultItem =
+    App
+  | Discussion
+  | Issue
+  | MarketplaceListing
+  | Organization
+  | PullRequest
+  | Repository
+  | User
+```
+
+### Possible types
+
+#### [`App`](/docs/api/objects/app)
+
+A GitHub App.
+
+#### [`Discussion`](/docs/api/objects/discussion)
+
+A discussion in a repository.
+
+#### [`Issue`](/docs/api/objects/issue)
+
+An Issue is a place to discuss ideas, enhancements, tasks, and bugs for a project.
+
+#### [`MarketplaceListing`](/docs/api/objects/marketplace-listing)
+
+A listing in the GitHub integration marketplace.
+
+#### [`Organization`](/docs/api/objects/organization)
+
+An account on GitHub, with one or more owners, that has repositories, members and teams.
+
+#### [`PullRequest`](/docs/api/objects/pull-request)
+
+A repository pull request.
+
+#### [`Repository`](/docs/api/objects/repository)
+
+A repository contains the content for a project.
+
+#### [`User`](/docs/api/objects/user)
+
+A user is an individual's account on GitHub that owns repositories and can make new content.

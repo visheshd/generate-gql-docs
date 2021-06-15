@@ -1,0 +1,33 @@
+---
+id: repository-invitation-connection
+title: RepositoryInvitationConnection
+---
+
+The connection type for RepositoryInvitation.
+
+```graphql
+type RepositoryInvitationConnection {
+  edges: [RepositoryInvitationEdge]
+  nodes: [RepositoryInvitation]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[RepositoryInvitationEdge]`](/docs/api/objects/repository-invitation-edge))
+
+A list of edges.
+
+#### `nodes` ([`[RepositoryInvitation]`](/docs/api/objects/repository-invitation))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

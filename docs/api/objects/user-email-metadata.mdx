@@ -1,0 +1,28 @@
+---
+id: user-email-metadata
+title: UserEmailMetadata
+---
+
+Email attributes from External Identity
+
+```graphql
+type UserEmailMetadata {
+  primary: Boolean
+  type: String
+  value: String!
+}
+```
+
+### Fields
+
+#### `primary` ([`Boolean`](/docs/api/scalars/boolean))
+
+Boolean to identify primary emails
+
+#### `type` ([`String`](/docs/api/scalars/string))
+
+Type of email
+
+#### `value` ([`String!`](/docs/api/scalars/string))
+
+Email id

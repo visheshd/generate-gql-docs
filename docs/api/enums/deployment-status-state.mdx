@@ -1,0 +1,53 @@
+---
+id: deployment-status-state
+title: DeploymentStatusState
+---
+
+The possible states for a deployment status.
+
+```graphql
+enum DeploymentStatusState {
+  ERROR
+  FAILURE
+  INACTIVE
+  IN_PROGRESS
+  PENDING
+  QUEUED
+  SUCCESS
+  WAITING
+}
+```
+
+### Values
+
+#### `ERROR`
+
+The deployment experienced an error.
+
+#### `FAILURE`
+
+The deployment has failed.
+
+#### `INACTIVE`
+
+The deployment is inactive.
+
+#### `IN_PROGRESS`
+
+The deployment is in progress.
+
+#### `PENDING`
+
+The deployment is pending.
+
+#### `QUEUED`
+
+The deployment is queued
+
+#### `SUCCESS`
+
+The deployment was successful.
+
+#### `WAITING`
+
+The deployment is waiting.

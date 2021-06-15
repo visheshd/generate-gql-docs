@@ -1,0 +1,23 @@
+---
+id: repository-order
+title: RepositoryOrder
+---
+
+Ordering options for repository connections
+
+```graphql
+type RepositoryOrder {
+  direction: OrderDirection!
+  field: RepositoryOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`RepositoryOrderField!`](/docs/api/enums/repository-order-field))
+
+The field to order repositories by.

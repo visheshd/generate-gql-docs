@@ -1,0 +1,33 @@
+---
+id: team-audit-entry-data
+title: TeamAuditEntryData
+---
+
+Metadata for an audit entry with action team.\*
+
+```graphql
+interface TeamAuditEntryData {
+  team: Team
+  teamName: String
+  teamResourcePath: URI
+  teamUrl: URI
+}
+```
+
+### Fields
+
+#### `team` ([`Team`](/docs/api/objects/team))
+
+The team associated with the action
+
+#### `teamName` ([`String`](/docs/api/scalars/string))
+
+The name of the team
+
+#### `teamResourcePath` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP path for this team
+
+#### `teamUrl` ([`URI`](/docs/api/scalars/uri))
+
+The HTTP URL for this team

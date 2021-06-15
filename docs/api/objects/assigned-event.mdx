@@ -1,0 +1,49 @@
+---
+id: assigned-event
+title: AssignedEvent
+---
+
+Represents an 'assigned' event on any assignable object.
+
+```graphql
+type AssignedEvent implements Node {
+  actor: Actor
+  assignable: Assignable!
+  assignee: Assignee
+  createdAt: DateTime!
+  id: ID!
+  user: User
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `assignable` ([`Assignable!`](/docs/api/interfaces/assignable))
+
+Identifies the assignable associated with the event.
+
+#### `assignee` ([`Assignee`](/docs/api/unions/assignee))
+
+Identifies the user or mannequin that was assigned.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `user` ([`User`](/docs/api/objects/user))
+
+<span class="badge badge--warning">DEPRECATED: Assignees can now be mannequins. Use the `assignee` field instead. Removal on 2020-01-01 UTC.</span>
+
+Identifies the user who was assigned.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

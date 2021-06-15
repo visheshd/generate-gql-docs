@@ -1,0 +1,57 @@
+---
+id: organization-invitation
+title: OrganizationInvitation
+---
+
+An Invitation for a user to an organization.
+
+```graphql
+type OrganizationInvitation implements Node {
+  createdAt: DateTime!
+  email: String
+  id: ID!
+  invitationType: OrganizationInvitationType!
+  invitee: User
+  inviter: User!
+  organization: Organization!
+  role: OrganizationInvitationRole!
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `email` ([`String`](/docs/api/scalars/string))
+
+The email address of the user invited to the organization.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `invitationType` ([`OrganizationInvitationType!`](/docs/api/enums/organization-invitation-type))
+
+The type of invitation that was sent (e.g. email, user).
+
+#### `invitee` ([`User`](/docs/api/objects/user))
+
+The user who was invited to the organization.
+
+#### `inviter` ([`User!`](/docs/api/objects/user))
+
+The user who created the invitation.
+
+#### `organization` ([`Organization!`](/docs/api/objects/organization))
+
+The organization the invite is for
+
+#### `role` ([`OrganizationInvitationRole!`](/docs/api/enums/organization-invitation-role))
+
+The user's pending role in the organization (e.g. member, owner).
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

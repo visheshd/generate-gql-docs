@@ -1,0 +1,63 @@
+---
+id: ref-update-rule
+title: RefUpdateRule
+---
+
+A ref update rules for a viewer.
+
+```graphql
+type RefUpdateRule {
+  allowsDeletions: Boolean!
+  allowsForcePushes: Boolean!
+  pattern: String!
+  requiredApprovingReviewCount: Int
+  requiredStatusCheckContexts: [String]
+  requiresCodeOwnerReviews: Boolean!
+  requiresLinearHistory: Boolean!
+  requiresSignatures: Boolean!
+  viewerAllowedToDismissReviews: Boolean!
+  viewerCanPush: Boolean!
+}
+```
+
+### Fields
+
+#### `allowsDeletions` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can this branch be deleted.
+
+#### `allowsForcePushes` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are force pushes allowed on this branch.
+
+#### `pattern` ([`String!`](/docs/api/scalars/string))
+
+Identifies the protection rule pattern.
+
+#### `requiredApprovingReviewCount` ([`Int`](/docs/api/scalars/int))
+
+Number of approving reviews required to update matching branches.
+
+#### `requiredStatusCheckContexts` ([`[String]`](/docs/api/scalars/string))
+
+List of required status check contexts that must pass for commits to be accepted to matching branches.
+
+#### `requiresCodeOwnerReviews` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are reviews from code owners required to update matching branches.
+
+#### `requiresLinearHistory` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are merge commits prohibited from being pushed to this branch.
+
+#### `requiresSignatures` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Are commits required to be signed.
+
+#### `viewerAllowedToDismissReviews` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Is the viewer allowed to dismiss reviews.
+
+#### `viewerCanPush` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the viewer push to the branch

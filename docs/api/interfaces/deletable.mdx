@@ -1,0 +1,18 @@
+---
+id: deletable
+title: Deletable
+---
+
+Entities that can be deleted.
+
+```graphql
+interface Deletable {
+  viewerCanDelete: Boolean!
+}
+```
+
+### Fields
+
+#### `viewerCanDelete` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the current viewer can delete this object.

@@ -1,0 +1,48 @@
+---
+id: security-advisory-ecosystem
+title: SecurityAdvisoryEcosystem
+---
+
+The possible ecosystems of a security vulnerability's package.
+
+```graphql
+enum SecurityAdvisoryEcosystem {
+  COMPOSER
+  GO
+  MAVEN
+  NPM
+  NUGET
+  PIP
+  RUBYGEMS
+}
+```
+
+### Values
+
+#### `COMPOSER`
+
+PHP packages hosted at packagist.org
+
+#### `GO`
+
+Go modules
+
+#### `MAVEN`
+
+Java artifacts hosted at the Maven central repository
+
+#### `NPM`
+
+JavaScript packages hosted at npmjs.com
+
+#### `NUGET`
+
+.NET packages hosted at the NuGet Gallery
+
+#### `PIP`
+
+Python packages hosted at PyPI.org
+
+#### `RUBYGEMS`
+
+Ruby gems hosted at RubyGems.org

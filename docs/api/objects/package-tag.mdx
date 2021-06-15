@@ -1,0 +1,32 @@
+---
+id: package-tag
+title: PackageTag
+---
+
+A version tag contains the mapping between a tag name and a version.
+
+```graphql
+type PackageTag implements Node {
+  id: ID!
+  name: String!
+  version: PackageVersion
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+Identifies the tag name of the version.
+
+#### `version` ([`PackageVersion`](/docs/api/objects/package-version))
+
+Version that the tag is associated with.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

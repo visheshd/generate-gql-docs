@@ -1,0 +1,72 @@
+---
+id: commit-comment-thread
+title: CommitCommentThread
+---
+
+A thread of comments on a commit.
+
+```graphql
+type CommitCommentThread implements Node, RepositoryNode {
+  comments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): CommitCommentConnection!
+  commit: Commit
+  id: ID!
+  path: String
+  position: Int
+  repository: Repository!
+}
+```
+
+### Fields
+
+#### `comments` ([`CommitCommentConnection!`](/docs/api/objects/commit-comment-connection))
+
+The comments that exist in this thread.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `commit` ([`Commit`](/docs/api/objects/commit))
+
+The commit the comments were made on.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `path` ([`String`](/docs/api/scalars/string))
+
+The file the comments were made on.
+
+#### `position` ([`Int`](/docs/api/scalars/int))
+
+The position in the diff for the commit that the comment was made on.
+
+#### `repository` ([`Repository!`](/docs/api/objects/repository))
+
+The repository associated with this node.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`RepositoryNode`](/docs/api/interfaces/repository-node)
+
+Represents a object that belongs to a repository.

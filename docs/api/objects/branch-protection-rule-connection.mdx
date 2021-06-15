@@ -1,0 +1,33 @@
+---
+id: branch-protection-rule-connection
+title: BranchProtectionRuleConnection
+---
+
+The connection type for BranchProtectionRule.
+
+```graphql
+type BranchProtectionRuleConnection {
+  edges: [BranchProtectionRuleEdge]
+  nodes: [BranchProtectionRule]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[BranchProtectionRuleEdge]`](/docs/api/objects/branch-protection-rule-edge))
+
+A list of edges.
+
+#### `nodes` ([`[BranchProtectionRule]`](/docs/api/objects/branch-protection-rule))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

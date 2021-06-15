@@ -1,0 +1,37 @@
+---
+id: moved-columns-in-project-event
+title: MovedColumnsInProjectEvent
+---
+
+Represents a 'moved_columns_in_project' event on a given issue or pull request.
+
+```graphql
+type MovedColumnsInProjectEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  databaseId: Int
+  id: ID!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

@@ -1,0 +1,23 @@
+---
+id: lockable
+title: Lockable
+---
+
+An object that can be locked.
+
+```graphql
+interface Lockable {
+  activeLockReason: LockReason
+  locked: Boolean!
+}
+```
+
+### Fields
+
+#### `activeLockReason` ([`LockReason`](/docs/api/enums/lock-reason))
+
+Reason that the conversation was locked.
+
+#### `locked` ([`Boolean!`](/docs/api/scalars/boolean))
+
+`true` if the object is locked

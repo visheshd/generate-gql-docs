@@ -1,0 +1,28 @@
+---
+id: repository-interaction-ability
+title: RepositoryInteractionAbility
+---
+
+Repository interaction limit that applies to this object.
+
+```graphql
+type RepositoryInteractionAbility {
+  expiresAt: DateTime
+  limit: RepositoryInteractionLimit!
+  origin: RepositoryInteractionLimitOrigin!
+}
+```
+
+### Fields
+
+#### `expiresAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+The time the currently active limit expires.
+
+#### `limit` ([`RepositoryInteractionLimit!`](/docs/api/enums/repository-interaction-limit))
+
+The current limit that is enabled on this object.
+
+#### `origin` ([`RepositoryInteractionLimitOrigin!`](/docs/api/enums/repository-interaction-limit-origin))
+
+The origin of the currently active interaction limit.

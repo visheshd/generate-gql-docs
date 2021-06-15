@@ -1,0 +1,20 @@
+---
+id: closer
+title: Closer
+---
+
+The object which triggered a `ClosedEvent`.
+
+```graphql
+union Closer = Commit | PullRequest
+```
+
+### Possible types
+
+#### [`Commit`](/docs/api/objects/commit)
+
+Represents a Git commit.
+
+#### [`PullRequest`](/docs/api/objects/pull-request)
+
+A repository pull request.

@@ -1,0 +1,29 @@
+---
+id: generic-hovercard-context
+title: GenericHovercardContext
+---
+
+A generic hovercard context with a message and icon
+
+```graphql
+type GenericHovercardContext implements HovercardContext {
+  message: String!
+  octicon: String!
+}
+```
+
+### Fields
+
+#### `message` ([`String!`](/docs/api/scalars/string))
+
+A string describing this context
+
+#### `octicon` ([`String!`](/docs/api/scalars/string))
+
+An octicon to accompany this context
+
+### Interfaces
+
+#### [`HovercardContext`](/docs/api/interfaces/hovercard-context)
+
+An individual line of a hovercard

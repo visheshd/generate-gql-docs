@@ -1,0 +1,71 @@
+---
+id: sponsorship
+title: Sponsorship
+---
+
+A sponsorship relationship between a sponsor and a maintainer
+
+```graphql
+type Sponsorship implements Node {
+  createdAt: DateTime!
+  id: ID!
+  isOneTimePayment: Boolean!
+  maintainer: User!
+  privacyLevel: SponsorshipPrivacy!
+  sponsor: User
+  sponsorEntity: Sponsor
+  sponsorable: Sponsorable!
+  tier: SponsorsTier
+  tierSelectedAt: DateTime
+}
+```
+
+### Fields
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isOneTimePayment` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this sponsorship represents a one-time payment versus a recurring sponsorship.
+
+#### `maintainer` ([`User!`](/docs/api/objects/user))
+
+<span class="badge badge--warning">DEPRECATED: `Sponsorship.maintainer` will be removed. Use `Sponsorship.sponsorable` instead. Removal on 2020-04-01 UTC.</span>
+
+The entity that is being sponsored
+
+#### `privacyLevel` ([`SponsorshipPrivacy!`](/docs/api/enums/sponsorship-privacy))
+
+The privacy level for this sponsorship.
+
+#### `sponsor` ([`User`](/docs/api/objects/user))
+
+<span class="badge badge--warning">DEPRECATED: `Sponsorship.sponsor` will be removed. Use `Sponsorship.sponsorEntity` instead. Removal on 2020-10-01 UTC.</span>
+
+The user that is sponsoring. Returns null if the sponsorship is private or if sponsor is not a user.
+
+#### `sponsorEntity` ([`Sponsor`](/docs/api/unions/sponsor))
+
+The user or organization that is sponsoring, if you have permission to view them.
+
+#### `sponsorable` ([`Sponsorable!`](/docs/api/interfaces/sponsorable))
+
+The entity that is being sponsored
+
+#### `tier` ([`SponsorsTier`](/docs/api/objects/sponsors-tier))
+
+The associated sponsorship tier
+
+#### `tierSelectedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the current tier was chosen for this sponsorship.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

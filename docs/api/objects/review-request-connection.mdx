@@ -1,0 +1,33 @@
+---
+id: review-request-connection
+title: ReviewRequestConnection
+---
+
+The connection type for ReviewRequest.
+
+```graphql
+type ReviewRequestConnection {
+  edges: [ReviewRequestEdge]
+  nodes: [ReviewRequest]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[ReviewRequestEdge]`](/docs/api/objects/review-request-edge))
+
+A list of edges.
+
+#### `nodes` ([`[ReviewRequest]`](/docs/api/objects/review-request))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

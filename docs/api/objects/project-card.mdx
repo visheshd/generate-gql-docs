@@ -1,0 +1,85 @@
+---
+id: project-card
+title: ProjectCard
+---
+
+A card in a project.
+
+```graphql
+type ProjectCard implements Node {
+  column: ProjectColumn
+  content: ProjectCardItem
+  createdAt: DateTime!
+  creator: Actor
+  databaseId: Int
+  id: ID!
+  isArchived: Boolean!
+  note: String
+  project: Project!
+  resourcePath: URI!
+  state: ProjectCardState
+  updatedAt: DateTime!
+  url: URI!
+}
+```
+
+### Fields
+
+#### `column` ([`ProjectColumn`](/docs/api/objects/project-column))
+
+The project column this card is associated under. A card may only belong to one
+project column at a time. The column field will be null if the card is created
+in a pending state and has yet to be associated with a column. Once cards are
+associated with a column, they will not become pending in the future.
+
+#### `content` ([`ProjectCardItem`](/docs/api/unions/project-card-item))
+
+The card content item
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `creator` ([`Actor`](/docs/api/interfaces/actor))
+
+The actor who created this card
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isArchived` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the card is archived
+
+#### `note` ([`String`](/docs/api/scalars/string))
+
+The card note
+
+#### `project` ([`Project!`](/docs/api/objects/project))
+
+The project that contains this card.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this card
+
+#### `state` ([`ProjectCardState`](/docs/api/enums/project-card-state))
+
+The state of ProjectCard
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this card
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

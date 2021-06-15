@@ -1,0 +1,59 @@
+---
+id: reaction-group
+title: ReactionGroup
+---
+
+A group of emoji reactions to a particular piece of content.
+
+```graphql
+type ReactionGroup {
+  content: ReactionContent!
+  createdAt: DateTime
+  subject: Reactable!
+  users(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): ReactingUserConnection!
+  viewerHasReacted: Boolean!
+}
+```
+
+### Fields
+
+#### `content` ([`ReactionContent!`](/docs/api/enums/reaction-content))
+
+Identifies the emoji reaction.
+
+#### `createdAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the reaction was created.
+
+#### `subject` ([`Reactable!`](/docs/api/interfaces/reactable))
+
+The subject that was reacted to.
+
+#### `users` ([`ReactingUserConnection!`](/docs/api/objects/reacting-user-connection))
+
+Users who have reacted to the reaction subject with the emotion represented by this reaction group
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `viewerHasReacted` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the authenticated user has left a reaction on the subject.

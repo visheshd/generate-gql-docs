@@ -1,0 +1,23 @@
+---
+id: issue-edge
+title: IssueEdge
+---
+
+An edge in a connection.
+
+```graphql
+type IssueEdge {
+  cursor: String!
+  node: Issue
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Issue`](/docs/api/objects/issue))
+
+The item at the end of the edge.

@@ -1,0 +1,1396 @@
+---
+id: repository
+title: Repository
+---
+
+A repository contains the content for a project.
+
+```graphql
+type Repository implements Node, PackageOwner, ProjectOwner, RepositoryInfo, Starrable, Subscribable, UniformResourceLocatable {
+  assignableUsers(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    query: String
+  ): UserConnection!
+  branchProtectionRules(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): BranchProtectionRuleConnection!
+  codeOfConduct: CodeOfConduct
+  collaborators(
+    affiliation: CollaboratorAffiliation
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    query: String
+  ): RepositoryCollaboratorConnection
+  commitComments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): CommitCommentConnection!
+  contactLinks: [RepositoryContactLink!]
+  createdAt: DateTime!
+  databaseId: Int
+  defaultBranchRef: Ref
+  deleteBranchOnMerge: Boolean!
+  deployKeys(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): DeployKeyConnection!
+  deployments(
+    after: String
+    before: String
+    environments: [String!] = []
+    first: Int = 0
+    last: Int = 0
+    orderBy: DeploymentOrder = "[object Object]"
+  ): DeploymentConnection!
+  description: String
+  descriptionHTML: HTML!
+  discussion(number: Int!): Discussion
+  discussionCategories(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): DiscussionCategoryConnection!
+  discussions(
+    after: String
+    before: String
+    categoryId: ID = 0
+    first: Int = 0
+    last: Int = 0
+    orderBy: DiscussionOrder = "[object Object]"
+  ): DiscussionConnection!
+  diskUsage: Int
+  environment(name: String!): Environment
+  environments(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): EnvironmentConnection!
+  forkCount: Int!
+  forks(
+    affiliations: [RepositoryAffiliation] = []
+    after: String
+    before: String
+    first: Int = 0
+    isLocked: Boolean
+    last: Int = 0
+    orderBy: RepositoryOrder
+    ownerAffiliations: [RepositoryAffiliation] = [OWNER, COLLABORATOR]
+    privacy: RepositoryPrivacy
+  ): RepositoryConnection!
+  fundingLinks: [FundingLink!]!
+  hasIssuesEnabled: Boolean!
+  hasProjectsEnabled: Boolean!
+  hasWikiEnabled: Boolean!
+  homepageUrl: URI
+  id: ID!
+  interactionAbility: RepositoryInteractionAbility
+  isArchived: Boolean!
+  isBlankIssuesEnabled: Boolean!
+  isDisabled: Boolean!
+  isEmpty: Boolean!
+  isFork: Boolean!
+  isInOrganization: Boolean!
+  isLocked: Boolean!
+  isMirror: Boolean!
+  isPrivate: Boolean!
+  isSecurityPolicyEnabled: Boolean
+  isTemplate: Boolean!
+  isUserConfigurationRepository: Boolean!
+  issue(number: Int!): Issue
+  issueOrPullRequest(number: Int!): IssueOrPullRequest
+  issueTemplates: [IssueTemplate!]
+  issues(
+    after: String
+    before: String
+    filterBy: IssueFilters
+    first: Int = 0
+    labels: [String!] = []
+    last: Int = 0
+    orderBy: IssueOrder
+    states: [IssueState!] = []
+  ): IssueConnection!
+  label(name: String!): Label
+  labels(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: LabelOrder = "[object Object]"
+    query: String
+  ): LabelConnection
+  languages(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: LanguageOrder
+  ): LanguageConnection
+  latestRelease: Release
+  licenseInfo: License
+  lockReason: RepositoryLockReason
+  mentionableUsers(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    query: String
+  ): UserConnection!
+  mergeCommitAllowed: Boolean!
+  milestone(number: Int!): Milestone
+  milestones(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: MilestoneOrder
+    query: String
+    states: [MilestoneState!] = []
+  ): MilestoneConnection
+  mirrorUrl: URI
+  name: String!
+  nameWithOwner: String!
+  object(expression: String, oid: GitObjectID): GitObject
+  openGraphImageUrl: URI!
+  owner: RepositoryOwner!
+  packages(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    names: [String] = []
+    orderBy: PackageOrder = "[object Object]"
+    packageType: PackageType
+    repositoryId: ID = 0
+  ): PackageConnection!
+  parent: Repository
+  pinnedDiscussions(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): PinnedDiscussionConnection!
+  pinnedIssues(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): PinnedIssueConnection
+  primaryLanguage: Language
+  project(number: Int!): Project
+  projects(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: ProjectOrder
+    search: String
+    states: [ProjectState!] = []
+  ): ProjectConnection!
+  projectsResourcePath: URI!
+  projectsUrl: URI!
+  pullRequest(number: Int!): PullRequest
+  pullRequestTemplates: [PullRequestTemplate!]
+  pullRequests(
+    after: String
+    baseRefName: String
+    before: String
+    first: Int = 0
+    headRefName: String
+    labels: [String!] = []
+    last: Int = 0
+    orderBy: IssueOrder
+    states: [PullRequestState!] = []
+  ): PullRequestConnection!
+  pushedAt: DateTime
+  rebaseMergeAllowed: Boolean!
+  ref(qualifiedName: String!): Ref
+  refs(
+    after: String
+    before: String
+    direction: OrderDirection
+    first: Int = 0
+    last: Int = 0
+    orderBy: RefOrder
+    query: String
+    refPrefix: String!
+  ): RefConnection
+  release(tagName: String!): Release
+  releases(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: ReleaseOrder
+  ): ReleaseConnection!
+  repositoryTopics(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): RepositoryTopicConnection!
+  resourcePath: URI!
+  securityPolicyUrl: URI
+  shortDescriptionHTML(limit: Int = 200): HTML!
+  squashMergeAllowed: Boolean!
+  sshUrl: GitSSHRemote!
+  stargazerCount: Int!
+  stargazers(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: StarOrder
+  ): StargazerConnection!
+  submodules(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): SubmoduleConnection!
+  tempCloneToken: String
+  templateRepository: Repository
+  updatedAt: DateTime!
+  url: URI!
+  usesCustomOpenGraphImage: Boolean!
+  viewerCanAdminister: Boolean!
+  viewerCanCreateProjects: Boolean!
+  viewerCanSubscribe: Boolean!
+  viewerCanUpdateTopics: Boolean!
+  viewerDefaultCommitEmail: String
+  viewerDefaultMergeMethod: PullRequestMergeMethod!
+  viewerHasStarred: Boolean!
+  viewerPermission: RepositoryPermission
+  viewerPossibleCommitEmails: [String!]
+  viewerSubscription: SubscriptionState
+  vulnerabilityAlerts(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): RepositoryVulnerabilityAlertConnection
+  watchers(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserConnection!
+}
+```
+
+### Fields
+
+#### `assignableUsers` ([`UserConnection!`](/docs/api/objects/user-connection))
+
+A list of users that can be assigned to issues in this repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+Filters users with query on user name and login
+
+#### `branchProtectionRules` ([`BranchProtectionRuleConnection!`](/docs/api/objects/branch-protection-rule-connection))
+
+A list of branch protection rules for this repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `codeOfConduct` ([`CodeOfConduct`](/docs/api/objects/code-of-conduct))
+
+Returns the code of conduct for this repository
+
+#### `collaborators` ([`RepositoryCollaboratorConnection`](/docs/api/objects/repository-collaborator-connection))
+
+A list of collaborators associated with the repository.
+
+- ##### `affiliation` ([`CollaboratorAffiliation`](/docs/api/enums/collaborator-affiliation))
+
+Collaborators affiliation level with a repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+Filters users with query on user name and login
+
+#### `commitComments` ([`CommitCommentConnection!`](/docs/api/objects/commit-comment-connection))
+
+A list of commit comments associated with the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `contactLinks` ([`[RepositoryContactLink!]`](/docs/api/objects/repository-contact-link))
+
+Returns a list of contact links associated to the repository
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `defaultBranchRef` ([`Ref`](/docs/api/objects/ref))
+
+The Ref associated with the repository's default branch.
+
+#### `deleteBranchOnMerge` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not branches are automatically deleted when merged in this repository.
+
+#### `deployKeys` ([`DeployKeyConnection!`](/docs/api/objects/deploy-key-connection))
+
+A list of deploy keys that are on this repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `deployments` ([`DeploymentConnection!`](/docs/api/objects/deployment-connection))
+
+Deployments associated with the repository
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `environments` ([`[String!]`](/docs/api/scalars/string))
+
+Environments to list deployments for
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`DeploymentOrder`](/docs/api/inputs/deployment-order))
+
+Ordering options for deployments returned from the connection.
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+The description of the repository.
+
+#### `descriptionHTML` ([`HTML!`](/docs/api/scalars/html))
+
+The description of the repository rendered to HTML.
+
+#### `discussion` ([`Discussion`](/docs/api/objects/discussion))
+
+Returns a single discussion from the current repository by number.
+
+- ##### `number` ([`Int!`](/docs/api/scalars/int))
+
+The number for the discussion to be returned.
+
+#### `discussionCategories` ([`DiscussionCategoryConnection!`](/docs/api/objects/discussion-category-connection))
+
+A list of discussion categories that are available in the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `discussions` ([`DiscussionConnection!`](/docs/api/objects/discussion-connection))
+
+A list of discussions that have been opened in the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `categoryId` ([`ID`](/docs/api/scalars/id))
+
+Only include discussions that belong to the category with this ID.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`DiscussionOrder`](/docs/api/inputs/discussion-order))
+
+Ordering options for discussions returned from the connection.
+
+#### `diskUsage` ([`Int`](/docs/api/scalars/int))
+
+The number of kilobytes this repository occupies on disk.
+
+#### `environment` ([`Environment`](/docs/api/objects/environment))
+
+Returns a single active environment from the current repository by name.
+
+- ##### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the environment to be returned.
+
+#### `environments` ([`EnvironmentConnection!`](/docs/api/objects/environment-connection))
+
+A list of environments that are in this repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `forkCount` ([`Int!`](/docs/api/scalars/int))
+
+Returns how many forks there are of this repository in the whole network.
+
+#### `forks` ([`RepositoryConnection!`](/docs/api/objects/repository-connection))
+
+A list of direct forked repositories.
+
+- ##### `affiliations` ([`[RepositoryAffiliation]`](/docs/api/enums/repository-affiliation))
+
+Array of viewer's affiliation options for repositories returned from the
+connection. For example, OWNER will include only repositories that the
+current viewer owns.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `isLocked` ([`Boolean`](/docs/api/scalars/boolean))
+
+If non-null, filters repositories according to whether they have been locked
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`RepositoryOrder`](/docs/api/inputs/repository-order))
+
+Ordering options for repositories returned from the connection
+
+- ##### `ownerAffiliations` ([`[RepositoryAffiliation]`](/docs/api/enums/repository-affiliation))
+
+Array of owner's affiliation options for repositories returned from the
+connection. For example, OWNER will include only repositories that the
+organization or user being viewed owns.
+
+- ##### `privacy` ([`RepositoryPrivacy`](/docs/api/enums/repository-privacy))
+
+If non-null, filters repositories according to privacy
+
+#### `fundingLinks` ([`[FundingLink!]!`](/docs/api/objects/funding-link))
+
+The funding links for this repository
+
+#### `hasIssuesEnabled` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository has issues feature enabled.
+
+#### `hasProjectsEnabled` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository has the Projects feature enabled.
+
+#### `hasWikiEnabled` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository has wiki feature enabled.
+
+#### `homepageUrl` ([`URI`](/docs/api/scalars/uri))
+
+The repository's URL.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `interactionAbility` ([`RepositoryInteractionAbility`](/docs/api/objects/repository-interaction-ability))
+
+The interaction ability settings for this repository.
+
+#### `isArchived` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository is unmaintained.
+
+#### `isBlankIssuesEnabled` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Returns true if blank issue creation is allowed
+
+#### `isDisabled` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Returns whether or not this repository disabled.
+
+#### `isEmpty` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Returns whether or not this repository is empty.
+
+#### `isFork` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the repository is a fork.
+
+#### `isInOrganization` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if a repository is either owned by an organization, or is a private fork of an organization repository.
+
+#### `isLocked` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates if the repository has been locked or not.
+
+#### `isMirror` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the repository is a mirror.
+
+#### `isPrivate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the repository is private or internal.
+
+#### `isSecurityPolicyEnabled` ([`Boolean`](/docs/api/scalars/boolean))
+
+Returns true if this repository has a security policy
+
+#### `isTemplate` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Identifies if the repository is a template that can be used to generate new repositories.
+
+#### `isUserConfigurationRepository` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Is this repository a user configuration repository?
+
+#### `issue` ([`Issue`](/docs/api/objects/issue))
+
+Returns a single issue from the current repository by number.
+
+- ##### `number` ([`Int!`](/docs/api/scalars/int))
+
+The number for the issue to be returned.
+
+#### `issueOrPullRequest` ([`IssueOrPullRequest`](/docs/api/unions/issue-or-pull-request))
+
+Returns a single issue-like object from the current repository by number.
+
+- ##### `number` ([`Int!`](/docs/api/scalars/int))
+
+The number for the issue to be returned.
+
+#### `issueTemplates` ([`[IssueTemplate!]`](/docs/api/objects/issue-template))
+
+Returns a list of issue templates associated to the repository
+
+#### `issues` ([`IssueConnection!`](/docs/api/objects/issue-connection))
+
+A list of issues that have been opened in the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `filterBy` ([`IssueFilters`](/docs/api/inputs/issue-filters))
+
+Filtering options for issues returned from the connection.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `labels` ([`[String!]`](/docs/api/scalars/string))
+
+A list of label names to filter the pull requests by.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`IssueOrder`](/docs/api/inputs/issue-order))
+
+Ordering options for issues returned from the connection.
+
+- ##### `states` ([`[IssueState!]`](/docs/api/enums/issue-state))
+
+A list of states to filter the issues by.
+
+#### `label` ([`Label`](/docs/api/objects/label))
+
+Returns a single label by name
+
+- ##### `name` ([`String!`](/docs/api/scalars/string))
+
+Label name
+
+#### `labels` ([`LabelConnection`](/docs/api/objects/label-connection))
+
+A list of labels associated with the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`LabelOrder`](/docs/api/inputs/label-order))
+
+Ordering options for labels returned from the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+If provided, searches labels by name and description.
+
+#### `languages` ([`LanguageConnection`](/docs/api/objects/language-connection))
+
+A list containing a breakdown of the language composition of the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`LanguageOrder`](/docs/api/inputs/language-order))
+
+Order for connection
+
+#### `latestRelease` ([`Release`](/docs/api/objects/release))
+
+Get the latest release for the repository if one exists.
+
+#### `licenseInfo` ([`License`](/docs/api/objects/license))
+
+The license associated with the repository
+
+#### `lockReason` ([`RepositoryLockReason`](/docs/api/enums/repository-lock-reason))
+
+The reason the repository has been locked.
+
+#### `mentionableUsers` ([`UserConnection!`](/docs/api/objects/user-connection))
+
+A list of Users that can be mentioned in the context of the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+Filters users with query on user name and login
+
+#### `mergeCommitAllowed` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not PRs are merged with a merge commit on this repository.
+
+#### `milestone` ([`Milestone`](/docs/api/objects/milestone))
+
+Returns a single milestone from the current repository by number.
+
+- ##### `number` ([`Int!`](/docs/api/scalars/int))
+
+The number for the milestone to be returned.
+
+#### `milestones` ([`MilestoneConnection`](/docs/api/objects/milestone-connection))
+
+A list of milestones associated with the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`MilestoneOrder`](/docs/api/inputs/milestone-order))
+
+Ordering options for milestones.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+Filters milestones with a query on the title
+
+- ##### `states` ([`[MilestoneState!]`](/docs/api/enums/milestone-state))
+
+Filter by the state of the milestones.
+
+#### `mirrorUrl` ([`URI`](/docs/api/scalars/uri))
+
+The repository's original mirror URL.
+
+#### `name` ([`String!`](/docs/api/scalars/string))
+
+The name of the repository.
+
+#### `nameWithOwner` ([`String!`](/docs/api/scalars/string))
+
+The repository's name with owner.
+
+#### `object` ([`GitObject`](/docs/api/interfaces/git-object))
+
+A Git object in the repository
+
+- ##### `expression` ([`String`](/docs/api/scalars/string))
+
+A Git revision expression suitable for rev-parse
+
+- ##### `oid` ([`GitObjectID`](/docs/api/scalars/git-object-id))
+
+The Git object ID
+
+#### `openGraphImageUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The image used to represent this repository in Open Graph data.
+
+#### `owner` ([`RepositoryOwner!`](/docs/api/interfaces/repository-owner))
+
+The User owner of the repository.
+
+#### `packages` ([`PackageConnection!`](/docs/api/objects/package-connection))
+
+A list of packages under the owner.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `names` ([`[String]`](/docs/api/scalars/string))
+
+Find packages by their names.
+
+- ##### `orderBy` ([`PackageOrder`](/docs/api/inputs/package-order))
+
+Ordering of the returned packages.
+
+- ##### `packageType` ([`PackageType`](/docs/api/enums/package-type))
+
+Filter registry package by type.
+
+- ##### `repositoryId` ([`ID`](/docs/api/scalars/id))
+
+Find packages in a repository by ID.
+
+#### `parent` ([`Repository`](/docs/api/objects/repository))
+
+The repository parent, if this is a fork.
+
+#### `pinnedDiscussions` ([`PinnedDiscussionConnection!`](/docs/api/objects/pinned-discussion-connection))
+
+A list of discussions that have been pinned in this repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `pinnedIssues` ([`PinnedIssueConnection`](/docs/api/objects/pinned-issue-connection))
+
+A list of pinned issues for this repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `primaryLanguage` ([`Language`](/docs/api/objects/language))
+
+The primary language of the repository's code.
+
+#### `project` ([`Project`](/docs/api/objects/project))
+
+Find project by number.
+
+- ##### `number` ([`Int!`](/docs/api/scalars/int))
+
+The project number to find.
+
+#### `projects` ([`ProjectConnection!`](/docs/api/objects/project-connection))
+
+A list of projects under the owner.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ProjectOrder`](/docs/api/inputs/project-order))
+
+Ordering options for projects returned from the connection
+
+- ##### `search` ([`String`](/docs/api/scalars/string))
+
+Query to search projects by, currently only searching by name.
+
+- ##### `states` ([`[ProjectState!]`](/docs/api/enums/project-state))
+
+A list of states to filter the projects by.
+
+#### `projectsResourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path listing the repository's projects
+
+#### `projectsUrl` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL listing the repository's projects
+
+#### `pullRequest` ([`PullRequest`](/docs/api/objects/pull-request))
+
+Returns a single pull request from the current repository by number.
+
+- ##### `number` ([`Int!`](/docs/api/scalars/int))
+
+The number for the pull request to be returned.
+
+#### `pullRequestTemplates` ([`[PullRequestTemplate!]`](/docs/api/objects/pull-request-template))
+
+Returns a list of pull request templates associated to the repository
+
+#### `pullRequests` ([`PullRequestConnection!`](/docs/api/objects/pull-request-connection))
+
+A list of pull requests that have been opened in the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `baseRefName` ([`String`](/docs/api/scalars/string))
+
+The base ref name to filter the pull requests by.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `headRefName` ([`String`](/docs/api/scalars/string))
+
+The head ref name to filter the pull requests by.
+
+- ##### `labels` ([`[String!]`](/docs/api/scalars/string))
+
+A list of label names to filter the pull requests by.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`IssueOrder`](/docs/api/inputs/issue-order))
+
+Ordering options for pull requests returned from the connection.
+
+- ##### `states` ([`[PullRequestState!]`](/docs/api/enums/pull-request-state))
+
+A list of states to filter the pull requests by.
+
+#### `pushedAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+Identifies when the repository was last pushed to.
+
+#### `rebaseMergeAllowed` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not rebase-merging is enabled on this repository.
+
+#### `ref` ([`Ref`](/docs/api/objects/ref))
+
+Fetch a given ref from the repository
+
+- ##### `qualifiedName` ([`String!`](/docs/api/scalars/string))
+
+The ref to retrieve. Fully qualified matches are checked in order
+(`refs/heads/master`) before falling back onto checks for short name matches (`master`).
+
+#### `refs` ([`RefConnection`](/docs/api/objects/ref-connection))
+
+Fetch a list of refs from the repository
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `direction` ([`OrderDirection`](/docs/api/enums/order-direction))
+
+DEPRECATED: use orderBy. The ordering direction.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`RefOrder`](/docs/api/inputs/ref-order))
+
+Ordering options for refs returned from the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+Filters refs with query on name
+
+- ##### `refPrefix` ([`String!`](/docs/api/scalars/string))
+
+A ref name prefix like `refs/heads/`, `refs/tags/`, etc.
+
+#### `release` ([`Release`](/docs/api/objects/release))
+
+Lookup a single release given various criteria.
+
+- ##### `tagName` ([`String!`](/docs/api/scalars/string))
+
+The name of the Tag the Release was created from
+
+#### `releases` ([`ReleaseConnection!`](/docs/api/objects/release-connection))
+
+List of releases which are dependent on this repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`ReleaseOrder`](/docs/api/inputs/release-order))
+
+Order for connection
+
+#### `repositoryTopics` ([`RepositoryTopicConnection!`](/docs/api/objects/repository-topic-connection))
+
+A list of applied repository-topic associations for this repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this repository
+
+#### `securityPolicyUrl` ([`URI`](/docs/api/scalars/uri))
+
+The security policy URL.
+
+#### `shortDescriptionHTML` ([`HTML!`](/docs/api/scalars/html))
+
+A description of the repository, rendered to HTML without any links in it.
+
+- ##### `limit` ([`Int`](/docs/api/scalars/int))
+
+How many characters to return.
+
+#### `squashMergeAllowed` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not squash-merging is enabled on this repository.
+
+#### `sshUrl` ([`GitSSHRemote!`](/docs/api/scalars/git-ssh-remote))
+
+The SSH URL to clone this repository
+
+#### `stargazerCount` ([`Int!`](/docs/api/scalars/int))
+
+Returns a count of how many stargazers there are on this object
+
+#### `stargazers` ([`StargazerConnection!`](/docs/api/objects/stargazer-connection))
+
+A list of users who have starred this starrable.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`StarOrder`](/docs/api/inputs/star-order))
+
+Order for connection
+
+#### `submodules` ([`SubmoduleConnection!`](/docs/api/objects/submodule-connection))
+
+Returns a list of all submodules in this repository parsed from the
+.gitmodules file as of the default branch's HEAD commit.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `tempCloneToken` ([`String`](/docs/api/scalars/string))
+
+Temporary authentication token for cloning this repository.
+
+#### `templateRepository` ([`Repository`](/docs/api/objects/repository))
+
+The repository from which this repository was generated, if any.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this repository
+
+#### `usesCustomOpenGraphImage` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether this repository has a custom image to use with Open Graph as opposed to being represented by the owner's avatar.
+
+#### `viewerCanAdminister` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates whether the viewer has admin permissions on this repository.
+
+#### `viewerCanCreateProjects` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Can the current viewer create new projects on this owner.
+
+#### `viewerCanSubscribe` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Check if the viewer is able to change their subscription status for the repository.
+
+#### `viewerCanUpdateTopics` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Indicates whether the viewer can update the topics of this repository.
+
+#### `viewerDefaultCommitEmail` ([`String`](/docs/api/scalars/string))
+
+The last commit email for the viewer.
+
+#### `viewerDefaultMergeMethod` ([`PullRequestMergeMethod!`](/docs/api/enums/pull-request-merge-method))
+
+The last used merge method by the viewer or the default for the repository.
+
+#### `viewerHasStarred` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Returns a boolean indicating whether the viewing user has starred this starrable.
+
+#### `viewerPermission` ([`RepositoryPermission`](/docs/api/enums/repository-permission))
+
+The users permission level on the repository. Will return null if authenticated as an GitHub App.
+
+#### `viewerPossibleCommitEmails` ([`[String!]`](/docs/api/scalars/string))
+
+A list of emails this viewer can commit with.
+
+#### `viewerSubscription` ([`SubscriptionState`](/docs/api/enums/subscription-state))
+
+Identifies if the viewer is watching, not watching, or ignoring the subscribable entity.
+
+#### `vulnerabilityAlerts` ([`RepositoryVulnerabilityAlertConnection`](/docs/api/objects/repository-vulnerability-alert-connection))
+
+A list of vulnerability alerts that are on this repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `watchers` ([`UserConnection!`](/docs/api/objects/user-connection))
+
+A list of users watching the repository.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
+
+#### [`PackageOwner`](/docs/api/interfaces/package-owner)
+
+Represents an owner of a package.
+
+#### [`ProjectOwner`](/docs/api/interfaces/project-owner)
+
+Represents an owner of a Project.
+
+#### [`RepositoryInfo`](/docs/api/interfaces/repository-info)
+
+A subset of repository info.
+
+#### [`Starrable`](/docs/api/interfaces/starrable)
+
+Things that can be starred.
+
+#### [`Subscribable`](/docs/api/interfaces/subscribable)
+
+Entities that can be subscribed to for web and email notifications.
+
+#### [`UniformResourceLocatable`](/docs/api/interfaces/uniform-resource-locatable)
+
+Represents a type that can be retrieved by a URL.

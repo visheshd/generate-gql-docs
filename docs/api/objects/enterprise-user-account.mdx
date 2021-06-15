@@ -1,0 +1,116 @@
+---
+id: enterprise-user-account
+title: EnterpriseUserAccount
+---
+
+An account for a user who is an admin of an enterprise or a member of an enterprise through one or more organizations.
+
+```graphql
+type EnterpriseUserAccount implements Actor, Node {
+  avatarUrl(size: Int = 0): URI!
+  createdAt: DateTime!
+  enterprise: Enterprise!
+  id: ID!
+  login: String!
+  name: String
+  organizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    query: String
+    role: EnterpriseUserAccountMembershipRole
+  ): EnterpriseOrganizationMembershipConnection!
+  resourcePath: URI!
+  updatedAt: DateTime!
+  url: URI!
+  user: User
+}
+```
+
+### Fields
+
+#### `avatarUrl` ([`URI!`](/docs/api/scalars/uri))
+
+A URL pointing to the enterprise user account's public avatar.
+
+- ##### `size` ([`Int`](/docs/api/scalars/int))
+
+The size of the resulting square image.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `enterprise` ([`Enterprise!`](/docs/api/objects/enterprise))
+
+The enterprise in which this user account exists.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `login` ([`String!`](/docs/api/scalars/string))
+
+An identifier for the enterprise user account, a login or email address
+
+#### `name` ([`String`](/docs/api/scalars/string))
+
+The name of the enterprise user account
+
+#### `organizations` ([`EnterpriseOrganizationMembershipConnection!`](/docs/api/objects/enterprise-organization-membership-connection))
+
+A list of enterprise organizations this user is a member of.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations returned from the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+- ##### `role` ([`EnterpriseUserAccountMembershipRole`](/docs/api/enums/enterprise-user-account-membership-role))
+
+The role of the user in the enterprise organization.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this user.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this user.
+
+#### `user` ([`User`](/docs/api/objects/user))
+
+The user within the enterprise.
+
+### Interfaces
+
+#### [`Actor`](/docs/api/interfaces/actor)
+
+Represents an object which can take actions on GitHub. Typically a User or Bot.
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

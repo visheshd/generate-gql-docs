@@ -1,0 +1,33 @@
+---
+id: package-file-connection
+title: PackageFileConnection
+---
+
+The connection type for PackageFile.
+
+```graphql
+type PackageFileConnection {
+  edges: [PackageFileEdge]
+  nodes: [PackageFile]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[PackageFileEdge]`](/docs/api/objects/package-file-edge))
+
+A list of edges.
+
+#### `nodes` ([`[PackageFile]`](/docs/api/objects/package-file))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

@@ -1,0 +1,28 @@
+---
+id: oauth-application-create-audit-entry-state
+title: OauthApplicationCreateAuditEntryState
+---
+
+The state of an OAuth Application when it was created.
+
+```graphql
+enum OauthApplicationCreateAuditEntryState {
+  ACTIVE
+  PENDING_DELETION
+  SUSPENDED
+}
+```
+
+### Values
+
+#### `ACTIVE`
+
+The OAuth Application was active and allowed to have OAuth Accesses.
+
+#### `PENDING_DELETION`
+
+The OAuth Application was in the process of being deleted.
+
+#### `SUSPENDED`
+
+The OAuth Application was suspended from generating OAuth Accesses due to abuse or security concerns.

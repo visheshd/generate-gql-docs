@@ -1,0 +1,33 @@
+---
+id: created-issue-contribution-connection
+title: CreatedIssueContributionConnection
+---
+
+The connection type for CreatedIssueContribution.
+
+```graphql
+type CreatedIssueContributionConnection {
+  edges: [CreatedIssueContributionEdge]
+  nodes: [CreatedIssueContribution]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CreatedIssueContributionEdge]`](/docs/api/objects/created-issue-contribution-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CreatedIssueContribution]`](/docs/api/objects/created-issue-contribution))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

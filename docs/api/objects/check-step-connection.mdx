@@ -1,0 +1,33 @@
+---
+id: check-step-connection
+title: CheckStepConnection
+---
+
+The connection type for CheckStep.
+
+```graphql
+type CheckStepConnection {
+  edges: [CheckStepEdge]
+  nodes: [CheckStep]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CheckStepEdge]`](/docs/api/objects/check-step-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CheckStep]`](/docs/api/objects/check-step))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

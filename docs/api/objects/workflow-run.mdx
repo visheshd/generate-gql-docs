@@ -1,0 +1,114 @@
+---
+id: workflow-run
+title: WorkflowRun
+---
+
+A workflow run.
+
+```graphql
+type WorkflowRun implements Node {
+  checkSuite: CheckSuite!
+  createdAt: DateTime!
+  databaseId: Int
+  deploymentReviews(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): DeploymentReviewConnection!
+  id: ID!
+  pendingDeploymentRequests(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): DeploymentRequestConnection!
+  resourcePath: URI!
+  runNumber: Int!
+  updatedAt: DateTime!
+  url: URI!
+  workflow: Workflow!
+}
+```
+
+### Fields
+
+#### `checkSuite` ([`CheckSuite!`](/docs/api/objects/check-suite))
+
+The check suite this workflow run belongs to.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `deploymentReviews` ([`DeploymentReviewConnection!`](/docs/api/objects/deployment-review-connection))
+
+The log of deployment reviews
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pendingDeploymentRequests` ([`DeploymentRequestConnection!`](/docs/api/objects/deployment-request-connection))
+
+The pending deployment requests of all check runs in this workflow run
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `resourcePath` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP path for this workflow run
+
+#### `runNumber` ([`Int!`](/docs/api/scalars/int))
+
+A number that uniquely identifies this workflow run in its parent workflow.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+#### `url` ([`URI!`](/docs/api/scalars/uri))
+
+The HTTP URL for this workflow run
+
+#### `workflow` ([`Workflow!`](/docs/api/objects/workflow))
+
+The workflow executed in this workflow run.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

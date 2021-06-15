@@ -1,0 +1,25 @@
+---
+id: marketplace-listing
+title: marketplaceListing
+---
+
+Look up a single Marketplace listing
+
+```graphql
+marketplaceListing(
+  slug: String!
+): MarketplaceListing
+
+```
+
+### Arguments
+
+#### `slug` ([`String!`](/docs/api/scalars/string))
+
+Select the listing that matches this slug. It's the short name of the listing used in its URL.
+
+### Type
+
+#### [`MarketplaceListing`](/docs/api/objects/marketplace-listing)
+
+A listing in the GitHub integration marketplace.

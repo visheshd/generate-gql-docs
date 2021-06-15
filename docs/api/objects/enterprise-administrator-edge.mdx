@@ -1,0 +1,28 @@
+---
+id: enterprise-administrator-edge
+title: EnterpriseAdministratorEdge
+---
+
+A User who is an administrator of an enterprise.
+
+```graphql
+type EnterpriseAdministratorEdge {
+  cursor: String!
+  node: User
+  role: EnterpriseAdministratorRole!
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`User`](/docs/api/objects/user))
+
+The item at the end of the edge.
+
+#### `role` ([`EnterpriseAdministratorRole!`](/docs/api/enums/enterprise-administrator-role))
+
+The role of the administrator.

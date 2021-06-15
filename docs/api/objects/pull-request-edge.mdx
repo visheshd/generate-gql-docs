@@ -1,0 +1,23 @@
+---
+id: pull-request-edge
+title: PullRequestEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PullRequestEdge {
+  cursor: String!
+  node: PullRequest
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PullRequest`](/docs/api/objects/pull-request))
+
+The item at the end of the edge.

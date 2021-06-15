@@ -1,0 +1,22 @@
+---
+id: created-issue-or-restricted-contribution
+title: CreatedIssueOrRestrictedContribution
+---
+
+Represents either a issue the viewer can access or a restricted contribution.
+
+```graphql
+union CreatedIssueOrRestrictedContribution =
+    CreatedIssueContribution
+  | RestrictedContribution
+```
+
+### Possible types
+
+#### [`CreatedIssueContribution`](/docs/api/objects/created-issue-contribution)
+
+Represents the contribution a user made on GitHub by opening an issue.
+
+#### [`RestrictedContribution`](/docs/api/objects/restricted-contribution)
+
+Represents a private contribution a user made on GitHub.

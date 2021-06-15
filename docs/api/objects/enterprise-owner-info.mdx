@@ -1,0 +1,1031 @@
+---
+id: enterprise-owner-info
+title: EnterpriseOwnerInfo
+---
+
+Enterprise information only visible to enterprise owners.
+
+```graphql
+type EnterpriseOwnerInfo {
+  admins(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: EnterpriseMemberOrder = "[object Object]"
+    query: String
+    role: EnterpriseAdministratorRole
+  ): EnterpriseAdministratorConnection!
+  affiliatedUsersWithTwoFactorDisabled(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserConnection!
+  affiliatedUsersWithTwoFactorDisabledExist: Boolean!
+  allowPrivateRepositoryForkingSetting: EnterpriseEnabledDisabledSettingValue!
+  allowPrivateRepositoryForkingSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  defaultRepositoryPermissionSetting: EnterpriseDefaultRepositoryPermissionSettingValue!
+  defaultRepositoryPermissionSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: DefaultRepositoryPermissionField!
+  ): OrganizationConnection!
+  domains(
+    after: String
+    before: String
+    first: Int = 0
+    isApproved: Boolean
+    isVerified: Boolean
+    last: Int = 0
+    orderBy: VerifiableDomainOrder = "[object Object]"
+  ): VerifiableDomainConnection!
+  enterpriseServerInstallations(
+    after: String
+    before: String
+    connectedOnly: Boolean
+    first: Int = 0
+    last: Int = 0
+    orderBy: EnterpriseServerInstallationOrder = "[object Object]"
+  ): EnterpriseServerInstallationConnection!
+  ipAllowListEnabledSetting: IpAllowListEnabledSettingValue!
+  ipAllowListEntries(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: IpAllowListEntryOrder = "[object Object]"
+  ): IpAllowListEntryConnection!
+  isUpdatingDefaultRepositoryPermission: Boolean!
+  isUpdatingTwoFactorRequirement: Boolean!
+  membersCanChangeRepositoryVisibilitySetting: EnterpriseEnabledDisabledSettingValue!
+  membersCanChangeRepositoryVisibilitySettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  membersCanCreateInternalRepositoriesSetting: Boolean
+  membersCanCreatePrivateRepositoriesSetting: Boolean
+  membersCanCreatePublicRepositoriesSetting: Boolean
+  membersCanCreateRepositoriesSetting: EnterpriseMembersCanCreateRepositoriesSettingValue
+  membersCanCreateRepositoriesSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: OrganizationMembersCanCreateRepositoriesSettingValue!
+  ): OrganizationConnection!
+  membersCanDeleteIssuesSetting: EnterpriseEnabledDisabledSettingValue!
+  membersCanDeleteIssuesSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  membersCanDeleteRepositoriesSetting: EnterpriseEnabledDisabledSettingValue!
+  membersCanDeleteRepositoriesSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  membersCanInviteCollaboratorsSetting: EnterpriseEnabledDisabledSettingValue!
+  membersCanInviteCollaboratorsSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  membersCanMakePurchasesSetting: EnterpriseMembersCanMakePurchasesSettingValue!
+  membersCanUpdateProtectedBranchesSetting: EnterpriseEnabledDisabledSettingValue!
+  membersCanUpdateProtectedBranchesSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  membersCanViewDependencyInsightsSetting: EnterpriseEnabledDisabledSettingValue!
+  membersCanViewDependencyInsightsSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  notificationDeliveryRestrictionEnabledSetting: NotificationRestrictionSettingValue!
+  organizationProjectsSetting: EnterpriseEnabledDisabledSettingValue!
+  organizationProjectsSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  outsideCollaborators(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    login: String
+    orderBy: EnterpriseMemberOrder = "[object Object]"
+    query: String
+    visibility: RepositoryVisibility
+  ): EnterpriseOutsideCollaboratorConnection!
+  pendingAdminInvitations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: EnterpriseAdministratorInvitationOrder = "[object Object]"
+    query: String
+    role: EnterpriseAdministratorRole
+  ): EnterpriseAdministratorInvitationConnection!
+  pendingCollaboratorInvitations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: RepositoryInvitationOrder = "[object Object]"
+    query: String
+  ): RepositoryInvitationConnection!
+  pendingCollaborators(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: RepositoryInvitationOrder = "[object Object]"
+    query: String
+  ): EnterprisePendingCollaboratorConnection!
+  pendingMemberInvitations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    query: String
+  ): EnterprisePendingMemberInvitationConnection!
+  repositoryProjectsSetting: EnterpriseEnabledDisabledSettingValue!
+  repositoryProjectsSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  samlIdentityProvider: EnterpriseIdentityProvider
+  samlIdentityProviderSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: IdentityProviderConfigurationState!
+  ): OrganizationConnection!
+  supportEntitlements(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: EnterpriseMemberOrder = "[object Object]"
+  ): EnterpriseMemberConnection!
+  teamDiscussionsSetting: EnterpriseEnabledDisabledSettingValue!
+  teamDiscussionsSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+  twoFactorRequiredSetting: EnterpriseEnabledSettingValue!
+  twoFactorRequiredSettingOrganizations(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+    orderBy: OrganizationOrder = "[object Object]"
+    value: Boolean!
+  ): OrganizationConnection!
+}
+```
+
+### Fields
+
+#### `admins` ([`EnterpriseAdministratorConnection!`](/docs/api/objects/enterprise-administrator-connection))
+
+A list of all of the administrators for this enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`EnterpriseMemberOrder`](/docs/api/inputs/enterprise-member-order))
+
+Ordering options for administrators returned from the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+- ##### `role` ([`EnterpriseAdministratorRole`](/docs/api/enums/enterprise-administrator-role))
+
+The role to filter by.
+
+#### `affiliatedUsersWithTwoFactorDisabled` ([`UserConnection!`](/docs/api/objects/user-connection))
+
+A list of users in the enterprise who currently have two-factor authentication disabled.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `affiliatedUsersWithTwoFactorDisabledExist` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not affiliated users with two-factor authentication disabled exist in the enterprise.
+
+#### `allowPrivateRepositoryForkingSetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether private repository forking is enabled for repositories in organizations in this enterprise.
+
+#### `allowPrivateRepositoryForkingSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided private repository forking setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `defaultRepositoryPermissionSetting` ([`EnterpriseDefaultRepositoryPermissionSettingValue!`](/docs/api/enums/enterprise-default-repository-permission-setting-value))
+
+The setting value for base repository permissions for organizations in this enterprise.
+
+#### `defaultRepositoryPermissionSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided default repository permission.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`DefaultRepositoryPermissionField!`](/docs/api/enums/default-repository-permission-field))
+
+The permission to find organizations for.
+
+#### `domains` ([`VerifiableDomainConnection!`](/docs/api/objects/verifiable-domain-connection))
+
+A list of domains owned by the enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `isApproved` ([`Boolean`](/docs/api/scalars/boolean))
+
+Filter whether or not the domain is approved.
+
+- ##### `isVerified` ([`Boolean`](/docs/api/scalars/boolean))
+
+Filter whether or not the domain is verified.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`VerifiableDomainOrder`](/docs/api/inputs/verifiable-domain-order))
+
+Ordering options for verifiable domains returned.
+
+#### `enterpriseServerInstallations` ([`EnterpriseServerInstallationConnection!`](/docs/api/objects/enterprise-server-installation-connection))
+
+Enterprise Server installations owned by the enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `connectedOnly` ([`Boolean`](/docs/api/scalars/boolean))
+
+Whether or not to only return installations discovered via GitHub Connect.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`EnterpriseServerInstallationOrder`](/docs/api/inputs/enterprise-server-installation-order))
+
+Ordering options for Enterprise Server installations returned.
+
+#### `ipAllowListEnabledSetting` ([`IpAllowListEnabledSettingValue!`](/docs/api/enums/ip-allow-list-enabled-setting-value))
+
+The setting value for whether the enterprise has an IP allow list enabled.
+
+#### `ipAllowListEntries` ([`IpAllowListEntryConnection!`](/docs/api/objects/ip-allow-list-entry-connection))
+
+The IP addresses that are allowed to access resources owned by the enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`IpAllowListEntryOrder`](/docs/api/inputs/ip-allow-list-entry-order))
+
+Ordering options for IP allow list entries returned.
+
+#### `isUpdatingDefaultRepositoryPermission` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether or not the default repository permission is currently being updated.
+
+#### `isUpdatingTwoFactorRequirement` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the two-factor authentication requirement is currently being enforced.
+
+#### `membersCanChangeRepositoryVisibilitySetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether organization members with admin permissions on a
+repository can change repository visibility.
+
+#### `membersCanChangeRepositoryVisibilitySettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided can change repository visibility setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `membersCanCreateInternalRepositoriesSetting` ([`Boolean`](/docs/api/scalars/boolean))
+
+The setting value for whether members of organizations in the enterprise can create internal repositories.
+
+#### `membersCanCreatePrivateRepositoriesSetting` ([`Boolean`](/docs/api/scalars/boolean))
+
+The setting value for whether members of organizations in the enterprise can create private repositories.
+
+#### `membersCanCreatePublicRepositoriesSetting` ([`Boolean`](/docs/api/scalars/boolean))
+
+The setting value for whether members of organizations in the enterprise can create public repositories.
+
+#### `membersCanCreateRepositoriesSetting` ([`EnterpriseMembersCanCreateRepositoriesSettingValue`](/docs/api/enums/enterprise-members-can-create-repositories-setting-value))
+
+The setting value for whether members of organizations in the enterprise can create repositories.
+
+#### `membersCanCreateRepositoriesSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided repository creation setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`OrganizationMembersCanCreateRepositoriesSettingValue!`](/docs/api/enums/organization-members-can-create-repositories-setting-value))
+
+The setting to find organizations for.
+
+#### `membersCanDeleteIssuesSetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether members with admin permissions for repositories can delete issues.
+
+#### `membersCanDeleteIssuesSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided members can delete issues setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `membersCanDeleteRepositoriesSetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether members with admin permissions for repositories can delete or transfer repositories.
+
+#### `membersCanDeleteRepositoriesSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided members can delete repositories setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `membersCanInviteCollaboratorsSetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether members of organizations in the enterprise can invite outside collaborators.
+
+#### `membersCanInviteCollaboratorsSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided members can invite collaborators setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `membersCanMakePurchasesSetting` ([`EnterpriseMembersCanMakePurchasesSettingValue!`](/docs/api/enums/enterprise-members-can-make-purchases-setting-value))
+
+Indicates whether members of this enterprise's organizations can purchase additional services for those organizations.
+
+#### `membersCanUpdateProtectedBranchesSetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether members with admin permissions for repositories can update protected branches.
+
+#### `membersCanUpdateProtectedBranchesSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided members can update protected branches setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `membersCanViewDependencyInsightsSetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether members can view dependency insights.
+
+#### `membersCanViewDependencyInsightsSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided members can view dependency insights setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `notificationDeliveryRestrictionEnabledSetting` ([`NotificationRestrictionSettingValue!`](/docs/api/enums/notification-restriction-setting-value))
+
+Indicates if email notification delivery for this enterprise is restricted to verified or approved domains.
+
+#### `organizationProjectsSetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether organization projects are enabled for organizations in this enterprise.
+
+#### `organizationProjectsSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided organization projects setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `outsideCollaborators` ([`EnterpriseOutsideCollaboratorConnection!`](/docs/api/objects/enterprise-outside-collaborator-connection))
+
+A list of outside collaborators across the repositories in the enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `login` ([`String`](/docs/api/scalars/string))
+
+The login of one specific outside collaborator.
+
+- ##### `orderBy` ([`EnterpriseMemberOrder`](/docs/api/inputs/enterprise-member-order))
+
+Ordering options for outside collaborators returned from the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+- ##### `visibility` ([`RepositoryVisibility`](/docs/api/enums/repository-visibility))
+
+Only return outside collaborators on repositories with this visibility.
+
+#### `pendingAdminInvitations` ([`EnterpriseAdministratorInvitationConnection!`](/docs/api/objects/enterprise-administrator-invitation-connection))
+
+A list of pending administrator invitations for the enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`EnterpriseAdministratorInvitationOrder`](/docs/api/inputs/enterprise-administrator-invitation-order))
+
+Ordering options for pending enterprise administrator invitations returned from the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+- ##### `role` ([`EnterpriseAdministratorRole`](/docs/api/enums/enterprise-administrator-role))
+
+The role to filter by.
+
+#### `pendingCollaboratorInvitations` ([`RepositoryInvitationConnection!`](/docs/api/objects/repository-invitation-connection))
+
+A list of pending collaborator invitations across the repositories in the enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`RepositoryInvitationOrder`](/docs/api/inputs/repository-invitation-order))
+
+Ordering options for pending repository collaborator invitations returned from the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+#### `pendingCollaborators` ([`EnterprisePendingCollaboratorConnection!`](/docs/api/objects/enterprise-pending-collaborator-connection))
+
+<span class="badge badge--warning">DEPRECATED: Repository invitations can now be associated with an email, not only an invitee. Use the `pendingCollaboratorInvitations` field instead. Removal on 2020-10-01 UTC.</span>
+
+A list of pending collaborators across the repositories in the enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`RepositoryInvitationOrder`](/docs/api/inputs/repository-invitation-order))
+
+Ordering options for pending repository collaborator invitations returned from the connection.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+#### `pendingMemberInvitations` ([`EnterprisePendingMemberInvitationConnection!`](/docs/api/objects/enterprise-pending-member-invitation-connection))
+
+A list of pending member invitations for organizations in the enterprise.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `query` ([`String`](/docs/api/scalars/string))
+
+The search string to look for.
+
+#### `repositoryProjectsSetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether repository projects are enabled in this enterprise.
+
+#### `repositoryProjectsSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided repository projects setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `samlIdentityProvider` ([`EnterpriseIdentityProvider`](/docs/api/objects/enterprise-identity-provider))
+
+The SAML Identity Provider for the enterprise.
+
+#### `samlIdentityProviderSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the SAML single sign-on setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`IdentityProviderConfigurationState!`](/docs/api/enums/identity-provider-configuration-state))
+
+The setting value to find organizations for.
+
+#### `supportEntitlements` ([`EnterpriseMemberConnection!`](/docs/api/objects/enterprise-member-connection))
+
+A list of members with a support entitlement.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`EnterpriseMemberOrder`](/docs/api/inputs/enterprise-member-order))
+
+Ordering options for support entitlement users returned from the connection.
+
+#### `teamDiscussionsSetting` ([`EnterpriseEnabledDisabledSettingValue!`](/docs/api/enums/enterprise-enabled-disabled-setting-value))
+
+The setting value for whether team discussions are enabled for organizations in this enterprise.
+
+#### `teamDiscussionsSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the provided team discussions setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.
+
+#### `twoFactorRequiredSetting` ([`EnterpriseEnabledSettingValue!`](/docs/api/enums/enterprise-enabled-setting-value))
+
+The setting value for whether the enterprise requires two-factor authentication for its organizations and users.
+
+#### `twoFactorRequiredSettingOrganizations` ([`OrganizationConnection!`](/docs/api/objects/organization-connection))
+
+A list of enterprise organizations configured with the two-factor authentication setting value.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`OrganizationOrder`](/docs/api/inputs/organization-order))
+
+Ordering options for organizations with this setting.
+
+- ##### `value` ([`Boolean!`](/docs/api/scalars/boolean))
+
+The setting value to find organizations for.

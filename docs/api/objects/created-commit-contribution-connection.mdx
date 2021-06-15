@@ -1,0 +1,33 @@
+---
+id: created-commit-contribution-connection
+title: CreatedCommitContributionConnection
+---
+
+The connection type for CreatedCommitContribution.
+
+```graphql
+type CreatedCommitContributionConnection {
+  edges: [CreatedCommitContributionEdge]
+  nodes: [CreatedCommitContribution]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[CreatedCommitContributionEdge]`](/docs/api/objects/created-commit-contribution-edge))
+
+A list of edges.
+
+#### `nodes` ([`[CreatedCommitContribution]`](/docs/api/objects/created-commit-contribution))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of commits across days and repositories in the connection.

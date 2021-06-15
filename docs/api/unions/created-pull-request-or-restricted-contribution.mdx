@@ -1,0 +1,22 @@
+---
+id: created-pull-request-or-restricted-contribution
+title: CreatedPullRequestOrRestrictedContribution
+---
+
+Represents either a pull request the viewer can access or a restricted contribution.
+
+```graphql
+union CreatedPullRequestOrRestrictedContribution =
+    CreatedPullRequestContribution
+  | RestrictedContribution
+```
+
+### Possible types
+
+#### [`CreatedPullRequestContribution`](/docs/api/objects/created-pull-request-contribution)
+
+Represents the contribution a user made on GitHub by opening a pull request.
+
+#### [`RestrictedContribution`](/docs/api/objects/restricted-contribution)
+
+Represents a private contribution a user made on GitHub.

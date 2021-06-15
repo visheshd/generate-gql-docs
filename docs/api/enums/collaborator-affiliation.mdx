@@ -1,0 +1,28 @@
+---
+id: collaborator-affiliation
+title: CollaboratorAffiliation
+---
+
+Collaborators affiliation level with a subject.
+
+```graphql
+enum CollaboratorAffiliation {
+  ALL
+  DIRECT
+  OUTSIDE
+}
+```
+
+### Values
+
+#### `ALL`
+
+All collaborators the authenticated user can see.
+
+#### `DIRECT`
+
+All collaborators with permissions to an organization-owned subject, regardless of organization membership status.
+
+#### `OUTSIDE`
+
+All outside collaborators of an organization-owned subject.

@@ -1,0 +1,23 @@
+---
+id: discussion-edge
+title: DiscussionEdge
+---
+
+An edge in a connection.
+
+```graphql
+type DiscussionEdge {
+  cursor: String!
+  node: Discussion
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Discussion`](/docs/api/objects/discussion))
+
+The item at the end of the edge.

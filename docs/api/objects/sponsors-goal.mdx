@@ -1,0 +1,39 @@
+---
+id: sponsors-goal
+title: SponsorsGoal
+---
+
+A goal associated with a GitHub Sponsors listing, representing a target the sponsored maintainer would like to attain.
+
+```graphql
+type SponsorsGoal {
+  description: String
+  kind: SponsorsGoalKind!
+  percentComplete: Int!
+  targetValue: Int!
+  title: String!
+}
+```
+
+### Fields
+
+#### `description` ([`String`](/docs/api/scalars/string))
+
+A description of the goal from the maintainer.
+
+#### `kind` ([`SponsorsGoalKind!`](/docs/api/enums/sponsors-goal-kind))
+
+What the objective of this goal is.
+
+#### `percentComplete` ([`Int!`](/docs/api/scalars/int))
+
+The percentage representing how complete this goal is, between 0-100.
+
+#### `targetValue` ([`Int!`](/docs/api/scalars/int))
+
+What the goal amount is. Represents a dollar amount for monthly sponsorship
+amount goals. Represents a count of unique sponsors for total sponsors count goals.
+
+#### `title` ([`String!`](/docs/api/scalars/string))
+
+A brief summary of the kind and target value of this goal.

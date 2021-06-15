@@ -1,0 +1,37 @@
+---
+id: unsubscribed-event
+title: UnsubscribedEvent
+---
+
+Represents an 'unsubscribed' event on a given `Subscribable`.
+
+```graphql
+type UnsubscribedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  subscribable: Subscribable!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `subscribable` ([`Subscribable!`](/docs/api/interfaces/subscribable))
+
+Object referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

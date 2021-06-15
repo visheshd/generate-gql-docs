@@ -1,0 +1,37 @@
+---
+id: head-ref-restored-event
+title: HeadRefRestoredEvent
+---
+
+Represents a 'head_ref_restored' event on a given pull request.
+
+```graphql
+type HeadRefRestoredEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  id: ID!
+  pullRequest: PullRequest!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `pullRequest` ([`PullRequest!`](/docs/api/objects/pull-request))
+
+PullRequest referenced by event.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

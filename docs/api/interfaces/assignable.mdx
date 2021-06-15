@@ -1,0 +1,39 @@
+---
+id: assignable
+title: Assignable
+---
+
+An object that can have users assigned to it.
+
+```graphql
+interface Assignable {
+  assignees(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): UserConnection!
+}
+```
+
+### Fields
+
+#### `assignees` ([`UserConnection!`](/docs/api/objects/user-connection))
+
+A list of Users assigned to this object.
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.

@@ -1,0 +1,24 @@
+---
+id: requested-reviewer
+title: RequestedReviewer
+---
+
+Types that can be requested reviewers.
+
+```graphql
+union RequestedReviewer = Mannequin | Team | User
+```
+
+### Possible types
+
+#### [`Mannequin`](/docs/api/objects/mannequin)
+
+A placeholder user for attribution of imported data on GitHub.
+
+#### [`Team`](/docs/api/objects/team)
+
+A team of users in an organization.
+
+#### [`User`](/docs/api/objects/user)
+
+A user is an individual's account on GitHub that owns repositories and can make new content.

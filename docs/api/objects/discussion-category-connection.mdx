@@ -1,0 +1,33 @@
+---
+id: discussion-category-connection
+title: DiscussionCategoryConnection
+---
+
+The connection type for DiscussionCategory.
+
+```graphql
+type DiscussionCategoryConnection {
+  edges: [DiscussionCategoryEdge]
+  nodes: [DiscussionCategory]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[DiscussionCategoryEdge]`](/docs/api/objects/discussion-category-edge))
+
+A list of edges.
+
+#### `nodes` ([`[DiscussionCategory]`](/docs/api/objects/discussion-category))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

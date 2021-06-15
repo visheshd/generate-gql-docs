@@ -1,0 +1,38 @@
+---
+id: starred-repository-connection
+title: StarredRepositoryConnection
+---
+
+The connection type for Repository.
+
+```graphql
+type StarredRepositoryConnection {
+  edges: [StarredRepositoryEdge]
+  isOverLimit: Boolean!
+  nodes: [Repository]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[StarredRepositoryEdge]`](/docs/api/objects/starred-repository-edge))
+
+A list of edges.
+
+#### `isOverLimit` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Is the list of stars for this user truncated? This is true for users that have many stars.
+
+#### `nodes` ([`[Repository]`](/docs/api/objects/repository))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

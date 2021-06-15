@@ -1,0 +1,23 @@
+---
+id: public-key-edge
+title: PublicKeyEdge
+---
+
+An edge in a connection.
+
+```graphql
+type PublicKeyEdge {
+  cursor: String!
+  node: PublicKey
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`PublicKey`](/docs/api/objects/public-key))
+
+The item at the end of the edge.

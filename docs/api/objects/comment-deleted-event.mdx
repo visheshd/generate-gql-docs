@@ -1,0 +1,42 @@
+---
+id: comment-deleted-event
+title: CommentDeletedEvent
+---
+
+Represents a 'comment_deleted' event on a given issue or pull request.
+
+```graphql
+type CommentDeletedEvent implements Node {
+  actor: Actor
+  createdAt: DateTime!
+  databaseId: Int
+  deletedCommentAuthor: Actor
+  id: ID!
+}
+```
+
+### Fields
+
+#### `actor` ([`Actor`](/docs/api/interfaces/actor))
+
+Identifies the actor who performed the event.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `deletedCommentAuthor` ([`Actor`](/docs/api/interfaces/actor))
+
+The user who authored the deleted comment.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

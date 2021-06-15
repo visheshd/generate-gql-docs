@@ -1,0 +1,52 @@
+---
+id: ip-allow-list-entry
+title: IpAllowListEntry
+---
+
+An IP address or range of addresses that is allowed to access an owner's resources.
+
+```graphql
+type IpAllowListEntry implements Node {
+  allowListValue: String!
+  createdAt: DateTime!
+  id: ID!
+  isActive: Boolean!
+  name: String
+  owner: IpAllowListOwner!
+  updatedAt: DateTime!
+}
+```
+
+### Fields
+
+#### `allowListValue` ([`String!`](/docs/api/scalars/string))
+
+A single IP address or range of IP addresses in CIDR notation.
+
+#### `createdAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was created.
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `isActive` ([`Boolean!`](/docs/api/scalars/boolean))
+
+Whether the entry is currently active.
+
+#### `name` ([`String`](/docs/api/scalars/string))
+
+The name of the IP allow list entry.
+
+#### `owner` ([`IpAllowListOwner!`](/docs/api/unions/ip-allow-list-owner))
+
+The owner of the IP allow list entry.
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+Identifies the date and time when the object was last updated.
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.

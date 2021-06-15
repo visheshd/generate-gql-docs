@@ -1,0 +1,33 @@
+---
+id: deployment-status-connection
+title: DeploymentStatusConnection
+---
+
+The connection type for DeploymentStatus.
+
+```graphql
+type DeploymentStatusConnection {
+  edges: [DeploymentStatusEdge]
+  nodes: [DeploymentStatus]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+```
+
+### Fields
+
+#### `edges` ([`[DeploymentStatusEdge]`](/docs/api/objects/deployment-status-edge))
+
+A list of edges.
+
+#### `nodes` ([`[DeploymentStatus]`](/docs/api/objects/deployment-status))
+
+A list of nodes.
+
+#### `pageInfo` ([`PageInfo!`](/docs/api/objects/page-info))
+
+Information to aid in pagination.
+
+#### `totalCount` ([`Int!`](/docs/api/scalars/int))
+
+Identifies the total count of items in the connection.

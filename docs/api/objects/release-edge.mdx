@@ -1,0 +1,23 @@
+---
+id: release-edge
+title: ReleaseEdge
+---
+
+An edge in a connection.
+
+```graphql
+type ReleaseEdge {
+  cursor: String!
+  node: Release
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `node` ([`Release`](/docs/api/objects/release))
+
+The item at the end of the edge.

@@ -1,0 +1,30 @@
+---
+id: enterprise-member-edge
+title: EnterpriseMemberEdge
+---
+
+A User who is a member of an enterprise through one or more organizations.
+
+```graphql
+type EnterpriseMemberEdge {
+  cursor: String!
+  isUnlicensed: Boolean!
+  node: EnterpriseMember
+}
+```
+
+### Fields
+
+#### `cursor` ([`String!`](/docs/api/scalars/string))
+
+A cursor for use in pagination.
+
+#### `isUnlicensed` ([`Boolean!`](/docs/api/scalars/boolean))
+
+<span class="badge badge--warning">DEPRECATED: All members consume a license Removal on 2021-01-01 UTC.</span>
+
+Whether the user does not have a license for the enterprise.
+
+#### `node` ([`EnterpriseMember`](/docs/api/unions/enterprise-member))
+
+The item at the end of the edge.

@@ -1,0 +1,23 @@
+---
+id: security-advisory-order
+title: SecurityAdvisoryOrder
+---
+
+Ordering options for security advisory connections
+
+```graphql
+type SecurityAdvisoryOrder {
+  direction: OrderDirection!
+  field: SecurityAdvisoryOrderField!
+}
+```
+
+### Fields
+
+#### `direction` ([`OrderDirection!`](/docs/api/enums/order-direction))
+
+The ordering direction.
+
+#### `field` ([`SecurityAdvisoryOrderField!`](/docs/api/enums/security-advisory-order-field))
+
+The field to order security advisories by.

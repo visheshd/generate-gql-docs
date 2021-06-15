@@ -1,0 +1,25 @@
+---
+id: rate-limit
+title: rateLimit
+---
+
+The client's rate limit information.
+
+```graphql
+rateLimit(
+  dryRun: Boolean
+): RateLimit
+
+```
+
+### Arguments
+
+#### `dryRun` ([`Boolean`](/docs/api/scalars/boolean))
+
+If true, calculate the cost for the query without evaluating it
+
+### Type
+
+#### [`RateLimit`](/docs/api/objects/rate-limit)
+
+Represents the client's rate limit.

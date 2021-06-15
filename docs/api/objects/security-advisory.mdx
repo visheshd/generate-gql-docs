@@ -1,0 +1,164 @@
+---
+id: security-advisory
+title: SecurityAdvisory
+---
+
+A GitHub Security Advisory
+
+```graphql
+type SecurityAdvisory implements Node {
+  cvss: CVSS!
+  cwes(
+    after: String
+    before: String
+    first: Int = 0
+    last: Int = 0
+  ): CWEConnection!
+  databaseId: Int
+  description: String!
+  ghsaId: String!
+  id: ID!
+  identifiers: [SecurityAdvisoryIdentifier!]!
+  notificationsPermalink: URI
+  origin: String!
+  permalink: URI
+  publishedAt: DateTime!
+  references: [SecurityAdvisoryReference!]!
+  severity: SecurityAdvisorySeverity!
+  summary: String!
+  updatedAt: DateTime!
+  vulnerabilities(
+    after: String
+    before: String
+    ecosystem: SecurityAdvisoryEcosystem
+    first: Int = 0
+    last: Int = 0
+    orderBy: SecurityVulnerabilityOrder = "[object Object]"
+    package: String
+    severities: [SecurityAdvisorySeverity!] = []
+  ): SecurityVulnerabilityConnection!
+  withdrawnAt: DateTime
+}
+```
+
+### Fields
+
+#### `cvss` ([`CVSS!`](/docs/api/objects/cvss))
+
+The CVSS associated with this advisory
+
+#### `cwes` ([`CWEConnection!`](/docs/api/objects/cwe-connection))
+
+CWEs associated with this Advisory
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+#### `databaseId` ([`Int`](/docs/api/scalars/int))
+
+Identifies the primary key from the database.
+
+#### `description` ([`String!`](/docs/api/scalars/string))
+
+This is a long plaintext description of the advisory
+
+#### `ghsaId` ([`String!`](/docs/api/scalars/string))
+
+The GitHub Security Advisory ID
+
+#### `id` ([`ID!`](/docs/api/scalars/id))
+
+#### `identifiers` ([`[SecurityAdvisoryIdentifier!]!`](/docs/api/objects/security-advisory-identifier))
+
+A list of identifiers for this advisory
+
+#### `notificationsPermalink` ([`URI`](/docs/api/scalars/uri))
+
+The permalink for the advisory's dependabot alerts page
+
+#### `origin` ([`String!`](/docs/api/scalars/string))
+
+The organization that originated the advisory
+
+#### `permalink` ([`URI`](/docs/api/scalars/uri))
+
+The permalink for the advisory
+
+#### `publishedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+When the advisory was published
+
+#### `references` ([`[SecurityAdvisoryReference!]!`](/docs/api/objects/security-advisory-reference))
+
+A list of references for this advisory
+
+#### `severity` ([`SecurityAdvisorySeverity!`](/docs/api/enums/security-advisory-severity))
+
+The severity of the advisory
+
+#### `summary` ([`String!`](/docs/api/scalars/string))
+
+A short plaintext summary of the advisory
+
+#### `updatedAt` ([`DateTime!`](/docs/api/scalars/date-time))
+
+When the advisory was last updated
+
+#### `vulnerabilities` ([`SecurityVulnerabilityConnection!`](/docs/api/objects/security-vulnerability-connection))
+
+Vulnerabilities associated with this Advisory
+
+- ##### `after` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come after the specified cursor.
+
+- ##### `before` ([`String`](/docs/api/scalars/string))
+
+Returns the elements in the list that come before the specified cursor.
+
+- ##### `ecosystem` ([`SecurityAdvisoryEcosystem`](/docs/api/enums/security-advisory-ecosystem))
+
+An ecosystem to filter vulnerabilities by.
+
+- ##### `first` ([`Int`](/docs/api/scalars/int))
+
+Returns the first _n_ elements from the list.
+
+- ##### `last` ([`Int`](/docs/api/scalars/int))
+
+Returns the last _n_ elements from the list.
+
+- ##### `orderBy` ([`SecurityVulnerabilityOrder`](/docs/api/inputs/security-vulnerability-order))
+
+Ordering options for the returned topics.
+
+- ##### `package` ([`String`](/docs/api/scalars/string))
+
+A package name to filter vulnerabilities by.
+
+- ##### `severities` ([`[SecurityAdvisorySeverity!]`](/docs/api/enums/security-advisory-severity))
+
+A list of severities to filter vulnerabilities by.
+
+#### `withdrawnAt` ([`DateTime`](/docs/api/scalars/date-time))
+
+When the advisory was withdrawn, if it has been withdrawn
+
+### Interfaces
+
+#### [`Node`](/docs/api/interfaces/node)
+
+An object with an ID.
